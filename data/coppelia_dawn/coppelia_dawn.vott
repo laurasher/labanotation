@@ -1,0 +1,265 @@
+{
+    "name": "coppelia_dawn",
+    "securityToken": "Annotations Token",
+    "sourceConnection": {
+        "name": "Coppelia Images",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZGUwMGZjMzhiMzcwNDgyZjFhYmQwNTBmNGJkN2Q1OTQ0MzBjYmZjOTE4NDMzOTc5YzFhOWY1YTYyMWU3ODdjMmQ0MTNmOTNjNmMwNWIzNmFlMTU0ZTU2YWJlYjE5MzA3Mzg5NzE0MmQ0Zjg3YTUwNDY4ZGY1NzBjMzA0ZmU0NzgwYjQyN2NjOWZlYzZmZDAyMGYyMTRiMDE1MzgyYzhjZTJlY2Y4MTgwMTRkOTlkODhmYTM1N2I2ZTljZGUzMjYwYjI3M2VmZTcxZWRjY2VmZDViNWNiYTgzNzhhMjgwNGQiLCJpdiI6ImI1MzkzMTFhYTQ4MDVmNDFhYzI1NGUyYmFlNDExZWNiYTIwNzU5NmNhOWQ1ZWMxOCJ9"
+        },
+        "id": "s0k4ix8l1"
+    },
+    "targetConnection": {
+        "name": "Coppelia Images",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMzY4ODdiZDcwNjEzOGU4NGQwM2E0OTAzNGQ3ZTg5ZmVkMDJlMWY4ODI4OWE2MTA3YzZjZGM2MmY0MmZhNWE5ZGFkOGQ4ZjQxNDYyMDBhYjE4ZThhM2FiNWYxYzc0YzU3NjBmNTIyMmExZjcxYjA4NTY3NTNhYWI0NGQ4N2M5MDU0ZDlhNjI4OWI3NTNmZTY5NTc3N2Y2M2NkZDA5YzM3NzIzNDFiNjdmMzZiYTU5NjNmNDVmYzMzODFkYjUzNjMyYjQxYzgxNzM5ZWZhMmE5MjhiMTdjNDQ5MmRmYTMxMzkiLCJpdiI6ImEyYjFiZWM4YmE4YzM4ZmYzZWRiZDYxZjRkOGJhMTFiNmY1NzU2NDM2NjcxNDM4ZiJ9"
+        },
+        "id": "s0k4ix8l1"
+    },
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "right_support_high",
+            "color": "#5db300"
+        },
+        {
+            "name": "right_support_middle",
+            "color": "#e81123"
+        },
+        {
+            "name": "right_support_low",
+            "color": "#6917aa"
+        },
+        {
+            "name": "left_support_high",
+            "color": "#015cda"
+        },
+        {
+            "name": "left_support_middle",
+            "color": "#4894fe"
+        },
+        {
+            "name": "left_support_low",
+            "color": "#6b849c"
+        },
+        {
+            "name": "right_arm_high",
+            "color": "#70c400"
+        },
+        {
+            "name": "right_arm_middle",
+            "color": "#f7929a"
+        },
+        {
+            "name": "right_arm_low",
+            "color": "#257ffe"
+        },
+        {
+            "name": "left_arm_high",
+            "color": "#ddabe9"
+        },
+        {
+            "name": "left_arm_middle",
+            "color": "#ff8c00"
+        },
+        {
+            "name": "left_arm_low",
+            "color": "#386300"
+        },
+        {
+            "name": "right_body_high",
+            "color": "#b40e1b"
+        },
+        {
+            "name": "right_body_middle",
+            "color": "#68217a"
+        },
+        {
+            "name": "right_body_low",
+            "color": "#33cccc"
+        },
+        {
+            "name": "left_body_high",
+            "color": "#016afe"
+        },
+        {
+            "name": "left_body_middle",
+            "color": "#595959"
+        },
+        {
+            "name": "left_body_low",
+            "color": "#808080"
+        },
+        {
+            "name": "right_leg_high",
+            "color": "#990066"
+        },
+        {
+            "name": "right_leg_middle",
+            "color": "#00bcf2"
+        },
+        {
+            "name": "right_leg_low",
+            "color": "#5db300"
+        },
+        {
+            "name": "left_leg_high",
+            "color": "#e81123"
+        },
+        {
+            "name": "left_leg_middle",
+            "color": "#6917aa"
+        },
+        {
+            "name": "left_leg_low",
+            "color": "#015cda"
+        },
+        {
+            "name": "right_hand_high",
+            "color": "#4894fe"
+        },
+        {
+            "name": "right_hand_middle",
+            "color": "#6b849c"
+        },
+        {
+            "name": "right_hand_low",
+            "color": "#70c400"
+        },
+        {
+            "name": "left_hand_high",
+            "color": "#f7929a"
+        },
+        {
+            "name": "left_hand_middle",
+            "color": "#257ffe"
+        },
+        {
+            "name": "left_hand_low",
+            "color": "#ddabe9"
+        },
+        {
+            "name": "head_high",
+            "color": "#ff8c00"
+        },
+        {
+            "name": "head_middle",
+            "color": "#386300"
+        },
+        {
+            "name": "head_low",
+            "color": "#b40e1b"
+        },
+        {
+            "name": "forward",
+            "color": "#68217a"
+        },
+        {
+            "name": "place",
+            "color": "#33cccc"
+        },
+        {
+            "name": "right",
+            "color": "#016afe"
+        },
+        {
+            "name": "left",
+            "color": "#595959"
+        },
+        {
+            "name": "backward",
+            "color": "#808080"
+        },
+        {
+            "name": "right_support_hold",
+            "color": "#990066"
+        },
+        {
+            "name": "forward_diagonal",
+            "color": "#00bcf2"
+        },
+        {
+            "name": "backward_diagonal",
+            "color": "#5db300"
+        }
+    ],
+    "id": "d8wg-Kx9R",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "exportFormat": {
+        "providerType": "csv",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMWEzM2RjMzE4MmVlYTgyYjgzZjQ4MThhZDllN2FkMjNmNzk0NzY4NGQzMDQwZWViZjE3NTdjYjFkMGIzMTY0MjIzNWU1ZmEyOWYxYTY5ZDU3MWU4ZGJiYTM5OGJlZTk1IiwiaXYiOiI5NWVlZjZkODRlZTc1M2NhOWRhZTdkYmFiYThjMTM1ZWFhNWU4YjEyY2ExODJmNmIifQ=="
+        }
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "cfa32c583881eca345f9cfb9d7dff659",
+    "assets": {
+        "f89a594ff35bcef1f0e7418dbcef2455": {
+            "format": "png",
+            "id": "f89a594ff35bcef1f0e7418dbcef2455",
+            "name": "coppelia_dawn_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/coppelia_dawn_1.png",
+            "size": {
+                "width": 1284,
+                "height": 1730
+            },
+            "state": 1,
+            "type": 1
+        },
+        "fc93f84fb8bc86d54262384a13398744": {
+            "format": "png",
+            "id": "fc93f84fb8bc86d54262384a13398744",
+            "name": "coppelia_dawn_1_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/coppelia_dawn_1_1.png",
+            "size": {
+                "width": 284,
+                "height": 1558
+            },
+            "state": 1,
+            "type": 1
+        },
+        "2cf122da1dd3ec0ddb73d7323834164b": {
+            "format": "png",
+            "id": "2cf122da1dd3ec0ddb73d7323834164b",
+            "name": "coppelia_dawn_1_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/coppelia_dawn_1_2.png",
+            "size": {
+                "width": 330,
+                "height": 1262
+            },
+            "state": 2,
+            "type": 1
+        },
+        "9e8705d05a4b69cb472480f4a29d30cf": {
+            "format": "png",
+            "id": "9e8705d05a4b69cb472480f4a29d30cf",
+            "name": "coppelia_dawn_1_3.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/coppelia_dawn_1_3.png",
+            "size": {
+                "width": 254,
+                "height": 1256
+            },
+            "state": 2,
+            "type": 1
+        },
+        "cfa32c583881eca345f9cfb9d7dff659": {
+            "format": "png",
+            "id": "cfa32c583881eca345f9cfb9d7dff659",
+            "name": "coppelia_dawn_1_4.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/coppelia_dawn_1_4.png",
+            "size": {
+                "width": 306,
+                "height": 1268
+            },
+            "state": 2,
+            "type": 1
+        }
+    }
+}

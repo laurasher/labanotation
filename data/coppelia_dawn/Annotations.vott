@@ -1,0 +1,1721 @@
+{
+    "name": "Annotations",
+    "securityToken": "Annotations Token",
+    "sourceConnection": {
+        "name": "Coppelia Images",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMmZjYjk0ZDYxOWM1OWFjNjFkMzY2ZGUzZDliNDZmZGM2NGU1YjU0YzBlMmJiYzY5ZWMyMWY5ZGQ4MzlhNDNjY2E4OTA0Nzg3Nzk1MGZjMWE3M2U0M2NjNTNlMGM0NDlmNmU4MzMxY2Q5ZTJlYWRmMWFiMTU1MjM2Mjg2ZTRiMTkyZDNiNWNjOTE3NTQyNWQ3ZmYzNTc4NDM5ODJiMGU2MWFmMjE3N2IzY2I3NWU0NWM1MjZjZWViNDc3NmIzNDBhZWVkNGQzYmE4ZGNmMjcyMTBkNWY2MTkwNjg5NTQxMDgiLCJpdiI6IjJiY2M1OTE5NWU4YzA4ZWQ5MjExNGMzZmI5NTUyNDY2YTZhN2Q4OTdjMjhhMWFkYyJ9"
+        },
+        "id": "s0k4ix8l1"
+    },
+    "targetConnection": {
+        "name": "Coppelia Images",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiOTU5NDZkNWFiNTI4ZTMwYjJkYWI3NzY2MWNhNDA3NjY4NmUxMDU4ZjQyZWJlN2U5OTJlYjFmZGJhMmM0MDNjMjk5OTM2MjEzNjU3ZmJkMmNiMDRkODA4ODMyNjkyMGMyNDExMzliMjRkNWQ1YWM0ZjUxMDBmMDdkMmMxNGYxNjExNGQzY2UxYmU5Y2IzODdhYzIyMWM1ZjU4MTM2M2MzYzQ1OTQ4MjkxM2I1NzMwZGRjNDVkNDAyZTY5NjhlYzMyNjFiOTliOTc4MWQyNTkzNWJlMzc0OWE4NmY2NmFlNGUiLCJpdiI6IjYwYjliNjg4OTAxZDNkYTE1YTRiODVjNzYzYjE1YTgyM2ViOTJlZWZhODU1ODg2MCJ9"
+        },
+        "id": "s0k4ix8l1"
+    },
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "Left_Forward",
+            "color": "#5db300"
+        },
+        {
+            "name": "Left_High",
+            "color": "#e81123"
+        },
+        {
+            "name": "Left_Low",
+            "color": "#6917aa"
+        },
+        {
+            "name": "Left_Middle",
+            "color": "#015cda"
+        },
+        {
+            "name": "Forward_Low",
+            "color": "#4894fe"
+        },
+        {
+            "name": "Forward_Middle",
+            "color": "#6b849c"
+        },
+        {
+            "name": "Place_Low",
+            "color": "#70c400"
+        },
+        {
+            "name": "Place_Middle",
+            "color": "#f7929a"
+        },
+        {
+            "name": "Right_Middle",
+            "color": "#257ffe"
+        },
+        {
+            "name": "Forward_High",
+            "color": "#ddabe9"
+        },
+        {
+            "name": "Right_Low",
+            "color": "#ff8c00"
+        },
+        {
+            "name": "Right_High",
+            "color": "#386300"
+        },
+        {
+            "name": "Place_High",
+            "color": "#b40e1b"
+        },
+        {
+            "name": "Backward_Middle",
+            "color": "#68217a"
+        },
+        {
+            "name": "Backward_Low",
+            "color": "#33cccc"
+        }
+    ],
+    "id": "RenpoUTwr",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "exportFormat": {
+        "providerType": "csv",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZDU0Mjk5NTY2ZGZmNmQyODU2NzhmNjNmNjNjNmNkMGRjYzEyZDhmMWU1Mzc5MGIzM2U0ZjRmMTg1NTBlYTI2ZDNmODNlYmM0NGRhZDBhZWNjNzdhNGI3MDA3NTJmZmE1IiwiaXYiOiJiNzQxZDg4ZmE4OTA3MjIyNGYwNjgxZThhOTVmYzY5OGEyMjZhYjg0MzM3MTkxNGEifQ=="
+        }
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "907c49a950f6ff33041929eb93561741",
+    "assets": {
+        "5c22f9f1e64bd288b0bdd548193ee07e": {
+            "format": "jpg",
+            "id": "5c22f9f1e64bd288b0bdd548193ee07e",
+            "name": "Left%20Forward%20Low.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Forward%20Low.jpg",
+            "size": {
+                "width": 346,
+                "height": 455
+            },
+            "state": 2,
+            "type": 1
+        },
+        "50b5906a2ab5db26e45be7a60a4adbdb": {
+            "format": "jpg",
+            "id": "50b5906a2ab5db26e45be7a60a4adbdb",
+            "name": "Left%20High1.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High1.jpg",
+            "size": {
+                "width": 201,
+                "height": 215
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e8d24d59c6fe0e6eb5b973f1d6d48de0": {
+            "format": "jpg",
+            "id": "e8d24d59c6fe0e6eb5b973f1d6d48de0",
+            "name": "Left%20High10.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High10.jpg",
+            "size": {
+                "width": 424,
+                "height": 502
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a0149c6eafd05c171954691c7cc2dc34": {
+            "format": "jpg",
+            "id": "a0149c6eafd05c171954691c7cc2dc34",
+            "name": "Left%20High11.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High11.jpg",
+            "size": {
+                "width": 361,
+                "height": 337
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a416d6e33ad692e37312b5204d185d70": {
+            "format": "jpg",
+            "id": "a416d6e33ad692e37312b5204d185d70",
+            "name": "Left%20High12.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High12.jpg",
+            "size": {
+                "width": 346,
+                "height": 352
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6b6e438e62cbc186fb49e2b12c905c4e": {
+            "format": "jpg",
+            "id": "6b6e438e62cbc186fb49e2b12c905c4e",
+            "name": "Left%20High13.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High13.jpg",
+            "size": {
+                "width": 423,
+                "height": 431
+            },
+            "state": 2,
+            "type": 1
+        },
+        "9c580ac314ae10e26e64d35b3c2677a2": {
+            "format": "jpg",
+            "id": "9c580ac314ae10e26e64d35b3c2677a2",
+            "name": "Left%20High14.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High14.jpg",
+            "size": {
+                "width": 284,
+                "height": 239
+            },
+            "state": 2,
+            "type": 1
+        },
+        "903e34ac42295ac414ef341e896b64f8": {
+            "format": "jpg",
+            "id": "903e34ac42295ac414ef341e896b64f8",
+            "name": "Left%20High15.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High15.jpg",
+            "size": {
+                "width": 372,
+                "height": 297
+            },
+            "state": 2,
+            "type": 1
+        },
+        "16389cfd8c7f74ea4c155c33507f5b6d": {
+            "format": "jpg",
+            "id": "16389cfd8c7f74ea4c155c33507f5b6d",
+            "name": "Left%20High16.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High16.jpg",
+            "size": {
+                "width": 1102,
+                "height": 1064
+            },
+            "state": 2,
+            "type": 1
+        },
+        "94e683736521076c63c3c194a1d70121": {
+            "format": "jpg",
+            "id": "94e683736521076c63c3c194a1d70121",
+            "name": "Left%20High17.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High17.jpg",
+            "size": {
+                "width": 838,
+                "height": 860
+            },
+            "state": 2,
+            "type": 1
+        },
+        "69feccbe4b4082e0a1c7ecead3e50fc1": {
+            "format": "jpg",
+            "id": "69feccbe4b4082e0a1c7ecead3e50fc1",
+            "name": "Left%20High18.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High18.jpg",
+            "size": {
+                "width": 568,
+                "height": 527
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a8b9428a2b9b57dbfd5bd96ac1f45f0d": {
+            "format": "jpg",
+            "id": "a8b9428a2b9b57dbfd5bd96ac1f45f0d",
+            "name": "Left%20High2.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High2.jpg",
+            "size": {
+                "width": 412,
+                "height": 421
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2d481e8a311cf8770dd412ca59d21e86": {
+            "format": "jpg",
+            "id": "2d481e8a311cf8770dd412ca59d21e86",
+            "name": "Left%20High3.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High3.jpg",
+            "size": {
+                "width": 292,
+                "height": 460
+            },
+            "state": 2,
+            "type": 1
+        },
+        "13f54b2d1a80113ae2ebdfa0653f64c3": {
+            "format": "jpg",
+            "id": "13f54b2d1a80113ae2ebdfa0653f64c3",
+            "name": "Left%20High4.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High4.jpg",
+            "size": {
+                "width": 391,
+                "height": 321
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b43f7918b539b3ef63858695fbf1361f": {
+            "format": "jpg",
+            "id": "b43f7918b539b3ef63858695fbf1361f",
+            "name": "Left%20High5.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High5.jpg",
+            "size": {
+                "width": 387,
+                "height": 393
+            },
+            "state": 2,
+            "type": 1
+        },
+        "01c4a2d9145fe86c285dddbbe0720faa": {
+            "format": "jpg",
+            "id": "01c4a2d9145fe86c285dddbbe0720faa",
+            "name": "Left%20High6.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High6.jpg",
+            "size": {
+                "width": 516,
+                "height": 475
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6c2a09483b190e1508fb9687c6fa0463": {
+            "format": "jpg",
+            "id": "6c2a09483b190e1508fb9687c6fa0463",
+            "name": "Left%20High8.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High8.jpg",
+            "size": {
+                "width": 891,
+                "height": 836
+            },
+            "state": 2,
+            "type": 1
+        },
+        "67183a6624ac88bb772c5c3eacf1d1f4": {
+            "format": "jpg",
+            "id": "67183a6624ac88bb772c5c3eacf1d1f4",
+            "name": "Left%20High9.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High9.jpg",
+            "size": {
+                "width": 491,
+                "height": 480
+            },
+            "state": 2,
+            "type": 1
+        },
+        "731cd5faa3c149fddb2b7355787987c4": {
+            "format": "jpg",
+            "id": "731cd5faa3c149fddb2b7355787987c4",
+            "name": "Left%20Low1.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low1.jpg",
+            "size": {
+                "width": 673,
+                "height": 513
+            },
+            "state": 2,
+            "type": 1
+        },
+        "dbef34b133e91852a9de489f2c86c5dd": {
+            "format": "jpg",
+            "id": "dbef34b133e91852a9de489f2c86c5dd",
+            "name": "Left%20Low10.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low10.jpg",
+            "size": {
+                "width": 810,
+                "height": 939
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1e98f06f1c21f9e17394066f0bd92fed": {
+            "format": "jpg",
+            "id": "1e98f06f1c21f9e17394066f0bd92fed",
+            "name": "Left%20Low11.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low11.jpg",
+            "size": {
+                "width": 810,
+                "height": 939
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a19dbf9d13d838d5b85ff48a8bf2ccc8": {
+            "format": "jpg",
+            "id": "a19dbf9d13d838d5b85ff48a8bf2ccc8",
+            "name": "Left%20Low12.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low12.jpg",
+            "size": {
+                "width": 724,
+                "height": 570
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e17e2f1e80bd8b58935e38304b62914a": {
+            "format": "jpg",
+            "id": "e17e2f1e80bd8b58935e38304b62914a",
+            "name": "Left%20Low13.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low13.jpg",
+            "size": {
+                "width": 350,
+                "height": 618
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ef26d04ff4352d169fe56cf80666463a": {
+            "format": "jpg",
+            "id": "ef26d04ff4352d169fe56cf80666463a",
+            "name": "Left%20High7.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20High7.jpg",
+            "size": {
+                "width": 1288,
+                "height": 1206
+            },
+            "state": 2,
+            "type": 1
+        },
+        "96c461299d8d6ff66fa54a4405be1180": {
+            "format": "jpg",
+            "id": "96c461299d8d6ff66fa54a4405be1180",
+            "name": "Left%20Low14.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low14.jpg",
+            "size": {
+                "width": 344,
+                "height": 420
+            },
+            "state": 2,
+            "type": 1
+        },
+        "842a9e42996668ec4cce09cf69faf405": {
+            "format": "jpg",
+            "id": "842a9e42996668ec4cce09cf69faf405",
+            "name": "Left%20Low15.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low15.jpg",
+            "size": {
+                "width": 253,
+                "height": 376
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c0ce0fe5eed4b7ca2487c09c47e8624f": {
+            "format": "jpg",
+            "id": "c0ce0fe5eed4b7ca2487c09c47e8624f",
+            "name": "Left%20Low16.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low16.jpg",
+            "size": {
+                "width": 741,
+                "height": 853
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3d4fb33989e4168ebc5fd36c9b697ebf": {
+            "format": "jpg",
+            "id": "3d4fb33989e4168ebc5fd36c9b697ebf",
+            "name": "Left%20Low17.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low17.jpg",
+            "size": {
+                "width": 321,
+                "height": 521
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6fbf37784fde64d1ffc72b06b42af385": {
+            "format": "jpg",
+            "id": "6fbf37784fde64d1ffc72b06b42af385",
+            "name": "Left%20Low18.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low18.jpg",
+            "size": {
+                "width": 313,
+                "height": 402
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a41a8ebd5cae0ae5867ffba85429e407": {
+            "format": "jpg",
+            "id": "a41a8ebd5cae0ae5867ffba85429e407",
+            "name": "Left%20Low19.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low19.jpg",
+            "size": {
+                "width": 283,
+                "height": 564
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6a5892b195f365d0c3e2413f9021db76": {
+            "format": "jpg",
+            "id": "6a5892b195f365d0c3e2413f9021db76",
+            "name": "Left%20Low2.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low2.jpg",
+            "size": {
+                "width": 285,
+                "height": 338
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f536daa164bbec2658538cf2fc1589f6": {
+            "format": "jpg",
+            "id": "f536daa164bbec2658538cf2fc1589f6",
+            "name": "Left%20Low20.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low20.jpg",
+            "size": {
+                "width": 817,
+                "height": 781
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4a538086a7c5b824343cdcf3820962a4": {
+            "format": "jpg",
+            "id": "4a538086a7c5b824343cdcf3820962a4",
+            "name": "Left%20Low22.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low22.jpg",
+            "size": {
+                "width": 856,
+                "height": 810
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3c5f421a13952bbb9e03ccfdf3692138": {
+            "format": "jpg",
+            "id": "3c5f421a13952bbb9e03ccfdf3692138",
+            "name": "Left%20Low3.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low3.jpg",
+            "size": {
+                "width": 356,
+                "height": 348
+            },
+            "state": 2,
+            "type": 1
+        },
+        "747c2602cd45acc341d7cb8eac7e6ba8": {
+            "format": "jpg",
+            "id": "747c2602cd45acc341d7cb8eac7e6ba8",
+            "name": "Left%20Low4.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low4.jpg",
+            "size": {
+                "width": 679,
+                "height": 749
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8337c51bc8ed1444ae2fa0ca7e78e4d3": {
+            "format": "jpg",
+            "id": "8337c51bc8ed1444ae2fa0ca7e78e4d3",
+            "name": "Left%20Low5.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low5.jpg",
+            "size": {
+                "width": 1164,
+                "height": 1127
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e2009df11056cd0cfb76ecef31cb3dad": {
+            "format": "jpg",
+            "id": "e2009df11056cd0cfb76ecef31cb3dad",
+            "name": "Left%20Low6.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low6.jpg",
+            "size": {
+                "width": 1011,
+                "height": 991
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0beaf6431a2c6769dfdb666ad3f46bf5": {
+            "format": "jpg",
+            "id": "0beaf6431a2c6769dfdb666ad3f46bf5",
+            "name": "Left%20Low7.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low7.jpg",
+            "size": {
+                "width": 638,
+                "height": 736
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c29d156fe734936f88a591d5aee81ed1": {
+            "format": "jpg",
+            "id": "c29d156fe734936f88a591d5aee81ed1",
+            "name": "Left%20Low8.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low8.jpg",
+            "size": {
+                "width": 1181,
+                "height": 1012
+            },
+            "state": 2,
+            "type": 1
+        },
+        "38fa561d5935694ed617b944ce1e3a4d": {
+            "format": "jpg",
+            "id": "38fa561d5935694ed617b944ce1e3a4d",
+            "name": "Left%20Low9.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Low9.jpg",
+            "size": {
+                "width": 468,
+                "height": 435
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6d2a71bdab8e91556a6aa0f8f9f98c9a": {
+            "format": "jpg",
+            "id": "6d2a71bdab8e91556a6aa0f8f9f98c9a",
+            "name": "Left%20Normal1.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal1.jpg",
+            "size": {
+                "width": 259,
+                "height": 294
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6c904d539bffef744b18ac9f153753f9": {
+            "format": "jpg",
+            "id": "6c904d539bffef744b18ac9f153753f9",
+            "name": "Left%20Normal10.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal10.jpg",
+            "size": {
+                "width": 402,
+                "height": 462
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a22ff49e951f10d273458d41af98f56f": {
+            "format": "jpg",
+            "id": "a22ff49e951f10d273458d41af98f56f",
+            "name": "Left%20Normal11.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal11.jpg",
+            "size": {
+                "width": 269,
+                "height": 396
+            },
+            "state": 2,
+            "type": 1
+        },
+        "45ed2fc84743088c71b83245d41aa4df": {
+            "format": "jpg",
+            "id": "45ed2fc84743088c71b83245d41aa4df",
+            "name": "Left%20Normal12.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal12.jpg",
+            "size": {
+                "width": 442,
+                "height": 389
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c0c844d6879c0de1c81a1a680440b9d0": {
+            "format": "jpg",
+            "id": "c0c844d6879c0de1c81a1a680440b9d0",
+            "name": "Left%20Normal13.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal13.jpg",
+            "size": {
+                "width": 411,
+                "height": 354
+            },
+            "state": 2,
+            "type": 1
+        },
+        "fb182239725d8074b88838a14c10c60f": {
+            "format": "jpg",
+            "id": "fb182239725d8074b88838a14c10c60f",
+            "name": "Left%20Normal14.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal14.jpg",
+            "size": {
+                "width": 418,
+                "height": 458
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1d4561e89d22526f3f688a86401a376a": {
+            "format": "jpg",
+            "id": "1d4561e89d22526f3f688a86401a376a",
+            "name": "Left%20Normal15.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal15.jpg",
+            "size": {
+                "width": 389,
+                "height": 405
+            },
+            "state": 2,
+            "type": 1
+        },
+        "01ff1a3173b2e67ef225956e15b1d53f": {
+            "format": "jpg",
+            "id": "01ff1a3173b2e67ef225956e15b1d53f",
+            "name": "Left%20Normal16.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal16.jpg",
+            "size": {
+                "width": 380,
+                "height": 342
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5dba4653fd308fab23f4841394f12c1d": {
+            "format": "jpg",
+            "id": "5dba4653fd308fab23f4841394f12c1d",
+            "name": "Left%20Normal17.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal17.jpg",
+            "size": {
+                "width": 437,
+                "height": 372
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6d6dcfe344e147655d1e09c5972c46c5": {
+            "format": "jpg",
+            "id": "6d6dcfe344e147655d1e09c5972c46c5",
+            "name": "Left%20Normal18.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal18.jpg",
+            "size": {
+                "width": 791,
+                "height": 1030
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a12f83375f63e9b59872ac578a2fda38": {
+            "format": "jpg",
+            "id": "a12f83375f63e9b59872ac578a2fda38",
+            "name": "Left%20Normal19.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal19.jpg",
+            "size": {
+                "width": 1012,
+                "height": 1006
+            },
+            "state": 2,
+            "type": 1
+        },
+        "526ba68849ca85045c02feb5c9c8a009": {
+            "format": "jpg",
+            "id": "526ba68849ca85045c02feb5c9c8a009",
+            "name": "Left%20Normal2.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal2.jpg",
+            "size": {
+                "width": 480,
+                "height": 608
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0b4ab807ec38898ebb05a6665ff63791": {
+            "format": "jpg",
+            "id": "0b4ab807ec38898ebb05a6665ff63791",
+            "name": "Left%20Normal20.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal20.jpg",
+            "size": {
+                "width": 574,
+                "height": 605
+            },
+            "state": 2,
+            "type": 1
+        },
+        "fa39f7849b375de76a7cb6c9741bea13": {
+            "format": "jpg",
+            "id": "fa39f7849b375de76a7cb6c9741bea13",
+            "name": "Left%20Normal21.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal21.jpg",
+            "size": {
+                "width": 292,
+                "height": 290
+            },
+            "state": 2,
+            "type": 1
+        },
+        "119c76a7d8fe01d1fce3b34aa42af35a": {
+            "format": "jpg",
+            "id": "119c76a7d8fe01d1fce3b34aa42af35a",
+            "name": "Left%20Normal3.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal3.jpg",
+            "size": {
+                "width": 480,
+                "height": 466
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5c2a359a233a78659127499027376f09": {
+            "format": "jpg",
+            "id": "5c2a359a233a78659127499027376f09",
+            "name": "Left%20Normal4.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal4.jpg",
+            "size": {
+                "width": 275,
+                "height": 322
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0c91bd3314396afd366ee3c5c52aff36": {
+            "format": "jpg",
+            "id": "0c91bd3314396afd366ee3c5c52aff36",
+            "name": "Left%20Normal5.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal5.jpg",
+            "size": {
+                "width": 270,
+                "height": 353
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1fd04408ed3a2e1844f04904b2aad5f0": {
+            "format": "jpg",
+            "id": "1fd04408ed3a2e1844f04904b2aad5f0",
+            "name": "Left%20Normal6.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal6.jpg",
+            "size": {
+                "width": 485,
+                "height": 498
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1e88ec582fd14b91823ac0b51b6b93ec": {
+            "format": "jpg",
+            "id": "1e88ec582fd14b91823ac0b51b6b93ec",
+            "name": "Left%20Normal7.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal7.jpg",
+            "size": {
+                "width": 233,
+                "height": 455
+            },
+            "state": 2,
+            "type": 1
+        },
+        "fe267e994f99ccd6bd7d80fe0a956d55": {
+            "format": "jpg",
+            "id": "fe267e994f99ccd6bd7d80fe0a956d55",
+            "name": "Left%20Normal8.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal8.jpg",
+            "size": {
+                "width": 461,
+                "height": 538
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4ce0c65667036adafbfcdef7facfd942": {
+            "format": "jpg",
+            "id": "4ce0c65667036adafbfcdef7facfd942",
+            "name": "Left%20Normal9.jpg",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Left%20Normal9.jpg",
+            "size": {
+                "width": 659,
+                "height": 828
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d0f401a193223e55b0e23a9635410477": {
+            "format": "png",
+            "id": "d0f401a193223e55b0e23a9635410477",
+            "name": "Forward_Low1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Forward_Low1.png",
+            "size": {
+                "width": 70,
+                "height": 130
+            },
+            "state": 2,
+            "type": 1
+        },
+        "faa2711d13408caf81d91b75e13b0077": {
+            "format": "png",
+            "id": "faa2711d13408caf81d91b75e13b0077",
+            "name": "Forward_Low2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Forward_Low2.png",
+            "size": {
+                "width": 52,
+                "height": 154
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3830dd48f8163871ea8b04805cc89ea1": {
+            "format": "png",
+            "id": "3830dd48f8163871ea8b04805cc89ea1",
+            "name": "Forward_Middle.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Forward_Middle.png",
+            "size": {
+                "width": 62,
+                "height": 160
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b4dcd90d4b8e6ee80169d6f1a482f4d8": {
+            "format": "png",
+            "id": "b4dcd90d4b8e6ee80169d6f1a482f4d8",
+            "name": "Place_Low1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Place_Low1.png",
+            "size": {
+                "width": 72,
+                "height": 158
+            },
+            "state": 2,
+            "type": 1
+        },
+        "30b0ccf327b3496cef863d9aee5edc4f": {
+            "format": "png",
+            "id": "30b0ccf327b3496cef863d9aee5edc4f",
+            "name": "Place_Middle.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Place_Middle.png",
+            "size": {
+                "width": 64,
+                "height": 158
+            },
+            "state": 2,
+            "type": 1
+        },
+        "481163424fe16f8b6e828de7b81723d1": {
+            "format": "png",
+            "id": "481163424fe16f8b6e828de7b81723d1",
+            "name": "Screen%20Shot%202020-07-01%20at%209.46.23%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-01%20at%209.46.23%20PM.png",
+            "size": {
+                "width": 63,
+                "height": 178
+            },
+            "state": 2,
+            "type": 1
+        },
+        "23e4406d207fb9d2bd44d3e024949bc6": {
+            "format": "png",
+            "id": "23e4406d207fb9d2bd44d3e024949bc6",
+            "name": "Screen%20Shot%202020-07-01%20at%209.46.45%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-01%20at%209.46.45%20PM.png",
+            "size": {
+                "width": 58,
+                "height": 152
+            },
+            "state": 2,
+            "type": 1
+        },
+        "394eb5e7caafce83be84ce2bf9f9f793": {
+            "format": "png",
+            "id": "394eb5e7caafce83be84ce2bf9f9f793",
+            "name": "Screen%20Shot%202020-07-01%20at%209.46.53%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-01%20at%209.46.53%20PM.png",
+            "size": {
+                "width": 36,
+                "height": 294
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1a6909f3c603ad85dc37fa78a0081b4b": {
+            "format": "png",
+            "id": "1a6909f3c603ad85dc37fa78a0081b4b",
+            "name": "Screen%20Shot%202020-07-01%20at%209.46.56%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-01%20at%209.46.56%20PM.png",
+            "size": {
+                "width": 52,
+                "height": 294
+            },
+            "state": 2,
+            "type": 1
+        },
+        "aa0616c198128f1291ab817f05370996": {
+            "format": "png",
+            "id": "aa0616c198128f1291ab817f05370996",
+            "name": "Screen%20Shot%202020-07-01%20at%209.47.04%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-01%20at%209.47.04%20PM.png",
+            "size": {
+                "width": 42,
+                "height": 86
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d7f40768deeeff3453ddeab9ab22ff36": {
+            "format": "png",
+            "id": "d7f40768deeeff3453ddeab9ab22ff36",
+            "name": "Screen%20Shot%202020-07-01%20at%209.47.07%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-01%20at%209.47.07%20PM.png",
+            "size": {
+                "width": 38,
+                "height": 100
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0479bd6436ecb6e9240c6d78dd7a4266": {
+            "format": "png",
+            "id": "0479bd6436ecb6e9240c6d78dd7a4266",
+            "name": "Screen%20Shot%202020-07-01%20at%209.47.11%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-01%20at%209.47.11%20PM.png",
+            "size": {
+                "width": 68,
+                "height": 126
+            },
+            "state": 2,
+            "type": 1
+        },
+        "96feb24ea6b113685a42c58acb8dd26f": {
+            "format": "png",
+            "id": "96feb24ea6b113685a42c58acb8dd26f",
+            "name": "Screen%20Shot%202020-07-01%20at%209.47.14%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-01%20at%209.47.14%20PM.png",
+            "size": {
+                "width": 58,
+                "height": 160
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ef9b7544aa5ed003ba40ec857aa5b611": {
+            "format": "png",
+            "id": "ef9b7544aa5ed003ba40ec857aa5b611",
+            "name": "Screen%20Shot%202020-07-01%20at%209.47.18%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-01%20at%209.47.18%20PM.png",
+            "size": {
+                "width": 58,
+                "height": 156
+            },
+            "state": 2,
+            "type": 1
+        },
+        "397e1ad1f2daeb6ca0745aec782a33b2": {
+            "format": "png",
+            "id": "397e1ad1f2daeb6ca0745aec782a33b2",
+            "name": "Aubade_1976_by_Carl_Wolz.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Aubade_1976_by_Carl_Wolz.png",
+            "size": {
+                "width": 1536,
+                "height": 1288
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a3f25dade5ed9c504a312ca01e3b5706": {
+            "format": "png",
+            "id": "a3f25dade5ed9c504a312ca01e3b5706",
+            "name": "Screen%20Shot%202020-07-02%20at%2011.27.05%20AM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%2011.27.05%20AM.png",
+            "size": {
+                "width": 1620,
+                "height": 1718
+            },
+            "state": 2,
+            "type": 1
+        },
+        "dffd4f61539430c98a0097eaa2061777": {
+            "format": "png",
+            "id": "dffd4f61539430c98a0097eaa2061777",
+            "name": "Screen%20Shot%202020-07-02%20at%2011.27.27%20AM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%2011.27.27%20AM.png",
+            "size": {
+                "width": 1254,
+                "height": 1668
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ed0331ef47eb755c258a2c462dcd7879": {
+            "format": "png",
+            "id": "ed0331ef47eb755c258a2c462dcd7879",
+            "name": "Screen%20Shot%202020-07-02%20at%2011.27.40%20AM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%2011.27.40%20AM.png",
+            "size": {
+                "width": 1246,
+                "height": 1318
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8426711c7ca1e464a7ef62b9d128e430": {
+            "format": "png",
+            "id": "8426711c7ca1e464a7ef62b9d128e430",
+            "name": "Screen%20Shot%202020-07-02%20at%2011.28.23%20AM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%2011.28.23%20AM.png",
+            "size": {
+                "width": 990,
+                "height": 1690
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3571226a138326af852b64eb6375543f": {
+            "format": "png",
+            "id": "3571226a138326af852b64eb6375543f",
+            "name": "Screen%20Shot%202020-07-02%20at%202.31.46%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.31.46%20PM.png",
+            "size": {
+                "width": 1008,
+                "height": 1382
+            },
+            "state": 2,
+            "type": 1
+        },
+        "92bb05e7c7f95abc48d44441a8536687": {
+            "format": "png",
+            "id": "92bb05e7c7f95abc48d44441a8536687",
+            "name": "Screen%20Shot%202020-07-02%20at%2011.28.33%20AM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%2011.28.33%20AM.png",
+            "size": {
+                "width": 656,
+                "height": 1430
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8115fa7e01b3a4d3e48edd9862faa22e": {
+            "format": "png",
+            "id": "8115fa7e01b3a4d3e48edd9862faa22e",
+            "name": "Screen%20Shot%202020-07-02%20at%202.31.56%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.31.56%20PM.png",
+            "size": {
+                "width": 1150,
+                "height": 1378
+            },
+            "state": 2,
+            "type": 1
+        },
+        "110a5c04aba8125c6e43783f7b542e2f": {
+            "format": "png",
+            "id": "110a5c04aba8125c6e43783f7b542e2f",
+            "name": "Screen%20Shot%202020-07-02%20at%202.32.01%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.32.01%20PM.png",
+            "size": {
+                "width": 914,
+                "height": 1356
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3425a215097003a4eabe1e7fe9159160": {
+            "format": "png",
+            "id": "3425a215097003a4eabe1e7fe9159160",
+            "name": "Screen%20Shot%202020-07-02%20at%202.32.12%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.32.12%20PM.png",
+            "size": {
+                "width": 1156,
+                "height": 1354
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8bfbce93df4f5149c8c9fe1644ab6009": {
+            "format": "png",
+            "id": "8bfbce93df4f5149c8c9fe1644ab6009",
+            "name": "Screen%20Shot%202020-07-02%20at%202.32.17%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.32.17%20PM.png",
+            "size": {
+                "width": 930,
+                "height": 1350
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d11c18da1a13a05f90ce7ebda21515c1": {
+            "format": "png",
+            "id": "d11c18da1a13a05f90ce7ebda21515c1",
+            "name": "Screen%20Shot%202020-07-02%20at%202.32.22%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.32.22%20PM.png",
+            "size": {
+                "width": 1380,
+                "height": 1388
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5f2e8c27dc0541de3c44b0de7810cbe6": {
+            "format": "png",
+            "id": "5f2e8c27dc0541de3c44b0de7810cbe6",
+            "name": "Screen%20Shot%202020-07-02%20at%202.32.27%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.32.27%20PM.png",
+            "size": {
+                "width": 1368,
+                "height": 1486
+            },
+            "state": 2,
+            "type": 1
+        },
+        "67ebb70a959c1f10d65f7b0fcdc4bf9e": {
+            "format": "png",
+            "id": "67ebb70a959c1f10d65f7b0fcdc4bf9e",
+            "name": "Screen%20Shot%202020-07-02%20at%202.32.34%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.32.34%20PM.png",
+            "size": {
+                "width": 1164,
+                "height": 1338
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ae38bcc5d0197c9c4302ce1d9ef4d208": {
+            "format": "png",
+            "id": "ae38bcc5d0197c9c4302ce1d9ef4d208",
+            "name": "Screen%20Shot%202020-07-02%20at%202.34.07%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.34.07%20PM.png",
+            "size": {
+                "width": 1428,
+                "height": 1696
+            },
+            "state": 2,
+            "type": 1
+        },
+        "154a10e1d309b98ac95ed0822bc8130a": {
+            "format": "png",
+            "id": "154a10e1d309b98ac95ed0822bc8130a",
+            "name": "Screen%20Shot%202020-07-02%20at%202.34.02%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.34.02%20PM.png",
+            "size": {
+                "width": 1366,
+                "height": 1594
+            },
+            "state": 2,
+            "type": 1
+        },
+        "46df0a7baaf769618377da1a60a5cd9a": {
+            "format": "png",
+            "id": "46df0a7baaf769618377da1a60a5cd9a",
+            "name": "Screen%20Shot%202020-07-02%20at%202.33.57%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.33.57%20PM.png",
+            "size": {
+                "width": 1252,
+                "height": 1516
+            },
+            "state": 2,
+            "type": 1
+        },
+        "34de5fb1dd9a4fd1d566ab00b6cae8ae": {
+            "format": "png",
+            "id": "34de5fb1dd9a4fd1d566ab00b6cae8ae",
+            "name": "Screen%20Shot%202020-07-02%20at%202.33.52%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.33.52%20PM.png",
+            "size": {
+                "width": 1248,
+                "height": 1654
+            },
+            "state": 2,
+            "type": 1
+        },
+        "496af73f248b9173aa9f8f62b8b17a8f": {
+            "format": "png",
+            "id": "496af73f248b9173aa9f8f62b8b17a8f",
+            "name": "Screen%20Shot%202020-07-02%20at%202.32.59%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.32.59%20PM.png",
+            "size": {
+                "width": 576,
+                "height": 1330
+            },
+            "state": 1,
+            "type": 1
+        },
+        "9a094b23b96a7b60c18e2efd0d15c0b0": {
+            "format": "png",
+            "id": "9a094b23b96a7b60c18e2efd0d15c0b0",
+            "name": "Screen%20Shot%202020-07-02%20at%202.32.39%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.32.39%20PM.png",
+            "size": {
+                "width": 1078,
+                "height": 1416
+            },
+            "state": 2,
+            "type": 1
+        },
+        "246883e6164edaf4e287c839d65ef1eb": {
+            "format": "png",
+            "id": "246883e6164edaf4e287c839d65ef1eb",
+            "name": "Screen%20Shot%202020-07-02%20at%202.32.48%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.32.48%20PM.png",
+            "size": {
+                "width": 1328,
+                "height": 1482
+            },
+            "state": 2,
+            "type": 1
+        },
+        "96a3a9cc1905f85fe22f84052eb3cb2a": {
+            "format": "png",
+            "id": "96a3a9cc1905f85fe22f84052eb3cb2a",
+            "name": "Screen%20Shot%202020-07-02%20at%202.32.55%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.32.55%20PM.png",
+            "size": {
+                "width": 812,
+                "height": 1348
+            },
+            "state": 1,
+            "type": 1
+        },
+        "541dd7f383d0730621547055cdea786f": {
+            "format": "png",
+            "id": "541dd7f383d0730621547055cdea786f",
+            "name": "Screen%20Shot%202020-07-02%20at%202.33.06%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.33.06%20PM.png",
+            "size": {
+                "width": 1384,
+                "height": 1404
+            },
+            "state": 1,
+            "type": 1
+        },
+        "aae975496ef7503e88358785ea5569c0": {
+            "format": "png",
+            "id": "aae975496ef7503e88358785ea5569c0",
+            "name": "Screen%20Shot%202020-07-02%20at%202.33.12%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.33.12%20PM.png",
+            "size": {
+                "width": 1526,
+                "height": 1450
+            },
+            "state": 1,
+            "type": 1
+        },
+        "8bf34bb0974f432088401a44013ca678": {
+            "format": "png",
+            "id": "8bf34bb0974f432088401a44013ca678",
+            "name": "Screen%20Shot%202020-07-02%20at%202.33.18%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.33.18%20PM.png",
+            "size": {
+                "width": 1276,
+                "height": 1332
+            },
+            "state": 1,
+            "type": 1
+        },
+        "b0108a24c40db365fa17d01e08101ca4": {
+            "format": "png",
+            "id": "b0108a24c40db365fa17d01e08101ca4",
+            "name": "Screen%20Shot%202020-07-02%20at%202.33.44%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-02%20at%202.33.44%20PM.png",
+            "size": {
+                "width": 1352,
+                "height": 1240
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1bea6a3d33f430f80f4687f08707abb3": {
+            "format": "png",
+            "id": "1bea6a3d33f430f80f4687f08707abb3",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.42.05%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.42.05%20PM.png",
+            "size": {
+                "width": 726,
+                "height": 1660
+            },
+            "state": 2,
+            "type": 1
+        },
+        "54c8960354ef266667f2b7ed799f0bc0": {
+            "format": "png",
+            "id": "54c8960354ef266667f2b7ed799f0bc0",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.42.13%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.42.13%20PM.png",
+            "size": {
+                "width": 868,
+                "height": 1668
+            },
+            "state": 2,
+            "type": 1
+        },
+        "345f63de65541bfa1e3f41566c003450": {
+            "format": "png",
+            "id": "345f63de65541bfa1e3f41566c003450",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.42.21%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.42.21%20PM.png",
+            "size": {
+                "width": 876,
+                "height": 1520
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2e707e0bc63aa6a88b436c85d7e5bf15": {
+            "format": "png",
+            "id": "2e707e0bc63aa6a88b436c85d7e5bf15",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.42.36%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.42.36%20PM.png",
+            "size": {
+                "width": 1374,
+                "height": 1588
+            },
+            "state": 1,
+            "type": 1
+        },
+        "8b8a56a7b9e090589b56ba52e50c4b34": {
+            "format": "png",
+            "id": "8b8a56a7b9e090589b56ba52e50c4b34",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.42.43%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.42.43%20PM.png",
+            "size": {
+                "width": 1482,
+                "height": 1404
+            },
+            "state": 1,
+            "type": 1
+        },
+        "626db657929f349644a1d5a49afd2de2": {
+            "format": "png",
+            "id": "626db657929f349644a1d5a49afd2de2",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.42.53%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.42.53%20PM.png",
+            "size": {
+                "width": 1548,
+                "height": 1628
+            },
+            "state": 1,
+            "type": 1
+        },
+        "1c7399a7d952230bd1b2328803f3e7cd": {
+            "format": "png",
+            "id": "1c7399a7d952230bd1b2328803f3e7cd",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.43.12%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.43.12%20PM.png",
+            "size": {
+                "width": 1598,
+                "height": 1602
+            },
+            "state": 2,
+            "type": 1
+        },
+        "78111b6368fe1dacb8bfead0a56b2e98": {
+            "format": "png",
+            "id": "78111b6368fe1dacb8bfead0a56b2e98",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.43.17%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.43.17%20PM.png",
+            "size": {
+                "width": 780,
+                "height": 528
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ee9a53a9b7dff87c3f05a6196c1b79a0": {
+            "format": "png",
+            "id": "ee9a53a9b7dff87c3f05a6196c1b79a0",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.43.27%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.43.27%20PM.png",
+            "size": {
+                "width": 1574,
+                "height": 1484
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a5799270b6dcf6400daa569a2cd77244": {
+            "format": "png",
+            "id": "a5799270b6dcf6400daa569a2cd77244",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.43.55%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.43.55%20PM.png",
+            "size": {
+                "width": 1596,
+                "height": 1646
+            },
+            "state": 2,
+            "type": 1
+        },
+        "9741e59728b79ad406f6f47541340687": {
+            "format": "png",
+            "id": "9741e59728b79ad406f6f47541340687",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.44.08%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.44.08%20PM.png",
+            "size": {
+                "width": 1566,
+                "height": 1798
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f7fc7793dbaaaf88471d8b6404dd8edd": {
+            "format": "png",
+            "id": "f7fc7793dbaaaf88471d8b6404dd8edd",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.44.22%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.44.22%20PM.png",
+            "size": {
+                "width": 1564,
+                "height": 1770
+            },
+            "state": 2,
+            "type": 1
+        },
+        "521aeff67ccd7c4802a8ef4421cbebc2": {
+            "format": "png",
+            "id": "521aeff67ccd7c4802a8ef4421cbebc2",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.44.31%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.44.31%20PM.png",
+            "size": {
+                "width": 1570,
+                "height": 1804
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8f5da49e6ebb71fd1dad831f27bfe98e": {
+            "format": "png",
+            "id": "8f5da49e6ebb71fd1dad831f27bfe98e",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.44.38%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.44.38%20PM.png",
+            "size": {
+                "width": 1546,
+                "height": 1528
+            },
+            "state": 2,
+            "type": 1
+        },
+        "fa5db28764e57a5ed1ed82cba43ab4c5": {
+            "format": "png",
+            "id": "fa5db28764e57a5ed1ed82cba43ab4c5",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.44.48%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.44.48%20PM.png",
+            "size": {
+                "width": 1360,
+                "height": 1672
+            },
+            "state": 2,
+            "type": 1
+        },
+        "7c19efe977c3d5ffa5b22a13bc76bf66": {
+            "format": "png",
+            "id": "7c19efe977c3d5ffa5b22a13bc76bf66",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.44.57%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.44.57%20PM.png",
+            "size": {
+                "width": 1486,
+                "height": 1196
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2b705d720c4277412d93be09fbc17c3a": {
+            "format": "png",
+            "id": "2b705d720c4277412d93be09fbc17c3a",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.45.02%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.45.02%20PM.png",
+            "size": {
+                "width": 1478,
+                "height": 1262
+            },
+            "state": 2,
+            "type": 1
+        },
+        "eb7644e0f8d5c3c1d4fbe9468acb60d8": {
+            "format": "png",
+            "id": "eb7644e0f8d5c3c1d4fbe9468acb60d8",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.45.07%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.45.07%20PM.png",
+            "size": {
+                "width": 1342,
+                "height": 1286
+            },
+            "state": 1,
+            "type": 1
+        },
+        "e1623a7e389264206a30d34b45a951fc": {
+            "format": "png",
+            "id": "e1623a7e389264206a30d34b45a951fc",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.45.16%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.45.16%20PM.png",
+            "size": {
+                "width": 1548,
+                "height": 1426
+            },
+            "state": 2,
+            "type": 1
+        },
+        "7e92b72662e0e558ea323818f8a47766": {
+            "format": "png",
+            "id": "7e92b72662e0e558ea323818f8a47766",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.45.25%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.45.25%20PM.png",
+            "size": {
+                "width": 1514,
+                "height": 1416
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1e5c37639a3c3a24d8233fe583e02cb6": {
+            "format": "png",
+            "id": "1e5c37639a3c3a24d8233fe583e02cb6",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.47.50%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.47.50%20PM.png",
+            "size": {
+                "width": 984,
+                "height": 1442
+            },
+            "state": 2,
+            "type": 1
+        },
+        "907c49a950f6ff33041929eb93561741": {
+            "format": "png",
+            "id": "907c49a950f6ff33041929eb93561741",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.46.01%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.46.01%20PM.png",
+            "size": {
+                "width": 1560,
+                "height": 1638
+            },
+            "state": 1,
+            "type": 1
+        },
+        "ae97c1ef1bbc22d370ff980bb8705037": {
+            "format": "png",
+            "id": "ae97c1ef1bbc22d370ff980bb8705037",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.47.26%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.47.26%20PM.png",
+            "size": {
+                "width": 530,
+                "height": 764
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6029cb9f2c932a0a0cf6a3f11d911668": {
+            "format": "png",
+            "id": "6029cb9f2c932a0a0cf6a3f11d911668",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.47.17%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.47.17%20PM.png",
+            "size": {
+                "width": 1528,
+                "height": 1776
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a1cfaa2ab8f27c194e2b8f9e553c1d7b": {
+            "format": "png",
+            "id": "a1cfaa2ab8f27c194e2b8f9e553c1d7b",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.47.02%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.47.02%20PM.png",
+            "size": {
+                "width": 1540,
+                "height": 1700
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2bf2cbaf02103f54f6290bf9a9ad8471": {
+            "format": "png",
+            "id": "2bf2cbaf02103f54f6290bf9a9ad8471",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.46.50%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.46.50%20PM.png",
+            "size": {
+                "width": 1548,
+                "height": 1548
+            },
+            "state": 1,
+            "type": 1
+        },
+        "203233e824a1270bff4ab44e2a1e26e0": {
+            "format": "png",
+            "id": "203233e824a1270bff4ab44e2a1e26e0",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.46.42%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.46.42%20PM.png",
+            "size": {
+                "width": 1544,
+                "height": 1600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e30510edcffb9bf31fc502e91dffe6b1": {
+            "format": "png",
+            "id": "e30510edcffb9bf31fc502e91dffe6b1",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.46.35%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.46.35%20PM.png",
+            "size": {
+                "width": 1548,
+                "height": 1610
+            },
+            "state": 2,
+            "type": 1
+        },
+        "54b593745f36fd58aa3344bccbc934f8": {
+            "format": "png",
+            "id": "54b593745f36fd58aa3344bccbc934f8",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.46.27%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.46.27%20PM.png",
+            "size": {
+                "width": 1590,
+                "height": 1660
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a63aa78de1e4ac0389f16876aa305b72": {
+            "format": "png",
+            "id": "a63aa78de1e4ac0389f16876aa305b72",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.43.05%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.43.05%20PM.png",
+            "size": {
+                "width": 1546,
+                "height": 1526
+            },
+            "state": 2,
+            "type": 1
+        },
+        "dce0283350b66a34ae726d3af4f3d2bb": {
+            "format": "png",
+            "id": "dce0283350b66a34ae726d3af4f3d2bb",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.45.33%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.45.33%20PM.png",
+            "size": {
+                "width": 1552,
+                "height": 1616
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f2c345d944521c4925cb0d41fc57035d": {
+            "format": "png",
+            "id": "f2c345d944521c4925cb0d41fc57035d",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.45.45%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.45.45%20PM.png",
+            "size": {
+                "width": 1560,
+                "height": 1670
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4355395612670e29a3a2cdb0154237b6": {
+            "format": "png",
+            "id": "4355395612670e29a3a2cdb0154237b6",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.45.52%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.45.52%20PM.png",
+            "size": {
+                "width": 1580,
+                "height": 1578
+            },
+            "state": 2,
+            "type": 1
+        },
+        "469d0ee0c437decb0b395a8e2057201a": {
+            "format": "png",
+            "id": "469d0ee0c437decb0b395a8e2057201a",
+            "name": "Screen%20Shot%202020-07-04%20at%2011.46.10%20PM.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/TrainYourOwnYOLO/Data/Source_Images/Training_Images/Screen%20Shot%202020-07-04%20at%2011.46.10%20PM.png",
+            "size": {
+                "width": 1544,
+                "height": 1800
+            },
+            "state": 2,
+            "type": 1
+        }
+    }
+}
