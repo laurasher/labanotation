@@ -108,33 +108,6 @@ df = _get_data(output_select)
 
 ### Generate plots & Put together layout
 ####################################################################################
-# Movement direction
-direction_movement_dict = [
-    "place",
-    "right",
-    "left",
-    "forward",
-    "backward",
-    "forward_diagonal",
-    "backward_diagonal",
-]
-# Body motion
-body_movement_dict = [
-    "right_arm",
-    "left_arm",
-    "right_body",
-    "left_body",
-    "right_leg",
-    "left_leg",
-    "right_hand",
-    "left_hand",
-    "right_support",
-    "left_support",
-    "head",
-]
-# Movement height
-height_movement_dict = ["low", "middle", "high"]
-
 # Step length
 source = ColumnDataSource(
     data={
@@ -168,15 +141,13 @@ p.xaxis.axis_label = "choreography order"
 p.yaxis.axis_label = "step length"
 st.bokeh_chart(p, use_container_width=True)
 
-# trio_chart = make_trio_chart(
-#     df,
-#     chart_width,
-#     chart_height,
-#     line_color,
-#     bar_width,
-#     TOOLS,
-#     direction_movement_dict,
-#     body_movement_dict,
-#     height_movement_dict,
-# )
-# st.bokeh_chart(trio_chart, use_container_width=True)
+# Movement direction, weight distribution (body), height
+trio_chart = make_trio_chart(
+    df,
+    600,
+    chart_height,
+    line_color,
+    bar_width,
+    TOOLS
+)
+st.bokeh_chart(trio_chart, use_container_width=False)
