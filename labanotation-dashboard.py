@@ -36,8 +36,8 @@ def style_plots(fig):
     fig.border_fill_color = None
     fig.toolbar.logo = None
     fig.outline_line_color = None
-    fig.title.text_font_size = "10pt"
-    fig.title.text_font_style = "normal"
+    fig.title.text_font_size = "9pt"
+    fig.title.text_font_style = "bold"
     fig.yaxis.major_label_text_color = "slategray"
     fig.xaxis.major_label_text_color = "slategray"
     fig.yaxis.major_tick_line_color = "slategray"
@@ -72,8 +72,8 @@ def get_output_folders():
 
 ###  Styling params
 ####################################################################################
-chart_width = 400
-chart_height = 350
+chart_width = 350
+chart_height = 430
 background_color = "#efeded"
 line_width = 2
 line_color = "slategray"

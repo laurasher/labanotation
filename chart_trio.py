@@ -33,41 +33,16 @@ def make_trio_chart(
     bar_width,
     TOOLS
 ):
-    # Movement direction
-    direction_movement_dict = [
-        "place",
-        "right",
-        "left",
-        "forward",
-        "backward",
-        "forward_diagonal",
-        "backward_diagonal",
-    ]
-    # Body motion
-    body_movement_dict = [
-        "right_arm",
-        "left_arm",
-        "right_body",
-        "left_body",
-        "right_leg",
-        "left_leg",
-        "right_hand",
-        "left_hand",
-        "right_support",
-        "left_support",
-        "head",
-    ]
-    # Movement height
-    height_movement_dict = ["low", "middle", "high"]
-
     direction_movement_df = df.direction_movement.value_counts()
     height_movement_df = df.height_movement.value_counts()
     body_movement_df = df.body_movement.value_counts()
+    TOOLS = []
     p = figure(
         plot_width=chart_width,
         plot_height=chart_height,
         tools=TOOLS,
-        x_range=list(direction_movement_df.index)
+        x_range=list(direction_movement_df.index),
+        title="Direction of movement",
     )
     source = ColumnDataSource(
         data=dict(
@@ -90,10 +65,11 @@ def make_trio_chart(
     p.yaxis.axis_label = "step count"
 
     p1 = figure(
-        plot_width=chart_width,
+        plot_width=250,
         plot_height=chart_height,
         tools=TOOLS,
-        x_range=list(height_movement_df.index)
+        x_range=list(height_movement_df.index),
+        title="Height of movement",
     )
     source = ColumnDataSource(
         data=dict(
@@ -119,7 +95,8 @@ def make_trio_chart(
         plot_width=chart_width,
         plot_height=chart_height,
         tools=TOOLS,
-        x_range=list(body_movement_df.index)
+        x_range=list(body_movement_df.index),
+        title="Weight distribution",
     )
     source = ColumnDataSource(
         data=dict(
@@ -140,4 +117,4 @@ def make_trio_chart(
     p2 = style_plots(p2)
     p2.xaxis.axis_label = "weight distribution"
     p2.yaxis.axis_label = "step count"
-    return row(p1, column(p, p2))
+    return row(p1, p, p2)
