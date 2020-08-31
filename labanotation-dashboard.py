@@ -53,9 +53,8 @@ def style_plots(fig):
 
 ###  Get data functions
 ####################################################################################
-@st.cache
 def _get_data(dir):
-    df = pd.read_csv(f"bbox_output/{dir}.csv")
+    df = pd.read_csv(f"bbox_output/{dir}.csv").drop(['Unnamed: 0'], axis=1).dropna()
     print(df)
     return df
 
@@ -105,20 +104,29 @@ st.markdown(html, unsafe_allow_html=True)
 output_files = get_output_folders()
 output_select = st.sidebar.selectbox("Available labanotations", output_files)
 df = _get_data(output_select)
-movement_body_select = st.sidebar.selectbox("Body movement", ['all','arm','leg','body','support','hand'])
-print(df)
+body_list = ['all','arm','leg','body','support','hand']
+movement_body_select = st.sidebar.selectbox("Body movement", body_list)
+
 ### Generate plots & Put together layout
 ####################################################################################
 # Step length
+color_list = ['blue', 'red', 'orange', 'green', 'purple']
+for i,b in enumerate(body_list[1:]):
+    df.loc[df['body_movement'].str.contains(b), 'color'] = color_list[i]
+    df.loc[df['body_movement'].str.contains(b), 'body_part'] = b
+
 df_filt = df.dropna(subset=['body_movement'])
 df_filt = df_filt[df_filt['body_movement'].str.contains(movement_body_select)]
 if movement_body_select == 'all':
     df_filt = df
+
 source = ColumnDataSource(
     data={
         "x_values": [int(x) for x in df_filt.index],
         "y_values": [int(x) for x in df_filt.step_length],
         "labels": list(df_filt.label),
+        "color": list(df_filt.color),
+        "legend_field": list(df_filt.body_part)
     }
 )
 TOOLTIPS = [
@@ -135,15 +143,19 @@ p.vbar(
     x="x_values",
     top="y_values",
     width=bar_width,
-    fill_color=line_color,
+    fill_color="color",
     source=source,
     line_width=0,
+    fill_alpha=0.5,
+    legend_field="legend_field"
 )
 p.xgrid.grid_line_color = None
 p.y_range.start = 0
 p = style_plots(p)
 p.xaxis.axis_label = "choreography order"
 p.yaxis.axis_label = "step length"
+p.legend.orientation = "horizontal"
+p.legend.location = "top_center"
 st.bokeh_chart(p, use_container_width=True)
 
 # Movement direction, weight distribution (body), height
