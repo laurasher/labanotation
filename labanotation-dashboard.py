@@ -104,29 +104,45 @@ st.markdown(html, unsafe_allow_html=True)
 output_files = get_output_folders()
 output_select = st.sidebar.selectbox("Available labanotations", output_files)
 df = _get_data(output_select)
+color_field_select = st.sidebar.selectbox("Color field", ["movement body part","movement direction", "movement height"])
 body_list = ['all','arm','leg','body','support','hand']
 movement_body_select = st.sidebar.selectbox("Body movement", body_list)
 
 ### Generate plots & Put together layout
 ####################################################################################
 # Step length
-color_list = ['blue', 'red', 'orange', 'green', 'purple']
+color_list = ['blue', 'red', 'orange', 'green', 'purple', 'gray', 'pink']
 for i,b in enumerate(body_list[1:]):
-    df.loc[df['body_movement'].str.contains(b), 'color'] = color_list[i]
+    df.loc[df['body_movement'].str.contains(b), 'body_color'] = color_list[i]
     df.loc[df['body_movement'].str.contains(b), 'body_part'] = b
+for i,b in enumerate(['high', 'middle', 'low']):
+    df.loc[df['height_movement'].str.contains(b), 'height_color'] = color_list[i]
+for i,b in enumerate(["place","right","left","forward","backward","forward_diagonal","backward_diagonal"]):
+    df.loc[df['direction_movement'].str.contains(b), 'dir_color'] = color_list[i]
 
 df_filt = df.dropna(subset=['body_movement'])
 df_filt = df_filt[df_filt['body_movement'].str.contains(movement_body_select)]
+
 if movement_body_select == 'all':
     df_filt = df
+
+if color_field_select == 'movement body part':
+    color_field = [x for x in df_filt.body_color]
+    legend_field = list(df_filt.body_part)
+if color_field_select == 'movement direction':
+    color_field = [x for x in df_filt.dir_color]
+    legend_field = list(df_filt.direction_movement)
+if color_field_select == 'movement height':
+    color_field = [x for x in df_filt.height_color]
+    legend_field = list(df_filt.height_movement)
 
 source = ColumnDataSource(
     data={
         "x_values": [int(x) for x in df_filt.index],
         "y_values": [int(x) for x in df_filt.step_length],
         "labels": list(df_filt.label),
-        "color": list(df_filt.color),
-        "legend_field": list(df_filt.body_part)
+        "color": color_field,
+        "legend_field": legend_field
     }
 )
 TOOLTIPS = [
@@ -146,7 +162,7 @@ p.vbar(
     fill_color="color",
     source=source,
     line_width=0,
-    fill_alpha=0.5,
+    fill_alpha=0.8,
     legend_field="legend_field"
 )
 p.xgrid.grid_line_color = None
