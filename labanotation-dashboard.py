@@ -105,15 +105,20 @@ st.markdown(html, unsafe_allow_html=True)
 output_files = get_output_folders()
 output_select = st.sidebar.selectbox("Available labanotations", output_files)
 df = _get_data(output_select)
-
+movement_body_select = st.sidebar.selectbox("Body movement", ['all','arm','leg','body','support','hand'])
+print(df)
 ### Generate plots & Put together layout
 ####################################################################################
 # Step length
+df_filt = df.dropna(subset=['body_movement'])
+df_filt = df_filt[df_filt['body_movement'].str.contains(movement_body_select)]
+if movement_body_select == 'all':
+    df_filt = df
 source = ColumnDataSource(
     data={
-        "x_values": [int(x) for x in df.index],
-        "y_values": [int(x) for x in df.step_length],
-        "labels": list(df.label),
+        "x_values": [int(x) for x in df_filt.index],
+        "y_values": [int(x) for x in df_filt.step_length],
+        "labels": list(df_filt.label),
     }
 )
 TOOLTIPS = [
@@ -144,7 +149,7 @@ st.bokeh_chart(p, use_container_width=True)
 # Movement direction, weight distribution (body), height
 trio_chart = make_trio_chart(
     df,
-    600,
+    670,
     chart_height,
     line_color,
     bar_width,
