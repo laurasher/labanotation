@@ -72,12 +72,11 @@ def get_output_folders():
 ###  Styling params
 ####################################################################################
 chart_width = 350
-chart_height = 430
+chart_height = 400
 background_color = "#efeded"
 line_width = 2
-line_color = "slategray"
+line_color = '#8da0cb'
 scatterdot_color = line_color
-scatterdot_size = 3
 bar_width = 0.4
 
 html = """
@@ -111,7 +110,7 @@ movement_body_select = st.sidebar.selectbox("Body movement", body_list)
 ### Generate plots & Put together layout
 ####################################################################################
 # Step length
-color_list = ['blue', 'red', 'orange', 'green', 'purple', 'gray', 'pink']
+color_list = ['#8da0cb','#a6d854','#fc8d62','#e78ac3','#ffd92f','#e5c494','#66c2a5']
 for i,b in enumerate(body_list[1:]):
     df.loc[df['body_movement'].str.contains(b), 'body_color'] = color_list[i]
     df.loc[df['body_movement'].str.contains(b), 'body_part'] = b
@@ -150,7 +149,7 @@ TOOLTIPS = [
 ]
 p = figure(
     tools=TOOLS,
-    plot_height=chart_height,
+    plot_height=600,
     plot_width=chart_width,
     title="Step length, ordered by choreography",
     tooltips=TOOLTIPS,
@@ -162,7 +161,7 @@ p.vbar(
     fill_color="color",
     source=source,
     line_width=0,
-    fill_alpha=0.8,
+    fill_alpha=1,
     legend_field="legend_field"
 )
 p.xgrid.grid_line_color = None
@@ -178,7 +177,7 @@ st.bokeh_chart(p, use_container_width=True)
 trio_chart = make_trio_chart(
     df,
     670,
-    chart_height,
+    200,
     line_color,
     bar_width,
     TOOLS

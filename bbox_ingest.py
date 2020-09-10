@@ -3,7 +3,7 @@ import numpy as np
 
 data_root = 'data/'
 
-ballets = ['coppelia_dawn']
+ballets = ['coppelia_dawn', 'artifact']
 
 # Movement direction
 direction_movement_dict = [
@@ -55,10 +55,12 @@ def label_body_movement(row):
 		return strip_height(row[1])
 
 for b in ballets:
-	bbox_file = f'{data_root}{b}/vott-csv-export/{b}-export.csv'
+	bbox_file = f'{data_root}coppelia_dawn/vott-csv-export/coppelia_dawn-export.csv'
 	df = pd.read_csv(bbox_file)
+	print(df)
 	# Whoops. Need to uniformly name images.
 	df['image'] = df['image'].str.replace('coppelia_2_','coppelia_dawn_2_')
+	df['image'] = df['image'].str.replace('artifact', 'artifact_none')
 	df['step_length'] = df['ymax']-df['ymin']
 	df['img_staff_num'] = df['image'].str.split('_').str[3].str.split('.').str[0].values
 	df['img_num'] = df['image'].str.split('_').str[2].values
@@ -76,10 +78,13 @@ for b in ballets:
 	df['body_movement'] = df.apply(lambda row: label_body_movement(row), axis=1)
 	df['height_movement'] = df.apply(lambda row: label_height_movement(row), axis=1)
 	df = df.drop([0, 1, 'img_num', 'img_staff_num'],axis=1)
-	print(df)
-	print(list(df.columns))
-	print(list(df.image.unique()))
-	df.to_csv(f'bbox_output/{b}.csv')
+	# print(df)
+	# print(list(df.columns))
+	# print(list(df.image.unique()))
+	df_to_save =df[df['image'].str.contains(b)]
+	print(b)
+	print(df_to_save)
+	df_to_save.to_csv(f'bbox_output/{b}.csv')
 
 # Import steps lookup
 

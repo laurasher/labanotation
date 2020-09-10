@@ -53,7 +53,7 @@ def make_trio_chart(
     p.vbar(
         x="x",
         top="y",
-        width=bar_width,
+        width=bar_width/2,
         fill_color=line_color,
         source=source,
         line_width=0,
@@ -80,7 +80,7 @@ def make_trio_chart(
     p1.vbar(
         x="x",
         top="y",
-        width=bar_width,
+        width=bar_width/2,
         fill_color=line_color,
         source=source,
         line_width=0,
@@ -107,7 +107,7 @@ def make_trio_chart(
     p2.vbar(
         x="x",
         top="y",
-        width=bar_width,
+        width=bar_width/2,
         fill_color=line_color,
         source=source,
         line_width=0,

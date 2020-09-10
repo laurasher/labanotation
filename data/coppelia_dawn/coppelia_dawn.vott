@@ -5,7 +5,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNDUyMmQwZTRiYjMwYTdhMDVlMGNlM2JkNTEyMmE5NGJjNzBjODg5NTVmNDcxYzhkODY4NWM1NjY4YmNlYmFhYzljMjZiMzE2ZjQxNjI3YmVmZjNkMzgyODNhODNhMDJlODcyOWNkZWMwZTc0NWMzNmUxM2IxYzk2NjI3OWY3MGViZDZmMTI2Mzg2NDk4Y2VjNjYxYWQwMmE5YTdhOTA0MDJkMjg3Mjk3ZGIyNTZiYjVkZDBiYmVhMTE5OTIyYzI0MDFmYTcxMDA0NTk1MzY2ODgwYzljNjZiY2U1NmFlOGQiLCJpdiI6IjQwYjkyN2Y1YTBkZWIwM2I2MzIwZTViNDZjMmQ2NzdlZDNkOWE2MjhiNzUzY2Q4MyJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYTVmMmI1ZThmNTJmNzQxMzY4MzRhYzhhZGQ4ZjJhMGU3ZjRhOWZmZmY1OGFjOTAwZGU4Njc5NzM2YmUwZjdmMzAxOGRmNzFmNjFkYmEwMmVhNzBjZjdmNGFhYjAzZmU1OGZhMWVmOTRlNGZjZTJiNTk1YjgyNDI4NDJhYmYxNTBiYWQwYzM3MWYyZDMyMjI3ZTdkNjhmOGIyOThlMmE5NWUwYzNiNzljMzc0OTU0OTFmNjk4NGUzZWNjMzc1ZGFhNjFhN2EzZDBkNDk2N2E4Mjk4NGZkMGYxYWUxMjIwYmEiLCJpdiI6IjJiOGViODMwM2FlMmUwN2FiY2E3YzQ2OTRlYjBlZTExMmI5ZmE2M2IzMTk2M2JlNSJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -13,7 +13,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMjgyMWRjZGU0YmU2ZWIwZjNmM2NmYzhiNzNiNmJiYTYwOTNmZTljZTliNGYxMmFiNzMxMmI3ODcxZDYyNzYzMDM3NmZiMTY2MWJmYzIzYjA3Y2FkZTU3NDQ2OTZjNjg0OWVlMzdhOGI2NjEyYTA2ZWQ0ZDk2NDdiOWRiYzk2YTBhOGM1NGI3MzQwYjdkYzM3YTFiODZlZmU2YTQxNmU1ZjQ4OTUzNzc5M2JhNzViMTc0ZWEzYzJmYTgwOTVmOGRhMTQxMTJmYmFiZmY4ZjE5NWZiZDMyZjYyMGUyNTdmYWYiLCJpdiI6IjNmMjM3ZDJjY2U3MGU2OTU2YmQ3NjhkMDk1MGVjN2VlOTllNThiNTA5ZDEzZjM2OSJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNjc3YTkxNTJhYTNlMDkwMmNhYzgyOWM3NTg2MzJmMjg1NjdkN2M1ZTM3MTExNDc5YTFjZTcwZWZhMzRhNmUzNzk4ZGQxYTliNmJhNWQ2OWNiYWY4YWE4N2M1MjQ2YzU4NTQ3MWYxYzlmYzU2ZWFjNzY1MmJkYWU3NDAyYmE4ZDVhZTcyNDk4ZmYyNWEyNjRiZjc3OTkyYTczZjRmNmIwOTY3ZGQ3YzFiYmNhYjliYzlkYjI2ZWU3MTg2YjM4NDAyZTU2Yzk0OTBiNWY1ZWRjNjZhZTRmMWNiYzJhMGM2NmQiLCJpdiI6IjQwMTQ3NzI5M2VhNDBmMzBiODQzMjk3YzlmNGEyMWMzYjM3OTQzNDFhYjAzNWFmNyJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -199,11 +199,11 @@
     "exportFormat": {
         "providerType": "csv",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZDcyNTBiZjM1YjBkY2VjMjA5NDIzZTA4YmU5MWNhNDQxOGJiYzBlNGU1ZDU5ZTgzOGVmNTI4MzM5NDg0MWM4MTU5MTVlMTVkOWNmNGNiNDc2ZTFiZmUwNTI4MjdmODRlIiwiaXYiOiI1OGM5ZmU4MTRjYTE4YzJlNmVjNjIyZDk0ZWM2YzQzMDQ0NjViOGVkNjk4ZGFhZTQifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiOWNjODU4MTc5ZWEyYTBiMDg4ODQ4ZjBmODUzYjc3OTUyZWI4OGIzMjBkYjU1NWEzNzY0MGExODY4MjRiMDgwNjczNGU5ZjJkZWYwZGQxZWExMWM2MzBmZjcwOWNiNGE4IiwiaXYiOiIzMjk5NmMzOTk0OTg3ZTJkYWY2Mzc4ZmU5OGE4NmZmNmNjNTJhOTNhMzgyYzEyYjkifQ=="
         }
     },
     "version": "2.2.0",
-    "lastVisitedAssetId": "fc93f84fb8bc86d54262384a13398744",
+    "lastVisitedAssetId": "0ccb7f1e6dcec7b2b8b4f4afb3844a06",
     "assets": {
         "f89a594ff35bcef1f0e7418dbcef2455": {
             "format": "png",
@@ -285,6 +285,78 @@
             "size": {
                 "width": 254,
                 "height": 1220
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ebc514e97626d0b475aab3a53ad1ba36": {
+            "format": "png",
+            "id": "ebc514e97626d0b475aab3a53ad1ba36",
+            "name": "artifact_1_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/artifact_1_1.png",
+            "size": {
+                "width": 910,
+                "height": 1658
+            },
+            "state": 2,
+            "type": 1
+        },
+        "7d2593618f2ba332e58b2547db2e2012": {
+            "format": "png",
+            "id": "7d2593618f2ba332e58b2547db2e2012",
+            "name": "artifact_1_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/artifact_1_2.png",
+            "size": {
+                "width": 818,
+                "height": 1636
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d03de26a061f3c63345110f7fb07a045": {
+            "format": "png",
+            "id": "d03de26a061f3c63345110f7fb07a045",
+            "name": "artifact_2_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/artifact_2_1.png",
+            "size": {
+                "width": 868,
+                "height": 1718
+            },
+            "state": 2,
+            "type": 1
+        },
+        "671836b2e5d71978a444f17b6ead9d9b": {
+            "format": "png",
+            "id": "671836b2e5d71978a444f17b6ead9d9b",
+            "name": "artifact_2_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/artifact_2_2.png",
+            "size": {
+                "width": 1014,
+                "height": 1806
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6657841af1683cf665c5a1cc2cd56d51": {
+            "format": "png",
+            "id": "6657841af1683cf665c5a1cc2cd56d51",
+            "name": "coppelia_2_3.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/coppelia_2_3.png",
+            "size": {
+                "width": 248,
+                "height": 1232
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0ccb7f1e6dcec7b2b8b4f4afb3844a06": {
+            "format": "png",
+            "id": "0ccb7f1e6dcec7b2b8b4f4afb3844a06",
+            "name": "coppelia_2_4.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/coppelia_2_4.png",
+            "size": {
+                "width": 250,
+                "height": 1232
             },
             "state": 2,
             "type": 1
