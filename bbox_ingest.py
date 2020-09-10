@@ -79,9 +79,6 @@ for b in ballets:
 	df['body_movement'] = df.apply(lambda row: label_body_movement(row), axis=1)
 	df['height_movement'] = df.apply(lambda row: label_height_movement(row), axis=1)
 	df = df.drop([0, 1, 'img_num', 'img_staff_num'],axis=1)
-	# print(df)
-	# print(list(df.columns))
-	# print(list(df.image.unique()))
 	df_to_save =df[df['image'].str.contains(b)]
 	print(b)
 	print(df_to_save)
