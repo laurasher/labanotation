@@ -3,7 +3,7 @@ import numpy as np
 
 data_root = 'data/'
 
-ballets = ['coppelia_dawn', 'artifact']
+ballets = ['coppelia_dawn', 'artifact', 'raymonda']
 
 # Movement direction
 direction_movement_dict = [
@@ -61,6 +61,7 @@ for b in ballets:
 	# Whoops. Need to uniformly name images.
 	df['image'] = df['image'].str.replace('coppelia_2_','coppelia_dawn_2_')
 	df['image'] = df['image'].str.replace('artifact', 'artifact_none')
+	df['image'] = df['image'].str.replace('raymonda', 'raymonda_none')
 	df['step_length'] = df['ymax']-df['ymin']
 	df['img_staff_num'] = df['image'].str.split('_').str[3].str.split('.').str[0].values
 	df['img_num'] = df['image'].str.split('_').str[2].values
