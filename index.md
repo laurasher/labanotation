@@ -1,4 +1,3 @@
-## [IN PROGRESS] Place holder explanatory and use page
-### Feature some visualizations here
+## Choreography visualization using Labanotation
 
 Work in progress..
