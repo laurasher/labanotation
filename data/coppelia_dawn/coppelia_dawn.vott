@@ -5,7 +5,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZDNmOTc3OTdjMmIwNTk0M2Q2M2FmNmExMDI4NWIzMjQ5ZDhiYmEyZTgxMzk5MGMwNTdjMDc0MzYzZWI4ODlkZGIxMzk5M2MyM2VmY2ZjYzI2MjVhNWQ1MTE4NzVkZTFkOTE4MzhhNjk3YzA2YmUwNGEwOTUwZTYxOTlmOTkyYjlmZjJiNjhjYzZmNmFlYThmMDYwYTcxYWNlZGZkM2I3MWExMWM0MzcwNTM1Mzk4MWY2ZTVjMDliZWJjY2FmNjhjMjM1ODI1ZDgwYTRmNjU2YWQ5MGE3ZDYzYzQ0YmU2MGEiLCJpdiI6ImE3NmFhMTcxOWQzOWIzODljODY4Y2NkOTM5YjZiZDY0Y2I0NjM2MmQzOGIxM2I4NCJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYTczNjM0ZTI4NmFkM2Q2ODM0YTU5YmFiNTMyZDRiOWE1MDNlMGNiNGViOTgwNWNlNDVmMzhlZGVlNjVmMDYzYTFmNWZjMjY0OGFmZjI1NmNhNWQzYTU5NDg5ZGVmY2U3OGVkMjZlZGFiODEyMWZlMzljZGJiZGZhYzgyZDk1MDVjNmE4ZmVhZGI3Y2MxZTAzZGNjNWJjZDY2NWRkNzRkZWU5ZmMxNzE3NjIwNTM1MzE3NTQ4NmM2YzA4NTQ5Njc3ZTYzNjNmMWRhYzY4NjE5OTZiZWQzMmE5NTM4Y2Y3YTEiLCJpdiI6ImIyODE4MDczOWRhMDA3OWNjZjE1YjExZjZkN2IyM2M1NjFkOGE3MjA0NjhlODc0MCJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -13,7 +13,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNWYyZjdkYTkwMDAxNWRlNzBjN2RmN2VkNmM1MWEzY2M0NTQ4NTlkZjdiZmQxN2MwYTQzNDVkOWNlNTMwOWRjY2I3YjI1MWMxZDJkYWMyODEzM2VkYjZhOGE0ODFkYzU1YjUxM2Q0ZjAwZmRlYjg0ZWQ5YTcwOTNiNjU4YWRiNDQzNmRlNTQxMDNkMDE1NDMxZmQzOTM4ZDIwNTk3MDE2YzIyMjZmYWMyNDA5YzNkODk5ZmM4YzkyZWMxMzE0MWNlZWIwMmY5MTdlN2ZlMGNiNzcxZThlMGU3OTRkZWU3YzMiLCJpdiI6IjljYzQxOThmMzgzYjMyNGUyYzZiNjk5ODNlZTUyZjdlZDUwOTE5MWM2OTUyYTRkOCJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZjU4ZDQ0MzI0NWI4M2ZmM2Y2N2E4ZTAwY2M3OGE1NGVkMWY3N2FiMDRjMmFjOGY2YWIzZjM5ZjhjNTdhMmJhNTdkYTA0OGY2NTRhNDk3ZjQ0NTBhM2JjMWM4NDk5NTZkNmRlYWQzNDRkNjQzOGM5YTc0YjJlNDQ1OGYyMjFjMWM2ZDNjYWZlMGNlN2ZlZDNiZDhlYzI0YjJlM2QyZjA0ZDljN2JmNWVhZDhjOTIyYmNiYTdlOWRlNmE1ZGNhZDc3NWYwMjE0ZGQzMWI5ZGQ5MjE5ZjI0MjM4MmI5NTFiNDAiLCJpdiI6IjMyMzRlZjlmNTkyMzIxNDAzNDg4Y2MxYzk4ZGQwZWQ5NTllNGQ3NTdjY2ZmYWVjZSJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -199,11 +199,11 @@
     "exportFormat": {
         "providerType": "csv",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZmE4MGM4MWExYzA3MzM5ZGVjNzIyOTM3NGFjMmJkNjMxZGFhZDU2OGFlMzQxZDQ2MTM1ZGU4MzYyZjMxNDliM2NhODA0MzM1OTllMTVmMzk1MjgzM2IzN2Y3MzI3M2UwIiwiaXYiOiI5NTE1ZGJkM2EzOWY3NzdhNDQ5ODRiYTA2ZmVlZTU0ZTJjYmU1MjE0YjBiYjEzZGIifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYzkxYTNhZjVmMDQ1MWQ3NjhhYjg5NjA0MDVhNjZkNzZkNWFmMzI5NjQ1MjdiZTEwYmMxZDNhZDhjZjdjZjg4NDcwMzY3M2JkMWM5OTVkMDkzYWViYTZkZjRhOWVmZDkxIiwiaXYiOiI2NTY5M2IwMmJkZTUxZTNmYjhkMGNmM2MyZTFkNDZhMDQ3NjZmMjdiOWVjMTllODcifQ=="
         }
     },
     "version": "2.2.0",
-    "lastVisitedAssetId": "d5ad4c2fdc21ea24bc04d2469d3fdc34",
+    "lastVisitedAssetId": "0ea0a07cd93974b30a22eed9ae01e7d4",
     "assets": {
         "f89a594ff35bcef1f0e7418dbcef2455": {
             "format": "png",
@@ -371,6 +371,30 @@
                 "height": 1328
             },
             "state": 2,
+            "type": 1
+        },
+        "0ea0a07cd93974b30a22eed9ae01e7d4": {
+            "format": "png",
+            "id": "0ea0a07cd93974b30a22eed9ae01e7d4",
+            "name": "raymonda_1_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/raymonda_1_2.png",
+            "size": {
+                "width": 338,
+                "height": 1338
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b5061cf28f5a74158d616ee5df52ad93": {
+            "format": "png",
+            "id": "b5061cf28f5a74158d616ee5df52ad93",
+            "name": "raymonda_1_3.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/raymonda_1_3.png",
+            "size": {
+                "width": 314,
+                "height": 1400
+            },
+            "state": 1,
             "type": 1
         }
     }

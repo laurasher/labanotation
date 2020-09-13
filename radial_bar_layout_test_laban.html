@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<!-- D3.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+	
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel='stylesheet' type='text/css'>
+		
+	<style>
+		body {
+		  	font-size: 10px;
+		  	font-family: 'Open Sans', sans-serif;
+		  	font-weight: 400;
+		  	fill: #8C8C8C;
+		  	text-align: center;
+		}
+
+	  	.title {
+	    	font-size: 28px;
+	    	fill: #4F4F4F;
+	    	font-weight: 300;
+	    	text-anchor: start;
+	  	}
+
+	  	.subtitle {
+	    	font-size: 14px;
+	    	fill: #AAAAAA;
+	    	font-weight: 300;
+	    	text-anchor: start;
+	  	}
+	  
+	  	.credit {
+	    	font-size: 12px;
+	    	fill: #AAAAAA;
+	    	font-weight: 300;
+	    	text-anchor: start;
+	  	}
+
+	  	.axis path,
+	  	.axis tick,
+	  	.axis line {
+	      	fill: none;
+	      	stroke: none;
+	  	}
+
+	  	.axis text {
+	      	font-size: 12px;
+	      	fill: #AAAAAA;
+	      	font-weight: 400;
+	  	}
+
+	  	.legendTitle {
+	      	font-size: 14px;
+	      	fill: #4F4F4F;
+	      	font-weight: 300;
+	  	}
+
+	  	.january {
+	  		font-size: 14px;
+	  		text-anchor: start;
+	  		font-weight: 300;
+	  		fill: #AAAAAA;
+	  	}
+
+	  	.yearLine {
+	  		stroke: #AAAAAA;
+	  	}
+
+	  	.axisText {
+	  		fill: #C4C4C4;
+	  		font-size: 11px;
+	  		font-weight: 300;
+	  		text-anchor: middle;
+	  		text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+	  	}
+
+	  	.axisCircles {
+	  		fill: none;
+	  		stroke: #E8E8E8;
+	  		stroke-width: 1px;
+	  	}
+	  	.axisSpokes {
+	  		fill: none;
+	  		stroke: #E8E8E8;
+	  		stroke-width: 1px;
+	  	}
+
+	</style>
+
+	
+</head>	
+<body>
+	
+	<div id="weatherRadial"></div>
+	<script>
+		///////////////////////////////////////////////////////////////////////////
+		//////////////////////////////// Data files ///////////////////////////////
+		///////////////////////////////////////////////////////////////////////////	
+
+		const datapath = "bbox_output/"
+		var dataset; // global
+		var numRadialSpokes = 11
+
+		function getRandomNumber(start, end) {
+	        return (Math.random() * (end-start) * 100)/100 + start;
+	    }
+
+		d3.json(datapath+"coppelia_dawn.json", function(data) {
+		    dataset = data;
+			console.log(dataset)
+			console.log(d3.range(1,360,360/numRadialSpokes))
+			var spokeArr = d3.range(1,360,360/numRadialSpokes)
+
+			///////////////////////////////////////////////////////////////////////////
+			//////////////////// Set up and initiate svg containers ///////////////////
+			///////////////////////////////////////////////////////////////////////////	
+
+			var margin = {
+				top: 70,
+				right: 20,
+				bottom: 120,
+				left: 20
+			};
+			var width = window.innerWidth - margin.left - margin.right - 20;
+			var height = window.innerHeight - margin.top - margin.bottom - 20;
+
+			//SVG container
+			var svg = d3.select("#weatherRadial")
+				.append("svg")
+				.attr("width", width + margin.left + margin.right)
+				.attr("height", height + margin.top + margin.bottom)
+				.append("g")
+				.attr("transform", "translate(" + (margin.left + width/2) + "," + (margin.top + height/2) + ")");
+
+			///////////////////////////////////////////////////////////////////////////
+			//////////////////////////// Create scales ////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
+
+			function staffNumToRad(staff_num){
+				return parseInt(staff_num);
+			}
+
+			function bodyMovementToTheta(body_movement){
+				switch(body_movement){
+					case "right_arm":
+						return spokeArr[2];
+					case "left_arm":
+						return spokeArr[9];
+					case "right_leg":
+						return spokeArr[4];
+					case "left_leg":
+						return spokeArr[7];
+					case "right_support":
+						return spokeArr[5];
+					case "left_support":
+						return spokeArr[6];
+					case "right_hand":
+						return spokeArr[1];
+					case "left_hand":
+						return spokeArr[10];
+					case "right_body":
+						return spokeArr[3];
+					case "left_body":
+						return spokeArr[8];
+					case "head":
+						return spokeArr[0];
+				}
+			}
+
+			// staff_num corresponds to R, radius
+			dataset.forEach(function(d) {
+				d.rad = staffNumToRad(d.staff_num) 
+				// + getRandomNumber(0.1,0.5);
+			});
+
+			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
+			dataset.forEach(function(d) {
+				d.theta = bodyMovementToTheta(d.body_movement) 
+				+ getRandomNumber(0.2,0.5);
+			});
+
+			console.log(dataset)
+
+			//Set the minimum inner radius and max outer radius of the chart
+			var	outerRadius = Math.min(width, height, 200)/2,
+				innerRadius = outerRadius * 0.4;
+
+			//Base the color scale on average temperature extremes
+			var colorScale = d3.scale.linear()
+				.domain([1, 8])
+				.range(["#2c7bb6", "#ffff8c", "#d7191c"])
+				.interpolate(d3.interpolateHcl);
+
+			//Scale for the heights of the bar, not starting at zero to give the bars an initial offset outward
+			var barScale = d3.scale.linear()
+				.range([innerRadius, outerRadius])
+				.domain([1,8]); 
+
+			//Scale to turn the date into an angle of 360 degrees in total
+			//With the first datapoint (Jan 1st) on top
+			var angle = d3.scale.linear()
+				.range([-180, 180])
+				.domain(d3.extent(dataset, function(d) { return d.theta; }));	 
+
+			///////////////////////////////////////////////////////////////////////////
+			//////////////////////////// Create Titles ////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
+
+			var textWrapper = svg.append("g").attr("class", "textWrapper")
+				.attr("transform", "translate(" + Math.max(-width/2, -outerRadius - 170) + "," + 0 + ")");
+
+			//Append title to the top
+			textWrapper.append("text")
+				.attr("class", "title")
+			    .attr("x", 0)
+			    .attr("y", -outerRadius - 40)
+			    // .text("Daily Temperatures in Boston");
+			textWrapper.append("text")
+				.attr("class", "subtitle")
+			    .attr("x", 0)
+			    .attr("y", -outerRadius - 20)
+			    // .text("2015");
+
+			//Append credit at bottom
+			textWrapper.append("text")
+				.attr("class", "credit")
+			    .attr("x", 0)
+			    .attr("y", outerRadius + 120)
+			    // .text("Based on weather-radials.com");
+
+			///////////////////////////////////////////////////////////////////////////
+			///////////////////////////// Create Axes /////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
+
+			//Wrapper for the bars and to position it downward
+			var barWrapper = svg.append("g")
+				.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				
+			//Draw gridlines below the bars
+			var axes = barWrapper.selectAll(".gridCircles")
+			 	.data([1,2,3,4,5,6,7,8])
+			 	.enter().append("g");
+
+			//Draw the circles
+			axes.append("circle")
+			 	.attr("class", "axisCircles")
+			 	.attr("r", function(d) { return innerRadius*(d); });
+
+			//Draw the axis labels
+			axes.append("text")
+				.attr("class", "axisText")
+				.attr("y", function(d) { return barScale(d); })
+				.attr("dy", "0.3em")
+				// .text(function(d) { return d + "°C"});
+
+			var lineWrapper = svg.append("g").attr("class", "lineWrapper");
+
+		    lineWrapper.selectAll(".lines")
+		        .data(d3.range(0,numRadialSpokes))
+		        .enter().append("line")
+		        .attr("class", "axisSpokes")
+		        .attr("transform", function(d,i) { return "rotate(" + ( d3.range(1,360,360/numRadialSpokes)[i] ) + ")"; })
+		        .attr("x1", 0)
+		        .attr("y1", innerRadius)
+		        .attr("x2", 0)
+		        .attr("y2", outerRadius*4)
+
+			///////////////////////////////////////////////////////////////////////////
+			////////////////////////////// Draw circles ///////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
+
+			var circleWrapper = svg.append("g").attr("class", "circleWrapper");
+
+		    circleWrapper.selectAll(".dots")
+		        .data(dataset)
+		        .enter().append("circle")
+		        .attr("class", "dots")
+		        .attr("cx", function(d) { return innerRadius * d.rad * Math.cos(d.theta); })
+		        .attr("cy", function(d) { return innerRadius * d.rad * Math.sin(d.theta);  })
+		        .attr("r", function(d) { return d.step_length/15; })
+		        .style("fill", "blue")
+		        .style("opacity", 0.2)
+
+
+		    var alignRotate = 15;
+		    lineWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    circleWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+
+		});
+	</script>
+
+</script>
+
+</body>
+</html>
