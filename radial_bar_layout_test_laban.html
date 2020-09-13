@@ -107,12 +107,30 @@
 		function getRandomNumber(start, end) {
 	        return (Math.random() * (end-start) * 100)/100 + start;
 	    }
+	    function degrees_to_radians(degrees) {
+		  var pi = Math.PI;
+		  return degrees * (pi/180);
+		}
 
 		d3.json(datapath+"coppelia_dawn.json", function(data) {
 		    dataset = data;
 			console.log(dataset)
-			console.log(d3.range(1,360,360/numRadialSpokes))
-			var spokeArr = d3.range(1,360,360/numRadialSpokes)
+			var spokeArr = d3.range(0,359,359/numRadialSpokes)
+			var bodyMovements = [
+									"head",
+									"right_hand",
+									"right_arm",
+									"right_body",
+									"right_leg",
+									"right_support",
+									"left_support",
+									"left_leg",
+									"left_body",
+									"left_arm",
+									"left_hand"
+								]
+			console.log(spokeArr)
+			console.log(bodyMovements)
 
 			///////////////////////////////////////////////////////////////////////////
 			//////////////////// Set up and initiate svg containers ///////////////////
@@ -142,7 +160,6 @@
 			function staffNumToRad(staff_num){
 				return parseInt(staff_num);
 			}
-
 			function bodyMovementToTheta(body_movement){
 				switch(body_movement){
 					case "right_arm":
@@ -179,7 +196,7 @@
 			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
 			dataset.forEach(function(d) {
 				d.theta = bodyMovementToTheta(d.body_movement) 
-				+ getRandomNumber(0.2,0.5);
+				// + getRandomNumber(0.2,0.5);
 			});
 
 			console.log(dataset)
@@ -201,9 +218,9 @@
 
 			//Scale to turn the date into an angle of 360 degrees in total
 			//With the first datapoint (Jan 1st) on top
-			var angle = d3.scale.linear()
-				.range([-180, 180])
-				.domain(d3.extent(dataset, function(d) { return d.theta; }));	 
+			// var angle = d3.scale.linear()
+			// 	.range([0, 360])
+			// 	.domain(d3.extent(dataset, function(d) { return d.theta; }));	 
 
 			///////////////////////////////////////////////////////////////////////////
 			//////////////////////////// Create Titles ////////////////////////////////
@@ -257,37 +274,46 @@
 				// .text(function(d) { return d + "°C"});
 
 			var lineWrapper = svg.append("g").attr("class", "lineWrapper");
-
 		    lineWrapper.selectAll(".lines")
 		        .data(d3.range(0,numRadialSpokes))
 		        .enter().append("line")
 		        .attr("class", "axisSpokes")
-		        .attr("transform", function(d,i) { return "rotate(" + ( d3.range(1,360,360/numRadialSpokes)[i] ) + ")"; })
+		        .attr("transform", function(d,i) { return "rotate(" + ( spokeArr[i]-1 ) + ")"; })
 		        .attr("x1", 0)
 		        .attr("y1", innerRadius)
 		        .attr("x2", 0)
 		        .attr("y2", outerRadius*4)
+
+		    var labelWrapper = svg.append("g");
+		    labelWrapper.selectAll(".axisText")
+		   		.data(bodyMovements)
+		   		.enter().append("text")
+		   		.attr("class", "axisText")
+		   		.text(function(d,i) {return d})
+		   		.attr("x", function(d,i) { return 4 * outerRadius * Math.cos(degrees_to_radians(spokeArr[i]+60)); })
+		        .attr("y", function(d,i) { return 4 * outerRadius * Math.sin(degrees_to_radians(spokeArr[i]+60)); })
+
 
 			///////////////////////////////////////////////////////////////////////////
 			////////////////////////////// Draw circles ///////////////////////////////
 			///////////////////////////////////////////////////////////////////////////
 
 			var circleWrapper = svg.append("g").attr("class", "circleWrapper");
-
 		    circleWrapper.selectAll(".dots")
 		        .data(dataset)
 		        .enter().append("circle")
 		        .attr("class", "dots")
-		        .attr("cx", function(d) { return innerRadius * d.rad * Math.cos(d.theta); })
-		        .attr("cy", function(d) { return innerRadius * d.rad * Math.sin(d.theta);  })
+		        .attr("cx", function(d) { return innerRadius * d.rad })
+		        .attr("cy", function(d) { return innerRadius * d.rad })
+		        .attr("transform", function(d,i) { return "rotate(" + ( d.theta + 20*getRandomNumber(0.2,0.4) + 5) + ")"; })
 		        .attr("r", function(d) { return d.step_length/15; })
 		        .style("fill", "blue")
 		        .style("opacity", 0.2)
 
-
-		    var alignRotate = 15;
+		    var alignRotate = -145;
 		    lineWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    circleWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    labelWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 
 		});
 	</script>
