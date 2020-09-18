@@ -66,7 +66,7 @@
 	  		fill: none;
 	  		stroke: #E8E8E8;
 	  		stroke-width: 1px;
-	  		opacity: 0.3;
+	  		opacity: 0.9;
 	  		/*display: none;*/
 	  	}
 	  	.axisSpokes {
@@ -94,7 +94,7 @@
 		var stepCircleAlpha = 0.4
 		var dataset; // global
 		var numRadialSpokes = 11
-		var randJitter = false
+		var randJitter = true
 
 		function getRandomNumber(start, end) {
 	        return (Math.random() * (end-start) * 100)/100 + start;
@@ -106,7 +106,7 @@
 
 		d3.json(datapath+"coppelia_dawn.json", function(data) {
 		    dataset = data;
-			console.log(dataset)
+			console.log(dataset.filter(x=>x.body_movement=="head"))
 			var spokeArr = d3.range(0,359,359/numRadialSpokes)
 			var bodyMovements = [
 									"head",
@@ -121,8 +121,6 @@
 									"left_arm",
 									"left_hand"
 								]
-			console.log(spokeArr)
-			console.log(bodyMovements)
 
 			///////////////////////////////////////////////////////////////////////////
 			//////////////////// Set up and initiate svg containers ///////////////////
@@ -187,8 +185,7 @@
 
 			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
 			dataset.forEach(function(d) {
-				d.theta = bodyMovementToTheta(d.body_movement) 
-				// + getRandomNumber(0.2,0.5);
+				d.theta = bodyMovementToTheta(d.body_movement) + 50
 			});
 
 			console.log(dataset)
@@ -206,13 +203,7 @@
 			//Scale for the heights of the bar, not starting at zero to give the bars an initial offset outward
 			var barScale = d3.scale.linear()
 				.range([innerRadius, outerRadius])
-				.domain([1,8]); 
-
-			//Scale to turn the date into an angle of 360 degrees in total
-			//With the first datapoint (Jan 1st) on top
-			// var angle = d3.scale.linear()
-			// 	.range([0, 360])
-			// 	.domain(d3.extent(dataset, function(d) { return d.theta; }));	 
+				.domain([1,8]);  
 
 			///////////////////////////////////////////////////////////////////////////
 			//////////////////////////// Create Titles ////////////////////////////////
@@ -294,14 +285,15 @@
 		        .data(dataset)
 		        // .enter().append("circle")
 		        .attr("class", "dots")
-		        .attr("cx", function(d) { return innerRadius/1.55 * d.rad 
-		        	 + getRandomNumber(10,40)
+		        .attr("cx", function(d) { return innerRadius * d.rad 
+		        	 // + getRandomNumber(10,40)
 		        })
-		        .attr("cy", function(d) { return innerRadius/1.55 * d.rad 
-		        	+ getRandomNumber(10,40) 
+		        .attr("cy", function(d) { return innerRadius * d.rad 
+		        	// + getRandomNumber(10,40) 
 		        })
-		        .attr("transform", function(d,i) { return "rotate(" + ( d.theta + 25 * getRandomNumber(0.2,0.5) ) + ")"; })
-		        .attr("r", function(d) { return d.step_length/15; })
+		        .attr("transform", function(d,i) { return "rotate(" + ( d.theta ) + ")"; })
+		        // .attr("transform", function(d,i) { return "rotate(" + ( d.theta + 25 * getRandomNumber(0.2,0.5) ) + ")"; })
+		        .attr("r", function(d) { return d.step_length*15; })
 		        .style("fill", stepCircleColor)
 		        .style("opacity", stepCircleAlpha)
 
@@ -312,19 +304,22 @@
 			 	.data(dataset)
 			 	.enter().append("rect")
 			 	.attr("class", "stepBar")
-			 	.attr("transform", function(d,i) { return "rotate(" + ( d.theta + 50 + (randJitter ? 1 : 0) * getRandomNumber(0.2,0.5) ) + ")"; })
-			 	.attr("width", function(d,i) { return d.step_length*10; })
+			 	.attr("transform", function(d,i) { return "rotate(" + ( d.theta + 50 * (randJitter ? 1 : 0) * getRandomNumber(-0.1,0.1) ) + ")"; })
+			 	// .attr("width", function(d,i) { return d.step_length*10; })
 				.attr("height", function(d,i) { return d.step_length*50; })
+			 	.attr("width", 3)
+			 	// .attr("height", 10)
 			 	.attr("x", 0)
-			 	.attr("y", function(d) { return innerRadius/1.55 * d.rad  })
+			 	.attr("y", function(d) { return innerRadius * (d.rad )  })
 			 	.style("fill", stepCircleColor)
 			 	.style("opacity", stepCircleAlpha)
 
 		    var alignRotate = -145;
 		    lineWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    circleWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    // circleWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    // barWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    barWrapper.attr("transform", function(d,i) { return "rotate(" + (-130) + ")"; })
+		    barWrapper.attr("transform", function(d,i) { return "rotate(" + ( 131 ) + ")"; })
+		    // circleWrapper.attr("transform", function(d,i) { return "rotate(" + (-35) + ")"; })
 		    labelWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 
 		});

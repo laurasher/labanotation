@@ -17,7 +17,7 @@
             "type": "RECTANGLE",
             "tags": [
                 "right",
-                "right_arm_middle"
+                "right_hand_middle"
             ],
             "boundingBox": {
                 "height": 62.03830735381862,
@@ -48,8 +48,8 @@
             "id": "nwR2tAJ5y",
             "type": "RECTANGLE",
             "tags": [
-                "right_arm_middle",
-                "left"
+                "left",
+                "right_hand_middle"
             ],
             "boundingBox": {
                 "height": 65.66127498508354,
@@ -112,8 +112,8 @@
             "id": "tYuZhXwG-",
             "type": "RECTANGLE",
             "tags": [
-                "right_hand_middle",
-                "left"
+                "left",
+                "right_hand_middle"
             ],
             "boundingBox": {
                 "height": 64.99951521479714,

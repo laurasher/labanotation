@@ -4,7 +4,9 @@ import json
 
 data_root = "data/"
 
-ballets = ["coppelia_dawn", "artifact", "raymonda"]
+# ballets = ["coppelia_dawn", "artifact", "raymonda"]
+ballets = ["coppelia_dawn"]
+
 
 # Movement direction
 direction_movement_dict = [
@@ -33,6 +35,8 @@ body_movement_dict = [
 # Movement height
 height_movement_dict = ["low", "middle", "high"]
 
+pd.set_option("display.max_rows", 500, "display.max_columns", 500)
+pd.set_option('display.expand_frame_repr', False)
 
 def label_direction_movement(row):
     if row[0] is not None and row[0].strip() in direction_movement_dict:
@@ -73,6 +77,16 @@ def label_body_movement(row):
     if row[1] is not None and strip_height(row[1]) in body_movement_dict:
         return strip_height(row[1])
 
+def label_staff_num(row):
+    print(row["img_num"])
+    if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 1: return 1
+    if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 2: return 2
+    if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 3: return 3
+    if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 4: return 4
+    if int(row["img_num"]) == 2 and int(row["img_staff_num"]) == 1: return 5
+    if int(row["img_num"]) == 2 and int(row["img_staff_num"]) == 2: return 6
+    if int(row["img_num"]) == 2 and int(row["img_staff_num"]) == 3: return 7
+    if int(row["img_num"]) == 2 and int(row["img_staff_num"]) == 4: return 8
 
 for b in ballets:
     bbox_file = f"{data_root}coppelia_dawn/vott-csv-export/coppelia_dawn-export.csv"
@@ -82,12 +96,23 @@ for b in ballets:
     df["image"] = df["image"].str.replace("coppelia_2_", "coppelia_dawn_2_")
     df["image"] = df["image"].str.replace("artifact", "artifact_none")
     df["image"] = df["image"].str.replace("raymonda", "raymonda_none")
+
+    df = df[df["image"].str.contains(b)].reset_index()
+
     df["step_length"] = df["ymax"] - df["ymin"]
     df["img_staff_num"] = df["image"].str.split("_").str[3].str.split(".").str[0].values
     df["img_num"] = df["image"].str.split("_").str[2].values
-    df["staff_num"] = df["img_staff_num"].astype(int) * df["img_num"].astype(int)
+    # df["staff_num"] = df["img_staff_num"].astype(int) * df["img_num"].astype(int)
+    df["staff_num"] = df.apply(lambda row: label_staff_num(row), axis=1)
+    # df = (
+    #     df.sort_values(by=["img_num", "img_staff_num"], ascending=[True, False])
+    #     .reset_index()
+    #     .drop(["index"], axis=1)
+    # )
+    # df["staff_num"] = df.groupby(["img_staff_num","img_num"]).ngroup()
     df["ballet"] = b
-
+    df = df[['image','ballet','xmin','ymin','xmax','ymax','label','step_length','img_num','img_staff_num','staff_num']]
+    print(df)
     # Group labels of same boxes
     df = (
         df.groupby(
@@ -125,14 +150,16 @@ for b in ballets:
     df["body_movement"] = df.apply(lambda row: label_body_movement(row), axis=1)
     df["height_movement"] = df.apply(lambda row: label_height_movement(row), axis=1)
     df = df.drop([0, 1, "img_num", "img_staff_num"], axis=1)
-    df_to_save = df[df["image"].str.contains(b)].drop(["image"], axis=1).reset_index()
+    df_to_save = df[df["image"].str.contains(b)].reset_index()
+    # .drop(["image"], axis=1).reset_index()
     df_to_save = df_to_save.drop(['index'], axis=1)
-    
+
     # Normalize step lengths from 0 to 1
     df_to_save["step_length"] = (
         df_to_save["step_length"] - np.min(df_to_save["step_length"])
     ) / (np.max(df_to_save["step_length"]) - np.min(df_to_save["step_length"]))
-    print(df_to_save)
+    print(df_to_save.sort_values(by=['staff_num']).tail())
+    print('-----------------------------------------------------------------')
     # print(json.dumps(json.loads(df_to_save.to_json(orient='records')), indent=4, sort_keys=True))
     df_to_save.to_csv(f"bbox_output/{b}.csv")
     with open(f"bbox_output/{b}.json", 'w') as outfile:
