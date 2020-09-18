@@ -4,8 +4,8 @@ import json
 
 data_root = "data/"
 
-# ballets = ["coppelia_dawn", "artifact", "raymonda"]
-ballets = ["coppelia_dawn"]
+ballets = ["coppelia_dawn", "artifact", "raymonda"]
+# ballets = ["coppelia_dawn"]
 
 
 # Movement direction
