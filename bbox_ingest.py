@@ -127,12 +127,13 @@ for b in ballets:
     df = df.drop([0, 1, "img_num", "img_staff_num"], axis=1)
     df_to_save = df[df["image"].str.contains(b)].drop(["image"], axis=1).reset_index()
     df_to_save = df_to_save.drop(['index'], axis=1)
+    
     # Normalize step lengths from 0 to 1
-    # df_to_save["step_length"] = (
-    #     df_to_save["step_length"] - np.min(df_to_save["step_length"])
-    # ) / (np.max(df_to_save["step_length"]) - np.min(df_to_save["step_length"]))
+    df_to_save["step_length"] = (
+        df_to_save["step_length"] - np.min(df_to_save["step_length"])
+    ) / (np.max(df_to_save["step_length"]) - np.min(df_to_save["step_length"]))
     print(df_to_save)
-    print(json.dumps(json.loads(df_to_save.to_json(orient='records')), indent=4, sort_keys=True))
+    # print(json.dumps(json.loads(df_to_save.to_json(orient='records')), indent=4, sort_keys=True))
     df_to_save.to_csv(f"bbox_output/{b}.csv")
     with open(f"bbox_output/{b}.json", 'w') as outfile:
         json.dump(json.loads(df_to_save.reset_index().to_json(orient='records')), outfile)

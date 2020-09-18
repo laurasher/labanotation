@@ -16,6 +16,7 @@
 		  	font-weight: 400;
 		  	fill: #8C8C8C;
 		  	text-align: center;
+		  	/*background: black;*/
 		}
 
 	  	.title {
@@ -52,40 +53,28 @@
 	      	font-weight: 400;
 	  	}
 
-	  	.legendTitle {
-	      	font-size: 14px;
-	      	fill: #4F4F4F;
-	      	font-weight: 300;
-	  	}
-
-	  	.january {
-	  		font-size: 14px;
-	  		text-anchor: start;
-	  		font-weight: 300;
-	  		fill: #AAAAAA;
-	  	}
-
-	  	.yearLine {
-	  		stroke: #AAAAAA;
-	  	}
-
 	  	.axisText {
 	  		fill: #C4C4C4;
 	  		font-size: 11px;
 	  		font-weight: 300;
 	  		text-anchor: middle;
 	  		text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+	  		display: none;
 	  	}
 
 	  	.axisCircles {
 	  		fill: none;
 	  		stroke: #E8E8E8;
 	  		stroke-width: 1px;
+	  		opacity: 0.3;
+	  		/*display: none;*/
 	  	}
 	  	.axisSpokes {
 	  		fill: none;
 	  		stroke: #E8E8E8;
-	  		stroke-width: 1px;
+	  		stroke-width: 2px;
+	  		opacity: 0.8;
+	  		/*display: none;*/
 	  	}
 
 	</style>
@@ -101,8 +90,11 @@
 		///////////////////////////////////////////////////////////////////////////	
 
 		const datapath = "bbox_output/"
+		var stepCircleColor = "blue"
+		var stepCircleAlpha = 0.4
 		var dataset; // global
 		var numRadialSpokes = 11
+		var randJitter = false
 
 		function getRandomNumber(start, end) {
 	        return (Math.random() * (end-start) * 100)/100 + start;
@@ -112,7 +104,7 @@
 		  return degrees * (pi/180);
 		}
 
-		d3.json(datapath+"coppelia_dawn.json", function(data) {
+		d3.json(datapath+"artifact.json", function(data) {
 		    dataset = data;
 			console.log(dataset)
 			var spokeArr = d3.range(0,359,359/numRadialSpokes)
@@ -202,7 +194,7 @@
 			console.log(dataset)
 
 			//Set the minimum inner radius and max outer radius of the chart
-			var	outerRadius = Math.min(width, height, 200)/2,
+			var	outerRadius = Math.min(width, height, 250)/2,
 				innerRadius = outerRadius * 0.4;
 
 			//Base the color scale on average temperature extremes
@@ -301,18 +293,35 @@
 			var circleWrapper = svg.append("g").attr("class", "circleWrapper");
 		    circleWrapper.selectAll(".dots")
 		        .data(dataset)
-		        .enter().append("circle")
+		        // .enter().append("circle")
 		        .attr("class", "dots")
-		        .attr("cx", function(d) { return innerRadius * d.rad })
-		        .attr("cy", function(d) { return innerRadius * d.rad })
-		        .attr("transform", function(d,i) { return "rotate(" + ( d.theta + 20*getRandomNumber(0.2,0.4) + 5) + ")"; })
+		        .attr("cx", function(d) { return innerRadius/1.55 * d.rad + getRandomNumber(10,40)})
+		        .attr("cy", function(d) { return innerRadius/1.55 * d.rad + getRandomNumber(10,40) })
+		        .attr("transform", function(d,i) { return "rotate(" + ( d.theta + 25 * getRandomNumber(0.2,0.5) ) + ")"; })
 		        .attr("r", function(d) { return d.step_length/15; })
-		        .style("fill", "blue")
-		        .style("opacity", 0.2)
+		        .style("fill", stepCircleColor)
+		        .style("opacity", stepCircleAlpha)
+
+		    var barWrapper = svg.append("g")
+				.attr("transform", "translate(" + 0 + "," + 0 + ")");
+
+		    barWrapper.selectAll(".stepBar")
+			 	.data(dataset)
+			 	.enter().append("rect")
+			 	.attr("class", "stepBar")
+			 	.attr("transform", function(d,i) { return "rotate(" + ( d.theta + 50 + (randJitter ? 1 : 0) * getRandomNumber(0.2,0.5) ) + ")"; })
+			 	.attr("width", function(d,i) { return d.step_length*10; })
+				.attr("height", function(d,i) { return d.step_length*50; })
+			 	.attr("x", 0)
+			 	.attr("y", function(d) { return innerRadius/1.55 * d.rad  })
+			 	.style("fill", stepCircleColor)
+			 	.style("opacity", stepCircleAlpha)
 
 		    var alignRotate = -145;
 		    lineWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    circleWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    // barWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    barWrapper.attr("transform", function(d,i) { return "rotate(" + (-130) + ")"; })
 		    labelWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 
 		});

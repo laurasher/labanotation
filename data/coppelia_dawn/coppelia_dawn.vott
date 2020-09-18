@@ -5,7 +5,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYTczNjM0ZTI4NmFkM2Q2ODM0YTU5YmFiNTMyZDRiOWE1MDNlMGNiNGViOTgwNWNlNDVmMzhlZGVlNjVmMDYzYTFmNWZjMjY0OGFmZjI1NmNhNWQzYTU5NDg5ZGVmY2U3OGVkMjZlZGFiODEyMWZlMzljZGJiZGZhYzgyZDk1MDVjNmE4ZmVhZGI3Y2MxZTAzZGNjNWJjZDY2NWRkNzRkZWU5ZmMxNzE3NjIwNTM1MzE3NTQ4NmM2YzA4NTQ5Njc3ZTYzNjNmMWRhYzY4NjE5OTZiZWQzMmE5NTM4Y2Y3YTEiLCJpdiI6ImIyODE4MDczOWRhMDA3OWNjZjE1YjExZjZkN2IyM2M1NjFkOGE3MjA0NjhlODc0MCJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiODMzNGFmNmRhNTFjYjQ4MjhlM2U1NTk3MjUwM2U1OTgzYTUwODFlNDMxMDllNjc3NGJhNTg2ZjVhN2FlYmJjODkyZmU5OGM3ZmEwNzc2YmE5NmZkZDE0ZmY2MWRlZDY0ZmJmOThmNmJkZDNkMGNiNDRmOTRmYmI2ZjE3N2E5ZmMwOTk0NTY5NmZiNWMxYTBjYjk3MDk1MDQ5OTE2MjVkNTc4MmUwMDEwYmZhYTk5MGViOWQxMDAwOTFlMTBhMzQ0ZTI3NTU0ZmY3MjhjNzk3ZmRiOTg1ZDczMzA5ZWVmYWMiLCJpdiI6IjVmZjVkZTMxY2M4NThmMDM2NDc4MmNjYjYwMTliMTU3MzgxMmI2MTQzMzMyMjY4NSJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -13,7 +13,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZjU4ZDQ0MzI0NWI4M2ZmM2Y2N2E4ZTAwY2M3OGE1NGVkMWY3N2FiMDRjMmFjOGY2YWIzZjM5ZjhjNTdhMmJhNTdkYTA0OGY2NTRhNDk3ZjQ0NTBhM2JjMWM4NDk5NTZkNmRlYWQzNDRkNjQzOGM5YTc0YjJlNDQ1OGYyMjFjMWM2ZDNjYWZlMGNlN2ZlZDNiZDhlYzI0YjJlM2QyZjA0ZDljN2JmNWVhZDhjOTIyYmNiYTdlOWRlNmE1ZGNhZDc3NWYwMjE0ZGQzMWI5ZGQ5MjE5ZjI0MjM4MmI5NTFiNDAiLCJpdiI6IjMyMzRlZjlmNTkyMzIxNDAzNDg4Y2MxYzk4ZGQwZWQ5NTllNGQ3NTdjY2ZmYWVjZSJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZTlmYzk3OWY2ZTEwNzEzOTgwMjIwYzkwNjY3YTg0YjliMjdmODBkODM0MGZhMzU4MzM5N2UwOTM3ZDQ1ODg1ZGRiZTcyNzYwMDU1NWJhMzgzY2E1NzJmNzhlNTc1ZmViZDBhYjFhNDgwZTkwNTAzMzEwYWMxYmU0OGNkMThkOTI3MDI4ZThjOTNjZGMyYWNhMjMxMDMzZmY4MTkxMjFiNTE3ZDRkNjIwOGVmNmVkYmMwYmNiZjU2N2E1YmE4ZDdkYzI0OTQ2YTM4MTMwZTBhMTI3Y2ZiMDExODRjZmVkNDIiLCJpdiI6IjRmYjA2ZTRmOWU3Nzk4YzI2NDE0MWIyNjk1ZTdkNTEyY2ZmY2JhNmU2ODFhNzliZiJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -199,11 +199,11 @@
     "exportFormat": {
         "providerType": "csv",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYzkxYTNhZjVmMDQ1MWQ3NjhhYjg5NjA0MDVhNjZkNzZkNWFmMzI5NjQ1MjdiZTEwYmMxZDNhZDhjZjdjZjg4NDcwMzY3M2JkMWM5OTVkMDkzYWViYTZkZjRhOWVmZDkxIiwiaXYiOiI2NTY5M2IwMmJkZTUxZTNmYjhkMGNmM2MyZTFkNDZhMDQ3NjZmMjdiOWVjMTllODcifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZTE4ODdhOGM0NmQ5ZjI0YjY1NTFjNGY0NTBmM2UxODBlNmIzZjA3YTY2YTliZTIwNmQ0OTg2NjI2ZDdkMWYyMjlkM2I2NzJhMDY4N2ZkZjcxMmMzNTZhOWRmZTM3NmM0IiwiaXYiOiJjODM4MDhmZTJlMDY1YTQ3Y2U4ZDNkNjc1NDZhOThhNDQ4ZjdkMjUyY2U3M2FmZGUifQ=="
         }
     },
     "version": "2.2.0",
-    "lastVisitedAssetId": "0ea0a07cd93974b30a22eed9ae01e7d4",
+    "lastVisitedAssetId": "6657841af1683cf665c5a1cc2cd56d51",
     "assets": {
         "f89a594ff35bcef1f0e7418dbcef2455": {
             "format": "png",
@@ -393,6 +393,102 @@
             "size": {
                 "width": 314,
                 "height": 1400
+            },
+            "state": 2,
+            "type": 1
+        },
+        "be64bdabcef1380a2f169c0da1263bcb": {
+            "format": "png",
+            "id": "be64bdabcef1380a2f169c0da1263bcb",
+            "name": "raymonda_1_4.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/raymonda_1_4.png",
+            "size": {
+                "width": 330,
+                "height": 1352
+            },
+            "state": 2,
+            "type": 1
+        },
+        "15739fe3629ca63e58504ccf4eb9333c": {
+            "format": "png",
+            "id": "15739fe3629ca63e58504ccf4eb9333c",
+            "name": "raymonda_2_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/raymonda_2_1.png",
+            "size": {
+                "width": 360,
+                "height": 1434
+            },
+            "state": 2,
+            "type": 1
+        },
+        "60926979bbe88f47df3169d74603f751": {
+            "format": "png",
+            "id": "60926979bbe88f47df3169d74603f751",
+            "name": "raymonda_2_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/raymonda_2_2.png",
+            "size": {
+                "width": 358,
+                "height": 1360
+            },
+            "state": 1,
+            "type": 1
+        },
+        "65595d2f4d0b762d890a64ffa78c8cc3": {
+            "format": "png",
+            "id": "65595d2f4d0b762d890a64ffa78c8cc3",
+            "name": "raymonda_2_3.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/raymonda_2_3.png",
+            "size": {
+                "width": 302,
+                "height": 678
+            },
+            "state": 1,
+            "type": 1
+        },
+        "87339bbf41e8d6f280cd2f1b20f0b043": {
+            "format": "png",
+            "id": "87339bbf41e8d6f280cd2f1b20f0b043",
+            "name": "sleepingbeauty_bluebird_1_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/sleepingbeauty_bluebird_1_1.png",
+            "size": {
+                "width": 396,
+                "height": 1480
+            },
+            "state": 1,
+            "type": 1
+        },
+        "06c7441be8f338c7f7b7922f84946368": {
+            "format": "png",
+            "id": "06c7441be8f338c7f7b7922f84946368",
+            "name": "sleepingbeauty_bluebird_1_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/sleepingbeauty_bluebird_1_2.png",
+            "size": {
+                "width": 400,
+                "height": 1308
+            },
+            "state": 1,
+            "type": 1
+        },
+        "ad812e86d06e0a6fdb9e432acd49ee94": {
+            "format": "png",
+            "id": "ad812e86d06e0a6fdb9e432acd49ee94",
+            "name": "sleepingbeauty_bluebird_1_3.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/sleepingbeauty_bluebird_1_3.png",
+            "size": {
+                "width": 328,
+                "height": 1288
+            },
+            "state": 1,
+            "type": 1
+        },
+        "0fc6a36161b71f85d555da23afee7a0a": {
+            "format": "png",
+            "id": "0fc6a36161b71f85d555da23afee7a0a",
+            "name": "sleepingbeauty_bluebird_2_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/sleepingbeauty_bluebird_2_1.png",
+            "size": {
+                "width": 388,
+                "height": 1332
             },
             "state": 1,
             "type": 1
