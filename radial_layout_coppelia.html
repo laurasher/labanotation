@@ -16,7 +16,7 @@
 		  	font-weight: 400;
 		  	fill: #8C8C8C;
 		  	text-align: center;
-		  	/*background: black;*/
+		  	background: #F8E8CB;
 		}
 
 	  	.title {
@@ -64,19 +64,18 @@
 
 	  	.axisCircles {
 	  		fill: none;
-	  		stroke: #E8E8E8;
-	  		stroke-width: 1px;
-	  		opacity: 0.9;
+	  		stroke: black;
+	  		stroke-width: 0.5px;
+	  		opacity: 0.2;
 	  		/*display: none;*/
 	  	}
 	  	.axisSpokes {
 	  		fill: none;
-	  		stroke: #E8E8E8;
-	  		stroke-width: 2px;
-	  		opacity: 0.8;
+	  		stroke: black;
+	  		stroke-width: 0.5px;
+	  		opacity: 0.2;
 	  		/*display: none;*/
 	  	}
-
 	</style>
 
 	
@@ -90,8 +89,10 @@
 		///////////////////////////////////////////////////////////////////////////	
 
 		const datapath = "bbox_output/"
-		var stepCircleColor = "blue"
-		var stepCircleAlpha = 0.4
+		var stepCircleColor = "black"
+		var stepCircleAlpha = 0.3
+		var barWidth = 10
+		var barHeightMulitplier = 200
 		var dataset; // global
 		var numRadialSpokes = 11
 		var randJitter = true
@@ -264,7 +265,7 @@
 		        .attr("x1", 0)
 		        .attr("y1", innerRadius)
 		        .attr("x2", 0)
-		        .attr("y2", outerRadius*4)
+		        .attr("y2", outerRadius*3.23)
 
 		    var labelWrapper = svg.append("g");
 		    labelWrapper.selectAll(".axisText")
@@ -277,7 +278,7 @@
 
 
 			///////////////////////////////////////////////////////////////////////////
-			////////////////////////////// Draw circles ///////////////////////////////
+			////////////////////////////// Draw circles and bars //////////////////////
 			///////////////////////////////////////////////////////////////////////////
 
 			var circleWrapper = svg.append("g").attr("class", "circleWrapper");
@@ -305,9 +306,8 @@
 			 	.enter().append("rect")
 			 	.attr("class", "stepBar")
 			 	.attr("transform", function(d,i) { return "rotate(" + ( d.theta + 50 * (randJitter ? 1 : 0) * getRandomNumber(-0.1,0.1) ) + ")"; })
-			 	// .attr("width", function(d,i) { return d.step_length*10; })
-				.attr("height", function(d,i) { return d.step_length*50; })
-			 	.attr("width", 3)
+				.attr("height", function(d,i) { return d.step_length*barHeightMulitplier; })
+			 	.attr("width", barWidth)
 			 	// .attr("height", 10)
 			 	.attr("x", 0)
 			 	.attr("y", function(d) { return innerRadius * (d.rad )  })

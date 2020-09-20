@@ -16,7 +16,7 @@
 		  	font-weight: 400;
 		  	fill: #8C8C8C;
 		  	text-align: center;
-		  	/*background: black;*/
+		  	background: #F8E8CB;
 		}
 
 	  	.title {
@@ -73,7 +73,7 @@
 	  		fill: none;
 	  		stroke: #E8E8E8;
 	  		stroke-width: 2px;
-	  		opacity: 0.8;
+	  		opacity: 0.5;
 	  		/*display: none;*/
 	  	}
 
@@ -90,7 +90,7 @@
 		///////////////////////////////////////////////////////////////////////////	
 
 		const datapath = "bbox_output/"
-		var stepCircleColor = "blue"
+		var stepCircleColor = "black"
 		var stepCircleAlpha = 0.4
 		var dataset; // global
 		var numRadialSpokes = 11
@@ -120,6 +120,16 @@
 									"left_body",
 									"left_arm",
 									"left_hand"
+								]
+			var directions = [
+									"forward",
+									"forward_right_diagonal",
+									"right",
+									"backward_right_diagonal",
+									"backward",
+									"backward_left_diagonal",
+									"left",
+									"forward_left_diagonal",
 								]
 
 			///////////////////////////////////////////////////////////////////////////
@@ -174,6 +184,24 @@
 						return spokeArr[8];
 					case "head":
 						return spokeArr[0];
+				}
+			}
+			function directionMovementToTheta(body_movement, directon_movement){
+				switch(body_movement){
+					case "forward":
+						return spokeArr[0];
+					case "backward":
+						return spokeArr[9];
+					case "right":
+						return spokeArr[4];
+					case "left":
+						return spokeArr[7];
+					case "forward_diagonal":
+						return spokeArr[5];
+					case "backward_diagonal":
+						return spokeArr[6];
+					case "place":
+						return spokeArr[1];
 				}
 			}
 
