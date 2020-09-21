@@ -4,7 +4,9 @@
 	<meta charset="utf-8">
 	
 	<!-- D3.js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script> -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="d3-scale-radial.js"></script>
 	
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel='stylesheet' type='text/css'>
@@ -67,14 +69,14 @@
 	  		stroke: black;
 	  		stroke-width: 0.5px;
 	  		opacity: 0.2;
-	  		/*display: none;*/
+	  		display: none;
 	  	}
 	  	.axisSpokes {
 	  		fill: none;
 	  		stroke: black;
 	  		stroke-width: 0.5px;
 	  		opacity: 0.2;
-	  		/*display: none;*/
+	  		display: none;
 	  	}
 	</style>
 
@@ -104,11 +106,15 @@
 		  var pi = Math.PI;
 		  return degrees * (pi/180);
 		}
+		function radians_to_degrees(rad) {
+		  var pi = Math.PI;
+		  return rad * (180/pi);
+		}
 
 		d3.json(datapath+"coppelia_dawn.json", function(data) {
 		    dataset = data;
-			console.log(dataset.filter(x=>x.body_movement=="head"))
 			var spokeArr = d3.range(0,359,359/numRadialSpokes)
+			var spokeArrRad = spokeArr.map(x => degrees_to_radians(x))
 			var bodyMovements = [
 									"head",
 									"right_hand",
@@ -187,49 +193,25 @@
 			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
 			dataset.forEach(function(d) {
 				d.theta = bodyMovementToTheta(d.body_movement) + 50
+				d.thetaRad = degrees_to_radians( bodyMovementToTheta(d.body_movement) + 50 )
 			});
 
-			console.log(dataset)
+			// console.log(dataset)
 
 			//Set the minimum inner radius and max outer radius of the chart
 			var	outerRadius = Math.min(width, height, 250)/2,
 				innerRadius = outerRadius * 0.4;
 
 			//Base the color scale on average temperature extremes
-			var colorScale = d3.scale.linear()
+			var colorScale = d3.scaleLinear()
 				.domain([1, 8])
 				.range(["#2c7bb6", "#ffff8c", "#d7191c"])
 				.interpolate(d3.interpolateHcl);
 
 			//Scale for the heights of the bar, not starting at zero to give the bars an initial offset outward
-			var barScale = d3.scale.linear()
+			var barScale = d3.scaleLinear()
 				.range([innerRadius, outerRadius])
 				.domain([1,8]);  
-
-			///////////////////////////////////////////////////////////////////////////
-			//////////////////////////// Create Titles ////////////////////////////////
-			///////////////////////////////////////////////////////////////////////////
-
-			var textWrapper = svg.append("g").attr("class", "textWrapper")
-				.attr("transform", "translate(" + Math.max(-width/2, -outerRadius - 170) + "," + 0 + ")");
-
-			//Append title to the top
-			textWrapper.append("text")
-				.attr("class", "title")
-			    .attr("x", 0)
-			    .attr("y", -outerRadius - 40)
-			    // .text("Daily Temperatures in Boston");
-			textWrapper.append("text")
-				.attr("class", "subtitle")
-			    .attr("x", 0)
-			    .attr("y", -outerRadius - 20)
-			    // .text("2015");
-
-			//Append credit at bottom
-			textWrapper.append("text")
-				.attr("class", "credit")
-			    .attr("x", 0)
-			    .attr("y", outerRadius + 120)
 
 			///////////////////////////////////////////////////////////////////////////
 			///////////////////////////// Create Axes /////////////////////////////////
@@ -303,7 +285,7 @@
 
 		    barWrapper.selectAll(".stepBar")
 			 	.data(dataset)
-			 	.enter().append("rect")
+			 	// .enter().append("rect")
 			 	.attr("class", "stepBar")
 			 	.attr("transform", function(d,i) { return "rotate(" + ( d.theta + 50 * (randJitter ? 1 : 0) * getRandomNumber(-0.1,0.1) ) + ")"; })
 				.attr("height", function(d,i) { return d.step_length*barHeightMulitplier; })
@@ -314,13 +296,57 @@
 			 	.style("fill", stepCircleColor)
 			 	.style("opacity", stepCircleAlpha)
 
+			///////////////////////////////////////////////////////////////////////////
+			//////////////////////////// Radial line //////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
+
+			var dataArr = []
+			var data = []
+			var lineRes = 0.005
+			radArr = dataset.map(x=>(x.ymin * x.staff_num)/25)
+			console.log(dataset)
+
+			function findClosest(num, spoke){
+				if (Math.abs(num[0] - spoke) <= 0.03) return 1
+			}
+
+			for (ii = 0; ii < radArr.length; ii++) {
+				data = []
+				for (i = 0; i <= 2; i=i+lineRes) {
+				  data.push([Math.PI * i, radArr[ii] + getRandomNumber(-0.5, 0.5) ])
+				}
+				arr = spokeArrRad
+				num = degrees_to_radians(dataset[ii].theta)
+				var closestSpoke = arr.reduce(function(prev, curr) {
+			  		return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev);
+				});
+				
+				// find theta closest to chosen spokeArr
+				index = data.findIndex(x => findClosest(x, closestSpoke));
+				data[index] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				// need to say data[spokeArrIndex]
+				dataArr.push({data})
+			}
+
+			var lineRadial = d3.lineRadial();
+			var radialWrapper = svg.append("g")
+				.attr("transform", "translate(" + 0 + "," + 0 + ")");
+
+			for (i = 0; i < dataArr.length; i++) {
+				radialWrapper
+				    .append("path")
+				    .attr("d", lineRadial(dataArr[i].data))
+				    .attr("fill", "none")
+				    .attr("stroke-width", 0.2)
+				    .attr("stroke", "black");
+			}
+
+
 		    var alignRotate = -145;
 		    lineWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    // circleWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    // barWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    barWrapper.attr("transform", function(d,i) { return "rotate(" + ( 131 ) + ")"; })
-		    // circleWrapper.attr("transform", function(d,i) { return "rotate(" + (-35) + ")"; })
 		    labelWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( -62 ) + ")"; })
 
 		});
 	</script>
