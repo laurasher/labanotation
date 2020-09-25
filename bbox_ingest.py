@@ -4,8 +4,8 @@ import json
 
 data_root = "data/"
 
-ballets = ["coppelia_dawn", "artifact", "raymonda"]
-# ballets = ["coppelia_dawn"]
+# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird"]
+ballets = ["sleepingbeauty_bluebird"]
 
 
 # Movement direction
@@ -78,7 +78,6 @@ def label_body_movement(row):
         return strip_height(row[1])
 
 def label_staff_num(row):
-    print(row["img_num"])
     if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 1: return 1
     if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 2: return 2
     if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 3: return 3
@@ -87,6 +86,10 @@ def label_staff_num(row):
     if int(row["img_num"]) == 2 and int(row["img_staff_num"]) == 2: return 6
     if int(row["img_num"]) == 2 and int(row["img_staff_num"]) == 3: return 7
     if int(row["img_num"]) == 2 and int(row["img_staff_num"]) == 4: return 8
+    if int(row["img_num"]) == 3 and int(row["img_staff_num"]) == 1: return 9
+    if int(row["img_num"]) == 3 and int(row["img_staff_num"]) == 2: return 10
+    if int(row["img_num"]) == 3 and int(row["img_staff_num"]) == 3: return 11
+    if int(row["img_num"]) == 3 and int(row["img_staff_num"]) == 4: return 12
 
 for b in ballets:
     bbox_file = f"{data_root}coppelia_dawn/vott-csv-export/coppelia_dawn-export.csv"
@@ -98,7 +101,7 @@ for b in ballets:
     df["image"] = df["image"].str.replace("raymonda", "raymonda_none")
 
     df = df[df["image"].str.contains(b)].reset_index()
-
+    print(df)
     df["step_length"] = df["ymax"] - df["ymin"]
     df["img_staff_num"] = df["image"].str.split("_").str[3].str.split(".").str[0].values
     df["img_num"] = df["image"].str.split("_").str[2].values
@@ -112,7 +115,6 @@ for b in ballets:
     # df["staff_num"] = df.groupby(["img_staff_num","img_num"]).ngroup()
     df["ballet"] = b
     df = df[['image','ballet','xmin','ymin','xmax','ymax','label','step_length','img_num','img_staff_num','staff_num']]
-    print(df)
     # Group labels of same boxes
     df = (
         df.groupby(
@@ -139,11 +141,12 @@ for b in ballets:
         .reset_index()
         .drop(["index"], axis=1)
     )
-
+    print(df)
     # Create columns for movement: body (weight distribution), height, direction
-    df = pd.concat([df, df["label"].str.split(",", expand=True)], axis=1).drop(
-        [2], axis=1
-    )
+    # df = pd.concat([df, df["label"].str.split(",", expand=True)], axis=1).drop(
+    #     [2], axis=1
+    # )
+    df = pd.concat([df, df["label"].str.split(",", expand=True)], axis=1)
     df["direction_movement"] = df.apply(
         lambda row: label_direction_movement(row), axis=1
     )
@@ -158,7 +161,7 @@ for b in ballets:
     df_to_save["step_length"] = (
         df_to_save["step_length"] - np.min(df_to_save["step_length"])
     ) / (np.max(df_to_save["step_length"]) - np.min(df_to_save["step_length"]))
-    print(df_to_save.sort_values(by=['staff_num']).tail())
+    print(df_to_save)
     print('-----------------------------------------------------------------')
     # print(json.dumps(json.loads(df_to_save.to_json(orient='records')), indent=4, sort_keys=True))
     df_to_save.to_csv(f"bbox_output/{b}.csv")

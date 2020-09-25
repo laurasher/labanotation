@@ -1,0 +1,49 @@
+{
+    "asset": {
+        "format": "png",
+        "id": "6c799f2cd7b2a081dd6fa6d9d889e7ae",
+        "name": "sleepingbeauty_bluebird_3_2.png",
+        "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/sleepingbeauty_bluebird_3_2.png",
+        "size": {
+            "width": 278,
+            "height": 1554
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "ciXYEW8hZ",
+            "type": "RECTANGLE",
+            "tags": [
+                "backward_diagonal",
+                "left_arm_low"
+            ],
+            "boundingBox": {
+                "height": 78.05204914976133,
+                "width": 28.451562499999998,
+                "left": 40.223124999999996,
+                "top": 79.86300156622912
+            },
+            "points": [
+                {
+                    "x": 40.223124999999996,
+                    "y": 79.86300156622912
+                },
+                {
+                    "x": 68.6746875,
+                    "y": 79.86300156622912
+                },
+                {
+                    "x": 68.6746875,
+                    "y": 157.91505071599045
+                },
+                {
+                    "x": 40.223124999999996,
+                    "y": 157.91505071599045
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}

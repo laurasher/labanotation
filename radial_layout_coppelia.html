@@ -302,9 +302,9 @@
 
 			var dataArr = []
 			var data = []
-			var lineRes = 0.005
+			var lineRes = 0.005/5
+			var radialLineWidth = 0.1
 			radArr = dataset.map(x=>(x.ymin * x.staff_num)/25)
-			console.log(dataset)
 
 			function findClosest(num, spoke){
 				if (Math.abs(num[0] - spoke) <= 0.03) return 1
@@ -323,11 +323,27 @@
 				
 				// find theta closest to chosen spokeArr
 				index = data.findIndex(x => findClosest(x, closestSpoke));
+				data[index-8] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index-7] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index-6] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index-5] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index-4] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index-3] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index-2] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index-1] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
 				data[index] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index+1] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index+2] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index+3] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index+4] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index+5] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index+6] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index+7] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
+				data[index+8] = [data[index][0], radArr[ii]+ dataset[ii].step_length*60]
 				// need to say data[spokeArrIndex]
 				dataArr.push({data})
 			}
-
+			console.log(dataArr)
 			var lineRadial = d3.lineRadial();
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
@@ -337,7 +353,7 @@
 				    .append("path")
 				    .attr("d", lineRadial(dataArr[i].data))
 				    .attr("fill", "none")
-				    .attr("stroke-width", 0.2)
+				    .attr("stroke-width", radialLineWidth)
 				    .attr("stroke", "black");
 			}
 

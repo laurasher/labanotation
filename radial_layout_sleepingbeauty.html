@@ -111,7 +111,7 @@
 		  return rad * (180/pi);
 		}
 
-		d3.json(datapath+"raymonda.json", function(data) {
+		d3.json(datapath+"sleepingbeauty_bluebird.json", function(data) {
 		    dataset = data;
 			var spokeArr = d3.range(0,359,359/numRadialSpokes)
 			var spokeArrRad = spokeArr.map(x => degrees_to_radians(x))
@@ -302,12 +302,12 @@
 
 			var dataArr = []
 			var data = []
-			var lineRes = 0.005
-			radArr = dataset.map(x=>(x.ymin * x.staff_num)/15)
-			console.log(dataset)
+			var lineRes = 0.005/5
+			var radialLineWidth = 0.1
+			radArr = dataset.map(x=>(x.ymin * x.staff_num)/25)
 
 			function findClosest(num, spoke){
-				if (Math.abs(num[0] - spoke) <= 0.02) return 1
+				if (Math.abs(num[0] - spoke) <= 0.03) return 1
 			}
 
 			for (ii = 0; ii < radArr.length; ii++) {
@@ -323,11 +323,14 @@
 				
 				// find theta closest to chosen spokeArr
 				index = data.findIndex(x => findClosest(x, closestSpoke));
-				data[index] = [data[index][0], radArr[ii]+ dataset[ii].step_length*50]
-				// need to say data[spokeArrIndex]
+				data[index] = [data[index][0], radArr[ii]+ dataset[ii].step_length * 60]
+				for (j=1; j<=5; j++){
+					data[index-j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * 60 - j)]
+					data[index+j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * 60 - j)]
+				}
 				dataArr.push({data})
 			}
-
+			console.log(dataArr)
 			var lineRadial = d3.lineRadial();
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
@@ -337,7 +340,7 @@
 				    .append("path")
 				    .attr("d", lineRadial(dataArr[i].data))
 				    .attr("fill", "none")
-				    .attr("stroke-width", 0.2)
+				    .attr("stroke-width", radialLineWidth)
 				    .attr("stroke", "black");
 			}
 

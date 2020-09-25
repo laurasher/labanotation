@@ -1,0 +1,17 @@
+,image,ballet,xmin,xmax,ymin,ymax,staff_num,step_length,label,direction_movement,body_movement,height_movement
+0,sleepingbeauty_bluebird_3_2.png,sleepingbeauty_bluebird,40.223125,68.67468749999999,79.86300156622913,157.91505071599042,10,1.0,"backward_diagonal, left_arm_low",backward_diagonal,left_arm,low
+1,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,160.99348096026492,178.02028145695363,598.2873657517898,653.2511560262529,11,0.22562758667269128,"left, right_leg_low",left,right_leg,low
+2,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,146.74368791390728,164.77235099337747,601.1433845465392,651.6871457338901,11,0.07738130228846994,"right, right_leg_middle",right,right_leg,middle
+3,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,111.46937086092714,137.01686672185429,601.6339592034606,649.8705623508353,11,0.0,"place, left_support_high",place,left_support,high
+4,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,136.13172599337747,156.03280215231786,497.2192720763723,554.3979340692124,11,0.2999136368696153,"place, right_support_low",place,right_support,low
+5,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,111.75144867549669,136.07336506622514,497.9527054743437,553.3779273568018,11,0.24110384713037686,"place, left_support_low",place,left_support,low
+6,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,90.68315397350992,104.66059602649008,401.46007048031026,452.8975518347257,11,0.10735637517495128,"left_leg_low, right",right,left_leg,low
+7,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,136.19495033112582,157.8565811258278,400.1826335023865,451.12468302505965,11,0.09073975868353193,"place, right_support_high",place,right_support,high
+8,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,105.30742963576158,116.83857615894037,398.21062052505965,449.35667139021484,11,0.09758189488587916,"left, left_leg_middle",left,left_leg,middle
+9,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,136.45271109271522,157.45291804635758,297.84681719868735,353.8743287589499,11,0.2613044397277918,"place, right_support_low",place,right_support,low
+10,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,111.67849751655628,138.24244619205297,296.0156622911694,353.3448967034606,11,0.30496378501896954,"place, left_support_low",place,left_support,low
+11,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,150.4398799668874,168.30805049668874,189.77953460620526,255.74968302505962,11,0.5947771255898764,"right_leg_middle, right",right,right_leg,middle
+12,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,113.0402524834437,140.8297806291391,192.11583569510742,254.48681757159903,11,0.4740622940198689,"place, left_support_high",place,left_support,high
+13,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,164.25682947019862,180.85564983443703,192.24212224045345,254.23910165572792,11,0.4615183776488977,"left, right_leg_low",left,right_leg,low
+14,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,137.2940811258278,160.67735927152316,97.53692758054892,156.9401756414081,11,0.37452550307617904,"place, right_support_low",place,right_support,low
+15,sleepingbeauty_bluebird_3_3.png,sleepingbeauty_bluebird,113.5168667218543,140.47961506622514,95.42891370823388,151.33013872315036,11,0.2570688316025279,"place, left_support_low",place,left_support,low
