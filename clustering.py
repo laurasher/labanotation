@@ -244,7 +244,9 @@ for b in ballets:
     # Group by measure and create new dataframe for clustering
     ## Start with a simple metric, likw number of movements in each measure
     measure_count_df = (
-        df_to_save.groupby(["measure_num", "ballet"]).size().reset_index(name="movements_in_measure")
+        df_to_save.groupby(["measure_num", "ballet"])
+        .size()
+        .reset_index(name="movements_in_measure")
     )
     measure_count_df["measure_num"] = measure_count_df["measure_num"].astype(int)
     measure_count_df = (
@@ -252,18 +254,33 @@ for b in ballets:
         .reset_index()
         .drop(["index"], axis=1)
     )
-    measure_count_df = measure_count_df[["ballet","measure_num","movements_in_measure"]]
-    print(measure_count_df)
-    unique_body_movements = df_to_save.groupby(["measure_num", "ballet"]).agg(['count','nunique']).reset_index(drop=False).reset_index()
+    measure_count_df = measure_count_df[
+        ["ballet", "measure_num", "movements_in_measure"]
+    ]
+    unique_body_movements = (
+        df_to_save.groupby(["measure_num", "ballet"])
+        .agg(["count", "nunique"])
+        .reset_index(drop=False)
+        .reset_index()
+    )
     print(unique_body_movements)
-    print(unique_body_movements["measure_num"])
-    print(unique_body_movements["body_movement"]["count"])
-    tmp = pd.DataFrame(data={'measure_num': list(unique_body_movements["measure_num"].astype(int)), 'unique_body_movements_in_measure': list(unique_body_movements["body_movement"]["nunique"])})
-    print(tmp)
-    print(measure_count_df.merge(tmp, left_on='measure_num', right_on='measure_num'))
-    # unique_body_movements = unique_body_movements[""]["measure_num"].astype(int)#.sort_values(by=["measure_num"]).reset_index().drop(["index"], axis=1)
-    # print(df_to_save.groupby(["measure_num", "ballet"]).agg(['count','nunique']).reset_index(drop=False)["body_movement"])
-
+    tmp = pd.DataFrame(
+        data={
+            "measure_num": list(unique_body_movements["measure_num"].astype(int)),
+            "unique_body_movements_in_measure": list(
+                unique_body_movements["body_movement"]["nunique"]
+            ),
+            "unique_directions_in_measure": list(
+                unique_body_movements["direction_movement"]["nunique"]
+            ),
+        }
+    )
+    measure_count_df = measure_count_df.merge(
+        tmp, left_on="measure_num", right_on="measure_num"
+    )
+    measure_count_df['repetition_index'] = measure_count_df['unique_body_movements_in_measure']/measure_count_df['movements_in_measure']
+    print(measure_count_df)
+    
     # Plot clustering results
     from bokeh.plotting import figure, output_file, show
     from bokeh.models import ColumnDataSource
@@ -272,16 +289,18 @@ for b in ballets:
     output_file(f"{b}_scatter_measure_movement_counts.html")
 
     p = figure(plot_width=400, plot_height=400)
-    source = ColumnDataSource(data=dict(
-        x=measure_count_df['measure_num'],
-        y=measure_count_df['movements_in_measure'],
-        label=measure_count_df['ballet'],
-    ))
+    source = ColumnDataSource(
+        data=dict(
+            x=measure_count_df["unique_directions_in_measure"],
+            y=measure_count_df["repetition_index"],
+            label=measure_count_df["ballet"],
+        )
+    )
     # add a circle renderer with a size, color, and alpha
     p.circle("x", "y", size=10, color="blue", alpha=0.5, source=source)
 
     # show the results
-    # show(p)
+    show(p)
 
     # df_to_save.to_csv(f"bbox_output/{b}.csv")
     # with open(f"bbox_output/{b}.json", 'w') as outfile:
