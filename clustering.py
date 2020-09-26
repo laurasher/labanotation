@@ -288,7 +288,7 @@ for b in ballets:
     from bokeh.models import ColumnDataSource
 
     # output to static HTML file
-    output_file(f"{b}_scatter_measure_movement_counts.html")
+    # output_file(f"{b}_scatter_measure_movement_counts.html")
 
     p = figure(plot_width=400, plot_height=400)
     source = ColumnDataSource(
@@ -302,9 +302,9 @@ for b in ballets:
     p.circle("x", "y", size=10, color="blue", alpha=0.5, source=source)
 
     # show the results
-    show(p)
+    # show(p)
 
-    # df_to_save.to_csv(f"bbox_output/{b}.csv")
+    measure_count_df.to_csv(f"clustering_output/{b}_indices.csv", index=False)
     # with open(f"bbox_output/{b}.json", 'w') as outfile:
     #     json.dump(json.loads(df_to_save.reset_index().to_json(orient='records')), outfile)
 
