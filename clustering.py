@@ -279,8 +279,10 @@ for b in ballets:
         tmp, left_on="measure_num", right_on="measure_num"
     )
     measure_count_df['repetition_index'] = measure_count_df['unique_body_movements_in_measure']/measure_count_df['movements_in_measure']
+    measure_count_df['direction_diversity_index'] = measure_count_df['unique_directions_in_measure']/measure_count_df['movements_in_measure']
+
     print(measure_count_df)
-    
+
     # Plot clustering results
     from bokeh.plotting import figure, output_file, show
     from bokeh.models import ColumnDataSource
@@ -291,7 +293,7 @@ for b in ballets:
     p = figure(plot_width=400, plot_height=400)
     source = ColumnDataSource(
         data=dict(
-            x=measure_count_df["unique_directions_in_measure"],
+            x=measure_count_df["direction_diversity_index"],
             y=measure_count_df["repetition_index"],
             label=measure_count_df["ballet"],
         )
