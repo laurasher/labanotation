@@ -5,7 +5,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYzFhYzI3MWZiNzhjZDdmYTExZmE1OTEwZjc2Njc1MjJjMjEwMWZmYjdmOGZjNDMyYjdiYzlkY2U5MWI2ZmNkNjBlZjg5MDZlZjcwMTdhNjUyZDc0ZGNlMTVhMGQyOTY2NmMxMDZhNGFhNWQ3ZWU0YzViMzc3ODU2NTc0NjUzYTRkYjkzZTdmOWIyYjQ0ODI0OGQ4M2E4NzhhNDhiNDI2MTkyMzk0YjEzZDk0Njk3Y2M2MzIxYjFmYTI2YmMyYTUxODNkM2YzOTk0NTI3YTI1YTgwNTI4ZmMwNTRhNDZlMTIiLCJpdiI6IjQwYzkxNjEwNmQzOGJjMTM2OGJlMmIwOGE0MDg3MzliOTFlMmVhN2Y5MjZmY2ZmYyJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMDU3ZWNhZDYxYTJiMjhkNWY3ZjhkYzNkY2JjZDRjYmZhNTMxMTM1ZTY0OTA4Y2NkMjNlNWMxMWVmOWNlODNjYzE0OWEwNmYyNzUxOGE3MzM0MTJkOWYzMDNhNjc3ODg5MTczYTVhNzJjMmI2NWRhYTVmNDA1NTJkNzc4ODRlOGQzNDU5NzMxMThkZWM2NGRiYzY3OWEyYTM0Nzg5YTM2ZmY5NzI1MmZlMGI3YzY2NjA3MTk0MjJjZTY1MjI5MGE2ZDZkNDI5ZjA5MWQ4ZThhZjdmMmEyNTI3MmRkZDdmMmYiLCJpdiI6ImNkY2Y3YmUwNmRkNjVhY2NhN2U1OGIwMTlhYjhiMjg1NjgzMzM3YTM4ZjVlYmUyNCJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -13,7 +13,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNmY4ZTMzYzAzMTMwODg0NjQ5NmZlNDc0ZWJmNTAxYzIzYzA3Zjg3NmQxNGM4NWQzYjlmYTgwZjYyNjQ5MjRiZjM1YTQ5OGQwYWI2NTUzZGQzYjgwZWRmOWFmY2I3NTgyNTIyMzFmZGE1ZGFjZDIzZmY2NmZmNDA0YjAyOWFjNDI5YzM0MDQ5YTZlYWU3NDQzYzZlMTA1MTExNmEyYmUzMzA0Y2NhOTk1MDMxNzU0NWUyMzFkYzczOWJiYzAwYTIyYmM2ODhkYjc4ODgzZWU1MTUxY2UxOTUxM2U2OWI0N2YiLCJpdiI6IjY0ZjI0MGVmNWRkYmI1YWQ2MjZlNjQ5ZjhmZmRiOGI4ZDUxMWMwYzdjMWVjYWFkNCJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMjQ4ODUzMmExNjRmZjk4NGU2YzgxOTI3MjE1Y2JjYjJhNDhjZGZlMWE0OGMwOGNiOTYzYTk4OTU5M2ExZGZhMTU3ZmIxMmNhYjVkMjk0NDE0MTMzNzkxMjZhNzY5OWMxMGRmZTMxOGYxYTM5NjhlNmNhNmFlZmFkYzdmNTNjZTdhZjYxYjI5M2I5NDJmZTY2M2MxYTVkYmRhN2RlNzk5ZDAxZmY5NGVmMGY0MjViN2ZjNDUwNzc1NjYwYjkwMzY1NDA5ZGFhMTZlMGYwNmI2NWQzZWVkNzY1ZTZhZjBkY2MiLCJpdiI6Ijk3NTJjYjRhNjQ3MTFiNTg5NDU3OGZiYWJkZmUxNTIxMzZkYjIxN2VhMjI5YTk0NCJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -188,6 +188,170 @@
         {
             "name": "left_support_hold",
             "color": "#e81123"
+        },
+        {
+            "name": "measure_1",
+            "color": "#6917aa"
+        },
+        {
+            "name": "measure_2",
+            "color": "#015cda"
+        },
+        {
+            "name": "measure_3",
+            "color": "#4894fe"
+        },
+        {
+            "name": "measure_4",
+            "color": "#6b849c"
+        },
+        {
+            "name": "measure_5",
+            "color": "#70c400"
+        },
+        {
+            "name": "measure_6",
+            "color": "#f7929a"
+        },
+        {
+            "name": "measure_7",
+            "color": "#257ffe"
+        },
+        {
+            "name": "measure_8",
+            "color": "#ddabe9"
+        },
+        {
+            "name": "measure_9",
+            "color": "#ff8c00"
+        },
+        {
+            "name": "measure_10",
+            "color": "#386300"
+        },
+        {
+            "name": "measure_11",
+            "color": "#b40e1b"
+        },
+        {
+            "name": "measure_12",
+            "color": "#68217a"
+        },
+        {
+            "name": "measure_13",
+            "color": "#33cccc"
+        },
+        {
+            "name": "measure_14",
+            "color": "#016afe"
+        },
+        {
+            "name": "measure_15",
+            "color": "#595959"
+        },
+        {
+            "name": "measure_16",
+            "color": "#808080"
+        },
+        {
+            "name": "measure_17",
+            "color": "#990066"
+        },
+        {
+            "name": "measure_18",
+            "color": "#00bcf2"
+        },
+        {
+            "name": "measure_19",
+            "color": "#5db300"
+        },
+        {
+            "name": "measure_20",
+            "color": "#e81123"
+        },
+        {
+            "name": "measure_21",
+            "color": "#6917aa"
+        },
+        {
+            "name": "measure_22",
+            "color": "#015cda"
+        },
+        {
+            "name": "measure_23",
+            "color": "#4894fe"
+        },
+        {
+            "name": "measure_24",
+            "color": "#6b849c"
+        },
+        {
+            "name": "measure_25",
+            "color": "#70c400"
+        },
+        {
+            "name": "measure_26",
+            "color": "#f7929a"
+        },
+        {
+            "name": "measure_27",
+            "color": "#257ffe"
+        },
+        {
+            "name": "measure_28",
+            "color": "#ddabe9"
+        },
+        {
+            "name": "measure_29",
+            "color": "#ff8c00"
+        },
+        {
+            "name": "measure_30",
+            "color": "#386300"
+        },
+        {
+            "name": "measure_31",
+            "color": "#b40e1b"
+        },
+        {
+            "name": "measure_32",
+            "color": "#68217a"
+        },
+        {
+            "name": "measure_33",
+            "color": "#33cccc"
+        },
+        {
+            "name": "measure_34",
+            "color": "#016afe"
+        },
+        {
+            "name": "measure_35",
+            "color": "#595959"
+        },
+        {
+            "name": "measure_36",
+            "color": "#808080"
+        },
+        {
+            "name": "measure_37",
+            "color": "#990066"
+        },
+        {
+            "name": "measure_38",
+            "color": "#00bcf2"
+        },
+        {
+            "name": "measure_39",
+            "color": "#5db300"
+        },
+        {
+            "name": "measure_40",
+            "color": "#e81123"
+        },
+        {
+            "name": "measure_41",
+            "color": "#6917aa"
         }
     ],
     "id": "d8wg-Kx9R",
@@ -199,11 +363,11 @@
     "exportFormat": {
         "providerType": "csv",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMzI1MzhlMzEwNDhjZDY3OGJjMjAyOTlmYjljZjFmOTNkYjUwZDUxZWZjNjE5NGY3ZDk2YmY1MjZiYzBlM2QyZjA4Mjc5NzM1M2ZhZDQ1ZTNkYWJjMjZkODkwMWVmNjQ3IiwiaXYiOiI0ZGE2ZDc4Njk2MmI4ZDVjYWJjNzk0ZGE1ODMxY2I1YzNlZWVkZDJmMmU1YjRkNzAifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYmMyMTJjN2M4NjAyOGY1ZjdlNTZkOTJiMmIyMzNhZDgwOTM3YzQzNGY4MmJiYjk3NWQzZjk1MTI5OTg1OTdkNWY1ZjM0MjBmMTlkN2Q1ODBhZjRjMDg5NjRiOGMwYWUyIiwiaXYiOiI0M2ZiZmY4MDkzMDg4ZGZhNDBkOThlOTU5ZDc5Zjc4ZjM4ODE3NDRkYTY1OGNkMjYifQ=="
         }
     },
     "version": "2.2.0",
-    "lastVisitedAssetId": "6c799f2cd7b2a081dd6fa6d9d889e7ae",
+    "lastVisitedAssetId": "0ccb7f1e6dcec7b2b8b4f4afb3844a06",
     "assets": {
         "f89a594ff35bcef1f0e7418dbcef2455": {
             "format": "png",
@@ -454,7 +618,7 @@
                 "width": 396,
                 "height": 1480
             },
-            "state": 1,
+            "state": 2,
             "type": 1
         },
         "06c7441be8f338c7f7b7922f84946368": {

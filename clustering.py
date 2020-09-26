@@ -1,12 +1,19 @@
 import pandas as pd
 import numpy as np
 import json
+import re
 
 data_root = "data/"
 
 # ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird"]
-ballets = ["sleepingbeauty_bluebird"]
+ballets = ["coppelia_dawn"]
 
+# Cluster by
+## Steps in one measure
+## Step lengthd in one measure
+## Symmetry in the body in one measure
+## Diversity of movements in one measure
+## Repetition in measure
 
 # Movement direction
 direction_movement_dict = [
@@ -102,6 +109,19 @@ def label_staff_num(row, ballet):
         if int(row["img_num"]) == 3 and int(row["img_staff_num"]) == 3: return 11
         if int(row["img_num"]) == 3 and int(row["img_staff_num"]) == 4: return 12
 
+def label_measures(row, measures):
+    margin = 2
+    res = measures[ ( (row['ymin']>=measures['ymin']) | (row['ymin']>=measures['ymin']-margin) | (row['ymin']>=measures['ymin']+margin) ) 
+    & ( (row['ymax']<=measures['ymax']) | (row['ymax']<=measures['ymax']-margin) | (row['ymax']<=measures['ymax']+margin) ) 
+    & (row['staff_num']==measures['staff_num']) ]
+    # res = measures[ (abs(row['ymin']-measures['ymin'])<=10) & (abs(row['ymax']-measures['ymax'])<=10) & (row['staff_num']==measures['staff_num']) ]
+    if not res.empty:
+        print(res)
+        print(res['label'].values[0])
+        print(re.findall(r'\d+', res['label'].values[0])[0])
+        print('--------------------------------------')
+        return re.findall(r'\d+', res['label'].values[0])[0]
+
 for b in ballets:
     bbox_file = f"{data_root}coppelia_dawn/vott-csv-export/coppelia_dawn-export.csv"
     df = pd.read_csv(bbox_file)
@@ -111,21 +131,18 @@ for b in ballets:
     df["image"] = df["image"].str.replace("artifact", "artifact_none")
     df["image"] = df["image"].str.replace("raymonda", "raymonda_none")
 
+
     df = df[df["image"].str.contains(b)].reset_index()
-    print(df)
+   
+
+    # print(df)
     df["step_length"] = df["ymax"] - df["ymin"]
     df["img_staff_num"] = df["image"].str.split("_").str[3].str.split(".").str[0].values
     df["img_num"] = df["image"].str.split("_").str[2].values
-    # df["staff_num"] = df["img_staff_num"].astype(int) * df["img_num"].astype(int)
     df["staff_num"] = df.apply(lambda row: label_staff_num(row, b), axis=1)
-    # df = (
-    #     df.sort_values(by=["img_num", "img_staff_num"], ascending=[True, False])
-    #     .reset_index()
-    #     .drop(["index"], axis=1)
-    # )
-    # df["staff_num"] = df.groupby(["img_staff_num","img_num"]).ngroup()
     df["ballet"] = b
     df = df[['image','ballet','xmin','ymin','xmax','ymax','label','step_length','img_num','img_staff_num','staff_num']]
+
     # Group labels of same boxes
     df = (
         df.groupby(
@@ -146,13 +163,19 @@ for b in ballets:
         .reset_index()
     )
 
+    # Group by measures
+    measures = df[df['label'].str.contains('measure')]
+    print('-----------------------------------------------------------------')
+    print(measures)
+    df = df[~df['label'].str.contains('measure')]
+    df["measure_num"] = df.apply(lambda row: label_measures(row, measures), axis=1)
+
     # Order temporally
     df = (
         df.sort_values(by=["staff_num", "ymax"], ascending=[True, False])
         .reset_index()
         .drop(["index"], axis=1)
     )
-    print(df)
     # Create columns for movement: body (weight distribution), height, direction
     # df = pd.concat([df, df["label"].str.split(",", expand=True)], axis=1).drop(
     #     [2], axis=1
@@ -166,20 +189,17 @@ for b in ballets:
     df = df.drop([0, 1, "img_num", "img_staff_num"], axis=1)
     df_to_save = df[df["image"].str.contains(b)].reset_index()
     # .drop(["image"], axis=1).reset_index()
-    df_to_save = df_to_save.drop(['index'], axis=1)
+    df_to_save = df_to_save.drop(['index',2], axis=1)
 
     # Normalize step lengths from 0 to 1
     df_to_save["step_length"] = (
         df_to_save["step_length"] - np.min(df_to_save["step_length"])
     ) / (np.max(df_to_save["step_length"]) - np.min(df_to_save["step_length"]))
     print(df_to_save)
-    print('-----------------------------------------------------------------')
-    # print(json.dumps(json.loads(df_to_save.to_json(orient='records')), indent=4, sort_keys=True))
-    df_to_save.to_csv(f"bbox_output/{b}.csv")
-    with open(f"bbox_output/{b}.json", 'w') as outfile:
-        json.dump(json.loads(df_to_save.reset_index().to_json(orient='records')), outfile)
+    # df_to_save.to_csv(f"bbox_output/{b}.csv")
+    # with open(f"bbox_output/{b}.json", 'w') as outfile:
+    #     json.dump(json.loads(df_to_save.reset_index().to_json(orient='records')), outfile)
 
-# print(list(df.direction_movement.unique()))
 # Import steps lookup
 
 # Group movements into steps
