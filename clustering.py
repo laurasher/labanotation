@@ -244,7 +244,7 @@ for b in ballets:
     # Group by measure and create new dataframe for clustering
     ## Start with a simple metric, likw number of movements in each measure
     measure_count_df = (
-        df_to_save.groupby(["measure_num", "ballet"]).size().reset_index(name="counts")
+        df_to_save.groupby(["measure_num", "ballet"]).size().reset_index(name="movements_in_measure")
     )
     measure_count_df["measure_num"] = measure_count_df["measure_num"].astype(int)
     measure_count_df = (
@@ -252,11 +252,15 @@ for b in ballets:
         .reset_index()
         .drop(["index"], axis=1)
     )
-    measure_count_df = measure_count_df[["ballet","measure_num","counts"]]
+    measure_count_df = measure_count_df[["ballet","measure_num","movements_in_measure"]]
     print(measure_count_df)
-    unique_body_movements = df_to_save.groupby(["measure_num", "ballet"]).agg(['count','nunique']).reset_index(drop=False)
+    unique_body_movements = df_to_save.groupby(["measure_num", "ballet"]).agg(['count','nunique']).reset_index(drop=False).reset_index()
     print(unique_body_movements)
-
+    print(unique_body_movements["measure_num"])
+    print(unique_body_movements["body_movement"]["count"])
+    tmp = pd.DataFrame(data={'measure_num': list(unique_body_movements["measure_num"].astype(int)), 'unique_body_movements_in_measure': list(unique_body_movements["body_movement"]["nunique"])})
+    print(tmp)
+    print(measure_count_df.merge(tmp, left_on='measure_num', right_on='measure_num'))
     # unique_body_movements = unique_body_movements[""]["measure_num"].astype(int)#.sort_values(by=["measure_num"]).reset_index().drop(["index"], axis=1)
     # print(df_to_save.groupby(["measure_num", "ballet"]).agg(['count','nunique']).reset_index(drop=False)["body_movement"])
 
@@ -270,7 +274,7 @@ for b in ballets:
     p = figure(plot_width=400, plot_height=400)
     source = ColumnDataSource(data=dict(
         x=measure_count_df['measure_num'],
-        y=measure_count_df['counts'],
+        y=measure_count_df['movements_in_measure'],
         label=measure_count_df['ballet'],
     ))
     # add a circle renderer with a size, color, and alpha
