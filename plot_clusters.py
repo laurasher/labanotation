@@ -1,30 +1,30 @@
 import pandas as pd
 import numpy as np
 from bokeh.plotting import figure, output_file, show
-from bokeh.models import ColumnDataSource
+from bokeh.models import ColumnDataSource, Title
+from bokeh.transform import jitter
+
 
 def style_plots(fig):
     fig.background_fill_color = None
     fig.border_fill_color = None
     fig.toolbar.logo = None
     fig.toolbar_location = None
-    # fig.legend.background_fill_alpha = 0.3
+    fig.legend.background_fill_alpha = 0.3
     fig.outline_line_color = None
-    fig.title.text_font_size = "9pt"
+    fig.title.text_font_size = "11pt"
     fig.title.text_font_style = "bold"
-    fig.title.text_color = "#394d7e"
+    fig.title.text_color = "black"
     return fig
 
 
 data_root = "clustering_output/"
+jitter_amt = 0.08
 
 # ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird"]
-ballets = ["raymonda","coppelia_dawn"]
-colors = {
-    'raymonda':'blue',
-    'coppelia_dawn':'red',
-}
-p = figure(plot_width=600, plot_height=600)
+ballets = ["raymonda", "coppelia_dawn", "artifact"]
+colors = {"raymonda": "blue", "coppelia_dawn": "red", "artifact": "orange"}
+p = figure(plot_width=800, plot_height=600, title="Repetition and direction diversity indices")
 
 for b in ballets:
     bbox_file = f"{data_root}{b}_indices.csv"
@@ -42,11 +42,22 @@ for b in ballets:
         )
     )
     # add a circle renderer with a size, color, and alpha
-    p.circle("x", "y", size=7, color="col", alpha=0.8, source=source)
-    p.xaxis.axis_label = "direction_diversity_index"
-    p.xaxis.axis_label = "repetition_index"
-    p = style_plots(p)
+    p.circle(
+        jitter("x", jitter_amt),
+        jitter("y", jitter_amt),
+        size=7,
+        color="col",
+        alpha=0.8,
+        source=source,
+        legend_group="label",
+    )
+    
+p.xaxis.axis_label = "direction_diversity_index"
+p.yaxis.axis_label = "repetition_index"
+p = style_plots(p)
+p.legend.location = "top_right"
+p.legend.click_policy = "hide"
+p.add_layout(Title(text="Higher DDI, more diverse directional mvmt. Higher RI, more repetitive mvmt.", text_font_style="italic"), 'above')
 
 # show the results
 show(p)
-

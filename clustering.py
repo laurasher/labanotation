@@ -140,8 +140,8 @@ for b in ballets:
     measure_count_df = measure_count_df.merge(
         tmp, left_on="measure_num", right_on="measure_num"
     )
-    measure_count_df['repetition_index'] = measure_count_df['unique_body_movements_in_measure']/measure_count_df['movements_in_measure']
-    measure_count_df['direction_diversity_index'] = measure_count_df['unique_directions_in_measure']/measure_count_df['movements_in_measure']
+    measure_count_df['repetition_index'] = 1-(measure_count_df['unique_body_movements_in_measure']/measure_count_df['movements_in_measure'])
+    measure_count_df['direction_diversity_index'] = (measure_count_df['unique_directions_in_measure']/measure_count_df['movements_in_measure'])
 
     print(measure_count_df)
 
