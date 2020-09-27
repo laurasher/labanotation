@@ -5,7 +5,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMDU3ZWNhZDYxYTJiMjhkNWY3ZjhkYzNkY2JjZDRjYmZhNTMxMTM1ZTY0OTA4Y2NkMjNlNWMxMWVmOWNlODNjYzE0OWEwNmYyNzUxOGE3MzM0MTJkOWYzMDNhNjc3ODg5MTczYTVhNzJjMmI2NWRhYTVmNDA1NTJkNzc4ODRlOGQzNDU5NzMxMThkZWM2NGRiYzY3OWEyYTM0Nzg5YTM2ZmY5NzI1MmZlMGI3YzY2NjA3MTk0MjJjZTY1MjI5MGE2ZDZkNDI5ZjA5MWQ4ZThhZjdmMmEyNTI3MmRkZDdmMmYiLCJpdiI6ImNkY2Y3YmUwNmRkNjVhY2NhN2U1OGIwMTlhYjhiMjg1NjgzMzM3YTM4ZjVlYmUyNCJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYWM4NTgxYmFiNGU2NjA1YjYxMWE4NjU3NTRmYjcyNmYwNGY5NGZkMWJhN2RiM2ZiYzFiMTgzMzM0Yzc5NmFhMTgyZmUxZGE2ZDgwMTIyMzIyMWRhZTNmYTI0ZWJlMTJlNzdhMWZiOGE3NGNhMjIxZWQ4NDMzM2QyNmIwMmQzMzJmNWJlZDUzYjM4Yzk0MTM4NTc1ZDJiYTVlYWQ3YzMzZDc1NGMwYzU5MDc4ZDI4MmM0ODU4ZTkzOWFjODE3Y2Y0Y2QxZWMxZWMyNjMwZTBkNjUwMGU0YTBlYzRmZjQwZWEiLCJpdiI6IjUyYjUzYmFmYmNlMDg1ZDQ0NDI4Y2M5OTZlOWFlMmQzNTJiZWY0MTQzYTUyNjgxYSJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -13,7 +13,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMjQ4ODUzMmExNjRmZjk4NGU2YzgxOTI3MjE1Y2JjYjJhNDhjZGZlMWE0OGMwOGNiOTYzYTk4OTU5M2ExZGZhMTU3ZmIxMmNhYjVkMjk0NDE0MTMzNzkxMjZhNzY5OWMxMGRmZTMxOGYxYTM5NjhlNmNhNmFlZmFkYzdmNTNjZTdhZjYxYjI5M2I5NDJmZTY2M2MxYTVkYmRhN2RlNzk5ZDAxZmY5NGVmMGY0MjViN2ZjNDUwNzc1NjYwYjkwMzY1NDA5ZGFhMTZlMGYwNmI2NWQzZWVkNzY1ZTZhZjBkY2MiLCJpdiI6Ijk3NTJjYjRhNjQ3MTFiNTg5NDU3OGZiYWJkZmUxNTIxMzZkYjIxN2VhMjI5YTk0NCJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZjk4NWRlOWQ5ZDNkNjAzNGM1NDQ3NjNkMzVjYjM5ZjI2Njg4ODViZTUwMmYwNzJmN2FhMDExZDI0OTY0MzU4MjljZTM3NWRmNGMzYzg1NDZhYzQwZWE2M2Y3ZWE3ZTJlMmIwMmEwYTdkOTAxMzZhNzE5ZjYwNzk5NjExMWE4MDFhODhhZjEyYmQ4MTNhNWE2ZWY3ZGQyOTA3NTM5N2EwNTRiOTYwOTZmZGU3YzFjMzQyNGUzODIxNGExMzBiNzUyY2Y0MWUyZDg4ZWIzNzM4YWRjNzFlOTg0ZDM5MjhmMWMiLCJpdiI6ImQ0YjYzZTI3Njk4OTcwMzA5NWFkNzg1YWQ0ZGMzZWJmY2IzMWI4YzAyYjNjMTY4MCJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -352,6 +352,54 @@
         {
             "name": "measure_41",
             "color": "#6917aa"
+        },
+        {
+            "name": "measure_42",
+            "color": "#015cda"
+        },
+        {
+            "name": "measure_43",
+            "color": "#4894fe"
+        },
+        {
+            "name": "measure_44",
+            "color": "#6b849c"
+        },
+        {
+            "name": "measure_45",
+            "color": "#70c400"
+        },
+        {
+            "name": "measure_46",
+            "color": "#f7929a"
+        },
+        {
+            "name": "measure_47",
+            "color": "#257ffe"
+        },
+        {
+            "name": "measure_48",
+            "color": "#ddabe9"
+        },
+        {
+            "name": "measure_49",
+            "color": "#ff8c00"
+        },
+        {
+            "name": "measure_51",
+            "color": "#386300"
+        },
+        {
+            "name": "measure_52",
+            "color": "#b40e1b"
+        },
+        {
+            "name": "measure_53",
+            "color": "#68217a"
+        },
+        {
+            "name": "measure_54",
+            "color": "#33cccc"
         }
     ],
     "id": "d8wg-Kx9R",
@@ -363,11 +411,11 @@
     "exportFormat": {
         "providerType": "csv",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYmMyMTJjN2M4NjAyOGY1ZjdlNTZkOTJiMmIyMzNhZDgwOTM3YzQzNGY4MmJiYjk3NWQzZjk1MTI5OTg1OTdkNWY1ZjM0MjBmMTlkN2Q1ODBhZjRjMDg5NjRiOGMwYWUyIiwiaXYiOiI0M2ZiZmY4MDkzMDg4ZGZhNDBkOThlOTU5ZDc5Zjc4ZjM4ODE3NDRkYTY1OGNkMjYifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNzcyNGRjMDg0NjRlYjQ1ZDk2ZTE4NzY0MjZiZjU2MGQ4Njc5YTcxNDFjMjNmNTY2Yjk2ZjZiZDgxY2MwYjMyMzAxOWRjYjUxMzEwNmNhMTliMzc3MjdlYjFlNDJjMGM5IiwiaXYiOiI5ZmQ0NzEzZjU4ZjViY2JkMmY5MzVlNzJkMjIzOWYyZDliNGM0ZGZmOWJkOGM4YTQifQ=="
         }
     },
     "version": "2.2.0",
-    "lastVisitedAssetId": "0ccb7f1e6dcec7b2b8b4f4afb3844a06",
+    "lastVisitedAssetId": "87339bbf41e8d6f280cd2f1b20f0b043",
     "assets": {
         "f89a594ff35bcef1f0e7418dbcef2455": {
             "format": "png",
@@ -606,7 +654,7 @@
                 "width": 302,
                 "height": 678
             },
-            "state": 1,
+            "state": 2,
             "type": 1
         },
         "87339bbf41e8d6f280cd2f1b20f0b043": {
