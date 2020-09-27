@@ -10,8 +10,7 @@ pd.set_option("display.expand_frame_repr", False)
 data_root = "data/"
 
 # ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird"]
-# ballets = ["coppelia_dawn"]
-ballets = ["raymonda"]
+ballets = ["coppelia_dawn", "artifact", "raymonda"]
 
 # Cluster by
 ## Steps in one measure
@@ -30,8 +29,6 @@ for b in ballets:
     df["image"] = df["image"].str.replace("raymonda", "raymonda_none")
 
     df = df[df["image"].str.contains(b)].reset_index()
-
-    # print(df)
     df["step_length"] = df["ymax"] - df["ymin"]
     df["img_staff_num"] = df["image"].str.split("_").str[3].str.split(".").str[0].values
     df["img_num"] = df["image"].str.split("_").str[2].values
@@ -106,8 +103,6 @@ for b in ballets:
     df_to_save = df_to_save.drop(
         ["xmin", "xmax", "ymin", "ymax", "label", "image"], axis=1
     )
-    print(df_to_save)
-
     # Group by measure and create new dataframe for clustering
     ## Start with a simple metric, likw number of movements in each measure
     measure_count_df = (
@@ -130,7 +125,7 @@ for b in ballets:
         .reset_index(drop=False)
         .reset_index()
     )
-    print(unique_body_movements)
+
     tmp = pd.DataFrame(
         data={
             "measure_num": list(unique_body_movements["measure_num"].astype(int)),
@@ -149,27 +144,6 @@ for b in ballets:
     measure_count_df['direction_diversity_index'] = measure_count_df['unique_directions_in_measure']/measure_count_df['movements_in_measure']
 
     print(measure_count_df)
-
-    # Plot clustering results
-    from bokeh.plotting import figure, output_file, show
-    from bokeh.models import ColumnDataSource
-
-    # output to static HTML file
-    # output_file(f"{b}_scatter_measure_movement_counts.html")
-
-    p = figure(plot_width=400, plot_height=400)
-    source = ColumnDataSource(
-        data=dict(
-            x=measure_count_df["direction_diversity_index"],
-            y=measure_count_df["repetition_index"],
-            label=measure_count_df["ballet"],
-        )
-    )
-    # add a circle renderer with a size, color, and alpha
-    p.circle("x", "y", size=10, color="blue", alpha=0.5, source=source)
-
-    # show the results
-    # show(p)
 
     measure_count_df.to_csv(f"clustering_output/{b}_indices.csv", index=False)
     # with open(f"bbox_output/{b}.json", 'w') as outfile:
