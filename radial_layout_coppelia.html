@@ -6,7 +6,7 @@
 	<!-- D3.js -->
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script> -->
 	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<script src="d3-scale-radial.js"></script>
+	<!-- <script src="d3-scale-radial.js"></script> -->
 	
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel='stylesheet' type='text/css'>
@@ -97,7 +97,11 @@
 		var barHeightMulitplier = 200
 		var dataset; // global
 		var numRadialSpokes = 11
-		var randJitter = true
+		var randJitter = false
+		var lineRes = 0.005
+		var radialLineWidth = 0.5
+		// var lineRes = 0.005/5
+		// var radialLineWidth = 0.1
 
 		function getRandomNumber(start, end) {
 	        return (Math.random() * (end-start) * 100)/100 + start;
@@ -196,7 +200,6 @@
 				d.thetaRad = degrees_to_radians( bodyMovementToTheta(d.body_movement) + 50 )
 			});
 
-			// console.log(dataset)
 
 			//Set the minimum inner radius and max outer radius of the chart
 			var	outerRadius = Math.min(width, height, 250)/2,
@@ -303,17 +306,13 @@
 			var dataArr = []
 			var data = []
 			var dataStyling = []
-			var lineRes = 0.005/5
-			var radialLineWidth = 0.1
+
 			radArr = dataset.map(x=>(x.ymin * x.staff_num)/25)
 			function findClosest(num, spoke){
 				if (Math.abs(num[0] - spoke) <= 0.03) return 1
 			}
-			console.log(radArr)
 			for (ii = 0; ii < radArr.length; ii++) {
 				if(dataset[ii].body_movement!=null){
-					console.log(dataset[ii])
-					console.log(dataset[ii].body_movement.includes("arm"))
 					// if(dataset[ii].body_movement.includes("arm")){
 					data = []
 					for (i = 0; i <= 2; i=i+lineRes) {
@@ -329,7 +328,7 @@
 					// find theta closest to chosen spokeArr
 					index = data.findIndex(x => findClosest(x, closestSpoke));
 					data[index] = [data[index][0], radArr[ii]+ dataset[ii].step_length * 60]
-					for (j=1; j<=5; j++){
+					for (j=1; j<=1; j++){
 						data[index-j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * (60 - 2.5*j))]
 						data[index+j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * (60 - 2.5*j))]
 					}
@@ -340,18 +339,21 @@
 			var lineRadial = d3.lineRadial();
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
+			var highlight = "body"
 
 			for (i = 0; i < dataArr.length; i++) {
+				className = "radial_"+dataStyling[i].body_movement
+				console.log(className)
+				console.log(dataStyling[i])
 				radialWrapper
 				    .append("path")
-				    // .data(dataset)
-				    // .attr("stroke-width", function(d,i) { return d.step_length*2})
 				    .attr("d", lineRadial(dataArr[i].data))
-				    .data(dataStyling)
-				    .attr("opacity", function(d,i) { return d.body_movement.includes("arm") ? 1 : 0.1 })
+				    .attr("class", className)
+				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.2 })
 				    .attr("fill", "none")
-				    .attr("stroke-width", radialLineWidth)
-				    .attr("stroke", "black");
+				    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*8 : radialLineWidth })
+				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				    // .attr("stroke", "black")
 			}
 
 
