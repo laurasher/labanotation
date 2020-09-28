@@ -6,7 +6,8 @@
 	<!-- D3.js -->
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script> -->
 	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<script src="d3-scale-radial.js"></script>
+	<!-- <script src="d3-scale-radial.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel='stylesheet' type='text/css'>
@@ -78,12 +79,30 @@
 	  		opacity: 0.2;
 	  		display: none;
 	  	}
+	  	button:focus {outline:0;}
+	  	.body-button{
+	  		/*background: white;*/
+	  		border-radius: 3px;
+	  		background: transparent;
+			color: black;
+			border: 1px solid black;
+			padding: 5px;
+	  	}
+	  	.enabled{
+	  		background: white;
+	  	}
 	</style>
 
 	
 </head>	
 <body>
-	
+	<button id="head-button" class="body-button enabled">head</button>
+	<button id="arm-button" class="body-button">arm</button>
+	<button id="hand-button" class="body-button">hand</button>
+	<button id="leg-button" class="body-button">leg</button>
+	<button id="body-button" class="body-button">body</button>
+	<button id="foot-button" class="body-button">foot</button>
+	<button id="all-button" class="body-button">all</button>
 	<div id="choreoRadial"></div>
 	<script>
 		///////////////////////////////////////////////////////////////////////////
@@ -96,8 +115,12 @@
 		var barWidth = 10
 		var barHeightMulitplier = 200
 		var dataset; // global
-		var numRadialSpokes = 11
-		var randJitter = true
+		var numRadialSpokes = 8
+		var randJitter = false
+		var lineRes = 0.005
+		var radialLineWidth = 0.5
+		// var lineRes = 0.005/5
+		// var radialLineWidth = 0.1
 
 		function getRandomNumber(start, end) {
 	        return (Math.random() * (end-start) * 100)/100 + start;
@@ -184,6 +207,33 @@
 				}
 			}
 
+			function bodyDirectionToTheta(body_movement, direction){
+				switch(direction){
+					case "place":
+						return;
+					case "forward":
+						return spokeArr[0]
+					case "forward_diagonal":
+						if (body_movement.includes("right")){
+							return spokeArr[1]
+						} else {
+							return spokeArr[7]
+						}
+					case "right":
+						return spokeArr[2];
+					case "backward_diagonal":
+						if (body_movement.includes("right")){
+							return spokeArr[3]
+						} else {
+							return spokeArr[5]
+						}
+					case "backward":
+						return spokeArr[4];
+					case "left":
+						return spokeArr[6];
+				}
+			}
+
 			// staff_num corresponds to R, radius
 			dataset.forEach(function(d) {
 				d.rad = staffNumToRad(d.staff_num) 
@@ -192,11 +242,12 @@
 
 			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
 			dataset.forEach(function(d) {
-				d.theta = bodyMovementToTheta(d.body_movement) + 50
-				d.thetaRad = degrees_to_radians( bodyMovementToTheta(d.body_movement) + 50 )
+				// d.theta = bodyMovementToTheta(d.body_movement) + 50
+				d.theta = bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50
+				// d.thetaRad = degrees_to_radians( bodyMovementToTheta(d.body_movement) + 50 )
+				d.thetaRad = degrees_to_radians( bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50 )
 			});
 
-			// console.log(dataset)
 
 			//Set the minimum inner radius and max outer radius of the chart
 			var	outerRadius = Math.min(width, height, 250)/2,
@@ -302,52 +353,195 @@
 
 			var dataArr = []
 			var data = []
-			var lineRes = 0.005
-			radArr = dataset.map(x=>(x.ymin * x.staff_num)/15)
-			console.log(dataset)
+			var dataStyling = []
 
+			radArr = dataset.map(x=>(x.ymin * x.staff_num)/25)
 			function findClosest(num, spoke){
-				if (Math.abs(num[0] - spoke) <= 0.02) return 1
+				if (Math.abs(num[0] - spoke) <= 0.03) return 1
 			}
-
 			for (ii = 0; ii < radArr.length; ii++) {
-				data = []
-				for (i = 0; i <= 2; i=i+lineRes) {
-				  data.push([Math.PI * i, radArr[ii] + getRandomNumber(-0.5, 0.5) ])
+				if(dataset[ii].body_movement!=null){
+					// if(dataset[ii].body_movement.includes("arm")){
+					data = []
+					for (i = 0; i <= 2; i=i+lineRes) {
+					  data.push([Math.PI * i, radArr[ii] + getRandomNumber(-0.5, 0.5) ])
+					}
+					dataStyling.push({'body_movement' : dataset[ii].body_movement, 'step_length' : dataset[ii].step_length})
+					arr = spokeArrRad
+					num = degrees_to_radians(dataset[ii].theta)
+					var closestSpoke = arr.reduce(function(prev, curr) {
+				  		return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev);
+					});
+					
+					// find theta closest to chosen spokeArr
+					index = data.findIndex(x => findClosest(x, closestSpoke));
+					data[index] = [data[index][0], radArr[ii]+dataset[ii].step_length * 300]
+					// for (j=0; j<=2; j++){
+					// 	data[index-j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * (160 - 2.5*j))]
+					// 	data[index+j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * (160 - 2.5*j))]
+					// }
+					dataArr.push({data})
 				}
-				arr = spokeArrRad
-				num = degrees_to_radians(dataset[ii].theta)
-				var closestSpoke = arr.reduce(function(prev, curr) {
-			  		return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev);
-				});
-				
-				// find theta closest to chosen spokeArr
-				index = data.findIndex(x => findClosest(x, closestSpoke));
-				data[index] = [data[index][0], radArr[ii]+ dataset[ii].step_length*50]
-				// need to say data[spokeArrIndex]
-				dataArr.push({data})
 			}
 
 			var lineRadial = d3.lineRadial();
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
+			var highlight = "head"
 
 			for (i = 0; i < dataArr.length; i++) {
+				className = "radial_"+dataStyling[i].body_movement
 				radialWrapper
 				    .append("path")
 				    .attr("d", lineRadial(dataArr[i].data))
+				    .attr("class", className)
+				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
 				    .attr("fill", "none")
-				    .attr("stroke-width", 0.2)
-				    .attr("stroke", "black");
+				    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 			}
 
-
-		    var alignRotate = -145;
-		    lineWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    barWrapper.attr("transform", function(d,i) { return "rotate(" + ( 131 ) + ")"; })
-		    labelWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( -62 ) + ")"; })
-
+			////////////////////////////////////////////// buttons //////////////////////////////////////////////
+			$('#head-button').click(function(){
+				console.log("HEAD");
+				$('.body-button').removeClass('enabled')
+				$('#head-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "head"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#arm-button').click(function(){
+				console.log("ARM");
+				$('.body-button').removeClass('enabled')
+				$('#arm-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "arm"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#leg-button').click(function(){
+				console.log("LEG");
+				$('.body-button').removeClass('enabled')
+				$('#leg-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "leg"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#foot-button').click(function(){
+				console.log("FOOT");
+				$('.body-button').removeClass('enabled')
+				$('#foot-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "support"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#body-button').click(function(){
+				console.log("BODY");
+				$('.body-button').removeClass('enabled')
+				$('#body-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "body"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#hand-button').click(function(){
+				console.log("HAND");
+				$('.body-button').removeClass('enabled')
+				$('#hand-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "hand"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#all-button').click(function(){
+				console.log("ALL");
+				$('.body-button').removeClass('enabled')
+				$('#all-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "hand"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", 0.6)
+					    .attr("fill", "none")
+					    .attr("stroke-width", radialLineWidth/3)
+					    .attr("stroke", "black");
+				}
+			});
 		});
 	</script>
 

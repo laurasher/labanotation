@@ -7,6 +7,7 @@
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script> -->
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<!-- <script src="d3-scale-radial.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel='stylesheet' type='text/css'>
@@ -78,12 +79,30 @@
 	  		opacity: 0.2;
 	  		display: none;
 	  	}
+	  	button:focus {outline:0;}
+	  	.body-button{
+	  		/*background: white;*/
+	  		border-radius: 3px;
+	  		background: transparent;
+			color: black;
+			border: 1px solid black;
+			padding: 5px;
+	  	}
+	  	.enabled{
+	  		background: white;
+	  	}
 	</style>
 
 	
 </head>	
 <body>
-	
+	<button id="head-button" class="body-button enabled">head</button>
+	<button id="arm-button" class="body-button">arm</button>
+	<button id="hand-button" class="body-button">hand</button>
+	<button id="leg-button" class="body-button">leg</button>
+	<button id="body-button" class="body-button">body</button>
+	<button id="foot-button" class="body-button">foot</button>
+	<button id="all-button" class="body-button">all</button>
 	<div id="choreoRadial"></div>
 	<script>
 		///////////////////////////////////////////////////////////////////////////
@@ -368,7 +387,7 @@
 			var lineRadial = d3.lineRadial();
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
-			var highlight = "right_arm"
+			var highlight = "head"
 
 			for (i = 0; i < dataArr.length; i++) {
 				className = "radial_"+dataStyling[i].body_movement
@@ -378,16 +397,151 @@
 				    .attr("class", className)
 				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
 				    .attr("fill", "none")
-				    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*8 : radialLineWidth })
+				    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
-				    // .attr("stroke", "black")
 			}
 
-
-		    // var alignRotate = -145;
-		    // lineWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    // radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( -62 ) + ")"; })
-
+			////////////////////////////////////////////// buttons //////////////////////////////////////////////
+			$('#head-button').click(function(){
+				console.log("HEAD");
+				$('.body-button').removeClass('enabled')
+				$('#head-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "head"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#arm-button').click(function(){
+				console.log("ARM");
+				$('.body-button').removeClass('enabled')
+				$('#arm-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "arm"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#leg-button').click(function(){
+				console.log("LEG");
+				$('.body-button').removeClass('enabled')
+				$('#leg-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "leg"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#foot-button').click(function(){
+				console.log("FOOT");
+				$('.body-button').removeClass('enabled')
+				$('#foot-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "support"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#body-button').click(function(){
+				console.log("BODY");
+				$('.body-button').removeClass('enabled')
+				$('#body-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "body"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#hand-button').click(function(){
+				console.log("HAND");
+				$('.body-button').removeClass('enabled')
+				$('#hand-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "hand"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+					    .attr("fill", "none")
+					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
+					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				}
+			});
+			$('#all-button').click(function(){
+				console.log("ALL");
+				$('.body-button').removeClass('enabled')
+				$('#all-button').addClass('enabled')
+				radialWrapper.remove()
+				radialWrapper = svg.append("g")
+					.attr("transform", "translate(" + 0 + "," + 0 + ")");
+				let highlight = "hand"
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", 0.6)
+					    .attr("fill", "none")
+					    .attr("stroke-width", radialLineWidth/3)
+					    .attr("stroke", "black");
+				}
+			});
 		});
 	</script>
 
