@@ -96,7 +96,7 @@
 		var barWidth = 10
 		var barHeightMulitplier = 200
 		var dataset; // global
-		var numRadialSpokes = 11
+		var numRadialSpokes = 8
 		var randJitter = false
 		var lineRes = 0.005
 		var radialLineWidth = 0.5
@@ -188,6 +188,33 @@
 				}
 			}
 
+			function bodyDirectionToTheta(body_movement, direction){
+				switch(direction){
+					case "place":
+						return;
+					case "forward":
+						return spokeArr[0]
+					case "forward_diagonal":
+						if (body_movement.includes("right")){
+							return spokeArr[1]
+						} else {
+							return spokeArr[7]
+						}
+					case "right":
+						return spokeArr[2];
+					case "backward_diagonal":
+						if (body_movement.includes("right")){
+							return spokeArr[3]
+						} else {
+							return spokeArr[5]
+						}
+					case "backward":
+						return spokeArr[4];
+					case "left":
+						return spokeArr[6];
+				}
+			}
+
 			// staff_num corresponds to R, radius
 			dataset.forEach(function(d) {
 				d.rad = staffNumToRad(d.staff_num) 
@@ -196,8 +223,10 @@
 
 			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
 			dataset.forEach(function(d) {
-				d.theta = bodyMovementToTheta(d.body_movement) + 50
-				d.thetaRad = degrees_to_radians( bodyMovementToTheta(d.body_movement) + 50 )
+				// d.theta = bodyMovementToTheta(d.body_movement) + 50
+				d.theta = bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50
+				// d.thetaRad = degrees_to_radians( bodyMovementToTheta(d.body_movement) + 50 )
+				d.thetaRad = degrees_to_radians( bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50 )
 			});
 
 
@@ -327,11 +356,11 @@
 					
 					// find theta closest to chosen spokeArr
 					index = data.findIndex(x => findClosest(x, closestSpoke));
-					data[index] = [data[index][0], radArr[ii]+ dataset[ii].step_length * 60]
-					for (j=1; j<=1; j++){
-						data[index-j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * (60 - 2.5*j))]
-						data[index+j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * (60 - 2.5*j))]
-					}
+					data[index] = [data[index][0], radArr[ii]+dataset[ii].step_length * 300]
+					// for (j=0; j<=2; j++){
+					// 	data[index-j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * (160 - 2.5*j))]
+					// 	data[index+j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * (160 - 2.5*j))]
+					// }
 					dataArr.push({data})
 				}
 			}
@@ -339,17 +368,15 @@
 			var lineRadial = d3.lineRadial();
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
-			var highlight = "body"
+			var highlight = "right_arm"
 
 			for (i = 0; i < dataArr.length; i++) {
 				className = "radial_"+dataStyling[i].body_movement
-				console.log(className)
-				console.log(dataStyling[i])
 				radialWrapper
 				    .append("path")
 				    .attr("d", lineRadial(dataArr[i].data))
 				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.2 })
+				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
 				    .attr("fill", "none")
 				    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*8 : radialLineWidth })
 				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
@@ -357,11 +384,9 @@
 			}
 
 
-		    var alignRotate = -145;
-		    lineWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    barWrapper.attr("transform", function(d,i) { return "rotate(" + ( 131 ) + ")"; })
-		    labelWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( -62 ) + ")"; })
+		    // var alignRotate = -145;
+		    // lineWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    // radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( -62 ) + ")"; })
 
 		});
 	</script>
