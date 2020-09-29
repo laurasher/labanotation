@@ -162,3 +162,4 @@ def label_measures(row, measures):
     # res = measures[ (abs(row['ymin']-measures['ymin'])<=10) & (abs(row['ymax']-measures['ymax'])<=10) & (row['staff_num']==measures['staff_num']) ]
     if not res.empty:
         return re.findall(r"\d+", res["label"].values[0])[0]
+        

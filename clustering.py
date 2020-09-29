@@ -22,7 +22,13 @@ lookup_table = pd.DataFrame.from_dict(
             "songs",
         ],
         "year": ["1870", "1984", "1898", "1890", "1956"],
-        "choreographer": ["arthur_saint-leon", "william_forsythe", "marius_petipa", "marius_petipa", "mary_anthony"],
+        "choreographer": [
+            "arthur_saint-leon",
+            "william_forsythe",
+            "marius_petipa",
+            "marius_petipa",
+            "mary_anthony",
+        ],
         "nationality": ["french", "american", "french", "french", "american"],
     }
 )
@@ -88,6 +94,21 @@ for b in ballets:
 
     # Group by measures
     measures = df[df["label"].str.contains("measure")]
+    measures["measure_num"] = measures["label"].str.split('_').str[1]
+    measures = measures[
+        [
+            "ballet",
+            "ymin",
+            "ymax",
+            "label",
+            "step_length",
+            "img_num",
+            "img_staff_num",
+            "staff_num",
+            "measure_num"
+        ]
+    ]
+    print(measures)
     df = df[~df["label"].str.contains("measure")]
     df["measure_num"] = df.apply(lambda row: label_measures(row, measures), axis=1)
 
@@ -105,17 +126,29 @@ for b in ballets:
     df["height_movement"] = df.apply(lambda row: label_height_movement(row), axis=1)
     df = df.drop([0, 1, "img_num", "img_staff_num"], axis=1)
     df_to_save = df[df["image"].str.contains(b)].reset_index()
-    # .drop(["image"], axis=1).reset_index()
-    # df_to_save = df_to_save.drop(["index", 2], axis=1)
 
     # Normalize step lengths from 0 to 1
     df_to_save["step_length"] = (
         df_to_save["step_length"] - np.min(df_to_save["step_length"])
     ) / (np.max(df_to_save["step_length"]) - np.min(df_to_save["step_length"]))
-    df_to_save = df_to_save.drop(
-        ["xmin", "xmax", "ymin", "ymax", "label", "image"], axis=1
-    )
+    df_to_save = df_to_save[
+        [
+            "ballet",
+            "staff_num",
+            "step_length",
+            "ymin",
+            "ymax",
+            "measure_num",
+            "direction_movement",
+            "body_movement",
+            "height_movement",
+        ]
+    ]
     print(df_to_save)
+    # df_to_save = df_to_save.drop(
+    #     ["xmin", "xmax", "ymin", "ymax", "label", "image"], axis=1
+    # )
+
     # Group by measure and create new dataframe for clustering
     ## Start with a simple metric, like number of movements in each measure
     measure_count_df = (
@@ -165,7 +198,7 @@ for b in ballets:
         lookup_table, left_on="ballet", right_on="ballet"
     )
     # print(lookup_table)
-    print(measure_count_df)
+    # print(measure_count_df)
     measure_count_df.to_csv(f"clustering_output/{b}_indices.csv", index=False)
     # with open(f"bbox_output/{b}.json", 'w') as outfile:
     #     json.dump(json.loads(df_to_save.reset_index().to_json(orient='records')), outfile)
