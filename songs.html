@@ -134,8 +134,10 @@
 		  return rad * (180/pi);
 		}
 
-		d3.json(datapath+"raymonda.json", function(data) {
+		d3.json(datapath+"songs.json", function(data) {
 		    dataset = data;
+		    // dataset = dataset.filter(x=>x.direction_movement=='backward_diagonal')
+		    console.log(dataset)
 			var spokeArr = d3.range(0,359,359/numRadialSpokes)
 			var spokeArrRad = spokeArr.map(x => degrees_to_radians(x))
 			var bodyMovements = [
@@ -387,7 +389,7 @@
 			var lineRadial = d3.lineRadial();
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
-			var highlight = "head"
+			var highlight = "leg"
 
 			for (i = 0; i < dataArr.length; i++) {
 				className = "radial_"+dataStyling[i].body_movement
@@ -557,8 +559,8 @@
 					    .attr("stroke", "black");
 				}
 		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-				
 			});
+
 		});
 	</script>
 

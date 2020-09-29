@@ -134,10 +134,13 @@
 		  return rad * (180/pi);
 		}
 
-		d3.json(datapath+"raymonda.json", function(data) {
+		d3.json(datapath+"korobushka.json", function(data) {
+		    // dataset = data.filter(x=>x.direction_movement=="right");
 		    dataset = data;
+			// console.log(dataset)
 			var spokeArr = d3.range(0,359,359/numRadialSpokes)
 			var spokeArrRad = spokeArr.map(x => degrees_to_radians(x))
+			console.log(spokeArr)
 			var bodyMovements = [
 									"head",
 									"right_hand",
@@ -213,6 +216,8 @@
 						return;
 					case "forward":
 						return spokeArr[0]
+					case "backward":
+						return spokeArr[4];
 					case "forward_diagonal":
 						if (body_movement.includes("right")){
 							return spokeArr[1]
@@ -227,8 +232,6 @@
 						} else {
 							return spokeArr[5]
 						}
-					case "backward":
-						return spokeArr[4];
 					case "left":
 						return spokeArr[6];
 				}
@@ -400,7 +403,7 @@
 				    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 			}
-
+			
 			var alignRotate = -44;
 		    radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 
@@ -424,8 +427,6 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-
 			});
 			$('#arm-button').click(function(){
 				console.log("ARM");
@@ -446,8 +447,6 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-
 			});
 			$('#leg-button').click(function(){
 				console.log("LEG");
@@ -468,8 +467,6 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-
 			});
 			$('#foot-button').click(function(){
 				console.log("FOOT");
@@ -490,8 +487,6 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-
 			});
 			$('#body-button').click(function(){
 				console.log("BODY");
@@ -512,8 +507,6 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-
 			});
 			$('#hand-button').click(function(){
 				console.log("HAND");
@@ -534,8 +527,6 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-
 			});
 			$('#all-button').click(function(){
 				console.log("ALL");
@@ -556,8 +547,6 @@
 					    .attr("stroke-width", radialLineWidth/3)
 					    .attr("stroke", "black");
 				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-				
 			});
 		});
 	</script>

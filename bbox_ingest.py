@@ -8,7 +8,7 @@ pd.set_option("display.expand_frame_repr", False)
 
 data_root = "data/"
 
-# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird"]
+# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs", "korobushka"]
 ballets = ["songs"]
 
 for b in ballets:
@@ -20,6 +20,7 @@ for b in ballets:
     df["image"] = df["image"].str.replace("artifact", "artifact_none")
     df["image"] = df["image"].str.replace("raymonda", "raymonda_none")
     df["image"] = df["image"].str.replace("songs", "songs_none")
+    df["image"] = df["image"].str.replace("korobushka", "korobushka_none")
 
     df = df[df["image"].str.contains(b)].reset_index()
     df["step_length"] = df["ymax"] - df["ymin"]
@@ -80,6 +81,7 @@ for b in ballets:
     df_to_save["step_length"] = (
         df_to_save["step_length"] - np.min(df_to_save["step_length"])
     ) / (np.max(df_to_save["step_length"]) - np.min(df_to_save["step_length"]))
+    df_to_save = df_to_save.drop([2], axis=1).dropna()
     print(df_to_save)
     # print(json.dumps(json.loads(df_to_save.to_json(orient='records')), indent=4, sort_keys=True))
     df_to_save.to_csv(f"bbox_output/{b}.csv")

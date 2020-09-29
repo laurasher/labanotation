@@ -136,6 +136,8 @@
 
 		d3.json(datapath+"artifact.json", function(data) {
 		    dataset = data;
+		    // dataset = dataset.filter(x=>x.direction_movement=='backward_diagonal')
+		    console.log(dataset)
 			var spokeArr = d3.range(0,359,359/numRadialSpokes)
 			var spokeArrRad = spokeArr.map(x => degrees_to_radians(x))
 			var bodyMovements = [
@@ -401,6 +403,9 @@
 				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 			}
 
+			var alignRotate = -44;
+		    radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+
 			////////////////////////////////////////////// buttons //////////////////////////////////////////////
 			$('#head-button').click(function(){
 				console.log("HEAD");
@@ -421,6 +426,8 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+
 			});
 			$('#arm-button').click(function(){
 				console.log("ARM");
@@ -441,6 +448,8 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+
 			});
 			$('#leg-button').click(function(){
 				console.log("LEG");
@@ -461,6 +470,8 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+
 			});
 			$('#foot-button').click(function(){
 				console.log("FOOT");
@@ -481,6 +492,8 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+
 			});
 			$('#body-button').click(function(){
 				console.log("BODY");
@@ -501,6 +514,8 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+
 			});
 			$('#hand-button').click(function(){
 				console.log("HAND");
@@ -521,6 +536,8 @@
 					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+
 			});
 			$('#all-button').click(function(){
 				console.log("ALL");
@@ -541,7 +558,9 @@
 					    .attr("stroke-width", radialLineWidth/3)
 					    .attr("stroke", "black");
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 			});
+
 		});
 	</script>
 

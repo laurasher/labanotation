@@ -400,6 +400,9 @@
 				    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
 				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
 			}
+			
+			var alignRotate = -44;
+		    radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 
 			////////////////////////////////////////////// buttons //////////////////////////////////////////////
 			$('#head-button').click(function(){

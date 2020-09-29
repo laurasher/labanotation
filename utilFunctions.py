@@ -114,6 +114,11 @@ def label_staff_num(row, ballet):
             return 10
         if int(row["img_num"]) == 5 and int(row["img_staff_num"]) == 3:
             return 11
+    if ballet == "korobushka":
+        if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 1:
+            return 1
+        if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 2:
+            return 2
     else:
         if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 1:
             return 1
@@ -162,4 +167,3 @@ def label_measures(row, measures):
     # res = measures[ (abs(row['ymin']-measures['ymin'])<=10) & (abs(row['ymax']-measures['ymax'])<=10) & (row['staff_num']==measures['staff_num']) ]
     if not res.empty:
         return re.findall(r"\d+", res["label"].values[0])[0]
-        

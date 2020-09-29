@@ -10,7 +10,7 @@ pd.set_option("display.expand_frame_repr", False)
 data_root = "data/"
 
 # ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
-ballets = ["songs"]
+ballets = ["korobushka"]
 
 lookup_table = pd.DataFrame.from_dict(
     {
@@ -20,16 +20,18 @@ lookup_table = pd.DataFrame.from_dict(
             "raymonda",
             "sleepingbeauty_bluebird",
             "songs",
+            "korobushka"
         ],
-        "year": ["1870", "1984", "1898", "1890", "1956"],
+        "year": ["1870", "1984", "1898", "1890", "1956", "NA"],
         "choreographer": [
             "arthur_saint-leon",
             "william_forsythe",
             "marius_petipa",
             "marius_petipa",
             "mary_anthony",
+            'russian_folk'
         ],
-        "nationality": ["french", "american", "french", "french", "american"],
+        "nationality": ["french", "american", "french", "french", "american", "russian"],
     }
 )
 # Cluster by
@@ -49,6 +51,7 @@ for b in ballets:
     df["image"] = df["image"].str.replace("artifact", "artifact_none")
     df["image"] = df["image"].str.replace("raymonda", "raymonda_none")
     df["image"] = df["image"].str.replace("songs", "songs_none")
+    df["image"] = df["image"].str.replace("korobushka", "korobushka_none")
 
     df = df[df["image"].str.contains(b)].reset_index()
     df["step_length"] = df["ymax"] - df["ymin"]

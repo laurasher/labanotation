@@ -22,8 +22,8 @@ data_root = "clustering_output/"
 jitter_amt = 0.08
 
 # ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
-ballets = ["raymonda", "coppelia_dawn", "artifact", "songs"]
-colors = {"raymonda": "blue", "coppelia_dawn": "red", "artifact": "orange", "songs": "purple"}
+ballets = ["raymonda", "coppelia_dawn", "artifact", "songs", "korobushka"]
+colors = {"raymonda": "blue", "coppelia_dawn": "red", "artifact": "orange", "songs": "purple", "korobushka":"black"}
 p = figure(plot_width=800, plot_height=600, title="Repetition and direction diversity indices")
 
 for b in ballets:
@@ -36,7 +36,8 @@ for b in ballets:
     # output_file(f"{b}_scatter_measure_movement_counts.html")
     source = ColumnDataSource(
         data=dict(
-            x=df["direction_diversity_index"],
+            # x=df["direction_diversity_index"],
+            x=df["repetition_index"],
             y=df["repetition_index"],
             label=df["ballet"],
             col=df["color"],

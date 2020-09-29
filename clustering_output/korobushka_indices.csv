@@ -1,0 +1,10 @@
+ballet,measure_num,movements_in_measure,unique_body_movements_in_measure,unique_directions_in_measure,repetition_index,direction_diversity_index,year,choreographer,nationality
+korobushka,1,2,2,1,0.0,0.5,NA,russian_folk,russian
+korobushka,2,5,2,3,0.6,0.6,NA,russian_folk,russian
+korobushka,3,3,2,2,0.33333333333333337,0.6666666666666666,NA,russian_folk,russian
+korobushka,4,4,2,2,0.5,0.5,NA,russian_folk,russian
+korobushka,5,4,3,3,0.25,0.75,NA,russian_folk,russian
+korobushka,6,5,3,4,0.4,0.8,NA,russian_folk,russian
+korobushka,7,4,3,3,0.25,0.75,NA,russian_folk,russian
+korobushka,8,3,2,2,0.33333333333333337,0.6666666666666666,NA,russian_folk,russian
+korobushka,9,4,2,2,0.5,0.5,NA,russian_folk,russian
