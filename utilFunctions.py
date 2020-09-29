@@ -91,6 +91,29 @@ def label_staff_num(row, ballet):
             return 8
         if int(row["img_num"]) == 3 and int(row["img_staff_num"]) == 3:
             return 9
+    if ballet == "songs":
+        if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 1:
+            return 1
+        if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 2:
+            return 2
+        if int(row["img_num"]) == 2 and int(row["img_staff_num"]) == 1:
+            return 3
+        if int(row["img_num"]) == 2 and int(row["img_staff_num"]) == 2:
+            return 4
+        if int(row["img_num"]) == 3 and int(row["img_staff_num"]) == 1:
+            return 5
+        if int(row["img_num"]) == 3 and int(row["img_staff_num"]) == 2:
+            return 6
+        if int(row["img_num"]) == 4 and int(row["img_staff_num"]) == 1:
+            return 7
+        if int(row["img_num"]) == 4 and int(row["img_staff_num"]) == 2:
+            return 8
+        if int(row["img_num"]) == 5 and int(row["img_staff_num"]) == 1:
+            return 9
+        if int(row["img_num"]) == 5 and int(row["img_staff_num"]) == 2:
+            return 10
+        if int(row["img_num"]) == 5 and int(row["img_staff_num"]) == 3:
+            return 11
     else:
         if int(row["img_num"]) == 1 and int(row["img_staff_num"]) == 1:
             return 1
@@ -121,7 +144,7 @@ def label_staff_num(row, ballet):
 def label_measures(row, measures):
     margin = 2
     res = measures[
-        (
+        ((
             (row["ymin"] >= measures["ymin"])
             | (row["ymin"] >= measures["ymin"] - margin)
             | (row["ymin"] >= measures["ymin"] + margin)
@@ -130,6 +153,9 @@ def label_measures(row, measures):
             (row["ymax"] <= measures["ymax"])
             | (row["ymax"] <= measures["ymax"] - margin)
             | (row["ymax"] <= measures["ymax"] + margin)
+            | ( (row["ymax"] >= measures["ymax"]) & (row["ymax"] <= measures["ymax"]) )
+        )
+        | ( (row["ymax"] > measures["ymin"]) & (row["ymax"] < measures["ymax"]) )
         )
         & (row["staff_num"] == measures["staff_num"])
     ]

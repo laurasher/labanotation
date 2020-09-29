@@ -1,0 +1,8 @@
+ballet,measure_num,movements_in_measure,unique_body_movements_in_measure,unique_directions_in_measure,repetition_index,direction_diversity_index,year,choreographer,nationality
+songs,1,5,5,2,0.0,0.4,1956,mary_anthony,american
+songs,2,8,3,2,0.625,0.25,1956,mary_anthony,american
+songs,3,5,5,2,0.0,0.4,1956,mary_anthony,american
+songs,4,15,7,3,0.5333333333333333,0.2,1956,mary_anthony,american
+songs,5,23,9,7,0.6086956521739131,0.30434782608695654,1956,mary_anthony,american
+songs,6,41,9,7,0.7804878048780488,0.17073170731707318,1956,mary_anthony,american
+songs,7,7,3,3,0.5714285714285714,0.42857142857142855,1956,mary_anthony,american

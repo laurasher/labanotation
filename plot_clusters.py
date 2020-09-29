@@ -21,15 +21,16 @@ def style_plots(fig):
 data_root = "clustering_output/"
 jitter_amt = 0.08
 
-# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird"]
-ballets = ["raymonda", "coppelia_dawn", "artifact"]
-colors = {"raymonda": "blue", "coppelia_dawn": "red", "artifact": "orange"}
+# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
+ballets = ["raymonda", "coppelia_dawn", "artifact", "songs"]
+colors = {"raymonda": "blue", "coppelia_dawn": "red", "artifact": "orange", "songs": "purple"}
 p = figure(plot_width=800, plot_height=600, title="Repetition and direction diversity indices")
 
 for b in ballets:
     bbox_file = f"{data_root}{b}_indices.csv"
     df = pd.read_csv(bbox_file)
     df["color"] = colors[b]
+    df["alpha"] = (df["measure_num"]-np.min(df["measure_num"]))/(np.max(df["measure_num"])-np.min(df["measure_num"]))
 
     # Plot clustering results
     # output_file(f"{b}_scatter_measure_movement_counts.html")
@@ -39,6 +40,7 @@ for b in ballets:
             y=df["repetition_index"],
             label=df["ballet"],
             col=df["color"],
+            alpha=df["alpha"]
         )
     )
     # add a circle renderer with a size, color, and alpha
@@ -47,13 +49,15 @@ for b in ballets:
         jitter("y", jitter_amt),
         size=7,
         color="col",
-        alpha=0.8,
+        line_width=1,
+        line_alpha=1,
+        alpha="alpha",
         source=source,
         legend_group="label",
     )
-    
-p.xaxis.axis_label = "direction_diversity_index"
-p.yaxis.axis_label = "repetition_index"
+
+p.xaxis.axis_label = "direction_diversity_index (DDI)"
+p.yaxis.axis_label = "repetition_index (RI)"
 p = style_plots(p)
 p.legend.location = "top_right"
 p.legend.click_policy = "hide"

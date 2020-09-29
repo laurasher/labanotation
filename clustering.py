@@ -9,15 +9,30 @@ pd.set_option("display.expand_frame_repr", False)
 
 data_root = "data/"
 
-# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird"]
-ballets = ["coppelia_dawn", "artifact", "raymonda"]
+# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
+ballets = ["songs"]
 
+lookup_table = pd.DataFrame.from_dict(
+    {
+        "ballet": [
+            "coppelia_dawn",
+            "artifact",
+            "raymonda",
+            "sleepingbeauty_bluebird",
+            "songs",
+        ],
+        "year": ["1870", "1984", "1898", "1890", "1956"],
+        "choreographer": ["arthur_saint-leon", "william_forsythe", "marius_petipa", "marius_petipa", "mary_anthony"],
+        "nationality": ["french", "american", "french", "french", "american"],
+    }
+)
 # Cluster by
 ## Steps in one measure
 ## Step lengthd in one measure
 ## Symmetry in the body in one measure
 ## Diversity of movements in one measure
 ## Repetition in measure
+## Sparseness (come up with index for this: amount of negative space) <-------
 
 for b in ballets:
     bbox_file = f"{data_root}coppelia_dawn/vott-csv-export/coppelia_dawn-export.csv"
@@ -27,6 +42,7 @@ for b in ballets:
     df["image"] = df["image"].str.replace("coppelia_2_", "coppelia_dawn_2_")
     df["image"] = df["image"].str.replace("artifact", "artifact_none")
     df["image"] = df["image"].str.replace("raymonda", "raymonda_none")
+    df["image"] = df["image"].str.replace("songs", "songs_none")
 
     df = df[df["image"].str.contains(b)].reset_index()
     df["step_length"] = df["ymax"] - df["ymin"]
@@ -81,10 +97,6 @@ for b in ballets:
         .reset_index()
         .drop(["index"], axis=1)
     )
-    # Create columns for movement: body (weight distribution), height, direction
-    # df = pd.concat([df, df["label"].str.split(",", expand=True)], axis=1).drop(
-    #     [2], axis=1
-    # )
     df = pd.concat([df, df["label"].str.split(",", expand=True)], axis=1)
     df["direction_movement"] = df.apply(
         lambda row: label_direction_movement(row), axis=1
@@ -94,7 +106,7 @@ for b in ballets:
     df = df.drop([0, 1, "img_num", "img_staff_num"], axis=1)
     df_to_save = df[df["image"].str.contains(b)].reset_index()
     # .drop(["image"], axis=1).reset_index()
-    df_to_save = df_to_save.drop(["index", 2], axis=1)
+    # df_to_save = df_to_save.drop(["index", 2], axis=1)
 
     # Normalize step lengths from 0 to 1
     df_to_save["step_length"] = (
@@ -103,8 +115,9 @@ for b in ballets:
     df_to_save = df_to_save.drop(
         ["xmin", "xmax", "ymin", "ymax", "label", "image"], axis=1
     )
+    print(df_to_save)
     # Group by measure and create new dataframe for clustering
-    ## Start with a simple metric, likw number of movements in each measure
+    ## Start with a simple metric, like number of movements in each measure
     measure_count_df = (
         df_to_save.groupby(["measure_num", "ballet"])
         .size()
@@ -125,7 +138,6 @@ for b in ballets:
         .reset_index(drop=False)
         .reset_index()
     )
-
     tmp = pd.DataFrame(
         data={
             "measure_num": list(unique_body_movements["measure_num"].astype(int)),
@@ -140,11 +152,20 @@ for b in ballets:
     measure_count_df = measure_count_df.merge(
         tmp, left_on="measure_num", right_on="measure_num"
     )
-    measure_count_df['repetition_index'] = 1-(measure_count_df['unique_body_movements_in_measure']/measure_count_df['movements_in_measure'])
-    measure_count_df['direction_diversity_index'] = (measure_count_df['unique_directions_in_measure']/measure_count_df['movements_in_measure'])
+    measure_count_df["repetition_index"] = 1 - (
+        measure_count_df["unique_body_movements_in_measure"]
+        / measure_count_df["movements_in_measure"]
+    )
+    measure_count_df["direction_diversity_index"] = (
+        measure_count_df["unique_directions_in_measure"]
+        / measure_count_df["movements_in_measure"]
+    )
 
+    measure_count_df = measure_count_df.merge(
+        lookup_table, left_on="ballet", right_on="ballet"
+    )
+    # print(lookup_table)
     print(measure_count_df)
-
     measure_count_df.to_csv(f"clustering_output/{b}_indices.csv", index=False)
     # with open(f"bbox_output/{b}.json", 'w') as outfile:
     #     json.dump(json.loads(df_to_save.reset_index().to_json(orient='records')), outfile)

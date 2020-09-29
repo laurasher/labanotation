@@ -5,7 +5,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNmEzMDg5MTQ5NmI2ZDM3NjEyMTc3MjI3MWRjNDEwMzU5ZmY5YzhkODAzYzhlNzU2OTNlYzYwZWI3ZTUyYmFhMjBjOWY0MzRkMjc5Y2VjYmRlMzNlYTliOWVlNTk1NGQ0MTZmY2EwNWQ1MzU0ZmQ4NTNkNWQ5MmU5YzA4YjE0MWEwZGM2NTQ2MjA4Yjc5YmU1MWNiYWE0Yjc5ZjYzZTg4YWE0MWU5YWU0YmIwZTNlZDZkNjViNTJiMTg2MTYxOGQwYWNlMDFhOWNmMjVjMzFkYTFjZjZjMGVhNmU2ZGQxMWUiLCJpdiI6ImM5Y2YyMzgxNGYxODdjMTRhZWMwYjViMmMxZGRmMDBjNTI2OWM5ZmMyZGU4M2M5ZiJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMmQyNjg1ODY3ZDYwOWUxMTQzYjg4OTQ1ODYxNDQ3NjBjZDExODgxYmIxYjRlZDUwNDFjZTkzYzZlZGUzYmU5ZTA1YmQ0NTJiMjI4MWMzMjE2OTYyODI4NWM1NmUyNTM0YzNiMjdiMTRjNjQxNjQ3NmE4ZjYzYWM1OTQ0ZDk1ZjIyYTRhMjdlMTNhODBjYWI5NWViN2MyZTYxMWVhNTViMTI3OTAwOWU2Y2Y4ZDgwYjQzZDA2YjAyZDcyMjkxMTYxZjE2MWY3NTI3Mzc4MjAyM2I4MmMwZjgyYjI2YmQ0MTAiLCJpdiI6IjZhZTk1NzYxNDYyYTM5NzRiZDJkOTQ1NDQ3NTZlM2FiYjZmMWZjYTY1MzY0M2U3OCJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -13,7 +13,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiY2UxMjRiNTBmZjU1MTQzOTFjODdlNmMyMTZkZTRkMGQ1MWRhNTQxYjIzNzQ3ZDMxZmE1OGVjNjZiZmMwMmVjZTc3ZGE5ZTE5ZjQ3NjkwN2U5ZmRiZmRmNWRhZTY4MWVkOWM5YjNhNjlhZmZiMTM3NzE2MGMwYmE5NDE3YzM5MWQ5ODA1OWRlNjBhMzJmY2E2ZTQyYmYwMzMxZTM2OWNmMmUwZTQxOTAyMDczZjk4NTZhOGUyNGJlZmQzODRjNjZmZWE1ZGZjZWRkNGQ3YmRiMGU4NGY2MWM0ZjUwMmU5NDQiLCJpdiI6IjhmZjU5M2Q2OTZmZmEyYjEzZTBiYjRhMGMwYTM5YjgzYjY4OTU3ZGQ2ZmM3MGFiNyJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNmNiYjlmN2M4NmI1ZTk4YzdkMjg3OWJkOGQxMTRiNTQ2ZWMzNWI2YzllODIzYzU0ZDg3YzljMmFlNGUzOGE3ZmJkNDY1NDUyYTA0Y2U0NTVjZTVjODY3OTU3ZTJmNTZjZDgwZGJhNzlhMzY1M2JjMmM4ODc5Y2NiMzc3ZmIwNWY4MjU0M2I2NmM3ODY0MjkzOTM0MDFkMTU5MmMxNDZlZDRiNmE3YTg5ZTA0MTNiNWI2Zjc3YTU3MzM3YTRiYjNiZDJiNzQ4Nzc2YzJlZDBkNzRlNGY3NTE0YmE4Mjg5ZWQiLCJpdiI6IjVhZmRkMzg1NTRmNTYxMGQ2MDY0MWMyZjY3Yjk4NjFlOTRkNDU1YTYzMGI0M2Y4YSJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -411,11 +411,11 @@
     "exportFormat": {
         "providerType": "csv",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMGZlMDAxNWJjNTVhNDMyM2NiYzg4ZWIxMmE0MTVlMTQyOTk0YzI4ODliMTA1ZGMzM2I2MWU2ODBhYTcyMzBiMWMyOGM1MzU2MTJjZjQxZTJjMzNjOTg5NDMyNTU1NGMzIiwiaXYiOiJiNjdiMzMzMDk3ZWE0ZTY4Yzc4NTc2MjZkM2E0YmRmMDM4M2FkZWNmYTFlODllMWMifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZjczYjFmMzhlYzBjYWY5OWIxZjc0NjQwZTVlMmJjNDNmMTAyMTFmNmUzNDAzMmVkNzkyZTdkYTYyZWE3YzhlNWQ2ZGFmNDRiNTA1MTc4YzIwMDU1NGRlODg5YTUyNTBhIiwiaXYiOiI2NTg5ZjRhNzNiZmIwNmYzNGU0OTZjNmI0ODUzMWE1MmQ1MTkzYjZiNDk4NmFhNzMifQ=="
         }
     },
     "version": "2.2.0",
-    "lastVisitedAssetId": "6657841af1683cf665c5a1cc2cd56d51",
+    "lastVisitedAssetId": "6a46a0e76a1a9a341853d6c2f894a0a8",
     "assets": {
         "f89a594ff35bcef1f0e7418dbcef2455": {
             "format": "png",
@@ -763,6 +763,138 @@
                 "height": 1362
             },
             "state": 1,
+            "type": 1
+        },
+        "e5c197945e6afbe1732d1fab39971d6d": {
+            "format": "png",
+            "id": "e5c197945e6afbe1732d1fab39971d6d",
+            "name": "songs_5_3.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_5_3.png",
+            "size": {
+                "width": 352,
+                "height": 496
+            },
+            "state": 1,
+            "type": 1
+        },
+        "e8c0701c7d853e67dfa7d8fa01feb779": {
+            "format": "png",
+            "id": "e8c0701c7d853e67dfa7d8fa01feb779",
+            "name": "songs_5_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_5_2.png",
+            "size": {
+                "width": 350,
+                "height": 706
+            },
+            "state": 1,
+            "type": 1
+        },
+        "51d40ee9a9cbf4c8a31a3df7e80191ec": {
+            "format": "png",
+            "id": "51d40ee9a9cbf4c8a31a3df7e80191ec",
+            "name": "songs_5_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_5_1.png",
+            "size": {
+                "width": 350,
+                "height": 916
+            },
+            "state": 1,
+            "type": 1
+        },
+        "f1d61e756160fa37576413e5d0ae17f3": {
+            "format": "png",
+            "id": "f1d61e756160fa37576413e5d0ae17f3",
+            "name": "songs_4_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_4_2.png",
+            "size": {
+                "width": 576,
+                "height": 1324
+            },
+            "state": 1,
+            "type": 1
+        },
+        "1a016e396e0d027fba525bc872f0a9e5": {
+            "format": "png",
+            "id": "1a016e396e0d027fba525bc872f0a9e5",
+            "name": "songs_4_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_4_1.png",
+            "size": {
+                "width": 544,
+                "height": 1318
+            },
+            "state": 1,
+            "type": 1
+        },
+        "67f35bb9e6d2156352c0d65d6e248660": {
+            "format": "png",
+            "id": "67f35bb9e6d2156352c0d65d6e248660",
+            "name": "songs_3_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_3_2.png",
+            "size": {
+                "width": 560,
+                "height": 1306
+            },
+            "state": 1,
+            "type": 1
+        },
+        "719f8dc7390edead967f00e3e9e751ee": {
+            "format": "png",
+            "id": "719f8dc7390edead967f00e3e9e751ee",
+            "name": "songs_3_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_3_1.png",
+            "size": {
+                "width": 464,
+                "height": 1316
+            },
+            "state": 1,
+            "type": 1
+        },
+        "42ff4d3d9f7e4b7727f2a7169e3743a7": {
+            "format": "png",
+            "id": "42ff4d3d9f7e4b7727f2a7169e3743a7",
+            "name": "songs_2_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_2_2.png",
+            "size": {
+                "width": 584,
+                "height": 1348
+            },
+            "state": 1,
+            "type": 1
+        },
+        "6a46a0e76a1a9a341853d6c2f894a0a8": {
+            "format": "png",
+            "id": "6a46a0e76a1a9a341853d6c2f894a0a8",
+            "name": "songs_2_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_2_1.png",
+            "size": {
+                "width": 506,
+                "height": 1282
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0cc8c282558f1916374e8a01b18f8011": {
+            "format": "png",
+            "id": "0cc8c282558f1916374e8a01b18f8011",
+            "name": "songs_1_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_1_2.png",
+            "size": {
+                "width": 476,
+                "height": 1356
+            },
+            "state": 2,
+            "type": 1
+        },
+        "026cc3ff25bdee7e5b2d20368aec0655": {
+            "format": "png",
+            "id": "026cc3ff25bdee7e5b2d20368aec0655",
+            "name": "songs_1_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/songs_1_1.png",
+            "size": {
+                "width": 686,
+                "height": 1402
+            },
+            "state": 2,
             "type": 1
         }
     }

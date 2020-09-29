@@ -9,7 +9,7 @@ pd.set_option("display.expand_frame_repr", False)
 data_root = "data/"
 
 # ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird"]
-ballets = ["sleepingbeauty_bluebird"]
+ballets = ["songs"]
 
 for b in ballets:
     bbox_file = f"{data_root}coppelia_dawn/vott-csv-export/coppelia_dawn-export.csv"
@@ -19,9 +19,9 @@ for b in ballets:
     df["image"] = df["image"].str.replace("coppelia_2_", "coppelia_dawn_2_")
     df["image"] = df["image"].str.replace("artifact", "artifact_none")
     df["image"] = df["image"].str.replace("raymonda", "raymonda_none")
+    df["image"] = df["image"].str.replace("songs", "songs_none")
 
     df = df[df["image"].str.contains(b)].reset_index()
-    print(df)
     df["step_length"] = df["ymax"] - df["ymin"]
     df["img_staff_num"] = df["image"].str.split("_").str[3].str.split(".").str[0].values
     df["img_num"] = df["image"].str.split("_").str[2].values
@@ -61,7 +61,6 @@ for b in ballets:
         .reset_index()
         .drop(["index"], axis=1)
     )
-    print(df)
     # Create columns for movement: body (weight distribution), height, direction
     # df = pd.concat([df, df["label"].str.split(",", expand=True)], axis=1).drop(
     #     [2], axis=1
@@ -82,7 +81,6 @@ for b in ballets:
         df_to_save["step_length"] - np.min(df_to_save["step_length"])
     ) / (np.max(df_to_save["step_length"]) - np.min(df_to_save["step_length"]))
     print(df_to_save)
-    print('-----------------------------------------------------------------')
     # print(json.dumps(json.loads(df_to_save.to_json(orient='records')), indent=4, sort_keys=True))
     df_to_save.to_csv(f"bbox_output/{b}.csv")
     with open(f"bbox_output/{b}.json", 'w') as outfile:
