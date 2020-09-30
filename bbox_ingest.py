@@ -8,8 +8,8 @@ pd.set_option("display.expand_frame_repr", False)
 
 data_root = "data/"
 
-# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs", "korobushka"]
-ballets = ["songs"]
+ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs", "korobushka"]
+# ballets = ["songs"]
 
 for b in ballets:
     bbox_file = f"{data_root}coppelia_dawn/vott-csv-export/coppelia_dawn-export.csv"
@@ -81,7 +81,17 @@ for b in ballets:
     df_to_save["step_length"] = (
         df_to_save["step_length"] - np.min(df_to_save["step_length"])
     ) / (np.max(df_to_save["step_length"]) - np.min(df_to_save["step_length"]))
-    df_to_save = df_to_save.drop([2], axis=1).dropna()
+    df_to_save = df_to_save[[ "image",
+                "ballet",
+                "ymin",
+                "ymax",
+                "staff_num",
+                "step_length",
+                "label",
+                "direction_movement",
+                "body_movement",
+                "height_movement"]]
+    # df_to_save = df_to_save.dropna()
     print(df_to_save)
     # print(json.dumps(json.loads(df_to_save.to_json(orient='records')), indent=4, sort_keys=True))
     df_to_save.to_csv(f"bbox_output/{b}.csv")

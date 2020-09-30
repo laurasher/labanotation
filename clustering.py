@@ -9,8 +9,8 @@ pd.set_option("display.expand_frame_repr", False)
 
 data_root = "data/"
 
-# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
-ballets = ["korobushka"]
+ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs", "korobushka"]
+# ballets = ["korobushka"]
 
 lookup_table = pd.DataFrame.from_dict(
     {

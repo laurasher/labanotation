@@ -1,46 +1,46 @@
-,image,ballet,xmin,xmax,ymin,ymax,staff_num,step_length,label,direction_movement,body_movement,height_movement
-0,korobushka_none_1_1.png,korobushka,0.8625,112.0,1254.8552450029833,1338.0,1,0.15444215335981895,measure_1,,,
-1,korobushka_none_1_1.png,korobushka,35.30625,58.3,1260.044385814439,1329.1185859188545,1,0.10334173809005692,"place, left_support_high",place,left_support,high
-2,korobushka_none_1_1.png,korobushka,53.3125,79.05,1259.4269279534606,1329.0125578013126,1,0.10519911134010967,"place, right_support_middle",place,right_support,middle
-3,korobushka_none_1_1.png,korobushka,0.0,112.0,936.384201596062,1252.3542288186156,1,1.0,measure_2,,,
-4,korobushka_none_1_1.png,korobushka,50.26875,77.72500000000002,1173.444361575179,1250.1276383502388,1,0.1309758279079248,"backward, right_support_middle",backward,right_support,middle
-5,korobushka_none_1_1.png,korobushka,33.456250000000004,53.77500000000001,1093.8671408860382,1171.5296185113366,1,0.13453201815497817,"backward, left_support_middle",backward,left_support,middle
-6,korobushka_none_1_1.png,korobushka,54.09375,77.825,1050.4018496420047,1097.2288559069211,1,0.02254600171273164,"backward, right_support_middle",backward,right_support,middle
-7,korobushka_none_1_1.png,korobushka,51.575,79.08125000000003,939.4403061605012,1020.3459967929593,1,0.14631048266751157,"place, right_support_middle",place,right_support,middle
-8,korobushka_none_1_1.png,korobushka,2.60625,112.0,627.6427972106205,938.7791896628877,1,0.9824455576976653,measure_3,,,
-9,korobushka_none_1_1.png,korobushka,33.06875,58.6125,861.0543425566824,937.1575831593077,1,0.12886929483164436,"forward, left_support_middle",forward,left_support,middle
-10,korobushka_none_1_1.png,korobushka,54.02500000000001,78.7625,778.8014711366349,858.7279609188545,1,0.14275429242045862,"forward, right_support_middle",forward,right_support,middle
-11,korobushka_none_1_1.png,korobushka,35.86875,59.4125,742.6209352625298,784.4396722106204,1,0.004357334398183794,"forward, left_support_middle",forward,left_support,middle
-12,korobushka_none_1_1.png,korobushka,35.275,56.86875,622.5160258800715,708.7854918705251,1,0.16579025089978014,"place, left_support_middle",place,left_support,middle
-13,korobushka_none_1_1.png,korobushka,1.5375,106.86875,312.26528005668257,627.9109859785203,1,0.9988221535487469,measure_4,,,
-14,korobushka_none_1_1.png,korobushka,53.15625,82.8625,547.7599660650358,626.2082991497613,1,0.13738603070993802,"right_support_middle, backward",backward,right_support,middle
-15,korobushka_none_1_1.png,korobushka,33.8125,56.0375,471.71285799522667,547.897178923031,1,0.12916375644445777,"backward, left_support_middle",backward,left_support,middle
-16,korobushka_none_1_1.png,korobushka,55.00625,78.15,427.76732174821,469.3864763573986,1,0.0036325058127973492,"backward, right_support_middle",backward,right_support,middle
-17,korobushka_none_1_1.png,korobushka,52.5125,77.14375000000003,312.701866423031,396.55763350238664,1,0.15702435519525937,"place, right_support_middle",place,right_support,middle
-18,korobushka_none_1_1.png,korobushka,0.43125,112.0,0.9854377983293556,313.3879307130072,1,0.987043689036213,measure_5,,,
-19,korobushka_none_1_1.png,korobushka,33.375,56.86875000000001,234.2161116497613,312.5771274612172,1,0.13706891820383155,"backward, left_support_middle",backward,left_support,middle
-20,korobushka_none_1_1.png,korobushka,69.93125,95.23125,150.27926424522673,231.203665721957,1,0.14637843534739187,"right, right_leg_low",right,right_leg,low
-21,korobushka_none_1_1.png,korobushka,54.90625,83.2375,79.8266986127685,157.07753766408115,1,0.1330370591976179,"place, right_support_middle",place,right_support,middle
-22,korobushka_none_1_1.png,korobushka,35.9125,57.85,78.97847367243436,154.51415199880662,1,0.12680806354195068,"place, left_support_middle",place,left_support,middle
-23,korobushka_none_1_2.png,korobushka,46.76089638157895,73.634765625,1176.8100201372315,1261.5322941527447,2,0.1601712719025077,"right, right_support_middle",right,right_support,middle
-24,korobushka_none_1_2.png,korobushka,0.0,118.0,943.3435262529832,1258.411489409308,2,0.9967239495004943,measure_6,,,
-25,korobushka_none_1_2.png,korobushka,23.756476151315788,45.72985197368421,1098.2505780131264,1178.512828162291,2,0.14397368243833486,"right, left_support_middle",right,left_support,middle
-26,korobushka_none_1_2.png,korobushka,48.25894325657895,72.02754934210526,1057.152912440334,1097.7718526252984,2,0.0,"right_support_middle, right",right,right_support,middle
-27,korobushka_none_1_2.png,korobushka,5.6040296052631575,33.89710115131579,979.108554594272,1067.9333233890216,2,0.17507041329822057,"left_leg_low, forward_diagonal",forward_diagonal,left_leg,low
-28,korobushka_none_1_2.png,korobushka,47.00349506578947,77.17670641447368,941.7982734188544,1024.8298590393795,2,0.1540311530703009,"place, right_support_middle",place,right_support,middle
-29,korobushka_none_1_2.png,korobushka,25.54564144736842,53.38384046052632,863.2751901849643,946.585527297136,2,0.15504350241181072,"left, left_support_middle",left,left_support,middle
-30,korobushka_none_1_2.png,korobushka,0.9340049342105264,118.0,632.7537664081144,944.2403788782816,2,0.9837174612215189,measure_7,,,
-31,korobushka_none_1_2.png,korobushka,51.133737664473685,72.47635690789474,784.661209725537,864.3417176312648,2,0.1418609533777905,"left, right_support_middle",left,right_support,middle
-32,korobushka_none_1_2.png,korobushka,27.262027138157894,51.35207648026316,746.0177692422434,791.9208681384247,2,0.01919062229994201,"left_support_middle, left",left,left_support,middle
-33,korobushka_none_1_2.png,korobushka,66.41745476973685,89.62201891447367,667.3068317422434,756.3194548031025,2,0.17575264872402077,"right_leg_low, forward_diagonal",forward_diagonal,right_leg,low
-34,korobushka_none_1_2.png,korobushka,26.12787828947368,53.64463404605264,632.075067124105,706.1017676014319,2,0.12132786782062659,"place, left_support_middle",place,left_support,middle
-35,korobushka_none_1_2.png,korobushka,50.52724095394736,74.76891447368422,587.1172993735082,631.8569137828163,2,0.01496516417885454,"forward_diagonal, right_support_middle",forward_diagonal,right_support,middle
-36,korobushka_none_1_2.png,korobushka,0.0,118.0,317.8312388126492,628.6633912589499,2,0.9813406410284062,measure_8,,,
-37,korobushka_none_1_2.png,korobushka,45.82082648026316,73.0403988486842,473.15035799522667,558.6301088902148,2,0.16292222120009134,"place, right_support_middle",place,right_support,middle
-38,korobushka_none_1_2.png,korobushka,27.492495888157894,52.60145970394736,432.21630742840097,476.82866572195707,2,0.01450300469685992,"left_support_middle, backward_diagonal",backward_diagonal,left_support,middle
-39,korobushka_none_1_2.png,korobushka,30.415810032894736,53.735608552631575,317.01922359785203,399.6326819809069,2,0.15251262905803453,"place, left_support_middle",place,left_support,middle
-40,korobushka_none_1_2.png,korobushka,1.1705386513157894,118.0,8.665535501193316,315.54668854415274,2,0.9669916894922101,measure_9,,,
-41,korobushka_none_1_2.png,korobushka,49.95106907894736,74.21700246710526,237.8235008949881,313.6075477326969,2,0.12771007019102065,"right_support_middle, forward",forward,right_support,middle
-42,korobushka_none_1_2.png,korobushka,31.507504111842106,54.31784539473684,162.96054594272076,242.73195107398567,2,0.14219106729350084,"left_support_middle, forward",forward,left_support,middle
-43,korobushka_none_1_2.png,korobushka,51.661389802631575,74.73252467105263,81.26817944510739,161.57890811455852,2,0.1441497431933806,"place, right_support_middle",place,right_support,middle
-44,korobushka_none_1_2.png,korobushka,30.330900493421048,55.34282483552632,85.0495040274463,161.22743884248212,2,0.12914056382576425,"place, left_support_middle",place,left_support,middle
+,image,ballet,ymin,ymax,staff_num,step_length,label,direction_movement,body_movement,height_movement
+0,korobushka_none_1_1.png,korobushka,1254.8552450029833,1338.0,1,0.15444215335981895,measure_1,,,
+1,korobushka_none_1_1.png,korobushka,1260.044385814439,1329.1185859188545,1,0.10334173809005692,"place, left_support_high",place,left_support,high
+2,korobushka_none_1_1.png,korobushka,1259.4269279534606,1329.0125578013126,1,0.10519911134010967,"place, right_support_middle",place,right_support,middle
+3,korobushka_none_1_1.png,korobushka,936.384201596062,1252.3542288186156,1,1.0,measure_2,,,
+4,korobushka_none_1_1.png,korobushka,1173.444361575179,1250.1276383502388,1,0.1309758279079248,"backward, right_support_middle",backward,right_support,middle
+5,korobushka_none_1_1.png,korobushka,1093.8671408860382,1171.5296185113366,1,0.13453201815497817,"backward, left_support_middle",backward,left_support,middle
+6,korobushka_none_1_1.png,korobushka,1050.4018496420047,1097.2288559069211,1,0.02254600171273164,"backward, right_support_middle",backward,right_support,middle
+7,korobushka_none_1_1.png,korobushka,939.4403061605012,1020.3459967929593,1,0.14631048266751157,"place, right_support_middle",place,right_support,middle
+8,korobushka_none_1_1.png,korobushka,627.6427972106205,938.7791896628877,1,0.9824455576976653,measure_3,,,
+9,korobushka_none_1_1.png,korobushka,861.0543425566824,937.1575831593077,1,0.12886929483164436,"forward, left_support_middle",forward,left_support,middle
+10,korobushka_none_1_1.png,korobushka,778.8014711366349,858.7279609188545,1,0.14275429242045862,"forward, right_support_middle",forward,right_support,middle
+11,korobushka_none_1_1.png,korobushka,742.6209352625298,784.4396722106204,1,0.004357334398183794,"forward, left_support_middle",forward,left_support,middle
+12,korobushka_none_1_1.png,korobushka,622.5160258800715,708.7854918705251,1,0.16579025089978014,"place, left_support_middle",place,left_support,middle
+13,korobushka_none_1_1.png,korobushka,312.26528005668257,627.9109859785203,1,0.9988221535487469,measure_4,,,
+14,korobushka_none_1_1.png,korobushka,547.7599660650358,626.2082991497613,1,0.13738603070993802,"right_support_middle, backward",backward,right_support,middle
+15,korobushka_none_1_1.png,korobushka,471.71285799522667,547.897178923031,1,0.12916375644445777,"backward, left_support_middle",backward,left_support,middle
+16,korobushka_none_1_1.png,korobushka,427.76732174821,469.3864763573986,1,0.0036325058127973492,"backward, right_support_middle",backward,right_support,middle
+17,korobushka_none_1_1.png,korobushka,312.701866423031,396.55763350238664,1,0.15702435519525937,"place, right_support_middle",place,right_support,middle
+18,korobushka_none_1_1.png,korobushka,0.9854377983293556,313.3879307130072,1,0.987043689036213,measure_5,,,
+19,korobushka_none_1_1.png,korobushka,234.2161116497613,312.5771274612172,1,0.13706891820383155,"backward, left_support_middle",backward,left_support,middle
+20,korobushka_none_1_1.png,korobushka,150.27926424522673,231.203665721957,1,0.14637843534739187,"right, right_leg_low",right,right_leg,low
+21,korobushka_none_1_1.png,korobushka,79.8266986127685,157.07753766408115,1,0.1330370591976179,"place, right_support_middle",place,right_support,middle
+22,korobushka_none_1_1.png,korobushka,78.97847367243436,154.51415199880662,1,0.12680806354195068,"place, left_support_middle",place,left_support,middle
+23,korobushka_none_1_2.png,korobushka,1176.8100201372315,1261.5322941527447,2,0.1601712719025077,"right, right_support_middle",right,right_support,middle
+24,korobushka_none_1_2.png,korobushka,943.3435262529832,1258.411489409308,2,0.9967239495004943,measure_6,,,
+25,korobushka_none_1_2.png,korobushka,1098.2505780131264,1178.512828162291,2,0.14397368243833486,"right, left_support_middle",right,left_support,middle
+26,korobushka_none_1_2.png,korobushka,1057.152912440334,1097.7718526252984,2,0.0,"right_support_middle, right",right,right_support,middle
+27,korobushka_none_1_2.png,korobushka,979.108554594272,1067.9333233890216,2,0.17507041329822057,"left_leg_low, forward_diagonal",forward_diagonal,left_leg,low
+28,korobushka_none_1_2.png,korobushka,941.7982734188544,1024.8298590393795,2,0.1540311530703009,"place, right_support_middle",place,right_support,middle
+29,korobushka_none_1_2.png,korobushka,863.2751901849643,946.585527297136,2,0.15504350241181072,"left, left_support_middle",left,left_support,middle
+30,korobushka_none_1_2.png,korobushka,632.7537664081144,944.2403788782816,2,0.9837174612215189,measure_7,,,
+31,korobushka_none_1_2.png,korobushka,784.661209725537,864.3417176312648,2,0.1418609533777905,"left, right_support_middle",left,right_support,middle
+32,korobushka_none_1_2.png,korobushka,746.0177692422434,791.9208681384247,2,0.01919062229994201,"left_support_middle, left",left,left_support,middle
+33,korobushka_none_1_2.png,korobushka,667.3068317422434,756.3194548031025,2,0.17575264872402077,"right_leg_low, forward_diagonal",forward_diagonal,right_leg,low
+34,korobushka_none_1_2.png,korobushka,632.075067124105,706.1017676014319,2,0.12132786782062659,"place, left_support_middle",place,left_support,middle
+35,korobushka_none_1_2.png,korobushka,587.1172993735082,631.8569137828163,2,0.01496516417885454,"forward_diagonal, right_support_middle",forward_diagonal,right_support,middle
+36,korobushka_none_1_2.png,korobushka,317.8312388126492,628.6633912589499,2,0.9813406410284062,measure_8,,,
+37,korobushka_none_1_2.png,korobushka,473.15035799522667,558.6301088902148,2,0.16292222120009134,"place, right_support_middle",place,right_support,middle
+38,korobushka_none_1_2.png,korobushka,432.21630742840097,476.82866572195707,2,0.01450300469685992,"left_support_middle, backward_diagonal",backward_diagonal,left_support,middle
+39,korobushka_none_1_2.png,korobushka,317.01922359785203,399.6326819809069,2,0.15251262905803453,"place, left_support_middle",place,left_support,middle
+40,korobushka_none_1_2.png,korobushka,8.665535501193316,315.54668854415274,2,0.9669916894922101,measure_9,,,
+41,korobushka_none_1_2.png,korobushka,237.8235008949881,313.6075477326969,2,0.12771007019102065,"right_support_middle, forward",forward,right_support,middle
+42,korobushka_none_1_2.png,korobushka,162.96054594272076,242.73195107398567,2,0.14219106729350084,"left_support_middle, forward",forward,left_support,middle
+43,korobushka_none_1_2.png,korobushka,81.26817944510739,161.57890811455852,2,0.1441497431933806,"place, right_support_middle",place,right_support,middle
+44,korobushka_none_1_2.png,korobushka,85.0495040274463,161.22743884248212,2,0.12914056382576425,"place, left_support_middle",place,left_support,middle
