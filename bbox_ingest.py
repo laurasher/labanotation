@@ -8,8 +8,8 @@ pd.set_option("display.expand_frame_repr", False)
 
 data_root = "data/"
 
-ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs", "korobushka"]
-# ballets = ["songs"]
+# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs", "korobushka"]
+ballets = ["songs"]
 
 for b in ballets:
     bbox_file = f"{data_root}coppelia_dawn/vott-csv-export/coppelia_dawn-export.csv"
@@ -22,6 +22,7 @@ for b in ballets:
     df["image"] = df["image"].str.replace("songs", "songs_none")
     df["image"] = df["image"].str.replace("korobushka", "korobushka_none")
 
+    # Isolate selected ballet
     df = df[df["image"].str.contains(b)].reset_index()
     df["step_length"] = df["ymax"] - df["ymin"]
     df["img_staff_num"] = df["image"].str.split("_").str[3].str.split(".").str[0].values
@@ -77,7 +78,7 @@ for b in ballets:
     # .drop(["image"], axis=1).reset_index()
     df_to_save = df_to_save.drop(['index'], axis=1)
 
-    # Normalize step lengths from 0 to 1
+    # Normalize step lengths from 0 to 1. Only doing this within a ballet.
     df_to_save["step_length"] = (
         df_to_save["step_length"] - np.min(df_to_save["step_length"])
     ) / (np.max(df_to_save["step_length"]) - np.min(df_to_save["step_length"]))
@@ -91,7 +92,7 @@ for b in ballets:
                 "direction_movement",
                 "body_movement",
                 "height_movement"]]
-    # df_to_save = df_to_save.dropna()
+    df_to_save = df_to_save.dropna()
     print(df_to_save)
     # print(json.dumps(json.loads(df_to_save.to_json(orient='records')), indent=4, sort_keys=True))
     df_to_save.to_csv(f"bbox_output/{b}.csv")

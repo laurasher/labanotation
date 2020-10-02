@@ -3,7 +3,7 @@ import numpy as np
 from bokeh.plotting import figure, output_file, show
 from bokeh.models import ColumnDataSource, Title
 from bokeh.transform import jitter
-
+from sklearn.cluster import KMeans
 
 def style_plots(fig):
     fig.background_fill_color = None
@@ -19,25 +19,28 @@ def style_plots(fig):
 
 
 data_root = "clustering_output/"
-jitter_amt = 0.08
+jitter_amt = 0.03
 
 # ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
-ballets = ["raymonda", "coppelia_dawn", "artifact", "songs", "korobushka"]
-colors = {"raymonda": "blue", "coppelia_dawn": "red", "artifact": "orange", "songs": "purple", "korobushka":"black"}
-p = figure(plot_width=800, plot_height=600, title="Repetition and direction diversity indices")
+ballets = ["raymonda", "coppelia_dawn", "artifact", "songs",]
+colors = {"raymonda": "blue", "coppelia_dawn": "red", "artifact": "orange", "songs": "purple"}
+
+# p = figure(plot_width=800, plot_height=600, title="Repetition index and direction diversity index")
+p = figure(plot_width=800, plot_height=600, title="Repetition index and total movements in measure")
+frames = []
 
 for b in ballets:
     bbox_file = f"{data_root}{b}_indices.csv"
     df = pd.read_csv(bbox_file)
     df["color"] = colors[b]
     df["alpha"] = (df["measure_num"]-np.min(df["measure_num"]))/(np.max(df["measure_num"])-np.min(df["measure_num"]))
-
+    print(df)
     # Plot clustering results
     # output_file(f"{b}_scatter_measure_movement_counts.html")
     source = ColumnDataSource(
         data=dict(
             # x=df["direction_diversity_index"],
-            x=df["repetition_index"],
+            x=df["movements_in_measure"],
             y=df["repetition_index"],
             label=df["ballet"],
             col=df["color"],
@@ -52,15 +55,33 @@ for b in ballets:
         color="col",
         line_width=1,
         line_alpha=1,
-        alpha="alpha",
+        # alpha="alpha",
+        alpha=0.8,
         source=source,
         legend_group="label",
     )
+    # frames.append(df[["direction_diversity_index","repetition_index"]])
+    frames.append(df[["movements_in_measure","repetition_index"]])
 
-p.xaxis.axis_label = "direction_diversity_index (DDI)"
+all_ballets_df = pd.concat(frames)
+print(all_ballets_df)
+kmeans = KMeans(n_clusters=3).fit(all_ballets_df)
+centroids = kmeans.cluster_centers_
+
+p.circle(
+        centroids[:, 0],
+        centroids[:, 1],
+        size=50,
+        color='black',
+        line_width=1,
+        line_alpha=1,
+        alpha=0
+    )
 p.yaxis.axis_label = "repetition_index (RI)"
+p.xaxis.axis_label = "movements in measure"
+# p.xaxis.axis_label = "direction diversity in measure"
 p = style_plots(p)
-p.legend.location = "top_right"
+p.legend.location = "top_left"
 p.legend.click_policy = "hide"
 p.add_layout(Title(text="Higher DDI, more diverse directional mvmt. Higher RI, more repetitive mvmt.", text_font_style="italic"), 'above')
 

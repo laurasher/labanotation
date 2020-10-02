@@ -9,7 +9,7 @@ pd.set_option("display.expand_frame_repr", False)
 
 data_root = "data/"
 
-ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs", "korobushka"]
+ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
 # ballets = ["korobushka"]
 
 lookup_table = pd.DataFrame.from_dict(
@@ -23,6 +23,7 @@ lookup_table = pd.DataFrame.from_dict(
             "korobushka"
         ],
         "year": ["1870", "1984", "1898", "1890", "1956", "NA"],
+        "length_seconds": ["NA", "78", "157", "NA", "NA", "NA"],
         "choreographer": [
             "arthur_saint-leon",
             "william_forsythe",
@@ -111,7 +112,6 @@ for b in ballets:
             "measure_num"
         ]
     ]
-    print(measures)
     df = df[~df["label"].str.contains("measure")]
     df["measure_num"] = df.apply(lambda row: label_measures(row, measures), axis=1)
 
@@ -147,7 +147,6 @@ for b in ballets:
             "height_movement",
         ]
     ]
-    print(df_to_save)
     # df_to_save = df_to_save.drop(
     #     ["xmin", "xmax", "ymin", "ymax", "label", "image"], axis=1
     # )
@@ -192,7 +191,7 @@ for b in ballets:
         measure_count_df["unique_body_movements_in_measure"]
         / measure_count_df["movements_in_measure"]
     )
-    measure_count_df["direction_diversity_index"] = (
+    measure_count_df["direction_diversity_index"] =  (
         measure_count_df["unique_directions_in_measure"]
         / measure_count_df["movements_in_measure"]
     )
@@ -201,7 +200,7 @@ for b in ballets:
         lookup_table, left_on="ballet", right_on="ballet"
     )
     # print(lookup_table)
-    # print(measure_count_df)
+    print(measure_count_df)
     measure_count_df.to_csv(f"clustering_output/{b}_indices.csv", index=False)
     # with open(f"bbox_output/{b}.json", 'w') as outfile:
     #     json.dump(json.loads(df_to_save.reset_index().to_json(orient='records')), outfile)
