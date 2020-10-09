@@ -245,7 +245,9 @@
 			//////////////////////////// Create scales ////////////////////////////////
 			///////////////////////////////////////////////////////////////////////////
 			dataset.forEach(function(d) {
-				d.playbackTime = +d.step_length * (+d.measure_num)
+				// d.playbackTime = +d.step_length * (+d.measure_num)
+				d.playbackTime =  (+d.step_length/d.ymin) * (+d.measure_num)
+
 			});
 			min = Math.min.apply(Math, dataset.map(x=>x.playbackTime))
 			max = Math.max.apply(Math, dataset.map(x=>x.playbackTime))
@@ -277,7 +279,8 @@
 			console.log(dataset)
 			var dataset = dataset.sort(({playbackTime:a}, {playbackTime:b}) => b-a);
 			
-			radArr = dataset.map(x=>(x.playbackTime)*2.2)
+			// radArr = dataset.map(x=>(x.playbackTime)*2.2)
+			radArr = dataset.map(x=>(x.measure_num*x.ymin)/100)
 			console.log(radArr)
 			function findClosest(num, spoke){
 				if (Math.abs(num[0] - spoke) <= 0.03) return 1
