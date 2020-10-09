@@ -138,6 +138,7 @@
 		  return rad * (180/pi);
 		}
 		const ballet = 'coppelia_dawn'
+		const total_len_sec = 163
 		d3.json(datapath+ballet+".json", function(data) {
 		    dataset = data;
 		    // dataset = dataset.filter(x=>x.direction_movement=='backward_diagonal')
@@ -180,7 +181,7 @@
 				.attr("transform", "translate(" + (margin.left + width/2) + "," + (margin.top + height/2) + ")");
 
 			///////////////////////////////////////////////////////////////////////////
-			//////////////////////////// Create scales ////////////////////////////////
+			//////////////////////////// Helper functions /////////////////////////////
 			///////////////////////////////////////////////////////////////////////////
 
 			function staffNumToRad(staff_num){
@@ -240,12 +241,24 @@
 				}
 			}
 
+			///////////////////////////////////////////////////////////////////////////
+			//////////////////////////// Create scales ////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
 			// staff_num corresponds to R, radius
 			dataset.forEach(function(d) {
 				d.rad = staffNumToRad(d.staff_num) 
 				// + getRandomNumber(0.1,0.5);
 			});
-
+			dataset.forEach(function(d) {
+				d.playbackTime = +d.step_length * (+d.measure_num)
+			});
+			min = Math.min.apply(Math, dataset.map(x=>x.playbackTime))
+			max = Math.max.apply(Math, dataset.map(x=>x.playbackTime))
+			dataset.forEach(function(d) {
+				d.playbackTime = ((d.playbackTime-min)/(max-min))*total_len_sec
+			});
+			// Normalize playback time from 0 to 1, so I can scale by total ballet lenth
+			console.log(dataset)
 			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
 			dataset.forEach(function(d) {
 				// d.theta = bodyMovementToTheta(d.body_movement) + 50

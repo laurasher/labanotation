@@ -22,7 +22,7 @@ lookup_table = pd.DataFrame.from_dict(
             "korobushka"
         ],
         "year": ["1870", "1984", "1898", "1890", "1956", "NA"],
-        "length_seconds": ["NA", "78", "157", "NA", "NA", "NA"],
+        "length_seconds": ["163", "78", "157", "NA", "NA", "NA"],
         "choreographer": [
             "arthur_saint-leon",
             "william_forsythe",
@@ -113,7 +113,7 @@ for b in ballets:
     ]
     df = df[~df["label"].str.contains("measure")]
     df["measure_num"] = df.apply(lambda row: label_measures(row, measures), axis=1)
-
+    print(df)
     # Order temporally
     df = (
         df.sort_values(by=["staff_num", "ymax"], ascending=[True, False])
@@ -199,7 +199,7 @@ for b in ballets:
         lookup_table, left_on="ballet", right_on="ballet"
     )
     # print(lookup_table)
-    print(measure_count_df.head())
+    # print(measure_count_df.head())
     measure_count_df.to_csv(f"clustering_output/{b}_indices.csv", index=False)
     print(f"clustering_output/{b}_indices.csv")
     # with open(f"bbox_output/{b}.json", 'w') as outfile:
