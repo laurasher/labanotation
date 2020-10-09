@@ -111,9 +111,10 @@ for b in ballets:
             "measure_num"
         ]
     ]
+    print(measures)
     df = df[~df["label"].str.contains("measure")]
     df["measure_num"] = df.apply(lambda row: label_measures(row, measures), axis=1)
-    print(df)
+    
     # Order temporally
     df = (
         df.sort_values(by=["staff_num", "ymax"], ascending=[True, False])
@@ -202,6 +203,8 @@ for b in ballets:
     # print(measure_count_df.head())
     measure_count_df.to_csv(f"clustering_output/{b}_indices.csv", index=False)
     print(f"clustering_output/{b}_indices.csv")
+    with open(f"bbox_output/{b}_measures.json", 'w') as outfile:
+        json.dump(json.loads(measures.reset_index().to_json(orient='records')), outfile)
     # with open(f"bbox_output/{b}.json", 'w') as outfile:
     #     json.dump(json.loads(df_to_save.reset_index().to_json(orient='records')), outfile)
 
