@@ -5,7 +5,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNmE4MDMyNWRlNTIwYzMyYmNjNjkxYjE4MTQ2YTFjYzY2NTZkMmViOGRmY2JiNDRmYmE5NDlhNWE3YzRiMjNkMjA1ZDczZTljOWU4Zjg3MWU4MmMyNzQwOGVhMjgxMTM2OGVmMjI2MTk1NmRhMzg0NjgwNmRiY2RmOWE4M2FjNzIwMTA0ZGNiOGU2ZWRjMDU0Yjk5MDIyMDhkYzkxNThkODJiMDNkYTYzYjc2NmM0YTIzMzBhNzk0Y2Y3NzZhMTE0ODdhNzFmNzc4YjVmYzc2YjA1ZGY5YjBjNGU2ZmM0YjIiLCJpdiI6IjY3ZTZmZTU3NGIxNDBjNDdhZDU5NGUxNWM5ZDQxNjk2YzhjMWRkOTkzMjVkMmM4OCJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZmRjY2Y5Yzk5YzAyZjk2OTU0NjJjZDMzYWYyOTAwM2E2MWQ2OTg0NDg1YjRlZWE1YjI1MTQ3YTk4ODhhYTYxNjkxYzc2YWFkZDFlYzI4MjZmZjQ2NjE1OGRmMjFiMGRjMDExZmFkMzg5Y2M5NmZiYWVlNDhlN2YxNGY2YTc0ZDU0NjY5YjUxZWJkNjNkZDFiNDBhMmIxYjE5YjBjMGQwOGEwNDI1OTMzMjVhODYxMjllNjk2ZTRiNzhjOTM5NGZlYTY4ZGUzNjljMDZjMmU2OTVhNTMyYTg0NThjNmNhMTAiLCJpdiI6Ijk4OGU0ZDM1NGJhOGEzYzEyYjA5NTJjNmQzZmIxNzQxMmMwMjIyN2IyZDE4NDAzNSJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -13,7 +13,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNDg4M2M2ZjkxY2YxY2Q4YzhiN2U3MGZkNjJiNzI4ZjU0NTRhZjlmYTI2MDJmMjVmYmEwOGE5OWY1ODg1NTJjZWRmOGZmZTE0ZWRjZjhjODlmMTMzNTVjNTQ0MTAxMWUzODBiZmE3YTM5ZGNhNTJlZWVjZmM5M2Q0OWRmMjc2NDk2NTdhMzVkODI4MTZiOTcyNzNhMzZjMGQ3ZTA4Y2FlNjkxMDU0ZTIxNGQ3ZmM5MTlkNTRlNmFkMTdmMzhkNmZiYTU3ZjQ2MTU0MDdkMGI5ZWVjZDhlYzUwNGU3ZjI4Y2EiLCJpdiI6ImI0MjlhY2JjMmY3MTAxZjhjZTFlZWQ5OTY0ODkxNzU0NzA3MGE4NjRhNGEyZWU4YiJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiM2I1Y2FhYzRmNTY1MmUxZTFkZmE4NDU5YjdhY2MxYTY0OWFhOTY4MmZhZWUxMjViMDI0NzdlNjZjYTBmNzgzZDk2ODMyZjg1ZTkxNTAyY2VhY2VhOTE3ZWE5NTQxM2ExZjRhNzBlMGIyOWUzMjg0NDE3Nzg4N2M4NWI2M2UzY2M1ZGRmM2NkOWRmZjk5MzgwYTE4NjI2NTUxYTNkNDRhY2RmNmMwOTRjMGE3OGFlYmFkODY1ODEyYTMxZWFmODk4ZDkzMmNiODYxZDE5ZmYyNmViNTZhYjk0ODJmOGU5MzciLCJpdiI6IjZlZjBlMTgyNDgzNTVkMTI1NDMwYTU4N2NlNWY0NjM5NjdkMjg1M2U0ZjY1MDBiMyJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -56,6 +56,10 @@
         {
             "name": "right_arm_middle",
             "color": "#f7929a"
+        },
+        {
+            "name": "turn",
+            "color": "#016afe"
         },
         {
             "name": "right_arm_low",
@@ -411,11 +415,11 @@
     "exportFormat": {
         "providerType": "csv",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYTQ3ZDI2OGM5YWRmOGZhODAyZDdiNDFlMmUxYjYyMWNiYThiMzE0YjNlNTI5YzRmMzQ4YWM2MmE5YWU3NWUyMTc0YWY2Mjc2MTYzZGM3YjE5ODY1MTk0M2QwNjU0MzA2IiwiaXYiOiJhZGYzNzY4ZmQxMTQ5NDhkOTEzM2IzY2JhNzFmZTcxZWFjOGJjOWNiYTliOWMxN2UifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZjc5ZDM3ZGJlZDRiZTZhNzU4ZmRjYmYzOGIxNzhhZTI4NmYzZjc5NzEwOWMzYjljYjJjMzgyZjY1ODc2N2JkY2ZjNjQ3YjMyZDgxYjM2MTNjYmI1ODNiZTQ2NTRiYWQ0IiwiaXYiOiI5NTQ1MjM4ZGEwYTNkNDdiNDY5M2FhOTdjZmUzMzE0YTNjNjViNmY2M2IzYTdkMTAifQ=="
         }
     },
     "version": "2.2.0",
-    "lastVisitedAssetId": "67f35bb9e6d2156352c0d65d6e248660",
+    "lastVisitedAssetId": "f1d61e756160fa37576413e5d0ae17f3",
     "assets": {
         "f89a594ff35bcef1f0e7418dbcef2455": {
             "format": "png",
@@ -678,7 +682,7 @@
                 "width": 400,
                 "height": 1308
             },
-            "state": 1,
+            "state": 2,
             "type": 1
         },
         "ad812e86d06e0a6fdb9e432acd49ee94": {
@@ -919,6 +923,18 @@
                 "height": 1300
             },
             "state": 2,
+            "type": 1
+        },
+        "c561d858853e12aa972af409396dcd55": {
+            "format": "png",
+            "id": "c561d858853e12aa972af409396dcd55",
+            "name": "desperateheart_1_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/desperateheart_1_1.png",
+            "size": {
+                "width": 526,
+                "height": 1616
+            },
+            "state": 1,
             "type": 1
         }
     }

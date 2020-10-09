@@ -1,21 +1,16 @@
 ,image,ballet,ymin,ymax,staff_num,step_length,label,direction_movement,body_movement,height_movement
-0,raymonda_none_1_1.png,raymonda,1133.0787589498807,1302.9539081145585,1,0.6644754287961238,measure_1,,,
 1,raymonda_none_1_1.png,raymonda,1214.6681058890147,1296.352137599094,1,0.2811367091967854,"left_arm_low, left",left,left_arm,low
 2,raymonda_none_1_1.png,raymonda,1229.1320073612685,1291.804997168743,1,0.19850176055872507,"right_support_middle, forward",forward,right_support,middle
 3,raymonda_none_1_1.png,raymonda,1210.4617072480182,1291.4818799547,1,0.2782511253908204,"right_arm_low, right",right,right_arm,low
 4,raymonda_none_1_1.png,raymonda,1150.8318941109853,1211.0080690826728,1,0.18764890111151394,"left_support_middle, forward",forward,left_support,middle
-5,raymonda_none_1_1.png,raymonda,969.2144242243436,1132.608293556086,1,0.6363033681143715,measure_2,,,
 6,raymonda_none_1_1.png,raymonda,1092.0598103057755,1131.8737259343147,1,0.09914064030202228,"right_support_high, forward",forward,right_support,high
 7,raymonda_none_1_1.png,raymonda,1051.899278029445,1116.3523499433747,1,0.20623921094108955,"right_arm_low, forward",forward,right_arm,low
 8,raymonda_none_1_1.png,raymonda,1054.1317242355606,1114.9423839184599,1,0.19040680421809958,"forward, left_arm_low",forward,left_arm,low
 9,raymonda_none_1_1.png,raymonda,1009.2360560588902,1055.4241930917328,1,0.1268473520672552,"left_support_high, place",place,left_support,high
 10,raymonda_none_1_1.png,raymonda,970.1447480181199,1035.7375424688562,1,0.2111932220769938,"right_arm_high, forward",forward,right_arm,high
 11,raymonda_none_1_1.png,raymonda,969.4045158550397,1030.2151755379386,1,0.1904068042180981,"left_arm_high, place",place,left_arm,high
-12,raymonda_none_1_1.png,raymonda,812.4627834128877,969.350611575179,1,0.6080236777834046,measure_3,,,
-13,raymonda_none_1_1.png,raymonda,648.796539379475,813.9608442720764,1,0.6439988880331685,measure_4,,,
 14,raymonda_none_1_1.png,raymonda,653.8776189127973,680.6258493771235,1,0.042348265218262175,"forward, left_arm_low",forward,left_arm,low
 15,raymonda_none_1_1.png,raymonda,652.7202718006795,680.4319790486977,1,0.0465361921578923,"right_arm_low, forward",forward,right_arm,low
-16,raymonda_none_1_1.png,raymonda,489.2716288782817,651.4212410501192,1,0.6308949782413685,measure_5,,,
 17,raymonda_none_1_1.png,raymonda,594.2243063420159,651.2163080407703,1,0.17380831329883553,"left_arm_low, backward_diagonal",backward_diagonal,left_arm,low
 18,raymonda_none_1_1.png,raymonda,609.1581964892413,651.2163080407701,1,0.10889544573457338,"forward, right_support_low",forward,right_support,low
 19,raymonda_none_1_1.png,raymonda,593.4899490373726,650.3703284258212,1,0.17332312664119517,"right_arm_low, place",place,right_arm,low
@@ -27,37 +22,28 @@
 25,raymonda_none_1_1.png,raymonda,453.4156993204983,495.08607021517565,1,0.10721006050277218,"forward, right_support_high",forward,right_support,high
 26,raymonda_none_1_1.png,raymonda,413.9307757644394,494.1167185730465,1,0.2746249935284588,"right_arm_middle, right",right,right_arm,middle
 27,raymonda_none_1_1.png,raymonda,414.1246460928652,492.41300962627406,1,0.26637682034857796,"left_arm_middle, left",left,left_arm,middle
-28,raymonda_none_1_1.png,raymonda,334.7732696897375,490.3549373508353,1,0.6023462137873677,measure_6,,,
 29,raymonda_none_1_1.png,raymonda,413.390288788222,451.4299971687429,1,0.0914287260595324,"left_support_high, forward",forward,left_support,high
 30,raymonda_none_1_1.png,raymonda,372.66577010192526,416.2337202718007,1,0.11545823368265208,"forward, right_support_high",forward,right_support,high
 31,raymonda_none_1_1.png,raymonda,329.6148074745187,398.9851359003397,1,0.22761296001712636,"right_arm_low, forward",forward,right_arm,low
 32,raymonda_none_1_1.png,raymonda,337.21687429218576,397.04643261608146,1,0.18614226885884153,"forward, left_arm_low",forward,left_arm,low
 33,raymonda_none_1_1.png,raymonda,335.1312995469989,376.03206398641,1,0.10386482617904291,"left_support_high, forward",forward,left_support,high
 34,raymonda_none_1_1.png,raymonda,251.40281710079282,337.8748584371461,1,0.3019486631955545,"right_body_high, right",right,right_body,high
-35,raymonda_none_1_1.png,raymonda,173.7255369928401,335.1199284009547,1,0.627612273940344,measure_7,,,
 36,raymonda_none_1_1.png,raymonda,288.8609144960363,332.39949037372594,1,0.11533055298327298,"place, right_support_high",place,right_support,high
 37,raymonda_none_1_1.png,raymonda,257.46567100792754,329.3328142695357,1,0.23846581946433798,"right_arm_low, right",right,right_arm,low
 38,raymonda_none_1_1.png,raymonda,285.87648640996605,319.9389156285391,1,0.07414075936362216,"right, head_high",right,head,high
 39,raymonda_none_1_1.png,raymonda,252.6659116647792,319.933040770102,1,0.21847102194159385,"left_arm_high, place",place,left_arm,high
-40,raymonda_none_1_1.png,raymonda,7.812201670644391,173.73172732696895,1,0.6472815923341941,measure_8,,,
 41,raymonda_none_1_1.png,raymonda,12.466449603624008,65.81603907134767,1,0.15797590657584437,"left_arm_low, left",left,left_arm,low
-42,raymonda_none_1_2.png,raymonda,1136.6089461515512,1298.4265643645585,2,0.6294519061637506,measure_9,,,
 43,raymonda_none_1_2.png,raymonda,1255.2332690402036,1294.0803015288789,2,0.0949379070162302,"left_support_high, forward",forward,left_support,high
 44,raymonda_none_1_2.png,raymonda,1132.731641067384,1283.0175095554926,2,0.5793270602396868,"forward, right_arm_low",forward,right_arm,low
 45,raymonda_none_1_2.png,raymonda,1213.6338565260476,1258.7077788788222,2,0.12200421546638442,"right_support_high, forward",forward,right_support,high
-46,raymonda_none_1_2.png,raymonda,975.9638741795943,1132.6983796986872,2,0.6073572330503563,measure_10,,,
 47,raymonda_none_1_2.png,raymonda,890.3387068233295,1130.6777144677235,2,0.9707593955635151,"right_arm_low, right",right,right_arm,low
 48,raymonda_none_1_2.png,raymonda,896.4827293318233,1128.209451090034,2,0.9333245297888236,"left_arm_low, left",left,left_arm,low
-49,raymonda_none_1_2.png,raymonda,816.8468544898567,976.3193802207636,2,0.6192585355003931,measure_11,,,
 50,raymonda_none_1_2.png,raymonda,938.7391615939978,975.0113869620614,2,0.08374603992895042,"right_support_middle, place",place,right_support,middle
 51,raymonda_none_1_2.png,raymonda,898.6787142553793,962.8476429784823,2,0.20500413092284997,"backward_diagonal, left_leg_low",backward_diagonal,left_leg,low
 52,raymonda_none_1_2.png,raymonda,914.0920423980748,931.0976075877693,2,0.0,"backward_diagonal, right_support_middle",backward_diagonal,right_support,middle
-53,raymonda_none_1_2.png,raymonda,895.216042610419,914.8674440826727,2,0.011500608248306564,right_support_middle,,right_support,middle
-54,raymonda_none_1_2.png,raymonda,659.1643328609784,815.4123564289977,2,0.6052426508382784,measure_12,,,
 55,raymonda_none_1_2.png,raymonda,656.6941976925254,691.5221634343147,2,0.07746830298803885,"right_arm_low, right",right,right_arm,low
 56,raymonda_none_1_2.png,raymonda,657.8069878963761,688.3732039212912,2,0.05894383332633585,"left_arm_low, left",left,left_arm,low
 57,raymonda_none_1_2.png,raymonda,613.7985029728201,659.9911346262741,2,0.12686688875258098,"place, right_support_middle",place,right_support,middle
-58,raymonda_none_1_2.png,raymonda,499.6543854415274,657.3680918108591,2,0.6116135075028758,measure_13,,,
 59,raymonda_none_1_2.png,raymonda,595.3131635758776,649.8339644677236,2,0.16306678988316037,"right_arm_middle, right",right,right_arm,middle
 60,raymonda_none_1_2.png,raymonda,611.5729225651189,646.1582053369194,2,0.07641343735452473,"left_leg_low, left",left,left_leg,low
 61,raymonda_none_1_2.png,raymonda,596.2069471970555,643.4354207955832,2,0.13136936401757915,"left_arm_middle, left",left,left_arm,middle
@@ -71,7 +57,6 @@
 69,raymonda_none_1_2.png,raymonda,540.9403401047565,576.0820179784823,2,0.07883190978258073,"left_leg_low, left",left,left_leg,low
 70,raymonda_none_1_2.png,raymonda,534.5181200453002,558.1293972961495,2,0.0287129279756388,"left_body_middle, forward_diagonal",forward_diagonal,left_body,middle
 71,raymonda_none_1_2.png,raymonda,463.678369195923,500.0453001132503,2,0.08415769481032095,"right_arm_high, right",right,right_arm,high
-72,raymonda_none_1_2.png,raymonda,336.2463454653938,498.5878673180191,2,0.631729148545989,measure_14,,,
 73,raymonda_none_1_2.png,raymonda,456.11376344847116,497.80196241506235,2,0.10728755345736463,"right_support_high, place",place,right_support,high
 74,raymonda_none_1_2.png,raymonda,449.9105499716874,496.77795866364653,2,0.12979992978235103,"right_arm_high, left",left,right_arm,high
 75,raymonda_none_1_2.png,raymonda,452.82866470838053,495.39289000566254,2,0.11109536111004807,"left_leg_middle, left",left,left_leg,middle
@@ -80,20 +65,17 @@
 78,raymonda_none_1_2.png,raymonda,339.6496142412231,389.84947444790487,2,0.1442850359206,"right_leg_low, left",left,right_leg,low
 79,raymonda_none_1_2.png,raymonda,338.2882219705549,385.3746372451868,2,0.13075188169552213,"right_leg_low, right",right,right_leg,low
 80,raymonda_none_1_2.png,raymonda,295.00186686013586,337.9093997734994,2,0.11258761005501854,"backward_diagonal, right_support_high",backward_diagonal,right_support,high
-81,raymonda_none_1_2.png,raymonda,175.4640606354415,337.26920495226733,2,0.62939768610703,measure_15,,,
 82,raymonda_none_1_2.png,raymonda,262.64808359286525,306.0054678652322,2,0.11454297074153189,"left_leg_middle, left",left,left_leg,middle
 83,raymonda_none_1_2.png,raymonda,263.8851748301246,305.9048432191393,2,0.1087283455421637,"left_leg_low, right",right,left_leg,low
 84,raymonda_none_1_2.png,raymonda,217.97074072763303,264.5362754813137,2,0.12848777984798077,"left_support_low, forward",forward,left_support,low
 85,raymonda_none_1_2.png,raymonda,174.45354084088336,233.23017235277462,2,0.18156553111477802,"right_leg_low, left",left,right_leg,low
 86,raymonda_none_1_2.png,raymonda,176.32397543884483,230.2765430351076,2,0.16059686059493347,"right_leg_low, right",right,right_leg,low
-87,raymonda_none_1_2.png,raymonda,19.552832264319807,173.9859039379475,2,0.5973536325855205,measure_16,,,
 88,raymonda_none_1_2.png,raymonda,133.59993452718007,169.51109498867496,2,0.08217660569372204,"right_support_high, backward_diagonal",backward_diagonal,right_support,high
 89,raymonda_none_1_2.png,raymonda,102.08666300962628,147.10731349094,2,0.12177265959561322,"left, left_leg_high, left_leg_middle",left,left_leg,high
 90,raymonda_none_1_2.png,raymonda,104.554926387316,140.99880556342018,2,0.08449216440143496,"left_leg_low, right",right,left_leg,low
 91,raymonda_none_1_2.png,raymonda,55.98873690543602,102.45956610985277,2,0.12807612496660944,"left_support_low, forward",forward,left_support,low
 92,raymonda_none_1_2.png,raymonda,17.994054360135898,66.61943481030578,2,0.13744127351780402,"right_leg_low, left",left,right_leg,low
 93,raymonda_none_1_2.png,raymonda,21.764519040203854,65.83219493204984,2,0.11763038235181568,"right_leg_high, right",right,right_leg,high
-94,raymonda_none_1_3.png,raymonda,1133.5256936157518,1380.5918108591886,3,1.0,measure_17,,,
 95,raymonda_none_1_3.png,raymonda,1297.78397225537,1377.6877610381864,3,0.2733985597775534,"right_support_low, place",place,right_support,low
 96,raymonda_none_1_3.png,raymonda,1297.248843973747,1375.4297807279236,3,0.26590987032923197,"left_support_low, place",place,left_support,low
 97,raymonda_none_1_3.png,raymonda,1293.8161918257754,1364.655429594272,3,0.23399784143014002,"right_arm_low, place",place,right_arm,low
@@ -103,20 +85,17 @@
 101,raymonda_none_1_3.png,raymonda,1054.8814140811455,1138.9030802505965,3,0.29129766220895403,"right, right_arm_low",right,right_arm,low
 102,raymonda_none_1_3.png,raymonda,1061.8968153341286,1135.4182204653935,3,0.24565636932127416,"right, left_leg_low",right,left_leg,low
 103,raymonda_none_1_3.png,raymonda,1061.5117840095463,1135.3333830548927,3,0.2469612167251499,"right_support_high, place",place,right_support,high
-104,raymonda_none_1_3.png,raymonda,977.855571300716,1135.1049746420051,3,0.6095953300104818,measure_18,,,
 105,raymonda_none_1_3.png,raymonda,1098.3442720763724,1129.8776849642004,3,0.06314793026637538,"left_arm_middle, forward",forward,left_arm,middle
 106,raymonda_none_1_3.png,raymonda,1051.5335993436754,1114.3198090692124,3,0.19899389150882377,"left, head_middle",left,head,middle
 107,raymonda_none_1_3.png,raymonda,1053.99388424821,1086.8716437947494,3,0.06899137733589888,"left_arm_high, place",place,left_arm,high
 108,raymonda_none_1_3.png,raymonda,975.8259994033414,1059.260329653938,3,0.2887446998970269,"place, right_support_low",place,right_support,low
 109,raymonda_none_1_3.png,raymonda,977.21602774463,1056.9697195704057,3,0.27274613607561554,"left_support_low, place",place,left_support,low
 110,raymonda_none_1_3.png,raymonda,982.4237395584726,1041.5488887231504,3,0.1830804264311432,"left_arm_middle, left",left,left_arm,middle
-111,raymonda_none_1_3.png,raymonda,823.2165498210023,976.7983666467779,3,0.5936534986848888,measure_19,,,
 112,raymonda_none_1_3.png,raymonda,821.9244107995227,923.1941751193317,3,0.3662696554358888,"left_support_low, place",place,left_support,low
 113,raymonda_none_1_3.png,raymonda,817.2518272673033,922.8744033412887,3,0.3851899427920609,"right_arm_low, place",place,right_arm,low
 114,raymonda_none_1_3.png,raymonda,820.9194137828163,901.5280056682577,3,0.2764621145518648,"place, left_support_low",place,left_support,low
 115,raymonda_none_1_3.png,raymonda,820.6061679594272,900.4381712410502,3,0.27308653105053915,"right_support_low, place",place,right_support,low
 116,raymonda_none_1_3.png,raymonda,743.7826297732698,822.3224940334129,3,0.2674700139642981,"left_support_high, place",place,left_support,high
-117,raymonda_none_1_3.png,raymonda,659.2258353221957,819.5098075775658,3,0.6227856352887722,measure_20,,,
 118,raymonda_none_1_3.png,raymonda,739.5146554295943,818.4526029236278,3,0.2692003550868273,"left_arm_low, left",left,left_arm,low
 119,raymonda_none_1_3.png,raymonda,740.80026849642,815.8095912887828,3,0.2521238738448241,"right_leg_middle, right",right,right_leg,middle
 120,raymonda_none_1_3.png,raymonda,776.6473374105012,804.4935859188545,3,0.047121000197054085,"right_arm_middle, forward",forward,right_arm,middle
@@ -125,34 +104,28 @@
 123,raymonda_none_1_3.png,raymonda,659.4346658711218,745.2640214797136,3,0.2991551128801086,"place, left_support_low",place,left_support,low
 124,raymonda_none_1_3.png,raymonda,657.6596062052506,742.7515289379477,3,0.29594972686624504,"place, right_support_low",place,right_support,low
 125,raymonda_none_1_3.png,raymonda,658.7233368138425,730.1238066825775,3,0.2364373387504255,"right_arm_middle, right",right,right_arm,middle
-126,raymonda_none_1_3.png,raymonda,505.9311605011934,660.0089498806683,3,0.595809333526072,measure_21,,,
 127,raymonda_none_1_3.png,raymonda,497.87160650358004,600.8968526252984,3,0.37390017612376064,"right_arm_low, place",place,right_arm,low
 128,raymonda_none_1_3.png,raymonda,500.29273568019096,598.1298478520288,3,0.35134900903506927,"left_arm_low, place",place,left_arm,low
 129,raymonda_none_1_3.png,raymonda,498.11306682577566,585.0322568615752,3,0.3038922762811296,"right_support_low, place",place,right_support,low
 130,raymonda_none_1_3.png,raymonda,499.93380817422434,581.2994107995228,3,0.2797525993094609,"left_support_low, place",place,left_support,low
 131,raymonda_none_1_3.png,raymonda,418.60736127684953,499.52267303102616,3,0.2777953282036495,"right, right_arm_low",right,right_arm,low
-132,raymonda_none_1_3.png,raymonda,340.60915125298334,499.3007905727924,3,0.6158642707986574,measure_22,,,
 133,raymonda_none_1_3.png,raymonda,419.2142750596659,495.763723150358,3,0.25881830835165553,"place, right_support_high",place,right_support,high
 134,raymonda_none_1_3.png,raymonda,415.93824582338897,484.34330250596656,3,0.223417230959596,"left_arm_middle, forward",forward,left_arm,middle
 135,raymonda_none_1_3.png,raymonda,419.4687872911695,477.8042959427208,3,0.17964811043399595,"forward_diagonal, head_low",forward_diagonal,head,low
 136,raymonda_none_1_3.png,raymonda,341.97960173031026,426.04042362768496,3,0.29146785969641614,"right_support_low, place",place,right_support,low
 137,raymonda_none_1_3.png,raymonda,341.6076223150358,421.3939439140812,3,0.2728879673151669,"place, left_support_low",place,left_support,low
-138,raymonda_none_1_3.png,raymonda,182.1328684367542,338.3968526252984,3,0.6053120265760243,measure_23,,,
 139,raymonda_none_1_3.png,raymonda,182.3221211217184,323.05433323389025,3,0.5378003565494998,"left_arm_low, place",place,left_arm,low
 140,raymonda_none_1_3.png,raymonda,179.10482547732695,322.57141258949883,3,0.5496858144239174,"place, right_arm_low",place,right_arm,low
 141,raymonda_none_1_3.png,raymonda,180.71673627684964,264.75798031026255,3,0.29138276095268534,"left_support_low, place",place,left_support,low
 142,raymonda_none_1_3.png,raymonda,186.02886336515513,264.4121047136038,3,0.26678922401445126,"place, right_support_low",place,right_support,low
-143,raymonda_none_1_3.png,raymonda,20.44581593078759,182.62884099045345,3,0.6310402134306702,measure_24,,,
 144,raymonda_none_1_3.png,raymonda,97.23672434367542,181.42806533412892,3,0.2920351846546224,"left, left_arm_low",left,left_arm,low
 145,raymonda_none_1_3.png,raymonda,159.1615080548926,180.99735232696895,3,0.020995685871663446,"right_leg_low, right",right,right_leg,low
 146,raymonda_none_1_3.png,raymonda,103.25365453460621,176.83379325775658,3,0.24591166555246732,"place, left_support_high",place,left_support,high
 147,raymonda_none_1_3.png,raymonda,97.38029534606207,167.75619033412892,3,0.2319838378285079,"right_arm_middle, forward",forward,right_arm,middle
 148,raymonda_none_1_3.png,raymonda,98.99220614558472,153.81675119331743,3,0.16438706905825246,"forward_diagonal, head_low",forward_diagonal,head,low
-149,raymonda_none_1_3.png,raymonda,126.56436455847256,149.3203684367542,3,0.024995326827016533,left,left,,
 150,raymonda_none_1_3.png,raymonda,95.10926312649164,118.00883800715992,3,0.025619384281043298,"right_leg_low, right",right,right_leg,low
 151,raymonda_none_1_3.png,raymonda,21.620487768496425,101.44596509546541,3,0.2730581648026286,"right_support_low, place",place,right_support,low
 152,raymonda_none_1_3.png,raymonda,18.977476133651553,99.39028937947495,3,0.27561112711455604,"left_support_low, place",place,left_support,low
-153,raymonda_none_1_4.png,raymonda,1133.867989260143,1299.244219868735,4,0.64492006167245,measure_25,,,
 154,raymonda_none_1_4.png,raymonda,1138.0148418854415,1241.4592780429593,4,0.3757222617966735,"left_arm_low, place",place,left_arm,low
 155,raymonda_none_1_4.png,raymonda,1134.8322270286396,1240.7786396181384,4,0.3865975570597937,"right_arm_low, place",place,right_arm,low
 156,raymonda_none_1_4.png,raymonda,1135.909904534606,1221.739670346062,4,0.2991568959014061,"right_support_low, place",place,right_support,low
@@ -161,20 +134,17 @@
 159,raymonda_none_1_4.png,raymonda,1057.397001789976,1135.8090692124103,4,0.26691452178379216,"left_leg_middle, left",left,left_leg,middle
 160,raymonda_none_1_4.png,raymonda,1053.7039081145583,1133.9562201670644,4,0.27491347950880834,"right_arm_low, right",right,right_arm,low
 161,raymonda_none_1_4.png,raymonda,1054.2963156324581,1132.582338902148,4,0.26636664796701087,"left_leg_low, right",right,left_leg,low
-162,raymonda_none_1_4.png,raymonda,969.9475686157516,1128.6308547136034,4,0.6158279620013313,measure_26,,,
 163,raymonda_none_1_4.png,raymonda,1093.685113365155,1122.6689662887827,4,0.052065804532777996,"left_arm_middle, forward",forward,left_arm,middle
 164,raymonda_none_1_4.png,raymonda,1054.4979862768496,1111.3817124105012,4,0.1733376738774476,"right_hand_middle, left",left,right_hand,middle
 165,raymonda_none_1_4.png,raymonda,1053.5652595465392,1082.410463902148,4,0.05146314333431885,"left_arm_high, place",place,left_arm,high
 166,raymonda_none_1_4.png,raymonda,975.1973075775657,1057.4789304892602,4,0.283734247958996,"place, right_support_low",place,right_support,low
 167,raymonda_none_1_4.png,raymonda,979.0038409904537,1056.4390662291169,4,0.26266849970373135,"left_support_low, place",place,left_support,low
 168,raymonda_none_1_4.png,raymonda,975.8716437947495,1037.790833830549,4,0.19522523285788318,"left_arm_middle, left",left,left_arm,middle
-169,raymonda_none_1_4.png,raymonda,824.0514618138425,971.8823463603819,4,0.5686560263764127,measure_27,,,
 170,raymonda_none_1_4.png,raymonda,836.1201894391407,921.3008278639618,4,0.2963353457449794,"left_arm_low, place",place,left_arm,low
 171,raymonda_none_1_4.png,raymonda,839.0444137828163,918.0047732696896,4,0.2692977728867928,"right_arm_low, place",place,right_arm,low
 172,raymonda_none_1_4.png,raymonda,836.6747837112172,900.2010366945108,4,0.2022106240218525,"right_support_low, place",place,right_support,low
 173,raymonda_none_1_4.png,raymonda,832.4333979713604,898.5309516706444,4,0.2133872498842028,"place, left_support_low",place,left_support,low
 174,raymonda_none_1_4.png,raymonda,772.9531622911694,824.3098523269689,4,0.14931340701156168,"right_arm_low, right",right,right_arm,low
-175,raymonda_none_1_4.png,raymonda,657.7109934367543,819.4697568615753,4,0.6291960831308103,measure_28,,,
 176,raymonda_none_1_4.png,raymonda,771.7368362171837,816.6148568019091,4,0.12115269282897258,"right, right_leg_low",right,right_leg,low
 177,raymonda_none_1_4.png,raymonda,775.0328908114557,815.1275357995227,4,0.1003608814821016,"left_support_low, place",place,left_support,low
 178,raymonda_none_1_4.png,raymonda,765.4787440334129,807.7917661097853,4,0.11000346065746217,"left_arm_low, right",right,left_arm,low
@@ -187,7 +157,6 @@
 185,raymonda_none_1_4.png,raymonda,611.4401849642005,674.8908114558473,4,0.20188189973178303,"left_body_high, right",right,left_body,high
 186,raymonda_none_1_4.png,raymonda,615.5807353818617,671.7081965990452,4,0.17005043097675482,"left_arm_low, left",left,left_arm,low
 187,raymonda_none_1_4.png,raymonda,609.3667586515513,662.0910277446301,4,0.15525783792364523,"left, right_arm_low",left,right_arm,low
-188,raymonda_none_1_4.png,raymonda,500.48351730310264,655.28464349642,4,0.5989534484444502,measure_29,,,
 189,raymonda_none_1_4.png,raymonda,614.1753430787588,654.1565483293556,4,0.09986779504699762,"right_support_low, place",place,right_support,low
 190,raymonda_none_1_4.png,raymonda,520.2094272076372,580.9879176610978,4,0.19026697481600707,"right_arm_low, place",place,right_arm,low
 191,raymonda_none_1_4.png,raymonda,534.4776252983294,579.2232995226731,4,0.12057742532135235,"place, left_support_high",place,left_support,high
@@ -197,7 +166,6 @@
 195,raymonda_none_1_4.png,raymonda,454.0488514319809,520.0518720167064,4,0.2129763445216161,"right_hand_middle, right",right,right_hand,middle
 196,raymonda_none_1_4.png,raymonda,452.7064812052506,518.9237768496421,4,0.21390773001014568,"right_arm_low, right",right,right_arm,low
 197,raymonda_none_1_4.png,raymonda,451.13723150357987,517.6633353221956,4,0.21525002086126102,"left_arm_low, right",right,left_arm,low
-198,raymonda_none_1_4.png,raymonda,339.07767750596656,499.89741199284,4,0.6251144231957847,measure_30,,,
 199,raymonda_none_1_4.png,raymonda,458.96457338902155,499.8028788782817,4,0.10359333700111407,"left_support_low, place",place,left_support,low
 200,raymonda_none_1_4.png,raymonda,454.7799075178997,494.90606354415286,4,0.10049784993629717,"right, right_leg_low",right,right_leg,low
 201,raymonda_none_1_4.png,raymonda,355.99910501193324,422.87183025059664,4,0.21675667385741085,"place, right_arm_low",place,right_arm,low
@@ -210,7 +178,6 @@
 208,raymonda_none_1_4.png,raymonda,297.6784755369928,353.3710844272076,4,0.16816026630885866,"right_arm_low, left",left,right_arm,low
 209,raymonda_none_1_4.png,raymonda,292.6493138424821,340.89271330548934,4,0.13578092373704967,"left, left_leg_low",left,left_leg,low
 210,raymonda_none_1_4.png,raymonda,298.2141631861575,337.04836664677805,4,0.0948821433142821,"right_support_low, place",place,right_support,low
-211,raymonda_none_1_4.png,raymonda,178.32726730310262,335.90136485680193,4,0.6110066724136519,measure_31,,,
 212,raymonda_none_1_4.png,raymonda,198.210732398568,258.6678102625298,4,0.18886989658321351,"right_arm_low, place",place,right_arm,low
 213,raymonda_none_1_4.png,raymonda,215.3527371718377,256.657406026253,4,0.10562047012320702,"place, left_support_high",place,left_support,high
 214,raymonda_none_1_4.png,raymonda,195.21718377088303,253.2983293556086,4,0.1785424751368752,"left_arm_low, place",place,left_arm,low
@@ -220,18 +187,14 @@
 218,raymonda_none_1_4.png,raymonda,134.5521330548926,193.50928550119326,4,0.1823501981635089,"left, left_body_high",left,left_body,high
 219,raymonda_none_1_4.png,raymonda,131.77916169451078,177.1865677207637,4,0.1234537628594568,"right, right_leg_low",right,right_leg,low
 220,raymonda_none_1_4.png,raymonda,133.36101581145584,177.003803699284,4,0.11578352942451074,"left_arm_low, right",right,left_arm,low
-221,raymonda_none_1_4.png,raymonda,18.049522673031024,175.88831294749406,4,0.6121572074288938,measure_32,,,
 222,raymonda_none_1_4.png,raymonda,134.38197344868738,175.1446524463007,4,0.10326461271104471,"left_support_low, place",place,left_support,low
 223,raymonda_none_2_1.png,raymonda,1341.9218097404535,1410.196701596062,5,0.22285144588341893,"forward_diagonal, right_support_low",forward_diagonal,right_support,low
-224,raymonda_none_2_1.png,raymonda,1246.5214517452268,1405.4975387828165,5,0.6171006744986457,measure_33,,,
 225,raymonda_none_2_1.png,raymonda,1302.5437611873508,1404.2809703162288,5,0.36830148925049155,"left, left_arm_low",left,left_arm,low
 226,raymonda_none_2_1.png,raymonda,1298.606624776253,1391.5136858591886,5,0.3299196460048068,"right_arm_low, forward_diagonal",forward_diagonal,right_arm,low
-227,raymonda_none_2_1.png,raymonda,1302.3231745972555,1377.8640550417663,5,0.254434385783541,"forward, forward_diagonal",forward,,
 228,raymonda_none_2_1.png,raymonda,1300.0905709278045,1367.4964853072795,5,0.21907427735810595,"left_body_high, forward",forward,left_body,high
 229,raymonda_none_2_1.png,raymonda,1301.9889524910502,1362.5901047881862,5,0.18949614229065015,"left_leg_low, left",left,left_leg,low
 230,raymonda_none_2_1.png,raymonda,1304.4087205399762,1361.487171837709,5,0.17418408219187956,"right, left_leg_low",right,left_leg,low
 231,raymonda_none_2_1.png,raymonda,1205.2450216288782,1248.901113141408,5,0.11584135604703574,"left_support_high, place",place,left_support,high
-232,raymonda_none_2_1.png,raymonda,1088.7151420793557,1245.82626976432,5,0.6089942897404722,measure_34,,,
 233,raymonda_none_2_1.png,raymonda,1121.6627573090693,1234.9239446599047,5,0.4183925549246509,"forward, right_arm_middle",forward,right_arm,middle
 234,raymonda_none_2_1.png,raymonda,1197.5579131861575,1228.6338846211218,5,0.06115957785749762,"right, head_high",right,head,high
 235,raymonda_none_2_1.png,raymonda,1124.6507029385443,1227.8584893347254,5,0.3746936206010219,"left_arm_middle, forward",forward,left_arm,middle
@@ -245,7 +208,6 @@
 243,raymonda_none_2_1.png,raymonda,967.9005351282816,1131.067767377685,5,0.6353182488476573,"right_arm_middle, forward_diagonal",forward_diagonal,right_arm,middle
 244,raymonda_none_2_1.png,raymonda,967.6598952118139,1127.758968526253,5,0.6219819384390501,"forward_diagonal, left_arm_middle",forward_diagonal,left_arm,middle
 245,raymonda_none_2_1.png,raymonda,1045.6205437052506,1090.0386616199285,5,0.11915364229231167,"place, left_support_high",place,left_support,high
-246,raymonda_none_2_1.png,raymonda,928.5692776700478,1085.7673031026254,5,0.6093720065930038,measure_35,,,
 247,raymonda_none_2_1.png,raymonda,964.6786340244632,1064.5776215692126,5,0.3603113250623294,"right_hand_high, place",place,right_hand,high
 248,raymonda_none_2_1.png,raymonda,1004.8187089797136,1061.355720465394,5,0.17183061564918453,"backward, right_body_middle",backward,right_body,middle
 249,raymonda_none_2_1.png,raymonda,961.115826372315,1058.3410370674223,5,0.34868926806136435,"left_hand_high, place, head_middle",place,left_hand,high
@@ -255,13 +217,11 @@
 253,raymonda_none_2_1.png,raymonda,806.8522710322197,966.7508110829357,5,0.6211102841639776,"left_arm_middle, left",left,left_arm,middle
 254,raymonda_none_2_1.png,raymonda,805.9899779982102,966.1492112917662,5,0.6222434347215715,"right_arm_middle, right",right,right_arm,middle
 255,raymonda_none_2_1.png,raymonda,884.5722796091887,929.0639263872316,5,0.11947324885983764,"left_support_high, place",place,left_support,high
-256,raymonda_none_2_1.png,raymonda,776.5717482100238,927.051909307876,5,0.5801715883780806,measure_36,,,
 257,raymonda_none_2_1.png,raymonda,844.9669600238665,901.8114558472554,5,0.17316715220429454,"left, right_leg_low",left,right_leg,low
 258,raymonda_none_2_1.png,raymonda,842.8814140811456,895.8422490304297,5,0.15628611441039392,"backward, right_body_middle",backward,right_body,middle
 259,raymonda_none_2_1.png,raymonda,839.9001528937947,892.6871923478521,5,0.15553068070533171,"right, right_leg_low",right,right_leg,low
 260,raymonda_none_2_1.png,raymonda,806.0902446300718,849.9401849642004,5,0.11668395517960539,"place, right_support_high",place,right_support,high
 261,raymonda_none_2_1.png,raymonda,722.8288335322197,775.9434106503579,5,0.15695438268794817,"right, right_leg_low",right,right_leg,low
-262,raymonda_none_2_1.png,raymonda,682.7890252088306,774.2789845614558,5,0.32375995579429495,measure_37,,,
 263,raymonda_none_2_1.png,raymonda,722.7686735531025,773.583802580549,5,0.14695941366712026,"right_arm_low, right",right,right_arm,low
 264,raymonda_none_2_1.png,raymonda,726.5119611426014,772.9955716736278,5,0.12813168132555705,"place, left_support_low",place,left_support,low
 265,raymonda_none_2_1.png,raymonda,725.0881749701671,761.9127666318616,5,0.08614700040957166,"right, left_arm_low",right,left_arm,low
@@ -270,7 +230,6 @@
 268,raymonda_none_2_1.png,raymonda,626.9873023568019,695.3624608442723,5,0.22328727302095613,"place, left_arm_low",place,left_arm,low
 269,raymonda_none_2_1.png,raymonda,628.6049373508354,694.1124701670643,5,0.21082261688741996,"place, right_arm_low",place,right_arm,low
 270,raymonda_none_2_1.png,raymonda,646.4323444958235,692.6418928997614,5,0.12694042048295762,"right_support_high, place",place,right_support,high
-271,raymonda_none_2_1.png,raymonda,528.2848299522674,688.103156697494,5,0.6207616224539484,measure_38,,,
 272,raymonda_none_2_1.png,raymonda,609.8149705399762,655.3961813842483,5,0.124209237087731,"left, left_support_high",left,left_support,high
 273,raymonda_none_2_1.png,raymonda,571.807232622315,636.5727923627685,5,0.20759749606965297,"right, left_body_high",right,left_body,high
 274,raymonda_none_2_1.png,raymonda,568.3045849492839,631.6597274015513,5,0.2014668610016445,"left_arm_low, left",left,left_arm,low
@@ -281,7 +240,6 @@
 279,raymonda_none_2_1.png,raymonda,467.88421091885436,533.0307838603818,5,0.20925363919229045,"place, left_arm_low",place,left_arm,low
 280,raymonda_none_2_1.png,raymonda,467.48982883353233,530.4372203162292,5,0.19969449730899677,"place, right_arm_low",place,right_arm,low
 281,raymonda_none_2_1.png,raymonda,486.6006488663485,529.4546073239857,5,0.11235473894674693,"left_support_high, place",place,left_support,high
-282,raymonda_none_2_1.png,raymonda,368.5801387231504,523.5722982547734,5,0.5997838095672079,measure_39,,,
 283,raymonda_none_2_1.png,raymonda,442.73065520584726,492.12868250298334,5,0.14079972345660843,"right, right_support_high",right,right_support,high
 284,raymonda_none_2_1.png,raymonda,411.82847926610987,475.7651681831743,5,0.2039946583993539,"left_body_high, left",left,left_body,high
 285,raymonda_none_2_1.png,raymonda,405.7991124701672,471.9550361724344,5,0.21364096571015428,"right, head_middle",right,head,middle
@@ -291,7 +249,6 @@
 289,raymonda_none_2_1.png,raymonda,311.267731951074,375.39826968973745,5,0.20483725753192378,"place, right_arm_low",place,right_arm,low
 290,raymonda_none_2_1.png,raymonda,309.40277259844873,372.4771684815036,5,0.20024654501654274,"left_arm_low, place",place,left_arm,low
 291,raymonda_none_2_1.png,raymonda,325.3050604116945,369.3287962410501,5,0.11743938888466907,"right_support_high, place",place,right_support,high
-292,raymonda_none_2_1.png,raymonda,212.5719439886635,366.1670551163485,5,0.5937112847842037,measure_40,,,
 293,raymonda_none_2_1.png,raymonda,288.8481130668258,328.60717482100245,5,0.0989022079681305,"left_support_high, left",left,left_support,high
 294,raymonda_none_2_1.png,raymonda,245.53961254474945,312.3907182279236,5,0.21666270053040532,"left_body_high, right",right,left_body,high
 295,raymonda_none_2_1.png,raymonda,246.08773679892602,312.12334054295945,5,0.21311797314511136,"left_arm_low, left",left,left_arm,low
@@ -301,7 +258,6 @@
 299,raymonda_none_2_1.png,raymonda,148.55504176610978,216.34865378878285,5,0.22075947562324574,"place, left_arm_low",place,left_arm,low
 300,raymonda_none_2_1.png,raymonda,163.16723224940338,213.09333047434367,5,0.1430950797142986,"left_support_high, place",place,left_support,high
 301,raymonda_none_2_1.png,raymonda,147.56574433174225,211.96365975536997,5,0.2059994632320205,"right_arm_low, place",place,right_arm,low
-302,raymonda_none_2_1.png,raymonda,44.11731801909309,211.80323314439144,5,0.6549595251792877,measure_41,,,
 303,raymonda_none_2_1.png,raymonda,125.6407741646778,173.46127312052502,5,0.13394270982603895,"right, right_support_high",right,right_support,high
 304,raymonda_none_2_1.png,raymonda,88.8429202714797,156.9908077267303,5,0.22229939817587344,"left, left_body_high",left,left_body,high
 305,raymonda_none_2_1.png,raymonda,90.76803960322195,150.96812537291171,5,0.18775283374050586,"right_arm_low, right",right,right_arm,low
@@ -311,7 +267,6 @@
 309,raymonda_none_2_1.png,raymonda,82.5528602326969,128.12738663484487,5,0.12418018194522869,"right, right_leg_low",right,right_leg,low
 310,raymonda_none_2_1.png,raymonda,44.725602252386636,90.32018198090692,5,0.12426734737273594,"right_arm_middle, right",right,right_arm,middle
 311,raymonda_none_2_2.png,raymonda,1185.6511038186156,1317.4049075178996,6,0.4987740726745026,"forward, right_arm_middle",forward,right_arm,middle
-312,raymonda_none_2_2.png,raymonda,1153.4147523866347,1316.14334725537,6,0.6334116317559721,measure_42,,,
 313,raymonda_none_2_2.png,raymonda,1268.0645883054892,1315.9024463007158,6,0.13401816404547998,"place, right_leg_low",place,right_leg,low
 314,raymonda_none_2_2.png,raymonda,1263.0627237470167,1309.6770584725537,6,0.1286998977944114,"right, left_support_middle",right,left_support,middle
 315,raymonda_none_2_2.png,raymonda,1248.0444510739856,1289.3526252983293,6,0.10563570685065601,"place, right_hand_low",place,right_hand,low
@@ -323,12 +278,10 @@
 321,raymonda_none_2_2.png,raymonda,1028.824582338902,1186.9190035799522,6,0.613268353882752,"right_arm_middle, left",left,right_arm,middle
 322,raymonda_none_2_2.png,raymonda,1104.7654385441526,1154.5558621718374,6,0.14250534542024254,"right, left_support_middle",right,left_support,middle
 323,raymonda_none_2_2.png,raymonda,1110.5660799522673,1153.192869928401,6,0.11136730985698982,"place, right_leg_low",place,right_leg,low
-324,raymonda_none_2_2.png,raymonda,987.624179594272,1149.4906026252984,6,0.6296640451749079,measure_43,,,
 325,raymonda_none_2_2.png,raymonda,1069.1184367541766,1111.6057577565632,6,0.11076108261593466,"right_leg_low, right",right,right_leg,low
 326,raymonda_none_2_2.png,raymonda,1026.8529982100238,1072.6939140811455,6,0.12533809218492747,"right, left_support_middle",right,left_support,middle
 327,raymonda_none_2_2.png,raymonda,1028.1969719570404,1071.6542362768496,6,0.11497711751963252,"place, right_leg_low",place,right_leg,low
 328,raymonda_none_2_2.png,raymonda,925.4717332935561,992.7021181384247,6,0.21831130633574042,"right_support_low, forward",forward,right_support,low
-329,raymonda_none_2_2.png,raymonda,827.4123657517898,991.2186754176613,6,0.6380961149823036,measure_44,,,
 330,raymonda_none_2_2.png,raymonda,954.3925268496421,977.4366050119332,6,0.026247494056199878,"forward, right_arm_low",forward,right_arm,low
 331,raymonda_none_2_2.png,raymonda,905.1599791169452,967.6294003579953,6,0.19761691278883492,"backward, left_leg_middle",backward,left_leg,middle
 332,raymonda_none_2_2.png,raymonda,869.0565334128877,955.248359188544,6,0.30073065533546944,"left_arm_middle, backward",backward,left_arm,middle
@@ -341,7 +294,6 @@
 339,raymonda_none_2_2.png,raymonda,776.8104862768497,831.2350835322195,6,0.1626486232934632,"forward_diagonal, left_support_low",forward_diagonal,left_support,low
 340,raymonda_none_2_2.png,raymonda,748.9610680190932,829.0416169451074,6,0.27416687986380806,"right, right_arm_middle",right,right_arm,middle
 341,raymonda_none_2_2.png,raymonda,748.7772225536992,828.5407965393795,6,0.27278909067959417,"left_arm_middle, left",left,left_arm,middle
-342,raymonda_none_2_2.png,raymonda,673.8887231503579,823.754474940334,6,0.5775009466605356,measure_45,,,
 343,raymonda_none_2_2.png,raymonda,751.1672136038187,800.3427058472554,6,0.13983243440286655,"right, right_leg_low",right,right_leg,low
 344,raymonda_none_2_2.png,raymonda,748.5363215990452,799.4361575178998,6,0.14732760756499608,"right_leg_low, left",left,right_leg,low
 345,raymonda_none_2_2.png,raymonda,752.0674224343675,790.7003281622909,6,0.09400716613588236,"left_body_high, forward_diagonal",forward_diagonal,left_body,high
@@ -349,25 +301,18 @@
 347,raymonda_none_2_2.png,raymonda,726.5572792362767,751.9533114558474,6,0.03647068980307473,"right_support_middle, place",place,right_support,middle
 348,raymonda_none_2_2.png,raymonda,671.3339051312648,711.8369630071601,6,0.10213612232275147,"left_leg_low, left",left,left_leg,low
 349,raymonda_none_2_2.png,raymonda,627.9083383054892,676.9697195704057,6,0.13933643029654955,"right, right_support_low",right,right_support,low
-350,raymonda_none_2_2.png,raymonda,513.892452267303,671.6255220763722,6,0.6116976742127467,measure_46,,,
 351,raymonda_none_2_2.png,raymonda,543.9670346062052,628.9036396181383,6,0.2952746101659788,"forward_diagonal, left_leg_low",forward_diagonal,left_leg,low
 352,raymonda_none_2_2.png,raymonda,548.4744182577565,598.2838603818615,6,0.1425880127712963,"right_support_low, place",place,right_support,low
-353,raymonda_none_2_2.png,raymonda,350.25096957040574,513.9495077565632,6,0.6376276666596687,measure_47,,,
 354,raymonda_none_2_2.png,raymonda,473.9599492840096,512.5674970167064,6,0.09389694300114544,"left_support_low, forward_diagonal",forward_diagonal,left_support,low
 355,raymonda_none_2_2.png,raymonda,385.3654534606205,462.13044451073984,6,0.25975520499692195,"right_body_low, forward_diagonal",forward_diagonal,right_body,low
 356,raymonda_none_2_2.png,raymonda,388.611276849642,437.9579355608592,6,0.1405764405623428,"place, left_support_low",place,left_support,low
-357,raymonda_none_2_2.png,raymonda,190.89498806682576,346.65013424821,6,0.6031002697032465,measure_48,,,
-358,raymonda_none_2_2.png,raymonda,31.069883651551308,191.5035799522673,6,0.6234364380622568,measure_49,,,
 359,raymonda_none_2_3.png,raymonda,614.3142433621719,656.0065912142005,7,0.1073055873419243,"right, right_support_low",right,right_support,low
-360,raymonda_none_2_3.png,raymonda,496.6262772225537,655.6052170346062,7,0.6171130746013028,measure_51,,,
 361,raymonda_none_2_3.png,raymonda,549.6361127684964,576.4175678699285,7,0.04249268214158622,"left_support_high, left",left,left_support,high
 362,raymonda_none_2_3.png,raymonda,511.0346621420048,538.1669245972554,7,0.0440175300596102,"right, right_support_high",right,right_support,high
 363,raymonda_none_2_3.png,raymonda,470.57488066825783,495.9215020883055,7,0.036255916783181,"left_support_high, left",left,left_support,high
-364,raymonda_none_2_3.png,raymonda,335.5993809665872,493.63967407517913,7,0.6130330761179414,measure_52,,,
 365,raymonda_none_2_3.png,raymonda,432.5549485381862,459.3332432130072,7,0.042478944772955385,"right, right_support_high",right,right_support,high
 366,raymonda_none_2_3.png,raymonda,391.380910650358,422.9124869480908,7,0.06313994719375036,"left, left_support_high",left,left_support,high
 367,raymonda_none_2_3.png,raymonda,350.2732417213604,381.56778602326966,7,0.062109644546435895,"right_support_low, right",right,right_support,low
-368,raymonda_none_2_3.png,raymonda,174.0099287738664,335.324423851432,7,0.6272649900194992,measure_53,,,
 369,raymonda_none_2_3.png,raymonda,281.4423105608592,318.87440334128877,7,0.08878761442754178,"left, right_leg_low",left,right_leg,low
 370,raymonda_none_2_3.png,raymonda,278.7496270883055,316.74427580548934,7,0.09123286604383307,"right, right_leg_middle",right,right_leg,middle
 371,raymonda_none_2_3.png,raymonda,255.6311064289976,314.3992392601432,7,0.1815285900543928,"left_support_middle, backward_diagonal",backward_diagonal,left_support,middle
@@ -375,7 +320,6 @@
 373,raymonda_none_2_3.png,raymonda,172.48976357398567,206.66029609188544,7,0.07461065000050739,"left_arm_middle, left",left,left_arm,middle
 374,raymonda_none_2_3.png,raymonda,171.99989744928402,202.8551424522673,7,0.06020015030674834,"right, right_arm_middle",right,right_arm,middle
 375,raymonda_none_2_3.png,raymonda,134.34341437947495,174.33861314140813,7,0.09992862038715918,"place, left_support_low",place,left_support,low
-376,raymonda_none_2_3.png,raymonda,17.246448016109785,173.71600909904538,7,0.6062056039084103,measure_54,,,
 377,raymonda_none_2_3.png,raymonda,133.009714349642,172.4708010143198,7,0.09760700508854589,"right_support_middle, backward",backward,right_support,middle
 378,raymonda_none_2_3.png,raymonda,114.63499403341291,157.09532555190933,7,0.11064376791922012,"place, right_arm_high",place,right_arm,high
 379,raymonda_none_2_3.png,raymonda,112.14773829057279,150.41734412291171,7,0.09242801711471656,"forward_diagonal, head_middle",forward_diagonal,head,middle

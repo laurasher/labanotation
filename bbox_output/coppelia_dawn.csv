@@ -1,17 +1,9 @@
 ,image,ballet,ymin,ymax,staff_num,step_length,label,direction_movement,body_movement,height_movement
-0,coppelia_dawn_1_1.png,coppelia_dawn,1227.1879008800715,1558.0,1,1.0,measure_1,,,
 1,coppelia_dawn_1_1.png,coppelia_dawn,1228.1755947941533,1362.785202863962,1,0.37429492154766114,"left_arm_middle, left",left,left_arm,middle
 2,coppelia_dawn_1_1.png,coppelia_dawn,1222.471697230539,1360.6990082335328,1,0.38583205894846856,"right_arm_middle, right",right,right_arm,middle
 3,coppelia_dawn_1_1.png,coppelia_dawn,1232.6492672285206,1356.0165945704055,1,0.33844240964937,"left_leg_low, forward",forward,left_leg,low
 4,coppelia_dawn_1_1.png,coppelia_dawn,1227.7107976581144,1355.5517974343675,1,0.3527093006890018,"right_support_middle, place",place,right_support,middle
-5,coppelia_dawn_1_1.png,coppelia_dawn,990.0759994033414,1225.4303867094272,1,0.6955778963881576,measure_2,,,
-6,coppelia_dawn_1_1.png,coppelia_dawn,754.1987153192124,984.8470316229117,1,0.6805698681516641,measure_3,,,
-7,coppelia_dawn_1_1.png,coppelia_dawn,516.0918574731504,752.09986575179,1,0.6976623447543375,measure_4,,,
-8,coppelia_dawn_1_1.png,coppelia_dawn,278.58778341288786,515.9102960918856,1,0.7018544020240992,measure_5,,,
-9,coppelia_dawn_1_1.png,coppelia_dawn,43.204346285799524,276.37273456145584,1,0.6886065746301568,measure_6,,,
 10,coppelia_dawn_1_2.png,coppelia_dawn,1131.8456611724346,1216.938656026253,2,0.2163825719583241,"left_support_low, forward",forward,left_support,low
-11,coppelia_dawn_1_2.png,coppelia_dawn,976.3134322792364,1216.7092314289976,2,0.7116553527765762,measure_7,,,
-12,coppelia_dawn_1_2.png,coppelia_dawn,1095.1730217034608,1199.1611910799525,2,0.276640760291212,"right_arm_low, left_body_middle, place",,right_arm,low
 13,coppelia_dawn_1_2.png,coppelia_dawn,1093.372921017303,1192.9549615900953,2,0.26258927116875436,"left_arm_low, place",place,left_arm,low
 14,coppelia_dawn_1_2.png,coppelia_dawn,1066.7877133888262,1097.9348811371333,2,0.044345113103595096,"right_support_high, place",place,right_support,high
 15,coppelia_dawn_1_2.png,coppelia_dawn,976.40167250895,1078.9191713902146,2,0.2719506771395229,"forward, right_arm_middle",forward,right_arm,middle
@@ -21,14 +13,11 @@
 19,coppelia_dawn_1_2.png,coppelia_dawn,935.8346975686158,977.0781809367543,2,0.07654305270759561,"forward, right_support_high",forward,right_support,high
 20,coppelia_dawn_1_2.png,coppelia_dawn,894.8147561157518,976.0192981801911,2,0.2039819921052618,"right_arm_high, right",right,right_arm,high
 21,coppelia_dawn_1_2.png,coppelia_dawn,894.8559348896182,974.5427450029832,2,0.19914182629271907,"left_arm_high, left",left,left_arm,high
-22,coppelia_dawn_1_2.png,coppelia_dawn,736.5294320554892,971.8955381115753,2,0.6956152683978044,measure_8,,,
 23,coppelia_dawn_1_2.png,coppelia_dawn,893.1205437052505,957.2123638872316,2,0.14940818455222066,"left_leg_middle, backward",backward,left_leg,middle
 24,coppelia_dawn_1_2.png,coppelia_dawn,896.3266053848448,938.611323463604,2,0.07986363157899108,"right, right_hand_low",right,right_hand,low
 25,coppelia_dawn_1_2.png,coppelia_dawn,894.367672285203,938.4407256861576,2,0.08556677269144305,"left_hand_middle, left",left,left_hand,middle
-26,coppelia_dawn_1_2.png,coppelia_dawn,916.163009024463,936.146479713604,2,0.008743210666794139,right_support_hold,,,
 27,coppelia_dawn_1_2.png,coppelia_dawn,856.1478874552505,901.5033655280431,2,0.08965652519971569,"right_support_middle, place",place,right_support,middle
 28,coppelia_dawn_1_2.png,coppelia_dawn,673.16118175716,853.5418593377091,2,0.5202624395224937,"right_support_middle, backward_diagonal",backward_diagonal,right_support,middle
-29,coppelia_dawn_1_2.png,coppelia_dawn,495.46300715990463,735.282303475537,2,0.7098168401811148,measure_9,,,
 30,coppelia_dawn_1_2.png,coppelia_dawn,503.91642116646784,674.667148344272,2,0.48955177504523983,"right_support_middle, forward_diagonal",forward_diagonal,right_support,middle
 31,coppelia_dawn_1_2.png,coppelia_dawn,500.46916952565635,621.4347590990452,2,0.3307830801942976,"left_arm_middle, backward",backward,left_arm,middle
 32,coppelia_dawn_1_2.png,coppelia_dawn,566.0434255668257,620.6111836217184,2,0.1190352060618888,"right_arm_middle, forward",forward,right_arm,middle
@@ -36,10 +25,8 @@
 34,coppelia_dawn_1_2.png,coppelia_dawn,498.9396722106205,550.6719775507161,2,0.10999272574543446,"forward, right_arm_high",forward,right_arm,high
 35,coppelia_dawn_1_2.png,coppelia_dawn,523.8057689439141,549.2895472852031,2,0.026284121654107227,"right_hand_low, place",place,right_hand,low
 36,coppelia_dawn_1_2.png,coppelia_dawn,497.2454598001194,521.7232995226731,2,0.023076104778351994,"right_hand_low, forward",forward,right_hand,low
-37,coppelia_dawn_1_2.png,coppelia_dawn,262.50291803400955,494.6511970465394,2,0.6853533664619105,measure_10,,,
 38,coppelia_dawn_1_2.png,coppelia_dawn,319.01784382458237,481.77988887231504,2,0.46407524336527084,"right_arm_low, forward",forward,right_arm,low
 39,coppelia_dawn_1_2.png,coppelia_dawn,266.0619406324583,472.71467593973745,2,0.6040460849442472,"left_body_low, forward",forward,left_body,low
-40,coppelia_dawn_1_2.png,coppelia_dawn,23.436605011933175,260.9498899910501,2,0.7024627897992682,measure_11,,,
 41,coppelia_dawn_1_2.png,coppelia_dawn,216.57681980906926,243.31360941229119,2,0.030280072499344786,"right_arm_middle, forward",forward,right_arm,middle
 42,coppelia_dawn_1_2.png,coppelia_dawn,181.83958271181385,208.7646181384248,2,0.03088040314276086,"forward, right_arm_high",forward,right_arm,high
 43,coppelia_dawn_1_2.png,coppelia_dawn,143.83745711515513,181.10424746420048,2,0.06386106786543096,"right, right_arm_middle",right,right_arm,middle
@@ -50,31 +37,22 @@
 48,coppelia_dawn_1_2.png,coppelia_dawn,24.107230757756568,69.30975909904535,2,0.08916875655193937,"left_arm_middle, forward",forward,left_arm,middle
 49,coppelia_dawn_1_2.png,coppelia_dawn,22.724800492243443,66.58607734188543,2,0.08489140071759985,"right_arm_middle, forward",forward,right_arm,middle
 50,coppelia_dawn_1_2.png,coppelia_dawn,22.31889543556086,57.37968004176612,2,0.05682594313789898,"forward, left_support_low",forward,left_support,low
-51,coppelia_dawn_1_3.png,coppelia_dawn,970.8637380668257,1208.7348970763726,3,0.7036040780524793,measure_12,,,
 52,coppelia_dawn_1_3.png,coppelia_dawn,1145.8414670658685,1191.4255239520958,3,0.09038548090067124,"forward, right_arm_middle, forward_diagonal",forward,right_arm,middle
 53,coppelia_dawn_1_3.png,coppelia_dawn,1080.1094685628746,1135.6999251497007,3,0.12229667161072852,"right_arm_high, forward",forward,right_arm,high
-54,coppelia_dawn_1_3.png,coppelia_dawn,733.1272374701671,968.533562052506,3,0.6957435284213627,measure_13,,,
-55,coppelia_dawn_1_3.png,coppelia_dawn,850.2971931137724,966.3491017964074,3,0.31511296779774517,right_support_low,,right_support,low
 56,coppelia_dawn_1_3.png,coppelia_dawn,850.0504116766467,966.1669535928144,3,0.3153190882309862,"place, left_support_low",place,left_support,low
 57,coppelia_dawn_1_3.png,coppelia_dawn,849.5333458083832,952.9053892215567,3,0.2746758864399619,"left_arm_low, place",place,left_arm,low
 58,coppelia_dawn_1_3.png,coppelia_dawn,846.9597679640718,949.2624251497007,3,0.27126553018087257,"place, right_arm_low",place,right_arm,low
-59,coppelia_dawn_1_3.png,coppelia_dawn,852.0481661676648,945.0553892215567,3,0.24162166423647277,right_body_high,,right_body,high
 60,coppelia_dawn_1_3.png,coppelia_dawn,792.4328218562874,850.9846556886228,3,0.13174073509744016,"place, right_support_high",place,right_support,high
 61,coppelia_dawn_1_3.png,coppelia_dawn,794.0427769461078,850.7966317365269,3,0.12600683940907995,"left_support_high, place",place,left_support,high
 62,coppelia_dawn_1_3.png,coppelia_dawn,722.3233907185629,833.8039670658683,3,0.30053463170119465,"right, right_arm_middle",right,right_arm,middle
 63,coppelia_dawn_1_3.png,coppelia_dawn,727.7878368263472,831.3008982035929,3,0.2751256037488538,"left_arm_middle, right",right,left_arm,middle
 64,coppelia_dawn_1_3.png,coppelia_dawn,754.4167290419163,792.5738398203592,3,0.06670036929907923,"left_support_high, left",left,left_support,high
 65,coppelia_dawn_1_3.png,coppelia_dawn,730.9724925149701,759.2759730538922,3,0.03527637234032113,"right_support_high, place",place,right_support,high
-66,coppelia_dawn_1_3.png,coppelia_dawn,494.3895808472554,728.4259024463008,3,0.6913744818330468,measure_14,,,
 67,coppelia_dawn_1_3.png,coppelia_dawn,610.6030931483579,714.2344280860702,3,0.2755027873770258,"place, left_arm_high",place,left_arm,high
-68,coppelia_dawn_1_3.png,coppelia_dawn,256.576968973747,492.0359859785203,3,0.6959115686747593,measure_15,,,
-69,coppelia_dawn_1_3.png,coppelia_dawn,19.209315334128878,254.5395286396181,3,0.6955008036109005,measure_16,,,
-70,coppelia_dawn_1_4.png,coppelia_dawn,972.0537365751793,1211.222292661098,4,0.7077415787290007,measure_17,,,
 71,coppelia_dawn_1_4.png,coppelia_dawn,1184.265494011976,1210.4844311377244,4,0.028628600475161765,"place, left_support_high",place,left_support,high
 72,coppelia_dawn_1_4.png,coppelia_dawn,1086.881717814371,1193.9226047904192,4,0.28637611530581963,"right_arm_middle, forward",forward,right_arm,middle
 73,coppelia_dawn_1_4.png,coppelia_dawn,1150.9282934131736,1185.0900261976046,4,0.05395879661154695,"right_support_high, place",place,right_support,high
 74,coppelia_dawn_1_4.png,coppelia_dawn,967.787238023952,1072.8943300898202,4,0.2802090921986779,"right_arm_high, place",place,right_arm,high
-75,coppelia_dawn_1_4.png,coppelia_dawn,735.0721211217184,970.948444958234,4,0.6972423927764131,measure_18,,,
 76,coppelia_dawn_1_4.png,coppelia_dawn,849.5172904191617,914.6968562874252,4,0.1528770905601352,"right_arm_middle, right",right,right_arm,middle
 77,coppelia_dawn_1_4.png,coppelia_dawn,854.2805950598802,910.200486526946,4,0.12334726519127913,"left_arm_middle, left",left,left_arm,middle
 78,coppelia_dawn_1_4.png,coppelia_dawn,770.7952282934133,854.3814371257486,4,0.21157731357074228,"place, right_support_low",place,right_support,low
@@ -83,11 +61,9 @@
 81,coppelia_dawn_1_4.png,coppelia_dawn,729.5389595808383,819.5019461077844,4,0.23191335602527136,"left_support_low, place",place,left_support,low
 82,coppelia_dawn_1_4.png,coppelia_dawn,673.9690494011977,778.827002245509,4,0.2794145677492916,"left_arm_middle, forward",forward,left_arm,middle
 83,coppelia_dawn_1_4.png,coppelia_dawn,674.6452844311377,776.5017028443114,4,0.26984243985906703,"right_arm_middle, forward",forward,right_arm,middle
-84,coppelia_dawn_1_4.png,coppelia_dawn,495.26521479713614,732.8970017899762,4,0.7028407019827302,measure_19,,,
 85,coppelia_dawn_1_4.png,coppelia_dawn,494.4167851796407,732.1430576347303,4,0.7031420235064938,"right_support_middle, place",place,right_support,middle
 86,coppelia_dawn_1_4.png,coppelia_dawn,431.67522455089824,667.8176833832335,4,0.6980911180782533,"right_arm_middle, right",right,right_arm,middle
 87,coppelia_dawn_1_4.png,coppelia_dawn,432.5887350299401,658.3385291916168,4,0.66494809818957,"place, left_arm_high",place,left_arm,high
-88,coppelia_dawn_1_4.png,coppelia_dawn,260.50600387828166,494.7568988663485,4,0.692058773140934,measure_20,,,
 89,coppelia_dawn_1_4.png,coppelia_dawn,294.85510853293414,378.44131736526947,4,0.21157731357074247,"place, right_support_low",place,right_support,low
 90,coppelia_dawn_1_4.png,coppelia_dawn,318.23383233532934,359.81635479041915,4,0.07762427485398046,"left_arm_low, place",place,left_arm,low
 91,coppelia_dawn_1_4.png,coppelia_dawn,320.27440119760485,359.43671407185633,4,0.06990603734565691,"right_arm_low, place",place,right_arm,low
@@ -95,7 +71,6 @@
 93,coppelia_dawn_1_4.png,coppelia_dawn,258.292122005988,300.6042664670658,4,0.0799510964557544,"right_arm_middle, forward",forward,right_arm,middle
 94,coppelia_dawn_1_4.png,coppelia_dawn,260.6292851796407,299.35857035928143,4,0.0685250781836285,"left_arm_middle, forward",forward,left_arm,middle
 95,coppelia_dawn_1_4.png,coppelia_dawn,21.12937874251497,257.67520583832334,4,0.6993774909963072,"left_support_middle, place",place,left_support,middle
-96,coppelia_dawn_1_4.png,coppelia_dawn,18.057036843675423,257.4679295942721,4,0.7085144092928363,measure_21,,,
 97,coppelia_dawn_1_4.png,coppelia_dawn,202.152750748503,256.50069236526946,4,0.11833419426062808,"left, left_arm_low",left,left_arm,low
 98,coppelia_dawn_1_4.png,coppelia_dawn,197.08691991017963,240.3007110778443,4,0.08282651827258092,"right_arm_high, left",left,right_arm,high
 99,coppelia_dawn_1_4.png,coppelia_dawn,140.56790793413174,202.52052769461082,4,0.1425861072157036,"left_arm_middle, left",left,left_arm,middle
@@ -104,7 +79,6 @@
 102,coppelia_dawn_1_4.png,coppelia_dawn,19.403199850299398,138.3197230538922,4,0.32424844739323,"right_arm_middle, right",right,right_arm,middle
 103,coppelia_dawn_1_4.png,coppelia_dawn,73.72741392215569,122.25617514970058,4,0.09977637319282073,"right, right_support_high",right,right_support,high
 104,coppelia_dawn_1_4.png,coppelia_dawn,18.709169161676645,120.83252245508982,4,0.2706937160548381,"place, left_arm_high",place,left_arm,high
-105,coppelia_dawn_2_1.png,coppelia_dawn,968.5108144391407,1209.8543034009547,5,0.7146776096553,measure_22,,,
 106,coppelia_dawn_2_1.png,coppelia_dawn,1086.5697417664674,1204.3775449101795,5,0.3207126524686278,"right, right_arm_low",right,right_arm,low
 107,coppelia_dawn_2_1.png,coppelia_dawn,1143.8909618263474,1191.5897080838326,5,0.09712939058226297,"left_arm_high, place",place,left_arm,high
 108,coppelia_dawn_2_1.png,coppelia_dawn,1083.680127245509,1129.2073540419162,5,0.09020424530259591,"left, left_arm_high",left,left_arm,high
@@ -114,13 +88,11 @@
 112,coppelia_dawn_2_1.png,coppelia_dawn,969.4283308383234,1009.3429266467067,5,0.07230512641837954,"forward, left_arm_middle",forward,left_arm,middle
 113,coppelia_dawn_2_1.png,coppelia_dawn,846.5076908682636,969.4225860778442,5,0.33699956821895477,"left_arm_high, forward",forward,left_arm,high
 114,coppelia_dawn_2_1.png,coppelia_dawn,845.3989520958082,969.1698166167664,5,0.3397293212524749,"right_arm_middle, backward_diagonal",backward_diagonal,right_arm,middle
-115,coppelia_dawn_2_1.png,coppelia_dawn,730.6132905727924,968.0414304892603,5,0.7021912555398433,measure_23,,,
 116,coppelia_dawn_2_1.png,coppelia_dawn,847.0247193113772,967.6934131736526,5,0.329836256567237,"right_support_middle, place",place,right_support,middle
 117,coppelia_dawn_2_1.png,coppelia_dawn,844.2787238023953,888.4157185628743,5,0.08577068668439673,"left_hand_low, forward",forward,left_hand,low
 118,coppelia_dawn_2_1.png,coppelia_dawn,727.8898764970061,773.5377432634731,5,0.09058897559591067,"right_arm_middle, forward",forward,right_arm,middle
 119,coppelia_dawn_2_1.png,coppelia_dawn,730.762256736527,771.3030314371257,5,0.07430205984558441,"left_arm_middle, forward",forward,left_arm,middle
 120,coppelia_dawn_2_1.png,coppelia_dawn,667.0873315868264,731.8767402694613,5,0.15163284880185807,"left_leg_low, forward",forward,left_leg,low
-121,coppelia_dawn_2_1.png,coppelia_dawn,489.47014841885436,727.7855384844869,5,0.7050207656098663,measure_24,,,
 122,coppelia_dawn_2_1.png,coppelia_dawn,612.0582709580839,727.5624251497006,5,0.3133661359153324,"left_arm_low, right",right,left_arm,low
 123,coppelia_dawn_2_1.png,coppelia_dawn,669.2933196107783,713.3613772455091,5,0.08555084080250347,"right_arm_high, place",place,right_arm,high
 124,coppelia_dawn_2_1.png,coppelia_dawn,611.3114520958084,653.6905501497006,5,0.08016461669609579,"right_arm_high, right",right,right_arm,high
@@ -131,13 +103,10 @@
 129,coppelia_dawn_2_1.png,coppelia_dawn,489.5455089820359,538.0255426646706,5,0.09962097724372941,"right_arm_low, place",place,right_arm,low
 130,coppelia_dawn_2_1.png,coppelia_dawn,490.23488023952103,533.8720808383233,5,0.08417680404066394,"left_arm_low, place",place,left_arm,low
 131,coppelia_dawn_2_1.png,coppelia_dawn,428.8636040419162,491.64809131736536,5,0.1452389977367692,"left_support_middle, place",place,left_support,middle
-132,coppelia_dawn_2_1.png,coppelia_dawn,256.10046241050117,485.8410090990453,5,0.6776749199008685,measure_25,,,
 133,coppelia_dawn_2_1.png,coppelia_dawn,375.37413922155685,476.8783121257485,5,0.268719101400659,"left_arm_middle, forward",forward,left_arm,middle
 134,coppelia_dawn_2_1.png,coppelia_dawn,372.75452844311377,472.8857035928144,5,0.2643405042529336,"forward, right_arm_middle",forward,right_arm,middle
 135,coppelia_dawn_2_1.png,coppelia_dawn,197.217627245509,373.7713510479042,5,0.5080579848227744,"left_arm_middle, left",left,left_arm,middle
-136,coppelia_dawn_2_1.png,coppelia_dawn,351.48742514970064,373.5530501497006,5,0.01538336349794801,right_support_hold,,,
 137,coppelia_dawn_2_1.png,coppelia_dawn,192.93433253114384,368.15336565685163,5,0.5038015519401106,"right_arm_middle, right",right,right_arm,middle
-138,coppelia_dawn_2_1.png,coppelia_dawn,16.806235083532222,254.69803475536992,5,0.7036699027377259,measure_26,,,
 139,coppelia_dawn_2_1.png,coppelia_dawn,92.46191991017963,141.18323353293414,5,0.10039043783035911,"left, left_support_low",left,left_support,low
 140,coppelia_dawn_2_1.png,coppelia_dawn,93.23171781437124,139.94236526946105,5,0.09397826627511252,"right, right_leg_low",right,right_leg,low
 141,coppelia_dawn_2_1.png,coppelia_dawn,53.75946856287426,81.04708083832334,5,0.032036689051431165,"right_support_low, right",right,right_support,low
@@ -145,7 +114,6 @@
 143,coppelia_dawn_2_1.png,coppelia_dawn,15.510853293413177,58.131231287425145,5,0.08093407728272532,"place, right_support_low",place,right_support,low
 144,coppelia_dawn_2_1.png,coppelia_dawn,14.63190494011976,40.736096556886224,5,0.02826266807891471,"place, left_arm_low",place,left_arm,low
 145,coppelia_dawn_2_1.png,coppelia_dawn,14.109131736526944,39.84565868263473,5,0.0270901567088125,"right_arm_low, place",place,right_arm,low
-146,coppelia_dawn_2_2.png,coppelia_dawn,962.9292213603819,1205.9306011336514,6,0.7199647530279202,measure_27,,,
 147,coppelia_dawn_2_2.png,coppelia_dawn,1159.2682447604789,1203.5400449101794,6,0.08620059160653731,"right_support_high, right",right,right_support,high
 148,coppelia_dawn_2_2.png,coppelia_dawn,1164.1765531437125,1192.6504491017965,6,0.03581984043109564,"left_arm_middle, forward",forward,left_arm,middle
 149,coppelia_dawn_2_2.png,coppelia_dawn,1162.2874251497005,1188.7409244011976,6,0.02937663742672125,"right_arm_middle, forward",forward,right_arm,middle
@@ -156,7 +124,6 @@
 154,coppelia_dawn_2_2.png,coppelia_dawn,1023.639127994012,1084.6962013473053,6,0.1397301397304449,"place, left_support_low",place,left_support,low
 155,coppelia_dawn_2_2.png,coppelia_dawn,924.3543226047904,965.7724550898204,6,0.0771000223913205,"right_support_low, place",place,right_support,low
 156,coppelia_dawn_2_2.png,coppelia_dawn,919.8284056886228,963.0329341317364,6,0.08279697872004585,"left_leg_low, right",right,left_leg,low
-157,coppelia_dawn_2_2.png,coppelia_dawn,726.7009434665871,960.6942683472554,6,0.6912373619376705,measure_28,,,
 158,coppelia_dawn_2_2.png,coppelia_dawn,921.3808008982036,959.8824850299401,6,0.06779924065336818,"left_support_low, right",right,left_support,low
 159,coppelia_dawn_2_2.png,coppelia_dawn,856.3000561377245,885.3218562874251,6,0.03756714972041671,"left_support_low, place",place,left_support,low
 160,coppelia_dawn_2_2.png,coppelia_dawn,853.2751684131737,871.7897642215569,6,0.004058853869986551,"right_leg_low, backward",backward,right_leg,low
@@ -168,12 +135,9 @@
 166,coppelia_dawn_2_2.png,coppelia_dawn,725.7847118263472,763.652881736527,6,0.06577891428759033,"place, left_support_low",place,left_support,low
 167,coppelia_dawn_2_2.png,coppelia_dawn,724.4663173652693,748.0718562874251,6,0.020294269349934568,"right_arm_low, place",place,right_arm,low
 168,coppelia_dawn_2_2.png,coppelia_dawn,723.0623128742516,746.5594124251497,6,0.019948447719755798,"left_arm_low, place",place,left_arm,low
-169,coppelia_dawn_2_2.png,coppelia_dawn,488.2945815930788,724.4887380668257,6,0.6982559858972198,measure_29,,,
-170,coppelia_dawn_2_2.png,coppelia_dawn,249.5925007458234,487.36192944510736,6,0.7032796521421691,measure_30,,,
 171,coppelia_dawn_2_2.png,coppelia_dawn,292.2898676387316,330.6847218289921,6,0.0674585516205504,"right_leg_low, right",right,right_leg,low
 172,coppelia_dawn_2_2.png,coppelia_dawn,254.73156143827862,291.15108295583235,6,0.061159061342265765,"right_support_low, right",right,right_support,low
 173,coppelia_dawn_2_2.png,coppelia_dawn,209.6227349943375,251.3799723952435,6,0.07818145447129118,"left_support_low, place",place,left_support,low
-174,coppelia_dawn_2_2.png,coppelia_dawn,11.828758949880669,249.11480086515513,6,0.7017380939081597,measure_31,,,
 175,coppelia_dawn_2_2.png,coppelia_dawn,211.01518261608157,246.6629211494904,6,0.058697785085996323,"right_support_low, place",place,right_support,low
 176,coppelia_dawn_2_2.png,coppelia_dawn,149.406624251497,213.60273203592808,6,0.14974076586718416,"right_arm_high, right",right,right_arm,high
 177,coppelia_dawn_2_2.png,coppelia_dawn,150.82204341317362,210.74906437125748,6,0.13612631432121938,"left_arm_middle, left",left,left_arm,middle
@@ -190,9 +154,6 @@
 188,coppelia_dawn_2_2.png,coppelia_dawn,10.147642215568863,92.04790419161677,6,0.2062006972783921,"right_arm_middle, right",right,right_arm,middle
 189,coppelia_dawn_2_2.png,coppelia_dawn,14.268338323353293,90.51833832335329,6,0.18818157023226195,"left_arm_middle, left",left,left_arm,middle
 190,coppelia_dawn_2_2.png,coppelia_dawn,14.941803892215571,37.70836452095809,6,0.017618702000660357,"left_support_low, left",left,left_support,low
-191,coppelia_dawn_2_3.png,coppelia_dawn,976.9375,1218.0219272076374,7,0.7138514414738797,measure_32,,,
-192,coppelia_dawn_2_3.png,coppelia_dawn,740.8952863961813,974.2441079952267,7,0.6891819906004758,measure_33,,,
-193,coppelia_dawn_2_3.png,coppelia_dawn,500.3679146778045,742.0955399761339,7,0.7159026504551866,measure_34,,,
 194,coppelia_dawn_2_3.png,coppelia_dawn,697.2988405336722,740.8559402795427,7,0.08392135616026469,"place, right_support_low",place,right_support,low
 195,coppelia_dawn_2_3.png,coppelia_dawn,695.1769377382466,738.1898030495554,7,0.08218575001300701,"left_support_low, place",place,left_support,low
 196,coppelia_dawn_2_3.png,coppelia_dawn,618.9168519695045,703.9580686149936,7,0.21621744720516006,"left_leg_low, forward",forward,left_leg,low
@@ -210,14 +171,12 @@
 208,coppelia_dawn_2_3.png,coppelia_dawn,496.81877382465063,524.3362452350699,7,0.03276972779782896,"right_arm_low, place",place,right_arm,low
 209,coppelia_dawn_2_3.png,coppelia_dawn,498.8183767471411,523.8164707750954,7,0.02473523641951297,"left_arm_low, place",place,left_arm,low
 210,coppelia_dawn_2_3.png,coppelia_dawn,468.6225381194409,498.769456797967,7,0.04115524064413019,"right_support_low, forward",forward,right_support,low
-211,coppelia_dawn_2_3.png,coppelia_dawn,263.99835918854416,498.75417661097856,7,0.6936690102470858,measure_35,,,
 212,coppelia_dawn_2_3.png,coppelia_dawn,458.2515088945362,489.7865311308768,7,0.04558201137927057,"right_arm_middle, forward",forward,right_arm,middle
 213,coppelia_dawn_2_3.png,coppelia_dawn,433.4246346886912,488.64914231257933,7,0.12112963176664128,"left_leg_middle, right",right,left_leg,middle
 214,coppelia_dawn_2_3.png,coppelia_dawn,455.4691867852605,486.4049396442186,7,0.04367089449802036,"left_arm_middle, forward",forward,left_arm,middle
 215,coppelia_dawn_2_3.png,coppelia_dawn,418.08823062261763,448.1311944091487,7,0.04082372036881091,"right_arm_high, place",place,right_arm,high
 216,coppelia_dawn_2_3.png,coppelia_dawn,418.357290343075,445.29995235069885,7,0.030936615687242222,"left_arm_high, place",place,left_arm,high
 217,coppelia_dawn_2_3.png,coppelia_dawn,344.8672966963152,382.37666772554,7,0.06463467661377226,"right_support_low, place",place,right_support,low
-218,coppelia_dawn_2_3.png,coppelia_dawn,23.87872911694511,264.3831294749404,7,0.7120016905175216,measure_36,,,
 219,coppelia_dawn_2_3.png,coppelia_dawn,219.8707115628971,264.1249205844981,7,0.0861444921241675,"right_arm_high, right",right,right_arm,high
 220,coppelia_dawn_2_3.png,coppelia_dawn,240.0196156289708,263.58068614993647,7,0.020152456143046116,"right_support_low, place",place,right_support,low
 221,coppelia_dawn_2_3.png,coppelia_dawn,226.36040419161682,262.14580838323354,7,0.059136811629482804,"left, left_arm_high",left,left_arm,high
@@ -236,13 +195,10 @@
 234,coppelia_dawn_2_3.png,coppelia_dawn,101.45875596658712,128.38119033412892,7,0.030872108162099756,"left_hand_low, place",place,left_hand,low
 235,coppelia_dawn_2_3.png,coppelia_dawn,62.36077844311377,104.31886227544909,7,0.07882196943856674,"right_support_low, backward",backward,right_support,low
 236,coppelia_dawn_2_3.png,coppelia_dawn,24.41407185628743,55.91145209580839,7,0.04546196810944715,"backward, left_support_low",backward,left_support,low
-237,coppelia_dawn_2_4.png,coppelia_dawn,975.8291318615753,1216.747016706444,8,0.7133203248626472,measure_37,,,
-238,coppelia_dawn_2_4.png,coppelia_dawn,738.1789230310263,974.9332488066827,8,0.7000424095818628,measure_38,,,
 239,coppelia_dawn_2_4.png,coppelia_dawn,772.4154224904703,819.5314485387547,8,0.09527105029176876,"right_support_low, backward",backward,right_support,low
 240,coppelia_dawn_2_4.png,coppelia_dawn,735.7132306226176,798.2268106734434,8,0.14437505342429366,"left_arm_low, place",place,left_arm,low
 241,coppelia_dawn_2_4.png,coppelia_dawn,735.1567662007625,794.625079415502,8,0.13466345947671768,"place, right_arm_low",place,right_arm,low
 242,coppelia_dawn_2_4.png,coppelia_dawn,733.9337674714104,766.9975381194411,8,0.0504573095457247,"left_support_low, place",place,left_support,low
-243,coppelia_dawn_2_4.png,coppelia_dawn,497.3816378281623,737.4553251789978,8,0.7106281130746821,measure_39,,,
 244,coppelia_dawn_2_4.png,coppelia_dawn,655.4111340533674,737.3214739517156,8,0.2062328365602625,"left_arm_middle, backward_diagonal",backward_diagonal,left_arm,middle
 245,coppelia_dawn_2_4.png,coppelia_dawn,652.6471569250317,736.343074968234,8,0.2119271848186814,"right_arm_high, forward",forward,right_arm,high
 246,coppelia_dawn_2_4.png,coppelia_dawn,691.7097363405337,736.2452350698857,8,0.087041546986795,"forward, right_support_low",forward,right_support,low
@@ -254,9 +210,7 @@
 252,coppelia_dawn_2_4.png,coppelia_dawn,494.48896124523515,603.4642630241424,8,0.292545115299164,"place, left_arm_low",place,left_arm,low
 253,coppelia_dawn_2_4.png,coppelia_dawn,493.49221728081324,600.418996188056,8,0.28601221575611585,"right_arm_low, place",place,right_arm,low
 254,coppelia_dawn_2_4.png,coppelia_dawn,493.18646759847525,542.0391518424397,8,0.10080938900886109,"right_support_middle, backward",backward,right_support,middle
-255,coppelia_dawn_2_4.png,coppelia_dawn,260.2367989260144,493.8727625298328,8,0.6900977088957014,measure_40,,,
 256,coppelia_dawn_2_4.png,coppelia_dawn,200.98149618805598,263.5011912325286,8,0.14439455461695963,"right_arm_high, forward",forward,right_arm,high
-257,coppelia_dawn_2_4.png,coppelia_dawn,23.0173031026253,261.5519093078759,8,0.7057198630122673,measure_41,,,
 258,coppelia_dawn_2_4.png,coppelia_dawn,198.39485387547649,258.3401365946633,8,0.13618455250465147,"left_arm_middle, backward_diagonal",backward_diagonal,left_arm,middle
 259,coppelia_dawn_2_4.png,coppelia_dawn,225.51485069885643,258.2239517153749,8,0.04932624037110698,"forward, right_support_middle",forward,right_support,middle
 260,coppelia_dawn_2_4.png,coppelia_dawn,199.77684243964424,241.02858958068614,8,0.07656940652525177,"left_leg_low, backward",backward,left_leg,low

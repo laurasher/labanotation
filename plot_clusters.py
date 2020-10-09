@@ -21,9 +21,8 @@ def style_plots(fig):
 data_root = "clustering_output/"
 jitter_amt = 0.03
 
-# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
-ballets = ["raymonda", "coppelia_dawn", "artifact", "songs",]
-colors = {"raymonda": "blue", "coppelia_dawn": "red", "artifact": "orange", "songs": "purple"}
+ballets = ["coppelia_dawn", "raymonda", "sleepingbeauty_bluebird", "songs", "artifact",]
+colors = {"raymonda": "orange", "coppelia_dawn": "red", "artifact": "blue", "songs": "purple", "sleepingbeauty_bluebird": "pink"}
 
 # p = figure(plot_width=800, plot_height=600, title="Repetition index and direction diversity index")
 p = figure(plot_width=800, plot_height=600, title="Repetition index and total movements in measure")

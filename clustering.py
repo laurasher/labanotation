@@ -10,7 +10,6 @@ pd.set_option("display.expand_frame_repr", False)
 data_root = "data/"
 
 ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
-# ballets = ["korobushka"]
 
 lookup_table = pd.DataFrame.from_dict(
     {
@@ -200,8 +199,9 @@ for b in ballets:
         lookup_table, left_on="ballet", right_on="ballet"
     )
     # print(lookup_table)
-    print(measure_count_df)
+    print(measure_count_df.head())
     measure_count_df.to_csv(f"clustering_output/{b}_indices.csv", index=False)
+    print(f"clustering_output/{b}_indices.csv")
     # with open(f"bbox_output/{b}.json", 'w') as outfile:
     #     json.dump(json.loads(df_to_save.reset_index().to_json(orient='records')), outfile)
 

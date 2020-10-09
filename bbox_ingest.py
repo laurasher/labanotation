@@ -8,8 +8,7 @@ pd.set_option("display.expand_frame_repr", False)
 
 data_root = "data/"
 
-# ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs", "korobushka"]
-ballets = ["songs"]
+ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
 
 for b in ballets:
     bbox_file = f"{data_root}coppelia_dawn/vott-csv-export/coppelia_dawn-export.csv"
@@ -93,9 +92,10 @@ for b in ballets:
                 "body_movement",
                 "height_movement"]]
     df_to_save = df_to_save.dropna()
-    print(df_to_save)
+    print(df_to_save.head())
     # print(json.dumps(json.loads(df_to_save.to_json(orient='records')), indent=4, sort_keys=True))
     df_to_save.to_csv(f"bbox_output/{b}.csv")
+    print(f"bbox_output/{b}.csv")
     with open(f"bbox_output/{b}.json", 'w') as outfile:
         json.dump(json.loads(df_to_save.reset_index().to_json(orient='records')), outfile)
 

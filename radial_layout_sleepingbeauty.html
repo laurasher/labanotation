@@ -2,16 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	
-	<!-- D3.js -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script> -->
 	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<!-- <script src="d3-scale-radial.js"></script> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel='stylesheet' type='text/css'>
-		
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>		
 	<style>
 		body {
 		  	font-size: 10px;
@@ -96,13 +89,13 @@
 	
 </head>	
 <body>
-	<button id="head-button" class="body-button enabled">head</button>
+	<button id="head-button" class="body-button">head</button>
 	<button id="arm-button" class="body-button">arm</button>
 	<button id="hand-button" class="body-button">hand</button>
 	<button id="leg-button" class="body-button">leg</button>
 	<button id="body-button" class="body-button">body</button>
 	<button id="foot-button" class="body-button">foot</button>
-	<button id="all-button" class="body-button">all</button>
+	<button id="all-button" class="body-button enabled">all</button>
 	<div id="choreoRadial"></div>
 	<script>
 		///////////////////////////////////////////////////////////////////////////
@@ -112,15 +105,26 @@
 		const datapath = "bbox_output/"
 		var stepCircleColor = "black"
 		var stepCircleAlpha = 0.3
-		var barWidth = 10
-		var barHeightMulitplier = 200
 		var dataset; // global
 		var numRadialSpokes = 8
 		var randJitter = false
-		var lineRes = 0.005
+		// var lineRes = 0.005
+		var lineRes = 0.05
+		var curveAlpha = 0.55
 		var radialLineWidth = 0.5
-		// var lineRes = 0.005/5
-		// var radialLineWidth = 0.1
+		var radiusMult = 300
+		var curveType = 'basis'
+		var stepLengthMultipier = 2
+
+		function saveSvg(svg, name){
+	        var svg_data = document.getElementById("choreoRadial").innerHTML //put id of your svg element here
+	        var head = '<svg title="graph" version="1.1" xmlns="http://www.w3.org/2000/svg">'
+	        //if you have some additional styling like graph edges put them inside <style> tag
+	        var style = '<style>circle {cursor: pointer;}</style>'
+	        var full_svg = head +  style + svg_data + "</svg>"
+	        var blob = new Blob([full_svg], {type: "image/svg+xml"});  
+	        saveAs(blob, name);
+		};
 
 		function getRandomNumber(start, end) {
 	        return (Math.random() * (end-start) * 100)/100 + start;
@@ -133,10 +137,12 @@
 		  var pi = Math.PI;
 		  return rad * (180/pi);
 		}
-
-		d3.json(datapath+"sleepingbeauty_bluebird.json", function(data) {
+		const ballet = 'sleepingbeauty_bluebird'
+		d3.json(datapath+ballet+".json", function(data) {
 		    dataset = data;
-			var spokeArr = d3.range(0,359,359/numRadialSpokes)
+		    // dataset = dataset.filter(x=>x.direction_movement=='backward_diagonal')
+		    console.log(dataset)
+			var spokeArr = d3.range(10,359,359/numRadialSpokes)
 			var spokeArrRad = spokeArr.map(x => degrees_to_radians(x))
 			var bodyMovements = [
 									"head",
@@ -157,7 +163,7 @@
 			///////////////////////////////////////////////////////////////////////////	
 
 			var margin = {
-				top: 70,
+				top: 150,
 				right: 20,
 				bottom: 120,
 				left: 20
@@ -236,7 +242,7 @@
 
 			// staff_num corresponds to R, radius
 			dataset.forEach(function(d) {
-				d.rad = staffNumToRad(d.staff_num)
+				d.rad = staffNumToRad(d.staff_num) 
 				// + getRandomNumber(0.1,0.5);
 			});
 
@@ -250,102 +256,8 @@
 
 
 			//Set the minimum inner radius and max outer radius of the chart
-			var	outerRadius = Math.min(width, height, 250),
+			var	outerRadius = Math.min(width, height, 250)/2,
 				innerRadius = outerRadius * 0.4;
-
-			//Base the color scale on average temperature extremes
-			var colorScale = d3.scaleLinear()
-				.domain([1, 8])
-				.range(["#2c7bb6", "#ffff8c", "#d7191c"])
-				.interpolate(d3.interpolateHcl);
-
-			//Scale for the heights of the bar, not starting at zero to give the bars an initial offset outward
-			var barScale = d3.scaleLinear()
-				.range([innerRadius, outerRadius])
-				.domain([1,8]);  
-
-			///////////////////////////////////////////////////////////////////////////
-			///////////////////////////// Create Axes /////////////////////////////////
-			///////////////////////////////////////////////////////////////////////////
-
-			//Wrapper for the bars and to position it downward
-			var barWrapper = svg.append("g")
-				.attr("transform", "translate(" + 0 + "," + 0 + ")");
-				
-			//Draw gridlines below the bars
-			var axes = barWrapper.selectAll(".gridCircles")
-			 	.data([1,2,3,4,5,6,7,8])
-			 	.enter().append("g");
-
-			//Draw the circles
-			axes.append("circle")
-			 	.attr("class", "axisCircles")
-			 	.attr("r", function(d) { return innerRadius*(d); });
-
-			//Draw the axis labels
-			axes.append("text")
-				.attr("class", "axisText")
-				.attr("y", function(d) { return barScale(d); })
-				.attr("dy", "0.3em")
-				// .text(function(d) { return d + "°C"});
-
-			var lineWrapper = svg.append("g").attr("class", "lineWrapper");
-		    lineWrapper.selectAll(".lines")
-		        .data(d3.range(0,numRadialSpokes))
-		        .enter().append("line")
-		        .attr("class", "axisSpokes")
-		        .attr("transform", function(d,i) { return "rotate(" + ( spokeArr[i]-1 ) + ")"; })
-		        .attr("x1", 0)
-		        .attr("y1", innerRadius)
-		        .attr("x2", 0)
-		        .attr("y2", outerRadius*3.23)
-
-		    var labelWrapper = svg.append("g");
-		    labelWrapper.selectAll(".axisText")
-		   		.data(bodyMovements)
-		   		.enter().append("text")
-		   		.attr("class", "axisText")
-		   		.text(function(d,i) {return d})
-		   		.attr("x", function(d,i) { return 4 * outerRadius * Math.cos(degrees_to_radians(spokeArr[i]+60)); })
-		        .attr("y", function(d,i) { return 4 * outerRadius * Math.sin(degrees_to_radians(spokeArr[i]+60)); })
-
-
-			///////////////////////////////////////////////////////////////////////////
-			////////////////////////////// Draw circles and bars //////////////////////
-			///////////////////////////////////////////////////////////////////////////
-
-			var circleWrapper = svg.append("g").attr("class", "circleWrapper");
-		    circleWrapper.selectAll(".dots")
-		        .data(dataset)
-		        // .enter().append("circle")
-		        .attr("class", "dots")
-		        .attr("cx", function(d) { return innerRadius * d.rad 
-		        	 // + getRandomNumber(10,40)
-		        })
-		        .attr("cy", function(d) { return innerRadius * d.rad 
-		        	// + getRandomNumber(10,40) 
-		        })
-		        .attr("transform", function(d,i) { return "rotate(" + ( d.theta ) + ")"; })
-		        // .attr("transform", function(d,i) { return "rotate(" + ( d.theta + 25 * getRandomNumber(0.2,0.5) ) + ")"; })
-		        .attr("r", function(d) { return d.step_length*15; })
-		        .style("fill", stepCircleColor)
-		        .style("opacity", stepCircleAlpha)
-
-		    var barWrapper = svg.append("g")
-				.attr("transform", "translate(" + 0 + "," + 0 + ")");
-
-		    barWrapper.selectAll(".stepBar")
-			 	.data(dataset)
-			 	// .enter().append("rect")
-			 	.attr("class", "stepBar")
-			 	.attr("transform", function(d,i) { return "rotate(" + ( d.theta + 50 * (randJitter ? 1 : 0) * getRandomNumber(-0.1,0.1) ) + ")"; })
-				.attr("height", function(d,i) { return d.step_length*barHeightMulitplier; })
-			 	.attr("width", barWidth)
-			 	// .attr("height", 10)
-			 	.attr("x", 0)
-			 	.attr("y", function(d) { return innerRadius * (d.rad )  })
-			 	.style("fill", stepCircleColor)
-			 	.style("opacity", stepCircleAlpha)
 
 			///////////////////////////////////////////////////////////////////////////
 			//////////////////////////// Radial line //////////////////////////////////
@@ -355,7 +267,7 @@
 			var data = []
 			var dataStyling = []
 
-			radArr = dataset.map(x=>(x.ymin * x.staff_num)/25)
+			radArr = dataset.map(x=>(x.ymin * x.staff_num)/30)
 			function findClosest(num, spoke){
 				if (Math.abs(num[0] - spoke) <= 0.03) return 1
 			}
@@ -363,10 +275,12 @@
 				if(dataset[ii].body_movement!=null){
 					// if(dataset[ii].body_movement.includes("arm")){
 					data = []
-					for (i = 0; i <= 2; i=i+lineRes) {
-					  data.push([Math.PI * i, radArr[ii] + getRandomNumber(-0.5, 0.5) ])
+					for (i = 0; i <= 2+lineRes; i=i+lineRes) {
+					  // data.push([Math.PI * i, radArr[ii] + getRandomNumber(-0.5, 0.5) ])
+					  if (randJitter) {data.push([Math.PI * i, radArr[ii] + getRandomNumber(-3.5, 3.5) ])}
+					  if (!randJitter) {data.push([Math.PI * i, radArr[ii] ])}
 					}
-					dataStyling.push({'body_movement' : dataset[ii].body_movement, 'step_length' : dataset[ii].step_length})
+					dataStyling.push({'body_movement' : dataset[ii].body_movement, 'step_length' : dataset[ii].step_length * stepLengthMultipier})
 					arr = spokeArrRad
 					num = degrees_to_radians(dataset[ii].theta)
 					var closestSpoke = arr.reduce(function(prev, curr) {
@@ -375,33 +289,31 @@
 					
 					// find theta closest to chosen spokeArr
 					index = data.findIndex(x => findClosest(x, closestSpoke));
-					data[index] = [data[index][0], radArr[ii]+dataset[ii].step_length * 300]
-					// for (j=0; j<=2; j++){
-					// 	data[index-j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * (160 - 2.5*j))]
-					// 	data[index+j] = [data[index][0], radArr[ii] + (dataset[ii].step_length * (160 - 2.5*j))]
-					// }
+					data[index] = [data[index][0], radArr[ii]+dataset[ii].step_length * radiusMult]
 					dataArr.push({data})
 				}
 			}
 
-			var lineRadial = d3.lineRadial();
+			if (curveType == 'catmull'){var lineRadial = d3.lineRadial().curve(d3.curveCatmullRom.alpha(curveAlpha));}
+			if (curveType == 'basis'){var lineRadial = d3.lineRadial().curve(d3.curveBasis);}
+
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
-			var highlight = "head"
-
 			for (i = 0; i < dataArr.length; i++) {
 				className = "radial_"+dataStyling[i].body_movement
+				curRadialLineWidth = dataStyling[i].step_length
 				radialWrapper
 				    .append("path")
 				    .attr("d", lineRadial(dataArr[i].data))
 				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
+				    .attr("opacity", 0.7)
 				    .attr("fill", "none")
-				    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				    // .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth/2 : radialLineWidth/2 })
+				    .attr("stroke-width", curRadialLineWidth)
+				    .attr("stroke", "black")
 			}
-			
-			var alignRotate = -44;
+
+			var alignRotate = -55;
 		    radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 
 			////////////////////////////////////////////// buttons //////////////////////////////////////////////
@@ -415,15 +327,18 @@
 				let highlight = "head"
 				for (i = 0; i < dataArr.length; i++) {
 					className = "radial_"+dataStyling[i].body_movement
+					curRadialLineWidth = dataStyling[i].step_length					
 					radialWrapper
 					    .append("path")
-					    .attr("d", lineRadial(dataArr[i].data))
-					    .attr("class", className)
-					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
-					    .attr("fill", "none")
-					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
-					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				    .attr("d", lineRadial(dataArr[i].data))
+				    .attr("class", className)
+				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+				    .attr("fill", "none")
+				    .attr("stroke-width", curRadialLineWidth)
+				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
 			});
 			$('#arm-button').click(function(){
 				console.log("ARM");
@@ -435,15 +350,18 @@
 				let highlight = "arm"
 				for (i = 0; i < dataArr.length; i++) {
 					className = "radial_"+dataStyling[i].body_movement
+					curRadialLineWidth = dataStyling[i].step_length					
 					radialWrapper
 					    .append("path")
-					    .attr("d", lineRadial(dataArr[i].data))
-					    .attr("class", className)
-					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
-					    .attr("fill", "none")
-					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
-					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				    .attr("d", lineRadial(dataArr[i].data))
+				    .attr("class", className)
+				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+				    .attr("fill", "none")
+				    .attr("stroke-width", curRadialLineWidth)
+				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
 			});
 			$('#leg-button').click(function(){
 				console.log("LEG");
@@ -455,15 +373,18 @@
 				let highlight = "leg"
 				for (i = 0; i < dataArr.length; i++) {
 					className = "radial_"+dataStyling[i].body_movement
+					curRadialLineWidth = dataStyling[i].step_length					
 					radialWrapper
 					    .append("path")
-					    .attr("d", lineRadial(dataArr[i].data))
-					    .attr("class", className)
-					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
-					    .attr("fill", "none")
-					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
-					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				    .attr("d", lineRadial(dataArr[i].data))
+				    .attr("class", className)
+				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+				    .attr("fill", "none")
+				    .attr("stroke-width", curRadialLineWidth)
+				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
 			});
 			$('#foot-button').click(function(){
 				console.log("FOOT");
@@ -475,15 +396,18 @@
 				let highlight = "support"
 				for (i = 0; i < dataArr.length; i++) {
 					className = "radial_"+dataStyling[i].body_movement
+					curRadialLineWidth = dataStyling[i].step_length					
 					radialWrapper
 					    .append("path")
-					    .attr("d", lineRadial(dataArr[i].data))
-					    .attr("class", className)
-					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
-					    .attr("fill", "none")
-					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
-					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				    .attr("d", lineRadial(dataArr[i].data))
+				    .attr("class", className)
+				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+				    .attr("fill", "none")
+				    .attr("stroke-width", curRadialLineWidth)
+				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
 			});
 			$('#body-button').click(function(){
 				console.log("BODY");
@@ -495,15 +419,18 @@
 				let highlight = "body"
 				for (i = 0; i < dataArr.length; i++) {
 					className = "radial_"+dataStyling[i].body_movement
+					curRadialLineWidth = dataStyling[i].step_length					
 					radialWrapper
 					    .append("path")
-					    .attr("d", lineRadial(dataArr[i].data))
-					    .attr("class", className)
-					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
-					    .attr("fill", "none")
-					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
-					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				    .attr("d", lineRadial(dataArr[i].data))
+				    .attr("class", className)
+				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+				    .attr("fill", "none")
+				    .attr("stroke-width", curRadialLineWidth)
+				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
 			});
 			$('#hand-button').click(function(){
 				console.log("HAND");
@@ -515,15 +442,18 @@
 				let highlight = "hand"
 				for (i = 0; i < dataArr.length; i++) {
 					className = "radial_"+dataStyling[i].body_movement
+					curRadialLineWidth = dataStyling[i].step_length					
 					radialWrapper
 					    .append("path")
-					    .attr("d", lineRadial(dataArr[i].data))
-					    .attr("class", className)
-					    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.9 : 0.1 })
-					    .attr("fill", "none")
-					    .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth*6 : radialLineWidth })
-					    .attr("stroke", function(d,i) { return className.includes(highlight) ? "white" : "black" })
+				    .attr("d", lineRadial(dataArr[i].data))
+				    .attr("class", className)
+				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+				    .attr("fill", "none")
+				    .attr("stroke-width", curRadialLineWidth)
+				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
 			});
 			$('#all-button').click(function(){
 				console.log("ALL");
@@ -532,19 +462,22 @@
 				radialWrapper.remove()
 				radialWrapper = svg.append("g")
 					.attr("transform", "translate(" + 0 + "," + 0 + ")");
-				let highlight = "hand"
 				for (i = 0; i < dataArr.length; i++) {
 					className = "radial_"+dataStyling[i].body_movement
+					curRadialLineWidth = dataStyling[i].step_length					
 					radialWrapper
 					    .append("path")
 					    .attr("d", lineRadial(dataArr[i].data))
 					    .attr("class", className)
-					    .attr("opacity", 0.6)
+					    .attr("opacity", 0.7)
 					    .attr("fill", "none")
-					    .attr("stroke-width", radialLineWidth/3)
-					    .attr("stroke", "black");
+					    .attr("stroke-width", curRadialLineWidth)
+					    .attr("stroke", "black")
 				}
+		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+		    	saveSvg(svg, ballet+'_ALL.svg')
 			});
+
 		});
 	</script>
 

@@ -1,5 +1,4 @@
 ,image,ballet,ymin,ymax,staff_num,step_length,label,direction_movement,body_movement,height_movement
-0,artifact_none_1_1.png,artifact,838.7689439140814,1642.1331947344877,1,0.9813785680040735,measure_1,,,
 1,artifact_none_1_1.png,artifact,1474.5387630988025,1518.4320172155687,1,0.023488470397279224,"backward_diagonal, left_support_middle",backward_diagonal,left_support,middle
 2,artifact_none_1_1.png,artifact,1446.3056044161676,1489.3068768712576,1,0.02236344994926342,"left_support_middle, forward_diagonal",forward_diagonal,left_support,middle
 3,artifact_none_1_1.png,artifact,1372.6434318862275,1484.5367140718563,1,0.10925415968213945,"left_hand_middle, forward",forward,left_hand,middle
@@ -11,21 +10,17 @@
 9,artifact_none_1_1.png,artifact,1299.9818300898205,1348.1100580089822,1,0.02882987182873078,"right_arm_high, right",right,right_arm,high
 10,artifact_none_1_1.png,artifact,1303.3636040419162,1342.5720153443115,1,0.017579667348567866,"forward, right_hand_middle",forward,right_hand,middle
 11,artifact_none_1_1.png,artifact,1298.2211358532934,1339.7254303892214,1,0.020475372153896575,"forward, right_leg_low",forward,right_leg,low
-12,artifact_none_1_1.png,artifact,1274.6107690868264,1299.8809973802395,1,0.0,left_support_hold,,,
 13,artifact_none_1_1.png,artifact,1010.3980445359282,1112.6656811377243,1,0.09711372163006747,"right_support_low, forward",forward,right_support,low
 14,artifact_none_1_1.png,artifact,904.2599831586825,1080.9731848802396,1,0.19100890650015884,"left_hand_high, place",place,left_hand,high
 15,artifact_none_1_1.png,artifact,908.409636976048,1075.9160366766466,1,0.17939673891932928,"place, right_arm_high",place,right_arm,high
 16,artifact_none_1_1.png,artifact,837.6483439371257,964.2632017215567,1,0.12782188846766043,"right_leg_low, left",left,right_leg,low
 17,artifact_none_1_1.png,artifact,841.503255988024,963.3789764221556,1,0.1218446059134173,"right, right_leg_low",right,right_leg,low
 18,artifact_none_1_1.png,artifact,838.8040419161676,911.5897455089819,1,0.05992935012650292,"left_support_low, place",place,left_support,low
-19,artifact_none_1_1.png,artifact,33.62711627386646,845.6937649164679,1,0.9923545509389011,measure_2,,,
-20,artifact_none_1_1.png,artifact,799.2465943113773,835.5851515718564,1,0.013960036341906765,left_support_hold,,,
 21,artifact_none_1_1.png,artifact,632.8028162425151,831.5751122754491,1,0.21883115131892675,"right_leg_low, backward",backward,right_leg,low
 22,artifact_none_1_1.png,artifact,740.6084955089821,807.2899419910179,1,0.05223029714746976,"left_hand_middle, forward",forward,left_hand,middle
 23,artifact_none_1_1.png,artifact,632.0039109281438,769.0821014221558,1,0.141018867462217,"left_arm_low, backward",backward,left_arm,low
 24,artifact_none_1_1.png,artifact,636.9292009730539,738.3901758982036,1,0.09609631183360094,"forward, left_hand_low",forward,left_hand,low
 25,artifact_none_1_1.png,artifact,564.9036208832335,630.8869947604791,1,0.051349846362065785,"left_arm_low, place",place,left_arm,low
-26,artifact_none_1_1.png,artifact,563.2747848053892,614.427994011976,1,0.03264515856548168,"right_support_low, right_support_hold, backward",,right_support,low
 27,artifact_none_1_1.png,artifact,502.4338791167664,613.8229977544909,1,0.10861827855934751,"right_arm_high, place",place,right_arm,high
 28,artifact_none_1_1.png,artifact,470.6017683383234,603.7087013473056,1,0.13601008077191853,"left_hand_high, place",place,left_hand,high
 29,artifact_none_1_1.png,artifact,497.019938248503,542.8833083832336,1,0.02597329816941993,"backward, left_leg_low",backward,left_leg,low
@@ -38,7 +33,6 @@
 36,artifact_none_1_1.png,artifact,101.76347305389221,273.65221744011984,1,0.1849240132943662,"right_arm_middle, right",right,right_arm,middle
 37,artifact_none_1_1.png,artifact,89.7411115269461,266.0975205838324,1,0.19055889832095219,"left_hand_high, left",left,left_hand,high
 38,artifact_none_1_1.png,artifact,25.97226252831257,170.48835645526614,1,0.15039999468931836,"left_support_high, backward",backward,left_support,high
-39,artifact_none_1_2.png,artifact,810.236687052506,1625.0795047732693,2,0.9958560208841598,measure_3,,,
 40,artifact_none_1_2.png,artifact,1287.6305763473054,1358.5703405688625,2,0.05760114134409485,"left_arm_middle, left",left,left_arm,middle
 41,artifact_none_1_2.png,artifact,1087.515999251497,1288.0897829341318,2,0.22110329494007752,"left_arm_low, forward",forward,left_arm,low
 42,artifact_none_1_2.png,artifact,1149.0114146706587,1252.868637724551,2,0.09911860282811413,"forward, right_leg_low",forward,right_leg,low
@@ -47,7 +41,6 @@
 45,artifact_none_1_2.png,artifact,811.8542851796408,895.9885853293414,2,0.07424287666110208,"right_arm_low, forward",forward,right_arm,low
 46,artifact_none_1_2.png,artifact,810.7062687125749,890.0877806886227,2,0.06824837687463924,"right_leg_low, place",place,right_leg,low
 47,artifact_none_1_2.png,artifact,622.1921184881088,812.2824532842583,2,0.20788094422396486,"right_arm_low, right",right,right_arm,low
-48,artifact_none_1_2.png,artifact,8.159867243436754,809.4435784606205,2,0.9787544674232013,measure_4,,,
 49,artifact_none_1_2.png,artifact,741.3737275449101,790.9986526946108,2,0.03071759560287281,"backward, left_leg_low",backward,left_leg,low
 50,artifact_none_1_2.png,artifact,579.6258607784431,619.2477357784431,2,0.018101152413006853,"left_support_low, backward",backward,left_support,low
 51,artifact_none_1_2.png,artifact,537.4783495508982,615.949101796407,2,0.06709967240670187,"right_arm_low, place",place,right_arm,low
@@ -60,7 +53,6 @@
 58,artifact_none_1_2.png,artifact,6.061526946107786,83.00924401197605,2,0.06517872964099176,"right, right_support_middle",right,right_support,middle
 59,artifact_none_2_1.png,artifact,1541.5545845808385,1615.1257485029944,5,0.06092001951981077,"left_leg_low, left",left,left_leg,low
 60,artifact_none_2_1.png,artifact,1538.6049869011974,1607.9566991017966,5,0.055598195462076234,"left_leg_low, right",right,left_leg,low
-61,artifact_none_2_1.png,artifact,797.2241385739858,1604.0982529087112,5,0.9858054171120845,measure_5,,,
 62,artifact_none_2_1.png,artifact,1337.6947885479044,1413.0984000748504,5,0.06323121168202664,"left_support_low, forward",forward,left_support,low
 63,artifact_none_2_1.png,artifact,1266.984814745509,1385.5232784431141,5,0.11763545876367065,"right_arm_high, right",right,right_arm,high
 64,artifact_none_2_1.png,artifact,1270.054968188623,1378.0890063622758,5,0.10438665106184299,"right_leg_low, forward",forward,right_leg,low
@@ -70,7 +62,6 @@
 68,artifact_none_2_1.png,artifact,802.4432728293415,997.6069797904194,5,0.2142797836521349,"left_body_low, place",place,left_body,low
 69,artifact_none_2_1.png,artifact,803.5122005988025,943.5979977544913,5,0.14481224028516984,"left_leg_low, place",place,left_leg,low
 70,artifact_none_2_1.png,artifact,662.606624251497,798.2559693113773,5,0.13921672241875124,"left_leg_low, forward",forward,left_leg,low
-71,artifact_none_2_1.png,artifact,0.0,790.9936977923628,5,0.9657760890431731,measure_6,,,
 72,artifact_none_2_1.png,artifact,665.9018151197605,750.1702937874252,5,0.07441211060713451,"left_arm_middle, left",left,left_arm,middle
 73,artifact_none_2_1.png,artifact,528.6772080838324,640.0466223802397,5,0.10859342626938576,"left_support_low, forward",forward,left_support,low
 74,artifact_none_2_1.png,artifact,402.8571762724552,535.8141092814371,5,0.1358208918295298,"right_leg_low, right",right,right_leg,low
@@ -78,7 +69,6 @@
 76,artifact_none_2_1.png,artifact,257.98129678143715,399.8111339820359,5,0.14701192756236658,"right_leg_low, forward",forward,right_leg,low
 77,artifact_none_2_1.png,artifact,0.0,269.0885011227545,5,0.3075181411436491,"right_support_high, place",place,right_support,high
 78,artifact_none_2_1.png,artifact,0.0,268.0999438622755,5,0.30627131379297984,"place, left_support_high",place,left_support,high
-79,artifact_none_2_2.png,artifact,826.0875400641028,1638.8237179487182,6,0.9931990011335328,measure_7,,,
 80,artifact_none_2_2.png,artifact,1557.2103199850299,1631.3141092814374,6,0.06159179839477007,"left_leg_low, left",left,left_leg,low
 81,artifact_none_2_2.png,artifact,1569.8918600299403,1626.6335142215567,6,0.03969363854090473,"right, left_leg_low",right,left_leg,low
 82,artifact_none_2_2.png,artifact,1429.2965849550894,1605.4779004491015,6,0.1903380598810909,"left, left_arm_high",left,left_arm,high
@@ -91,7 +81,6 @@
 89,artifact_none_2_2.png,artifact,689.7879116766467,1022.3467252994012,6,0.3875706831098872,"left_body_low, forward",forward,left_body,low
 90,artifact_none_2_2.png,artifact,829.0060441616766,964.785544535928,6,0.13938088206056523,"place, left_leg_low",place,left_leg,low
 91,artifact_none_2_2.png,artifact,692.1789015718563,825.4406811377246,6,0.13620538248078368,"left_leg_low, forward",forward,left_leg,low
-92,artifact_none_2_2.png,artifact,4.341346153846153,822.4697516025642,6,1.0,measure_8,,,
 93,artifact_none_2_2.png,artifact,553.1466410928143,699.2251403443112,6,0.15237059342886725,"right_support_middle, place",place,right_support,middle
 94,artifact_none_2_2.png,artifact,547.6549681886228,655.2241672904191,6,0.10380036831260753,"forward, left_support_low",forward,left_support,low
 95,artifact_none_2_2.png,artifact,19.34758607784431,291.59938248502993,6,0.3115078777391405,"left_support_middle, forward",forward,left_support,middle
