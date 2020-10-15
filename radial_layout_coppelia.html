@@ -84,16 +84,19 @@
 	  	}
 	  	.enabled{
 	  		background: white;
+	  		color: black
 	  	}
-	  	button {
-        font-size: 14px;
-        background: #130C0E;
-        color: #7AC143;
-        border: none;
-        outline:none;
-        padding: 4px 8px;
-        letter-spacing: 1px;
+	  	#play-button {
+        	border-radius: 3px;
+	  		background: black;
+			color: white;
+			border: 1px solid black;
+			padding: 5px;
       }
+      #play-button.enabled{
+	  		background: white;
+	  		color: black
+	  	}
 	</style>
 
 	
@@ -107,9 +110,9 @@
 	<button id="foot-button" class="body-button">foot</button>
 	<button id="all-button" class="body-button enabled">all</button>
 	<button id="play-button" onclick="document.getElementById('audioElement').play()">Play &#9658;</button>
-	<button onclick="document.getElementById('audioElement').pause()">Pause ||</button>
+	<!--<button onclick="document.getElementById('audioElement').pause()">Pause ||</button>
     <button onclick="document.getElementById('audioElement').volume+=0.1">Vol +</button>
-    <button onclick="document.getElementById('audioElement').volume-=0.1">Vol -</button>
+    <button onclick="document.getElementById('audioElement').volume-=0.1">Vol -</button>-->
 	<div id="choreoRadial"></div>
 	<script>
 		///////////////////////////////////////////////////////////////////////////
@@ -158,7 +161,6 @@
 		d3.json(datapath+ballet+".json", function(data) {
 		    dataset = data;
 		    dataset = dataset.filter(x=> +x.measure_num>6)
-		    console.log(dataset)
 			var spokeArr = d3.range(10,359,359/numRadialSpokes)
 			var spokeArrRad = spokeArr.map(x => degrees_to_radians(x))
 			var bodyMovements = [
@@ -751,7 +753,6 @@
 			      "measure_num":"41"
 			   }
 			]
-			console.log(measures)
 			///////////////////////////////////////////////////////////////////////////
 			//////////////////////////// Create scales ////////////////////////////////
 			///////////////////////////////////////////////////////////////////////////
@@ -761,10 +762,10 @@
 				measNum = +d.measure_num
 				meas_ymin = measures.filter(x=>+x.measure_num==measNum)[0].ymax
 				step_ymin = +d.ymax
-				console.log(meas_ymin)
-				console.log(step_ymin)
-				console.log( (step_ymin -meas_ymin)*measNum )
-				console.log('-------')
+				// console.log(meas_ymin)
+				// console.log(step_ymin)
+				// console.log( (step_ymin -meas_ymin)*measNum )
+				// console.log('-------')
 				// d.playbackTime = +d.step_length * (+d.measure_num)
 				d.playbackTime = (step_ymin-meas_ymin)*measNum
 
@@ -775,7 +776,7 @@
 				d.playbackTime = ((d.playbackTime-min)/(max-min))*total_len_sec
 			});
 			// Normalize playback time from 0 to 1, so I can scale by total ballet lenth
-			console.log(dataset)
+			// console.log(dataset)
 			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
 			dataset.forEach(function(d) {
 				d.theta = bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50
@@ -795,11 +796,11 @@
 			var data = []
 			var dataStyling = []
 			var dataset = dataset.sort(({playbackTime:a}, {playbackTime:b}) => a-b);
-			console.log(dataset)
+			// console.log(dataset)
 			
 			radArr = dataset.map(x=>(x.playbackTime)*5)
 			radArr = radArr.filter(x=>x>0)
-			console.log('radArr', radArr)
+			// console.log('radArr', radArr)
 			// radArr = dataset.map(x=>(x.measure_num*x.ymin)/100)
 			
 			function findClosest(num, spoke){
@@ -841,6 +842,7 @@
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
 			$('#play-button').click(function(){
+				$('#play-button').addClass('enabled')
 				for (i = 0; i < dataArr.length; i++) {
 					className = "radial_"+dataStyling[i].body_movement
 					curRadialLineWidth = dataStyling[i].step_length
@@ -856,7 +858,7 @@
 					    .attr("stroke", "black")
 					    .transition()
 	          			// .delay(curPlaybackTime*1000)
-	          			.delay((curPlaybackTime-5)*1000)
+	          			.delay((curPlaybackTime-4)*1000)
 					    .attr("opacity", 0.7)
 
 				}
