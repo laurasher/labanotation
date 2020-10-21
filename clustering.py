@@ -54,6 +54,7 @@ for b in ballets:
     df["image"] = df["image"].str.replace("raymonda", "raymonda_none")
     df["image"] = df["image"].str.replace("songs", "songs_none")
     df["image"] = df["image"].str.replace("korobushka", "korobushka_none")
+    df["image"] = df["image"].str.replace("endolor", "endolor_none")
 
     df = df[df["image"].str.contains(b)].reset_index()
     df["step_length"] = df["ymax"] - df["ymin"]
