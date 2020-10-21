@@ -5,8 +5,7 @@
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<audio id="audioElement" src="audio/coppelia_dawn_short.m4a"></audio>
-	<!-- <audio id="audioElement" src="audio/coppelia_dawn_short.mp3"></audio> -->
+	<audio id="audioElement" src="audio/artifact.mp3"></audio>
 	<style>
 		body {
 		  	font-size: 10px;
@@ -15,7 +14,7 @@
 		  	fill: #8C8C8C;
 		  	text-align: center;
 		  	background: #F8E8CB;
-			background: #fff5e2;
+            background: #fff5e2;
 		}
 
 	  	.title {
@@ -115,13 +114,16 @@
 	<!--<button onclick="document.getElementById('audioElement').pause()">Pause ||</button>
     <button onclick="document.getElementById('audioElement').volume+=0.1">Vol +</button>
     <button onclick="document.getElementById('audioElement').volume-=0.1">Vol -</button>-->
-	<div id="choreoRadial"></div>
+	<div id="measures" style='margin-top: 5%;'></div>
 	<script>
 		///////////////////////////////////////////////////////////////////////////
 		//////////////////////////////// Data files ///////////////////////////////
 		///////////////////////////////////////////////////////////////////////////	
-
-		const datapath = "bbox_output/"
+		// Only show measures b/w
+        var measMin = 6;
+        var measMax = 9;
+        
+        const datapath = "bbox_output/"
 		var stepCircleColor = "black"
 		var stepCircleAlpha = 0.3
 		var dataset; // global
@@ -131,18 +133,19 @@
 		var lineRes = 0.05
 		var curveAlpha = 0.55
 		var radialLineWidth = 0.5
-		var radiusMult = 300
+		var radiusMult = 200 //this has to do with the spikes
+		var radiusOutwardMult = 4 //scaling to the page
 		var curveType = 'basis'
 		var stepLengthMultipier = 2
 
 		function saveSvg(svg, name){
-	        var svg_data = document.getElementById("choreoRadial").innerHTML //put id of your svg element here
+	        var svg_data = document.getElementById("measures").innerHTML //put id of your svg element here
 	        var head = '<svg title="graph" version="1.1" xmlns="http://www.w3.org/2000/svg">'
 	        //if you have some additional styling like graph edges put them inside <style> tag
 	        var style = '<style>circle {cursor: pointer;}</style>'
 	        var full_svg = head +  style + svg_data + "</svg>"
 	        var blob = new Blob([full_svg], {type: "image/svg+xml"});  
-	        // saveAs(blob, name);
+	        saveAs(blob, name);
 		};
 
 		function getRandomNumber(start, end) {
@@ -156,111 +159,121 @@
 		  var pi = Math.PI;
 		  return rad * (180/pi);
 		}
-		const ballet = 'coppelia_dawn'
-		const total_len_sec = 160
-		// const total_len_sec = 45
+		
+        const ballet = 'artifact'
+		const total_len_sec = 95
 		var measures = []
+		///////////////////////////////////////////////////////////////////////////
+		//////////////////////////// Helper functions /////////////////////////////
+		///////////////////////////////////////////////////////////////////////////
+
+		function range(start, end, step, offset) {
+			var len = (Math.abs(end - start) + ((offset || 0) * 2)) / (step || 1) + 1;
+			var direction = start < end ? 1 : -1;
+			var startingPoint = start - (direction * (offset || 0));
+			var stepSize = direction * (step || 1);
+				
+			return Array(len).fill(0).map(function(_, index) {
+				return startingPoint + (stepSize * index);
+			});
+		}
+
 		d3.json(datapath+ballet+".json", function(data) {
 		    dataset = data;
-		    // dataset = dataset.filter(x=> +x.measure_num>=7)
-		    // dataset = dataset.filter(x => +x.measure_num<=8)
+		    dataset = dataset.filter(x=> +x.measure_num>=measMin)
+		    dataset = dataset.filter(x => +x.measure_num<=measMax)
+            dataset = dataset.filter(x => +x.body_movement.includes('arm'))
 			var spokeArr = d3.range(10,359,359/numRadialSpokes)
 			var spokeArrRad = spokeArr.map(x => degrees_to_radians(x))
-			var bodyMovements = [
-									"head",
-									"right_hand",
-									"right_arm",
-									"right_body",
-									"right_leg",
-									"right_support",
-									"left_support",
-									"left_leg",
-									"left_body",
-									"left_arm",
-									"left_hand"
-								]
+			var bodyMovements = ["head","right_hand","right_arm","right_body","right_leg","right_support","left_support","left_leg","left_body","left_arm","left_hand"]
 
 			///////////////////////////////////////////////////////////////////////////
 			//////////////////// Set up and initiate svg containers ///////////////////
 			///////////////////////////////////////////////////////////////////////////	
 			var margin = {
-				top: 150,
-				right: 20,
-				bottom: 120,
-				left: 20
+				top: 5,
+				right: 5,
+				bottom: 5,
+				left: 5
 			};
-			var width = window.innerWidth - margin.left - margin.right - 20;
-			var height = window.innerHeight - margin.top - margin.bottom - 20;
-
+			var padding = {
+				top: 50,
+			} 
+			// var width = window.innerWidth - margin.left - margin.right - 20;
+			// var height = window.innerHeight - margin.top - margin.bottom - 20;
+			var width = 600 - margin.left - margin.right;
+			var height = 100 - margin.top - margin.bottom;
 			//SVG container
-			var svg = d3.select("#choreoRadial")
+			var svg = d3.select("#measures")
 				.append("svg")
 				.attr("width", width + margin.left + margin.right)
 				.attr("height", height + margin.top + margin.bottom)
 				.append("g")
-				.attr("transform", "translate(" + (margin.left + width/2) + "," + (margin.top + height/2) + ")");
+				.attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
 
+
+            ///////////////////////////////////////////////////////////////////////////
+			//////////////////////////// Create scales ////////////////////////////////
 			///////////////////////////////////////////////////////////////////////////
-			//////////////////////////// Helper functions /////////////////////////////
-			///////////////////////////////////////////////////////////////////////////
-			function staffNumToRad(staff_num){
-				return parseInt(staff_num);
+			console.log('------------- Back to the beginning....')
+            console.log(dataset)
+			dataset_6 = dataset.filter(x=>x.measure_num==7)
+			dataset_7 = dataset.filter(x=>x.measure_num==8)
+			console.log(dataset_6)
+			console.log('------------- Flattened data')
+			dataset_flat = []
+            dataset_flat_obj = {
+				'measure_num': 7,
+				'body_movement': [],
+				'direction_movement': [],
+				'height_movement': [],
+				'step_length': [],
+				'index': [],
+				'yVal': [],
+				'line': []
 			}
-			function bodyMovementToTheta(body_movement){
-				switch(body_movement){
-					case "right_arm":
-						return spokeArr[2];
-					case "left_arm":
-						return spokeArr[9];
-					case "right_leg":
-						return spokeArr[4];
-					case "left_leg":
-						return spokeArr[7];
-					case "right_support":
-						return spokeArr[5];
-					case "left_support":
-						return spokeArr[6];
-					case "right_hand":
-						return spokeArr[1];
-					case "left_hand":
-						return spokeArr[10];
-					case "right_body":
-						return spokeArr[3];
-					case "left_body":
-						return spokeArr[8];
-					case "head":
-						return spokeArr[0];
-				}
+			for (ii = 0; ii < dataset_6.length; ii++) {
+				dataset_flat_obj['body_movement'].push(dataset[ii].body_movement)
+				dataset_flat_obj['direction_movement'].push(dataset[ii].direction_movement)
+				dataset_flat_obj['height_movement'].push(dataset[ii].height_movement)
+				dataset_flat_obj['step_length'].push(dataset[ii].step_length)
+				dataset_flat_obj['line'].push({'index': ii, 'yVal': dataset[ii].step_length})
+				// dataset_flat_obj['line'].push({'index': ii, 'yVal': getRandomNumber(5,18)})
 			}
 
-			function bodyDirectionToTheta(body_movement, direction){
-				switch(direction){
-					case "place":
-						return -1;
-					case "forward":
-						return spokeArr[0]
-					case "forward_diagonal":
-						if (body_movement.includes("right")){
-							return spokeArr[1]
-						} else {
-							return spokeArr[7]
-						}
-					case "right":
-						return spokeArr[2];
-					case "backward_diagonal":
-						if (body_movement.includes("right")){
-							return spokeArr[3]
-						} else {
-							return spokeArr[5]
-						}
-					case "backward":
-						return spokeArr[4];
-					case "left":
-						return spokeArr[6];
-				}
-			}
+			dataset_flat[0] = dataset_flat_obj
+			dataset_flat[1] = dataset_flat_obj
+			dataset_flat[2] = dataset_flat_obj
+			dataset_flat[3] = dataset_flat_obj
+			dataset_flat[4] = dataset_flat_obj
+			console.log(dataset_flat)
+			for (i = 1; i < dataset_flat.length; i++){
+				// Add X axis --> it is a date format
+				var x = d3.scaleLinear()
+					.domain(d3.extent(dataset_flat[0].line.filter(x=>x.index), function(d) { return +d.index; }))
+					.range([ 0, ((width/dataset_flat.length) - 30) ]);
+					
+				// Add Y axis
+				var y = d3.scaleLinear()
+					.domain([0, d3.max(dataset_flat[0].line.filter(x=>x.yVal), function(d) { return +d.yVal; })])
+					.range([ height, 0 ]);
 
-			var measures = [
+				// Add the line
+				svg.append("path")
+					.datum(dataset_flat[i].line)
+					.attr('class', 'measure-'+i)
+					.attr("fill", "none")
+					.attr("stroke", "steelblue")
+					.attr("stroke-width", 1.5)
+					.attr("d", d3.line()
+						.curve(d3.curveCatmullRom)
+						.x(function(d) { return x(d.index) })
+						.y(function(d) { return y(d.yVal) })
+						)
+						.attr("transform", "translate(" + ( ((width/dataset_flat.length) * i) + 35 ) + "," + 0 + ")");
+			}
+        })
+        var measures = [
 			   {
 			      "index":0,
 			      "ballet":"coppelia_dawn",
@@ -754,294 +767,6 @@
 			      "measure_num":"41"
 			   }
 			]
-			///////////////////////////////////////////////////////////////////////////
-			//////////////////////////// Create scales ////////////////////////////////
-			///////////////////////////////////////////////////////////////////////////
-			// Playback time
-			// get the ymin of the same measure, subtract it from the step ymin, then add difference to measure num
-			dataset.forEach(function(d) {
-				measNum = +d.measure_num
-				meas_ymin = measures.filter(x=>+x.measure_num==measNum)[0].ymax
-				step_ymin = +d.ymax
-				// console.log(meas_ymin)
-				// console.log(step_ymin)
-				// console.log( (step_ymin -meas_ymin)*measNum )
-				// console.log('-------')
-				// d.playbackTime = (step_ymin-meas_ymin)*measNum
-				// d.playbackTime = measNum
-				// d.playbackTime = (step_ymin-meas_ymin)/100+measNum
-				d.playbackTime = measNum + (step_ymin)/100
-				
-			});
-			min = Math.min.apply(Math, dataset.map(x=>x.playbackTime))
-			max = Math.max.apply(Math, dataset.map(x=>x.playbackTime))
-			dataset.forEach(function(d) {
-				// d.playbackTime = ((d.playbackTime-min)/(max-min))*total_len_sec
-				d.playbackTime = d.playbackTime*4
-			});
-			// Normalize playback time from 0 to 1, so I can scale by total ballet lenth
-			console.log('NORMALIZED', dataset)
-			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
-			dataset.forEach(function(d) {
-				d.theta = bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50
-				d.thetaRad = degrees_to_radians( bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50 )
-			});
-
-
-			//Set the minimum inner radius and max outer radius of the chart
-			var	outerRadius = Math.min(width, height, 250)/2,
-				innerRadius = outerRadius * 0.4;
-
-			///////////////////////////////////////////////////////////////////////////
-			//////////////////////////// Radial line //////////////////////////////////
-			///////////////////////////////////////////////////////////////////////////
-			var dataArr = []
-			var data = []
-			var dataStyling = []
-			var dataset = dataset.sort(({playbackTime:a}, {playbackTime:b}) => a-b);
-			console.log('sorted', dataset)
-			
-			radArr = dataset.map(x=>(x.playbackTime)*2)
-			// Nonzero radii
-			radArr = radArr.filter(x=>x>0)
-			
-			function findClosest(num, spoke){
-				if (Math.abs(num[0] - spoke) <= 0.03) return 1
-			}
-			for (ii = 0; ii < radArr.length; ii++) {
-				if(dataset[ii].body_movement!=null){
-					data = []
-					for (i = 0; i <= 2+lineRes; i=i+lineRes) {
-					  if (randJitter) {data.push([Math.PI * i, radArr[ii] + getRandomNumber(-3.5, 3.5) ])}
-					  if (!randJitter) {data.push([Math.PI * i, radArr[ii] ])}
-					}
-					dataStyling.push({'body_movement' : dataset[ii].body_movement,
-									  'step_length' : dataset[ii].step_length * stepLengthMultipier,
-									  'playback_time': dataset[ii].playbackTime})
-					arr = spokeArrRad
-					num = degrees_to_radians(dataset[ii].theta)
-					var closestSpoke = arr.reduce(function(prev, curr) {
-				  		return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev);
-					});
-					console.log(dataset[ii].direction_movement)
-					// find theta closest to chosen spokeArr
-					if (dataset[ii].direction_movement!='place'){
-						index = data.findIndex(x => findClosest(x, closestSpoke));
-						data[index] = [data[index][0], radArr[ii]+dataset[ii].step_length * radiusMult]
-						dataArr.push({data})
-					}
-					if (dataset[ii].direction_movement=='place'){
-						index = data.findIndex(x => findClosest(x, closestSpoke));
-						data[index] = [data[index][0], radArr[ii]]
-						dataArr.push({data})
-					}
-
-				}
-			}
-
-			if (curveType == 'catmull'){var lineRadial = d3.lineRadial().curve(d3.curveCatmullRom.alpha(curveAlpha));}
-			if (curveType == 'basis'){var lineRadial = d3.lineRadial().curve(d3.curveBasis);}
-
-			// var dataStyling = dataStyling.sort(({playback_time:a}, {playback_time:b}) => b-a);
-			
-			var radialWrapper = svg.append("g")
-				.attr("transform", "translate(" + 0 + "," + 0 + ")");
-			$('#play-button').click(function(){
-				$('#play-button').addClass('enabled')
-				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length
-					curPlaybackTime = dataStyling[i].playback_time
-					console.log(curPlaybackTime)
-					radialWrapper
-					    .append("path")
-					    .attr("d", lineRadial(dataArr[i].data))
-					    .attr("class", className)
-					    .attr("opacity", 0)
-					    .attr("fill", "none")
-					    .attr("stroke-width", curRadialLineWidth/2)
-					    .attr("stroke", "black")
-					    .transition()
-	          			// .delay(curPlaybackTime*1000)
-	          			.duration(curPlaybackTime*1000)
-	          			// .delay((curPlaybackTime-4)*1000)
-					    .attr("opacity", 0.7)
-				}
-			})
-			var alignRotate = -55;
-		    radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-
-			///////////////////////////////////////////////////////////////////////////
-			//////////////////////////// JUST BUTTONS /////////////////////////////////
-			///////////////////////////////////////////////////////////////////////////
-			///////////////////////////////////////////////////////////////////////////
-			///////////////////////////////////////////////////////////////////////////
-			///////////////////////////////////////////////////////////////////////////
-			$('#head-button').click(function(){
-				console.log("HEAD");
-				$('.body-button').removeClass('enabled')
-				$('#head-button').addClass('enabled')
-				radialWrapper.remove()
-				radialWrapper = svg.append("g")
-					.attr("transform", "translate(" + 0 + "," + 0 + ")");
-				let highlight = "head"
-				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
-				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
-			});
-			$('#arm-button').click(function(){
-				console.log("ARM");
-				$('.body-button').removeClass('enabled')
-				$('#arm-button').addClass('enabled')
-				radialWrapper.remove()
-				radialWrapper = svg.append("g")
-					.attr("transform", "translate(" + 0 + "," + 0 + ")");
-				let highlight = "arm"
-				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
-				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
-			});
-			$('#leg-button').click(function(){
-				console.log("LEG");
-				$('.body-button').removeClass('enabled')
-				$('#leg-button').addClass('enabled')
-				radialWrapper.remove()
-				radialWrapper = svg.append("g")
-					.attr("transform", "translate(" + 0 + "," + 0 + ")");
-				let highlight = "leg"
-				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
-				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
-			});
-			$('#foot-button').click(function(){
-				console.log("FOOT");
-				$('.body-button').removeClass('enabled')
-				$('#foot-button').addClass('enabled')
-				radialWrapper.remove()
-				radialWrapper = svg.append("g")
-					.attr("transform", "translate(" + 0 + "," + 0 + ")");
-				let highlight = "support"
-				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
-				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
-			});
-			$('#body-button').click(function(){
-				console.log("BODY");
-				$('.body-button').removeClass('enabled')
-				$('#body-button').addClass('enabled')
-				radialWrapper.remove()
-				radialWrapper = svg.append("g")
-					.attr("transform", "translate(" + 0 + "," + 0 + ")");
-				let highlight = "body"
-				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
-				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
-			});
-			$('#hand-button').click(function(){
-				console.log("HAND");
-				$('.body-button').removeClass('enabled')
-				$('#hand-button').addClass('enabled')
-				radialWrapper.remove()
-				radialWrapper = svg.append("g")
-					.attr("transform", "translate(" + 0 + "," + 0 + ")");
-				let highlight = "hand"
-				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
-				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
-			});
-			$('#all-button').click(function(){
-				console.log("ALL");
-				$('.body-button').removeClass('enabled')
-				$('#all-button').addClass('enabled')
-				radialWrapper.remove()
-				radialWrapper = svg.append("g")
-					.attr("transform", "translate(" + 0 + "," + 0 + ")");
-				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-					    .attr("d", lineRadial(dataArr[i].data))
-					    .attr("class", className)
-					    .attr("opacity", 0.7)
-					    .attr("fill", "none")
-					    .attr("stroke-width", curRadialLineWidth)
-					    .attr("stroke", "black")
-				}
-		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
-		    	saveSvg(svg, ballet+'_ALL.svg')
-			});
-
-		});
-	</script>
-
 </script>
-
 </body>
 </html>
