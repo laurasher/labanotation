@@ -9,7 +9,7 @@ pd.set_option("display.expand_frame_repr", False)
 
 data_root = "data/"
 
-ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
+ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs", "endolor"]
 
 lookup_table = pd.DataFrame.from_dict(
     {
@@ -19,19 +19,21 @@ lookup_table = pd.DataFrame.from_dict(
             "raymonda",
             "sleepingbeauty_bluebird",
             "songs",
-            "korobushka"
+            "korobushka",
+            "endolor"
         ],
-        "year": ["1870", "1984", "1898", "1890", "1956", "NA"],
-        "length_seconds": ["163", "78", "157", "NA", "NA", "NA"],
+        "year": ["1870", "1984", "1898", "1890", "1956", "NA", "1944"],
+        "length_seconds": ["163", "78", "157", "NA", "NA", "NA", "60"],
         "choreographer": [
             "arthur_saint-leon",
             "william_forsythe",
             "marius_petipa",
             "marius_petipa",
             "mary_anthony",
-            'russian_folk'
+            'russian_folk',
+            'ethel_winters'
         ],
-        "nationality": ["french", "american", "french", "french", "american", "russian"],
+        "nationality": ["french", "american", "french", "french", "american", "russian", "american"],
     }
 )
 # Cluster by

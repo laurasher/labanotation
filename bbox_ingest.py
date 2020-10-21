@@ -8,7 +8,7 @@ pd.set_option("display.expand_frame_repr", False)
 
 data_root = "data/"
 
-ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs"]
+ballets = ["coppelia_dawn", "artifact", "raymonda", "sleepingbeauty_bluebird", "songs", "endolor"]
 
 for b in ballets:
     bbox_file = f"{data_root}coppelia_dawn/vott-csv-export/coppelia_dawn-export.csv"
@@ -19,6 +19,7 @@ for b in ballets:
     df["image"] = df["image"].str.replace("artifact", "artifact_none")
     df["image"] = df["image"].str.replace("raymonda", "raymonda_none")
     df["image"] = df["image"].str.replace("songs", "songs_none")
+    df["image"] = df["image"].str.replace("endolor", "endolor_none")
     # df["image"] = df["image"].str.replace("korobushka", "korobushka_none")
 
     # Isolate selected ballet

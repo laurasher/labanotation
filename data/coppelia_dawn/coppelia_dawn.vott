@@ -5,7 +5,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZmRjY2Y5Yzk5YzAyZjk2OTU0NjJjZDMzYWYyOTAwM2E2MWQ2OTg0NDg1YjRlZWE1YjI1MTQ3YTk4ODhhYTYxNjkxYzc2YWFkZDFlYzI4MjZmZjQ2NjE1OGRmMjFiMGRjMDExZmFkMzg5Y2M5NmZiYWVlNDhlN2YxNGY2YTc0ZDU0NjY5YjUxZWJkNjNkZDFiNDBhMmIxYjE5YjBjMGQwOGEwNDI1OTMzMjVhODYxMjllNjk2ZTRiNzhjOTM5NGZlYTY4ZGUzNjljMDZjMmU2OTVhNTMyYTg0NThjNmNhMTAiLCJpdiI6Ijk4OGU0ZDM1NGJhOGEzYzEyYjA5NTJjNmQzZmIxNzQxMmMwMjIyN2IyZDE4NDAzNSJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNTZkODNiM2I2NGE0ODFiYzUxNjE2ZWU2YjVjODUxNWY4NDg5MjJhYTRjN2U1YTZiMWE1ZDY0ZTU2MzBhMTgyMTJkNGU4ODFkZjdjMTgzMTUzZmMwMmU1ZmViNDZkM2M5NGVhM2E0ZTE1ZmQ4YThkMTFmYjE3ZGNiZjk0Mzc4MDMyOTk4ZjE3NWFjYTczZDAyYzVmMDAxNDc1NDk2ZDNhNGU1YzcyMjc1NTgxOTVlZDA2NmU5MGJlNzVmZmVhYmViNDAzNzg1MTUxMTY0NTczMGFjMzQ3NWE4YmUwMGUxOWIiLCJpdiI6IjViMTFjNWU2M2YyNTEyMDQ1MGZmNmQwMGE3ZmRjZjgwMmNhMjg5Y2U5MzY3ZjAzMCJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -13,7 +13,7 @@
         "name": "Coppelia Images",
         "providerType": "localFileSystemProxy",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiM2I1Y2FhYzRmNTY1MmUxZTFkZmE4NDU5YjdhY2MxYTY0OWFhOTY4MmZhZWUxMjViMDI0NzdlNjZjYTBmNzgzZDk2ODMyZjg1ZTkxNTAyY2VhY2VhOTE3ZWE5NTQxM2ExZjRhNzBlMGIyOWUzMjg0NDE3Nzg4N2M4NWI2M2UzY2M1ZGRmM2NkOWRmZjk5MzgwYTE4NjI2NTUxYTNkNDRhY2RmNmMwOTRjMGE3OGFlYmFkODY1ODEyYTMxZWFmODk4ZDkzMmNiODYxZDE5ZmYyNmViNTZhYjk0ODJmOGU5MzciLCJpdiI6IjZlZjBlMTgyNDgzNTVkMTI1NDMwYTU4N2NlNWY0NjM5NjdkMjg1M2U0ZjY1MDBiMyJ9"
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYjg2OWEzN2Q3YmUyNzM4YzBmNzA5Njg4MWUyMmY5ZWY2NmI2YWQyMTAzOTM3ZWRmNGRlMTkyMDNiYTc4OTYyNWM4ODcwYWU0ZTllNTdkNWU1NDViNzRmMjc2NjRhYzZiYmQ4OGYyYzI3NDg2MjdjMWYzNTc3NDBmYTUwNDlkZmI3MGQ3MjVmNDJjZmY1YzM5MGU5NGVhYjFjZjYwMDU2ZDBmODkyYTI5MjA1NGI5NTY1MWJkZmVkNWIyOWJkYzJlNTEzYjBkNTQ2M2M0MDFkNzM2MDBkMzk1OThlNmViZGMiLCJpdiI6Ijk3NWEwZWU0NjkwZTQ4NzM5ZDQ4MWMzMjM0M2Q5ZDZmYzhkNjFmNmJiZjAyZGVkOSJ9"
         },
         "id": "s0k4ix8l1"
     },
@@ -415,11 +415,11 @@
     "exportFormat": {
         "providerType": "csv",
         "providerOptions": {
-            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZjc5ZDM3ZGJlZDRiZTZhNzU4ZmRjYmYzOGIxNzhhZTI4NmYzZjc5NzEwOWMzYjljYjJjMzgyZjY1ODc2N2JkY2ZjNjQ3YjMyZDgxYjM2MTNjYmI1ODNiZTQ2NTRiYWQ0IiwiaXYiOiI5NTQ1MjM4ZGEwYTNkNDdiNDY5M2FhOTdjZmUzMzE0YTNjNjViNmY2M2IzYTdkMTAifQ=="
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNjg0OTQ2MDhhZDJhOWIzODhiYzg1NzllNjEwMjAyZTA5MThiMmJiNDk5Y2VmMzA5MjliMWY1ZDAwNDNhZmE0Yzg4ZmNhNzc3MWM3YjRjMTI0YmEwODIzNzllMjQzNDBiIiwiaXYiOiI0OTk4M2I1Mzk2NDM2NWU5YjJiZmI0ZDg1ZTM1OTdmZDU3YmFkMjNkY2ZmOThmNWQifQ=="
         }
     },
     "version": "2.2.0",
-    "lastVisitedAssetId": "f1d61e756160fa37576413e5d0ae17f3",
+    "lastVisitedAssetId": "052dea3622ddd792c62d92a9917800a6",
     "assets": {
         "f89a594ff35bcef1f0e7418dbcef2455": {
             "format": "png",
@@ -814,7 +814,7 @@
                 "width": 576,
                 "height": 1324
             },
-            "state": 1,
+            "state": 2,
             "type": 1
         },
         "1a016e396e0d027fba525bc872f0a9e5": {
@@ -826,7 +826,7 @@
                 "width": 544,
                 "height": 1318
             },
-            "state": 1,
+            "state": 2,
             "type": 1
         },
         "67f35bb9e6d2156352c0d65d6e248660": {
@@ -933,6 +933,138 @@
             "size": {
                 "width": 526,
                 "height": 1616
+            },
+            "state": 1,
+            "type": 1
+        },
+        "f0cd558d7d64ea3a7bba255810c30013": {
+            "format": "png",
+            "id": "f0cd558d7d64ea3a7bba255810c30013",
+            "name": "moods_4_3.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/moods_4_3.png",
+            "size": {
+                "width": 368,
+                "height": 1466
+            },
+            "state": 1,
+            "type": 1
+        },
+        "e70881fba8b30b142da5faea253e3910": {
+            "format": "png",
+            "id": "e70881fba8b30b142da5faea253e3910",
+            "name": "moods_4_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/moods_4_2.png",
+            "size": {
+                "width": 424,
+                "height": 1582
+            },
+            "state": 1,
+            "type": 1
+        },
+        "052dea3622ddd792c62d92a9917800a6": {
+            "format": "png",
+            "id": "052dea3622ddd792c62d92a9917800a6",
+            "name": "endolor_3_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/endolor_3_2.png",
+            "size": {
+                "width": 366,
+                "height": 1362
+            },
+            "state": 1,
+            "type": 1
+        },
+        "289d780d2dfed915e25186895074d053": {
+            "format": "png",
+            "id": "289d780d2dfed915e25186895074d053",
+            "name": "endolor_1_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/endolor_1_1.png",
+            "size": {
+                "width": 632,
+                "height": 1396
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6b27bd28058090042d3e89e34840e8ee": {
+            "format": "png",
+            "id": "6b27bd28058090042d3e89e34840e8ee",
+            "name": "desperateheart_2_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/desperateheart_2_2.png",
+            "size": {
+                "width": 438,
+                "height": 1584
+            },
+            "state": 1,
+            "type": 1
+        },
+        "68ed1da9781b453ceca05608c528603c": {
+            "format": "png",
+            "id": "68ed1da9781b453ceca05608c528603c",
+            "name": "desperateheart_2_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/desperateheart_2_1.png",
+            "size": {
+                "width": 580,
+                "height": 1526
+            },
+            "state": 1,
+            "type": 1
+        },
+        "55204e5937c41673d3972121c986764f": {
+            "format": "png",
+            "id": "55204e5937c41673d3972121c986764f",
+            "name": "desperateheart_1_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/desperateheart_1_2.png",
+            "size": {
+                "width": 502,
+                "height": 1560
+            },
+            "state": 1,
+            "type": 1
+        },
+        "3a1e837e7b6631515e34b3b370f1d247": {
+            "format": "png",
+            "id": "3a1e837e7b6631515e34b3b370f1d247",
+            "name": "endolor_2_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/endolor_2_1.png",
+            "size": {
+                "width": 574,
+                "height": 1344
+            },
+            "state": 1,
+            "type": 1
+        },
+        "707567a96920cfbdea548f4b11df6fdc": {
+            "format": "png",
+            "id": "707567a96920cfbdea548f4b11df6fdc",
+            "name": "endolor_2_2.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/endolor_2_2.png",
+            "size": {
+                "width": 450,
+                "height": 1260
+            },
+            "state": 1,
+            "type": 1
+        },
+        "b85ad3d97463c5b2cce22fa94ae2461b": {
+            "format": "png",
+            "id": "b85ad3d97463c5b2cce22fa94ae2461b",
+            "name": "endolor_3_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/endolor_3_1.png",
+            "size": {
+                "width": 540,
+                "height": 1246
+            },
+            "state": 1,
+            "type": 1
+        },
+        "642cbfefd49aa5dc73cc82ff8e3fbe8d": {
+            "format": "png",
+            "id": "642cbfefd49aa5dc73cc82ff8e3fbe8d",
+            "name": "moods_1_1.png",
+            "path": "file:/Users/asherlk1/Documents/MICA/Labanotation/labanotation-pipeline/data/coppelia_dawn/moods_1_1.png",
+            "size": {
+                "width": 608,
+                "height": 1580
             },
             "state": 1,
             "type": 1

@@ -1,0 +1,29 @@
+,image,ballet,ymin,ymax,staff_num,step_length,label,direction_movement,body_movement,height_movement,measure_num
+0,endolor_none_1_1.png,endolor,1238.339446952596,1316.5173180022575,1,0.10708144647896527,"right, right_hand_high",right,right_hand,high,1
+1,endolor_none_1_1.png,endolor,1234.0803470654628,1310.9041690180584,1,0.10419373892498399,"head_high, left",left,head,high,1
+2,endolor_none_1_1.png,endolor,1142.669723476298,1177.604190180587,1,0.014858567959571573,"left, right_arm_middle",left,right_arm,middle,1
+3,endolor_none_1_1.png,endolor,1033.1702349040634,1147.7474075902935,1,0.18470827590733013,"right, head_low",right,head,low,1
+5,endolor_none_1_1.png,endolor,1030.7206369920993,1133.3390942437925,1,0.15920456782831247,"left_support_middle, place",place,left_support,middle,1
+6,endolor_none_1_1.png,endolor,1101.272749717833,1129.2400183408581,1,0.0,"place, right_arm_low",place,right_arm,low,1
+7,endolor_none_1_1.png,endolor,1033.7487831546277,1113.8346324774266,1,0.11115048894139154,"right, right_body_high",right,right_body,high,1
+8,endolor_none_1_1.png,endolor,1036.9554176072236,1105.8395880361174,1,0.08726127190391746,"left, right_hand_high",left,right_hand,high,1
+9,endolor_none_1_1.png,endolor,1071.9883606094807,1102.725275112867,1,0.005906674542232714,"left_arm_low, forward",forward,left_arm,low,1
+10,endolor_none_1_1.png,endolor,1036.062976156885,1080.1003456546277,1,0.03427183828837647,"right_arm_middle, right",right,right_arm,middle,1
+11,endolor_none_1_1.png,endolor,1037.860168594808,1078.1800578442437,1,0.026343768458357245,"forward, left_hand_middle",forward,left_hand,middle,1
+12,endolor_none_1_1.png,endolor,1019.3035411963884,1059.2602990970656,1,0.025569337796153474,"right, left_arm_middle",right,left_arm,middle,1
+13,endolor_none_1_1.png,endolor,935.2971042607223,982.017952878104,1,0.039994749622628875,"backward_diagonal, right_leg_high",backward_diagonal,right_leg,high,1
+14,endolor_none_1_1.png,endolor,869.7426636568849,924.8524619074492,1,0.057885410513879965,"left, right_leg_low",left,right_leg,low,2
+15,endolor_none_1_1.png,endolor,859.9935101580136,920.1809925225734,1,0.06871431384130684,"left_leg_high, left",left,left_leg,high,2
+16,endolor_none_1_1.png,endolor,792.5249365124154,822.1355283577877,1,0.003504626895057272,"right_support_middle, left",left,right_support,middle,2
+17,endolor_none_1_1.png,endolor,702.4437429458238,803.628139108352,1,0.15614622300977823,"head_middle, forward",forward,head,middle,2
+18,endolor_none_1_1.png,endolor,737.0396973758466,789.3860045146727,1,0.051991861915074364,"place, left_body_low",place,left_body,low,2
+20,endolor_none_1_1.png,endolor,682.8592691873589,734.6085637697516,1,0.050718645402637645,"left_body_low, left",left,left_body,low,2
+21,endolor_none_1_1.png,endolor,589.7622389954854,689.5187288374718,1,0.1531010041346716,"place, left_arm_high",place,left_arm,high,2
+22,endolor_none_1_1.png,endolor,587.0787598758467,687.3953336625282,1,0.15429546498654492,"place, right_arm_high",place,right_arm,high,2
+23,endolor_none_1_1.png,endolor,535.6864418735892,635.541408013544,1,0.1533110192295066,"right_support_low, place",place,right_support,low,3
+24,endolor_none_1_1.png,endolor,136.53123236455986,633.3995485327314,1,1.0,"left_leg_middle, forward_diagonal, left_body_high",forward_diagonal,left_leg,middle,3
+25,endolor_none_1_1.png,endolor,150.90877186794583,570.9655756207675,1,0.8361882260287458,"left_arm_middle, forward_diagonal",forward_diagonal,left_arm,middle,3
+26,endolor_none_1_1.png,endolor,144.07082392776525,569.2483951749438,1,0.8471090109601632,"left_arm_middle, forward_diagonal",forward_diagonal,left_arm,middle,3
+27,endolor_none_1_1.png,endolor,137.07900677200905,502.6230248306998,1,0.7199317450941786,"place, left_body_high",place,left_body,high,3
+28,endolor_none_1_1.png,endolor,139.92250987584652,312.53915067720095,1,0.308485922425674,"right_leg_middle, forward",forward,right_leg,middle,4
+30,endolor_none_1_1.png,endolor,43.50805939616253,78.57793101015801,1,0.015147338714969523,"forward, right_support_middle",forward,right_support,middle,4

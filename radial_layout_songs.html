@@ -5,7 +5,7 @@
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<audio id="audioElement" src="audio/coppelia_dawn_short.m4a"></audio>
+	<audio id="audioElement" src="audio/songs.mp3"></audio>
 	<!-- <audio id="audioElement" src="audio/coppelia_dawn_short.mp3"></audio> -->
 	<style>
 		body {
@@ -15,6 +15,7 @@
 		  	fill: #8C8C8C;
 		  	text-align: center;
 		  	background: #F8E8CB;
+			background: #fff5e2;
 		}
 
 	  	.title {
@@ -156,12 +157,12 @@
 		  return rad * (180/pi);
 		}
 		const ballet = 'songs'
-		const total_len_sec = 63 //NOT RIGHT
+		const total_len_sec = 60
 		var measures = []
 		d3.json(datapath+ballet+".json", function(data) {
 		    dataset = data;
 		    // dataset = dataset.filter(x=> +x.measure_num>=7)
-		    // dataset = dataset.filter(x => +x.measure_num<=8)
+		    dataset = dataset.filter(x => +x.measure_num<=8)
 			var spokeArr = d3.range(10,359,359/numRadialSpokes)
 			var spokeArrRad = spokeArr.map(x => degrees_to_radians(x))
 			var bodyMovements = [
@@ -768,7 +769,7 @@
 				// d.playbackTime = (step_ymin-meas_ymin)*measNum
 				// d.playbackTime = measNum
 				// d.playbackTime = (step_ymin-meas_ymin)/100+measNum
-				d.playbackTime = measNum + (step_ymin)/100
+				d.playbackTime = measNum + (step_ymin)/50
 				
 			});
 			min = Math.min.apply(Math, dataset.map(x=>x.playbackTime))
@@ -850,7 +851,6 @@
 					className = "radial_"+dataStyling[i].body_movement
 					curRadialLineWidth = dataStyling[i].step_length
 					curPlaybackTime = dataStyling[i].playback_time
-					console.log(curPlaybackTime)
 					radialWrapper
 					    .append("path")
 					    .attr("d", lineRadial(dataArr[i].data))
@@ -861,8 +861,8 @@
 					    .attr("stroke", "black")
 					    .transition()
 	          			// .delay(curPlaybackTime*1000)
-	          			.duration(curPlaybackTime*1000)
-	          			// .delay((curPlaybackTime-4)*1000)
+	          			// .duration(curPlaybackTime*1000)
+	          			.delay(((curPlaybackTime-6)/1.38)*1000)
 					    .attr("opacity", 0.7)
 				}
 			})

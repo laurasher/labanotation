@@ -5,8 +5,7 @@
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<audio id="audioElement" src="audio/coppelia_dawn_short.m4a"></audio>
-	<!-- <audio id="audioElement" src="audio/coppelia_dawn_short.mp3"></audio> -->
+	<audio id="audioElement" src="audio/artifact.mp3"></audio>
 	<style>
 		body {
 		  	font-size: 10px;
@@ -131,7 +130,8 @@
 		var lineRes = 0.05
 		var curveAlpha = 0.55
 		var radialLineWidth = 0.5
-		var radiusMult = 300
+		var radiusMult = 200 //this has to do with the spikes
+		var radiusOutwardMult = 4 //scaling to the page
 		var curveType = 'basis'
 		var stepLengthMultipier = 2
 
@@ -156,9 +156,8 @@
 		  var pi = Math.PI;
 		  return rad * (180/pi);
 		}
-		const ballet = 'coppelia_dawn'
-		const total_len_sec = 160
-		// const total_len_sec = 45
+		const ballet = 'endolor'
+		const total_len_sec = 95
 		var measures = []
 		d3.json(datapath+ballet+".json", function(data) {
 		    dataset = data;
@@ -771,7 +770,6 @@
 				// d.playbackTime = measNum
 				// d.playbackTime = (step_ymin-meas_ymin)/100+measNum
 				d.playbackTime = measNum + (step_ymin)/100
-				
 			});
 			min = Math.min.apply(Math, dataset.map(x=>x.playbackTime))
 			max = Math.max.apply(Math, dataset.map(x=>x.playbackTime))
@@ -801,7 +799,7 @@
 			var dataset = dataset.sort(({playbackTime:a}, {playbackTime:b}) => a-b);
 			console.log('sorted', dataset)
 			
-			radArr = dataset.map(x=>(x.playbackTime)*2)
+			radArr = dataset.map(x=>(x.playbackTime)*radiusOutwardMult)
 			// Nonzero radii
 			radArr = radArr.filter(x=>x>0)
 			
@@ -851,7 +849,7 @@
 				for (i = 0; i < dataArr.length; i++) {
 					className = "radial_"+dataStyling[i].body_movement
 					curRadialLineWidth = dataStyling[i].step_length
-					curPlaybackTime = dataStyling[i].playback_time
+					curPlaybackTime = dataStyling[i].playback_time 
 					console.log(curPlaybackTime)
 					radialWrapper
 					    .append("path")
@@ -861,11 +859,11 @@
 					    .attr("fill", "none")
 					    .attr("stroke-width", curRadialLineWidth/2)
 					    .attr("stroke", "black")
-					    .transition()
-	          			// .delay(curPlaybackTime*1000)
-	          			// .duration(curPlaybackTime*1000)
-						// .delay((curPlaybackTime-4)*1000)
-						.delay( (curPlaybackTime-30)*700)
+						.transition()
+						.delay( (curPlaybackTime-10)*700)
+						// .delay(curPlaybackTime*1000)
+	          			// .duration((curPlaybackTime)*1000)
+	          			// .delay((curPlaybackTime-4)*1000)
 					    .attr("opacity", 0.7)
 				}
 			})
