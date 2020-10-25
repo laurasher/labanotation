@@ -142,7 +142,7 @@
 	        var style = '<style>circle {cursor: pointer;}</style>'
 	        var full_svg = head +  style + svg_data + "</svg>"
 	        var blob = new Blob([full_svg], {type: "image/svg+xml"});  
-	        // saveAs(blob, name);
+	        saveAs(blob, name);
 		};
 
 		function getRandomNumber(start, end) {
@@ -318,7 +318,7 @@
 			for (ii = 0; ii < radArr.length; ii++) {
 				if(dataset[ii].body_movement!=null){
 					data = []
-					for (i = 0; i <= 2+lineRes; i=i+lineRes) {
+					for (i = 0.01; i <= 2.01+lineRes; i=i+lineRes) {
 					  if (randJitter) {data.push([Math.PI * i, radArr[ii] + getRandomNumber(-3.5, 3.5) ])}
 					  if (!randJitter) {data.push([Math.PI * i, radArr[ii] ])}
 					}
@@ -330,7 +330,6 @@
 					var closestSpoke = arr.reduce(function(prev, curr) {
 				  		return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev);
 					});
-					console.log(dataset[ii].direction_movement)
 					// find theta closest to chosen spokeArr
 					if (dataset[ii].direction_movement!='place'){
 						index = data.findIndex(x => findClosest(x, closestSpoke));
@@ -421,10 +420,12 @@
 				for (i = 0; i < dataArr.length; i++) {
 					if (dataStyling[i].body_movement.includes(highlight)){
 						className = "radial_"+dataStyling[i].body_movement
-						curRadialLineWidth = dataStyling[i].step_length					
+						curRadialLineWidth = dataStyling[i].step_length
+						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/2 |  x[0]>=Math.PI )) 				
 						radialWrapper
 							.append("path")
-							.attr("d", lineRadial(dataArr[i].data))
+							// .attr("d", lineRadial(dataArr[i].data))
+							.attr("d", lineRadial(cur_data))
 							.attr("class", className)
 							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
 							.attr("fill", "none")
@@ -521,10 +522,12 @@
 				for (i = 0; i < dataArr.length; i++) {
 					if (dataStyling[i].body_movement.includes(highlight)){
 						className = "radial_"+dataStyling[i].body_movement
-						curRadialLineWidth = dataStyling[i].step_length					
+						curRadialLineWidth = dataStyling[i].step_length	
+						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/1.2 |  x[0]>=Math.PI )) 
 						radialWrapper
 							.append("path")
-							.attr("d", lineRadial(dataArr[i].data))
+							// .attr("d", lineRadial(dataArr[i].data))
+							.attr("d", lineRadial(cur_data))
 							.attr("class", className)
 							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
 							.attr("fill", "none")
@@ -543,18 +546,20 @@
 				radialWrapper = svg.append("g")
 					.attr("transform", "translate(" + 0 + "," + 0 + ")");
 					for (i = 0; i < dataArr.length; i++) {
-					if (dataStyling[i].body_movement.includes(highlight)){
+					// if (dataStyling[i].body_movement.includes(highlight)){
 						className = "radial_"+dataStyling[i].body_movement
-						curRadialLineWidth = dataStyling[i].step_length					
+						curRadialLineWidth = dataStyling[i].step_length
+						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/1.3 |  x[0]>=Math.PI )) 
 						radialWrapper
 							.append("path")
-							.attr("d", lineRadial(dataArr[i].data))
+							// .attr("d", lineRadial(dataArr[i].data))
+							.attr("d", lineRadial(cur_data))
 							.attr("class", className)
-							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+							.attr("opacity", 0.7)
 							.attr("fill", "none")
 							.attr("stroke-width", curRadialLineWidth)
-							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
-					}
+							.attr("stroke", "black")
+					// }
 				}
 		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    	saveSvg(svg, ballet+'_ALL.svg')
