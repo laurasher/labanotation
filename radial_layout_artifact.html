@@ -286,13 +286,6 @@
 				measNum = +d.measure_num
 				meas_ymin = measures.filter(x=>+x.measure_num==measNum)[0].ymax
 				step_ymin = +d.ymax
-				// console.log(meas_ymin)
-				// console.log(step_ymin)
-				// console.log( (step_ymin -meas_ymin)*measNum )
-				// console.log('-------')
-				// d.playbackTime = (step_ymin-meas_ymin)*measNum
-				// d.playbackTime = measNum
-				// d.playbackTime = (step_ymin-meas_ymin)/100+measNum
 				d.playbackTime = measNum + (step_ymin)/100
 			});
 			min = Math.min.apply(Math, dataset.map(x=>x.playbackTime))
@@ -384,7 +377,7 @@
 					    .attr("stroke-width", curRadialLineWidth/2)
 					    .attr("stroke", "black")
 						.transition()
-						.delay( (curPlaybackTime-19)*700)
+						.delay( (curPlaybackTime-14)*900)
                         .attr("opacity", 0.7)
 				}
 			})
@@ -437,10 +430,12 @@
 				for (i = 0; i < dataArr.length; i++) {
 					if (dataStyling[i].body_movement.includes(highlight)){
 						className = "radial_"+dataStyling[i].body_movement
-						curRadialLineWidth = dataStyling[i].step_length					
+						curRadialLineWidth = dataStyling[i].step_length
+						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/2 |  x[0]>=Math.PI )) 				
 						radialWrapper
 							.append("path")
-							.attr("d", lineRadial(dataArr[i].data))
+							// .attr("d", lineRadial(dataArr[i].data))
+							.attr("d", lineRadial(cur_data))
 							.attr("class", className)
 							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
 							.attr("fill", "none")
@@ -537,10 +532,12 @@
 				for (i = 0; i < dataArr.length; i++) {
 					if (dataStyling[i].body_movement.includes(highlight)){
 						className = "radial_"+dataStyling[i].body_movement
-						curRadialLineWidth = dataStyling[i].step_length					
+						curRadialLineWidth = dataStyling[i].step_length	
+						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/1.2 |  x[0]>=Math.PI )) 
 						radialWrapper
 							.append("path")
-							.attr("d", lineRadial(dataArr[i].data))
+							// .attr("d", lineRadial(dataArr[i].data))
+							.attr("d", lineRadial(cur_data))
 							.attr("class", className)
 							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
 							.attr("fill", "none")
@@ -559,18 +556,20 @@
 				radialWrapper = svg.append("g")
 					.attr("transform", "translate(" + 0 + "," + 0 + ")");
 					for (i = 0; i < dataArr.length; i++) {
-					if (dataStyling[i].body_movement.includes(highlight)){
+					// if (dataStyling[i].body_movement.includes(highlight)){
 						className = "radial_"+dataStyling[i].body_movement
-						curRadialLineWidth = dataStyling[i].step_length					
+						curRadialLineWidth = dataStyling[i].step_length
+						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/1.3 |  x[0]>=Math.PI )) 
 						radialWrapper
 							.append("path")
-							.attr("d", lineRadial(dataArr[i].data))
+							// .attr("d", lineRadial(dataArr[i].data))
+							.attr("d", lineRadial(cur_data))
 							.attr("class", className)
-							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+							.attr("opacity", 0.7)
 							.attr("fill", "none")
 							.attr("stroke-width", curRadialLineWidth)
-							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
-					}
+							.attr("stroke", "black")
+					// }
 				}
 		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    	saveSvg(svg, ballet+'_ALL.svg')

@@ -4,7 +4,9 @@
 	<meta charset="utf-8">
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<audio id="audioElement" src="audio/coppelia_dawn_short.m4a"></audio>
+	<!-- <audio id="audioElement" src="audio/coppelia_dawn_short.mp3"></audio> -->
 	<style>
 		body {
 		  	font-size: 10px;
@@ -13,6 +15,7 @@
 		  	fill: #8C8C8C;
 		  	text-align: center;
 		  	background: #F8E8CB;
+			background: #fff5e2;
 		}
 
 	  	.title {
@@ -83,6 +86,18 @@
 	  	}
 	  	.enabled{
 	  		background: white;
+	  		color: black
+	  	}
+	  	#play-button {
+        	border-radius: 3px;
+	  		background: black;
+			color: white;
+			border: 1px solid black;
+			padding: 5px;
+      }
+      #play-button.enabled{
+	  		background: white;
+	  		color: black
 	  	}
 	</style>
 
@@ -96,6 +111,10 @@
 	<button id="body-button" class="body-button">body</button>
 	<button id="foot-button" class="body-button">foot</button>
 	<button id="all-button" class="body-button enabled">all</button>
+	<button id="play-button" onclick="document.getElementById('audioElement').play()">Play &#9658;</button>
+	<!--<button onclick="document.getElementById('audioElement').pause()">Pause ||</button>
+    <button onclick="document.getElementById('audioElement').volume+=0.1">Vol +</button>
+    <button onclick="document.getElementById('audioElement').volume-=0.1">Vol -</button>-->
 	<div id="choreoRadial"></div>
 	<script>
 		///////////////////////////////////////////////////////////////////////////
@@ -112,7 +131,7 @@
 		var lineRes = 0.05
 		var curveAlpha = 0.55
 		var radialLineWidth = 0.5
-		var radiusMult = 300
+		var radiusMult = 200
 		var curveType = 'basis'
 		var stepLengthMultipier = 2
 
@@ -123,7 +142,7 @@
 	        var style = '<style>circle {cursor: pointer;}</style>'
 	        var full_svg = head +  style + svg_data + "</svg>"
 	        var blob = new Blob([full_svg], {type: "image/svg+xml"});  
-	        // saveAs(blob, name);
+	        saveAs(blob, name);
 		};
 
 		function getRandomNumber(start, end) {
@@ -138,10 +157,13 @@
 		  return rad * (180/pi);
 		}
 		const ballet = 'raymonda'
+		const total_len_sec = 160
+		// const total_len_sec = 45
+		var measures = [{"index": 0, "ballet": "raymonda", "ymin": 969.2144242243, "ymax": 1132.6082935561, "label": "measure_2", "step_length": 163.3938693317, "img_num": "1", "img_staff_num": "1", "staff_num": 1, "measure_num": "2"}, {"index": 1, "ballet": "raymonda", "ymin": 7.8122016706, "ymax": 173.731727327, "label": "measure_8", "step_length": 165.9195256563, "img_num": "1", "img_staff_num": "1", "staff_num": 1, "measure_num": "8"}, {"index": 2, "ballet": "raymonda", "ymin": 1133.0787589499, "ymax": 1302.9539081146, "label": "measure_1", "step_length": 169.8751491647, "img_num": "1", "img_staff_num": "1", "staff_num": 1, "measure_num": "1"}, {"index": 3, "ballet": "raymonda", "ymin": 648.7965393795, "ymax": 813.9608442721, "label": "measure_4", "step_length": 165.1643048926, "img_num": "1", "img_staff_num": "1", "staff_num": 1, "measure_num": "4"}, {"index": 4, "ballet": "raymonda", "ymin": 489.2716288783, "ymax": 651.4212410501, "label": "measure_5", "step_length": 162.1496121718, "img_num": "1", "img_staff_num": "1", "staff_num": 1, "measure_num": "5"}, {"index": 5, "ballet": "raymonda", "ymin": 812.4627834129, "ymax": 969.3506115752, "label": "measure_3", "step_length": 156.8878281623, "img_num": "1", "img_staff_num": "1", "staff_num": 1, "measure_num": "3"}, {"index": 6, "ballet": "raymonda", "ymin": 334.7732696897, "ymax": 490.3549373508, "label": "measure_6", "step_length": 155.5816676611, "img_num": "1", "img_staff_num": "1", "staff_num": 1, "measure_num": "6"}, {"index": 7, "ballet": "raymonda", "ymin": 173.7255369928, "ymax": 335.119928401, "label": "measure_7", "step_length": 161.3943914081, "img_num": "1", "img_staff_num": "1", "staff_num": 1, "measure_num": "7"}, {"index": 42, "ballet": "raymonda", "ymin": 1136.6089461516, "ymax": 1298.4265643646, "label": "measure_9", "step_length": 161.817618213, "img_num": "1", "img_staff_num": "2", "staff_num": 2, "measure_num": "9"}, {"index": 43, "ballet": "raymonda", "ymin": 336.2463454654, "ymax": 498.587867318, "label": "measure_14", "step_length": 162.3415218526, "img_num": "1", "img_staff_num": "2", "staff_num": 2, "measure_num": "14"}, {"index": 44, "ballet": "raymonda", "ymin": 816.8468544899, "ymax": 976.3193802208, "label": "measure_11", "step_length": 159.4725257309, "img_num": "1", "img_staff_num": "2", "staff_num": 2, "measure_num": "11"}, {"index": 45, "ballet": "raymonda", "ymin": 175.4640606354, "ymax": 337.2692049523, "label": "measure_15", "step_length": 161.8051443168, "img_num": "1", "img_staff_num": "2", "staff_num": 2, "measure_num": "15"}, {"index": 46, "ballet": "raymonda", "ymin": 499.6543854415, "ymax": 657.3680918109, "label": "measure_13", "step_length": 157.7137063693, "img_num": "1", "img_staff_num": "2", "staff_num": 2, "measure_num": "13"}, {"index": 47, "ballet": "raymonda", "ymin": 659.164332861, "ymax": 815.412356429, "label": "measure_12", "step_length": 156.248023568, "img_num": "1", "img_staff_num": "2", "staff_num": 2, "measure_num": "12"}, {"index": 48, "ballet": "raymonda", "ymin": 19.5528322643, "ymax": 173.9859039379, "label": "measure_16", "step_length": 154.4330716736, "img_num": "1", "img_staff_num": "2", "staff_num": 2, "measure_num": "16"}, {"index": 49, "ballet": "raymonda", "ymin": 975.9638741796, "ymax": 1132.6983796987, "label": "measure_10", "step_length": 156.7345055191, "img_num": "1", "img_staff_num": "2", "staff_num": 2, "measure_num": "10"}, {"index": 94, "ballet": "raymonda", "ymin": 505.9311605012, "ymax": 660.0089498807, "label": "measure_21", "step_length": 154.0777893795, "img_num": "1", "img_staff_num": "3", "staff_num": 3, "measure_num": "21"}, {"index": 95, "ballet": "raymonda", "ymin": 182.1328684368, "ymax": 338.3968526253, "label": "measure_23", "step_length": 156.2639841885, "img_num": "1", "img_staff_num": "3", "staff_num": 3, "measure_num": "23"}, {"index": 96, "ballet": "raymonda", "ymin": 659.2258353222, "ymax": 819.5098075776, "label": "measure_20", "step_length": 160.2839722554, "img_num": "1", "img_staff_num": "3", "staff_num": 3, "measure_num": "20"}, {"index": 97, "ballet": "raymonda", "ymin": 977.8555713007, "ymax": 1135.104974642, "label": "measure_18", "step_length": 157.2494033413, "img_num": "1", "img_staff_num": "3", "staff_num": 3, "measure_num": "18"}, {"index": 98, "ballet": "raymonda", "ymin": 20.4458159308, "ymax": 182.6288409905, "label": "measure_24", "step_length": 162.1830250597, "img_num": "1", "img_staff_num": "3", "staff_num": 3, "measure_num": "24"}, {"index": 99, "ballet": "raymonda", "ymin": 1133.5256936158, "ymax": 1380.5918108592, "label": "measure_17", "step_length": 247.0661172434, "img_num": "1", "img_staff_num": "3", "staff_num": 3, "measure_num": "17"}, {"index": 100, "ballet": "raymonda", "ymin": 340.609151253, "ymax": 499.3007905728, "label": "measure_22", "step_length": 158.6916393198, "img_num": "1", "img_staff_num": "3", "staff_num": 3, "measure_num": "22"}, {"index": 101, "ballet": "raymonda", "ymin": 823.216549821, "ymax": 976.7983666468, "label": "measure_19", "step_length": 153.5818168258, "img_num": "1", "img_staff_num": "3", "staff_num": 3, "measure_num": "19"}, {"index": 153, "ballet": "raymonda", "ymin": 1133.8679892601, "ymax": 1299.2442198687, "label": "measure_25", "step_length": 165.3762306086, "img_num": "1", "img_staff_num": "4", "staff_num": 4, "measure_num": "25"}, {"index": 154, "ballet": "raymonda", "ymin": 178.3272673031, "ymax": 335.9013648568, "label": "measure_31", "step_length": 157.5740975537, "img_num": "1", "img_staff_num": "4", "staff_num": 4, "measure_num": "31"}, {"index": 155, "ballet": "raymonda", "ymin": 657.7109934368, "ymax": 819.4697568616, "label": "measure_28", "step_length": 161.7587634248, "img_num": "1", "img_staff_num": "4", "staff_num": 4, "measure_num": "28"}, {"index": 156, "ballet": "raymonda", "ymin": 824.0514618138, "ymax": 971.8823463604, "label": "measure_27", "step_length": 147.8308845465, "img_num": "1", "img_staff_num": "4", "staff_num": 4, "measure_num": "27"}, {"index": 157, "ballet": "raymonda", "ymin": 18.049522673, "ymax": 175.8883129475, "label": "measure_32", "step_length": 157.8387902745, "img_num": "1", "img_staff_num": "4", "staff_num": 4, "measure_num": "32"}, {"index": 158, "ballet": "raymonda", "ymin": 500.4835173031, "ymax": 655.2846434964, "label": "measure_29", "step_length": 154.8011261933, "img_num": "1", "img_staff_num": "4", "staff_num": 4, "measure_num": "29"}, {"index": 159, "ballet": "raymonda", "ymin": 339.077677506, "ymax": 499.8974119928, "label": "measure_30", "step_length": 160.8197344869, "img_num": "1", "img_staff_num": "4", "staff_num": 4, "measure_num": "30"}, {"index": 160, "ballet": "raymonda", "ymin": 969.9475686158, "ymax": 1128.6308547136, "label": "measure_26", "step_length": 158.6832860979, "img_num": "1", "img_staff_num": "4", "staff_num": 4, "measure_num": "26"}, {"index": 223, "ballet": "raymonda", "ymin": 44.1173180191, "ymax": 211.8032331444, "label": "measure_41", "step_length": 167.6859151253, "img_num": "2", "img_staff_num": "1", "staff_num": 5, "measure_num": "41"}, {"index": 224, "ballet": "raymonda", "ymin": 528.2848299523, "ymax": 688.1031566975, "label": "measure_38", "step_length": 159.8183267452, "img_num": "2", "img_staff_num": "1", "staff_num": 5, "measure_num": "38"}, {"index": 225, "ballet": "raymonda", "ymin": 928.56927767, "ymax": 1085.7673031026, "label": "measure_35", "step_length": 157.1980254326, "img_num": "2", "img_staff_num": "1", "staff_num": 5, "measure_num": "35"}, {"index": 226, "ballet": "raymonda", "ymin": 682.7890252088, "ymax": 774.2789845615, "label": "measure_37", "step_length": 91.4899593526, "img_num": "2", "img_staff_num": "1", "staff_num": 5, "measure_num": "37"}, {"index": 227, "ballet": "raymonda", "ymin": 776.57174821, "ymax": 927.0519093079, "label": "measure_36", "step_length": 150.4801610979, "img_num": "2", "img_staff_num": "1", "staff_num": 5, "measure_num": "36"}, {"index": 228, "ballet": "raymonda", "ymin": 212.5719439887, "ymax": 366.1670551163, "label": "measure_40", "step_length": 153.5951111277, "img_num": "2", "img_staff_num": "1", "staff_num": 5, "measure_num": "40"}, {"index": 229, "ballet": "raymonda", "ymin": 1246.5214517452, "ymax": 1405.4975387828, "label": "measure_33", "step_length": 158.9760870376, "img_num": "2", "img_staff_num": "1", "staff_num": 5, "measure_num": "33"}, {"index": 230, "ballet": "raymonda", "ymin": 1088.7151420794, "ymax": 1245.8262697643, "label": "measure_34", "step_length": 157.111127685, "img_num": "2", "img_staff_num": "1", "staff_num": 5, "measure_num": "34"}, {"index": 231, "ballet": "raymonda", "ymin": 368.5801387232, "ymax": 523.5722982548, "label": "measure_39", "step_length": 154.9921595316, "img_num": "2", "img_staff_num": "1", "staff_num": 5, "measure_num": "39"}, {"index": 311, "ballet": "raymonda", "ymin": 31.0698836516, "ymax": 191.5035799523, "label": "measure_49", "step_length": 160.4336963007, "img_num": "2", "img_staff_num": "2", "staff_num": 6, "measure_num": "49"}, {"index": 312, "ballet": "raymonda", "ymin": 513.8924522673, "ymax": 671.6255220764, "label": "measure_46", "step_length": 157.7330698091, "img_num": "2", "img_staff_num": "2", "staff_num": 6, "measure_num": "46"}, {"index": 313, "ballet": "raymonda", "ymin": 673.8887231504, "ymax": 823.7544749403, "label": "measure_45", "step_length": 149.86575179, "img_num": "2", "img_staff_num": "2", "staff_num": 6, "measure_num": "45"}, {"index": 314, "ballet": "raymonda", "ymin": 987.6241795943, "ymax": 1149.4906026253, "label": "measure_43", "step_length": 161.866423031, "img_num": "2", "img_staff_num": "2", "staff_num": 6, "measure_num": "43"}, {"index": 315, "ballet": "raymonda", "ymin": 1153.4147523866, "ymax": 1316.1433472554, "label": "measure_42", "step_length": 162.7285948687, "img_num": "2", "img_staff_num": "2", "staff_num": 6, "measure_num": "42"}, {"index": 316, "ballet": "raymonda", "ymin": 190.8949880668, "ymax": 346.6501342482, "label": "measure_48", "step_length": 155.7551461814, "img_num": "2", "img_staff_num": "2", "staff_num": 6, "measure_num": "48"}, {"index": 317, "ballet": "raymonda", "ymin": 350.2509695704, "ymax": 513.9495077566, "label": "measure_47", "step_length": 163.6985381862, "img_num": "2", "img_staff_num": "2", "staff_num": 6, "measure_num": "47"}, {"index": 318, "ballet": "raymonda", "ymin": 827.4123657518, "ymax": 991.2186754177, "label": "measure_44", "step_length": 163.8063096659, "img_num": "2", "img_staff_num": "2", "staff_num": 6, "measure_num": "44"}, {"index": 359, "ballet": "raymonda", "ymin": 174.0099287739, "ymax": 335.3244238514, "label": "measure_53", "step_length": 161.3144950776, "img_num": "2", "img_staff_num": "3", "staff_num": 7, "measure_num": "53"}, {"index": 360, "ballet": "raymonda", "ymin": 17.2464480161, "ymax": 173.716009099, "label": "measure_54", "step_length": 156.4695610829, "img_num": "2", "img_staff_num": "3", "staff_num": 7, "measure_num": "54"}, {"index": 361, "ballet": "raymonda", "ymin": 335.5993809666, "ymax": 493.6396740752, "label": "measure_52", "step_length": 158.0402931086, "img_num": "2", "img_staff_num": "3", "staff_num": 7, "measure_num": "52"}, {"index": 362, "ballet": "raymonda", "ymin": 496.6262772226, "ymax": 655.6052170346, "label": "measure_51", "step_length": 158.9789398121, "img_num": "2", "img_staff_num": "3", "staff_num": 7, "measure_num": "51"}]
 		d3.json(datapath+ballet+".json", function(data) {
 		    dataset = data;
-		    // dataset = dataset.filter(x=>x.direction_movement=='backward_diagonal')
-		    console.log(dataset)
+		    // dataset = dataset.filter(x=> +x.measure_num>=7)
+		    // dataset = dataset.filter(x => +x.measure_num<=8)
 			var spokeArr = d3.range(10,359,359/numRadialSpokes)
 			var spokeArrRad = spokeArr.map(x => degrees_to_radians(x))
 			var bodyMovements = [
@@ -161,7 +183,6 @@
 			///////////////////////////////////////////////////////////////////////////
 			//////////////////// Set up and initiate svg containers ///////////////////
 			///////////////////////////////////////////////////////////////////////////	
-
 			var margin = {
 				top: 150,
 				right: 20,
@@ -180,9 +201,8 @@
 				.attr("transform", "translate(" + (margin.left + width/2) + "," + (margin.top + height/2) + ")");
 
 			///////////////////////////////////////////////////////////////////////////
-			//////////////////////////// Create scales ////////////////////////////////
+			//////////////////////////// Helper functions /////////////////////////////
 			///////////////////////////////////////////////////////////////////////////
-
 			function staffNumToRad(staff_num){
 				return parseInt(staff_num);
 			}
@@ -216,7 +236,7 @@
 			function bodyDirectionToTheta(body_movement, direction){
 				switch(direction){
 					case "place":
-						return;
+						return -1;
 					case "forward":
 						return spokeArr[0]
 					case "forward_diagonal":
@@ -240,17 +260,36 @@
 				}
 			}
 
-			// staff_num corresponds to R, radius
+			///////////////////////////////////////////////////////////////////////////
+			//////////////////////////// Create scales ////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
+			// Playback time
+			// get the ymin of the same measure, subtract it from the step ymin, then add difference to measure num
 			dataset.forEach(function(d) {
-				d.rad = staffNumToRad(d.staff_num) 
-				// + getRandomNumber(0.1,0.5);
+				measNum = +d.measure_num
+				meas_ymin = measures.filter(x=>+x.measure_num==measNum)[0].ymax
+				step_ymin = +d.ymax
+				// console.log(meas_ymin)
+				// console.log(step_ymin)
+				// console.log( (step_ymin -meas_ymin)*measNum )
+				// console.log('-------')
+				// d.playbackTime = (step_ymin-meas_ymin)*measNum
+				// d.playbackTime = measNum
+				// d.playbackTime = (step_ymin-meas_ymin)/100+measNum
+				d.playbackTime = measNum + (step_ymin)/100
+				
 			});
-
+			min = Math.min.apply(Math, dataset.map(x=>x.playbackTime))
+			max = Math.max.apply(Math, dataset.map(x=>x.playbackTime))
+			dataset.forEach(function(d) {
+				// d.playbackTime = ((d.playbackTime-min)/(max-min))*total_len_sec
+				d.playbackTime = d.playbackTime*4
+			});
+			// Normalize playback time from 0 to 1, so I can scale by total ballet lenth
+			console.log('NORMALIZED', dataset)
 			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
 			dataset.forEach(function(d) {
-				// d.theta = bodyMovementToTheta(d.body_movement) + 50
 				d.theta = bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50
-				// d.thetaRad = degrees_to_radians( bodyMovementToTheta(d.body_movement) + 50 )
 				d.thetaRad = degrees_to_radians( bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50 )
 			});
 
@@ -262,61 +301,88 @@
 			///////////////////////////////////////////////////////////////////////////
 			//////////////////////////// Radial line //////////////////////////////////
 			///////////////////////////////////////////////////////////////////////////
-
 			var dataArr = []
 			var data = []
 			var dataStyling = []
-
-			radArr = dataset.map(x=>(x.ymin * x.staff_num)/30)
+			var dataset = dataset.sort(({playbackTime:a}, {playbackTime:b}) => a-b);
+			console.log('sorted', dataset)
+			
+			radArr = dataset.map(x=>(x.playbackTime)*2)
+			// Nonzero radii
+			radArr = radArr.filter(x=>x>0)
+			
 			function findClosest(num, spoke){
 				if (Math.abs(num[0] - spoke) <= 0.03) return 1
 			}
 			for (ii = 0; ii < radArr.length; ii++) {
 				if(dataset[ii].body_movement!=null){
-					// if(dataset[ii].body_movement.includes("arm")){
 					data = []
-					for (i = 0; i <= 2+lineRes; i=i+lineRes) {
-					  // data.push([Math.PI * i, radArr[ii] + getRandomNumber(-0.5, 0.5) ])
+					for (i = 0.01; i <= 2.01+lineRes; i=i+lineRes) {
 					  if (randJitter) {data.push([Math.PI * i, radArr[ii] + getRandomNumber(-3.5, 3.5) ])}
 					  if (!randJitter) {data.push([Math.PI * i, radArr[ii] ])}
 					}
-					dataStyling.push({'body_movement' : dataset[ii].body_movement, 'step_length' : dataset[ii].step_length * stepLengthMultipier})
+					dataStyling.push({'body_movement' : dataset[ii].body_movement,
+									  'step_length' : dataset[ii].step_length * stepLengthMultipier,
+									  'playback_time': dataset[ii].playbackTime})
 					arr = spokeArrRad
 					num = degrees_to_radians(dataset[ii].theta)
 					var closestSpoke = arr.reduce(function(prev, curr) {
 				  		return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev);
 					});
-					
 					// find theta closest to chosen spokeArr
-					index = data.findIndex(x => findClosest(x, closestSpoke));
-					data[index] = [data[index][0], radArr[ii]+dataset[ii].step_length * radiusMult]
-					dataArr.push({data})
+					if (dataset[ii].direction_movement!='place'){
+						index = data.findIndex(x => findClosest(x, closestSpoke));
+						data[index] = [data[index][0], radArr[ii]+dataset[ii].step_length * radiusMult]
+						dataArr.push({data})
+					}
+					if (dataset[ii].direction_movement=='place'){
+						// index = data.findIndex(x => findClosest(x, closestSpoke));
+						// data[index] = [data[index][0], radArr[ii]]
+						// dataArr.push({data})
+					}
+
 				}
 			}
 
 			if (curveType == 'catmull'){var lineRadial = d3.lineRadial().curve(d3.curveCatmullRom.alpha(curveAlpha));}
 			if (curveType == 'basis'){var lineRadial = d3.lineRadial().curve(d3.curveBasis);}
 
+			// var dataStyling = dataStyling.sort(({playback_time:a}, {playback_time:b}) => b-a);
+			
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
-			for (i = 0; i < dataArr.length; i++) {
-				className = "radial_"+dataStyling[i].body_movement
-				curRadialLineWidth = dataStyling[i].step_length
-				radialWrapper
-				    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", 0.7)
-				    .attr("fill", "none")
-				    // .attr("stroke-width", function(d,i) { return className.includes(highlight) ? radialLineWidth/2 : radialLineWidth/2 })
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", "black")
-			}
-
+			$('#play-button').click(function(){
+				$('#play-button').addClass('enabled')
+				for (i = 0; i < dataArr.length; i++) {
+					className = "radial_"+dataStyling[i].body_movement
+					curRadialLineWidth = dataStyling[i].step_length
+					curPlaybackTime = dataStyling[i].playback_time
+					console.log(curPlaybackTime)
+					radialWrapper
+					    .append("path")
+					    .attr("d", lineRadial(dataArr[i].data))
+					    .attr("class", className)
+					    .attr("opacity", 0)
+					    .attr("fill", "none")
+					    .attr("stroke-width", curRadialLineWidth/2)
+					    .attr("stroke", "black")
+					    .transition()
+	          			// .delay(curPlaybackTime*1000)
+	          			// .duration(curPlaybackTime*1000)
+						// .delay((curPlaybackTime-4)*1000)
+						.delay( (curPlaybackTime-30)*700)
+					    .attr("opacity", 0.7)
+				}
+			})
 			var alignRotate = -55;
 		    radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 
-			////////////////////////////////////////////// buttons //////////////////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
+			//////////////////////////// JUST BUTTONS /////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
+			///////////////////////////////////////////////////////////////////////////
 			$('#head-button').click(function(){
 				console.log("HEAD");
 				$('.body-button').removeClass('enabled')
@@ -326,16 +392,18 @@
 					.attr("transform", "translate(" + 0 + "," + 0 + ")");
 				let highlight = "head"
 				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					if (dataStyling[i].body_movement.includes(highlight)){
+						className = "radial_"+dataStyling[i].body_movement
+						curRadialLineWidth = dataStyling[i].step_length					
+						radialWrapper
+							.append("path")
+							.attr("d", lineRadial(dataArr[i].data))
+							.attr("class", className)
+							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+							.attr("fill", "none")
+							.attr("stroke-width", curRadialLineWidth)
+							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					}
 				}
 		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
@@ -349,16 +417,20 @@
 					.attr("transform", "translate(" + 0 + "," + 0 + ")");
 				let highlight = "arm"
 				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					if (dataStyling[i].body_movement.includes(highlight)){
+						className = "radial_"+dataStyling[i].body_movement
+						curRadialLineWidth = dataStyling[i].step_length
+						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/2 |  x[0]>=Math.PI )) 				
+						radialWrapper
+							.append("path")
+							// .attr("d", lineRadial(dataArr[i].data))
+							.attr("d", lineRadial(cur_data))
+							.attr("class", className)
+							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+							.attr("fill", "none")
+							.attr("stroke-width", curRadialLineWidth)
+							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					}
 				}
 		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
@@ -372,16 +444,18 @@
 					.attr("transform", "translate(" + 0 + "," + 0 + ")");
 				let highlight = "leg"
 				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					if (dataStyling[i].body_movement.includes(highlight)){
+						className = "radial_"+dataStyling[i].body_movement
+						curRadialLineWidth = dataStyling[i].step_length					
+						radialWrapper
+							.append("path")
+							.attr("d", lineRadial(dataArr[i].data))
+							.attr("class", className)
+							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+							.attr("fill", "none")
+							.attr("stroke-width", curRadialLineWidth)
+							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					}
 				}
 		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
@@ -395,16 +469,18 @@
 					.attr("transform", "translate(" + 0 + "," + 0 + ")");
 				let highlight = "support"
 				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					if (dataStyling[i].body_movement.includes(highlight)){
+						className = "radial_"+dataStyling[i].body_movement
+						curRadialLineWidth = dataStyling[i].step_length					
+						radialWrapper
+							.append("path")
+							.attr("d", lineRadial(dataArr[i].data))
+							.attr("class", className)
+							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+							.attr("fill", "none")
+							.attr("stroke-width", curRadialLineWidth)
+							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					}
 				}
 		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
@@ -418,16 +494,18 @@
 					.attr("transform", "translate(" + 0 + "," + 0 + ")");
 				let highlight = "body"
 				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					if (dataStyling[i].body_movement.includes(highlight)){
+						className = "radial_"+dataStyling[i].body_movement
+						curRadialLineWidth = dataStyling[i].step_length					
+						radialWrapper
+							.append("path")
+							.attr("d", lineRadial(dataArr[i].data))
+							.attr("class", className)
+							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+							.attr("fill", "none")
+							.attr("stroke-width", curRadialLineWidth)
+							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					}
 				}
 		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
@@ -441,16 +519,20 @@
 					.attr("transform", "translate(" + 0 + "," + 0 + ")");
 				let highlight = "hand"
 				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-				    .attr("d", lineRadial(dataArr[i].data))
-				    .attr("class", className)
-				    .attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
-				    .attr("fill", "none")
-				    .attr("stroke-width", curRadialLineWidth)
-				    .attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					if (dataStyling[i].body_movement.includes(highlight)){
+						className = "radial_"+dataStyling[i].body_movement
+						curRadialLineWidth = dataStyling[i].step_length	
+						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/1.2 |  x[0]>=Math.PI )) 
+						radialWrapper
+							.append("path")
+							// .attr("d", lineRadial(dataArr[i].data))
+							.attr("d", lineRadial(cur_data))
+							.attr("class", className)
+							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
+							.attr("fill", "none")
+							.attr("stroke-width", curRadialLineWidth)
+							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
+					}
 				}
 		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    	saveSvg(svg, ballet+'_'+highlight+'.svg')
@@ -462,17 +544,21 @@
 				radialWrapper.remove()
 				radialWrapper = svg.append("g")
 					.attr("transform", "translate(" + 0 + "," + 0 + ")");
-				for (i = 0; i < dataArr.length; i++) {
-					className = "radial_"+dataStyling[i].body_movement
-					curRadialLineWidth = dataStyling[i].step_length					
-					radialWrapper
-					    .append("path")
-					    .attr("d", lineRadial(dataArr[i].data))
-					    .attr("class", className)
-					    .attr("opacity", 0.7)
-					    .attr("fill", "none")
-					    .attr("stroke-width", curRadialLineWidth)
-					    .attr("stroke", "black")
+					for (i = 0; i < dataArr.length; i++) {
+					// if (dataStyling[i].body_movement.includes(highlight)){
+						className = "radial_"+dataStyling[i].body_movement
+						curRadialLineWidth = dataStyling[i].step_length
+						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/1.3 |  x[0]>=Math.PI )) 
+						radialWrapper
+							.append("path")
+							// .attr("d", lineRadial(dataArr[i].data))
+							.attr("d", lineRadial(cur_data))
+							.attr("class", className)
+							.attr("opacity", 0.7)
+							.attr("fill", "none")
+							.attr("stroke-width", curRadialLineWidth)
+							.attr("stroke", "black")
+					// }
 				}
 		    	radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
 		    	saveSvg(svg, ballet+'_ALL.svg')
