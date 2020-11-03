@@ -98,6 +98,9 @@
 	  		background: white;
 	  		color: black
 	  	}
+	  .circle {
+		  fill: red;
+	  }
 	</style>
 
 	
@@ -130,8 +133,8 @@
 		var lineRes = 0.05
 		var curveAlpha = 0.55
 		var radialLineWidth = 0.5
-		var radiusMult = 400 //this has to do with the spikes
-		var radiusOutwardMult = 4 //scaling to the page
+		var radiusMult = 300 //this has to do with the spikes
+		var radiusOutwardMult = 3 //scaling to the page
 		var curveType = 'basis'
 		var stepLengthMultipier = 2
 
@@ -297,11 +300,18 @@
 			// Normalize playback time from 0 to 1, so I can scale by total ballet lenth
 			console.log('NORMALIZED', dataset)
 			// body_movement corresponds to THETA, pin to a spoke at a certain theta val
-			dataset.forEach(function(d) {
+			dataset.forEach(function(d, i) {
 				d.theta = bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50
 				d.thetaRad = degrees_to_radians( bodyDirectionToTheta(d.body_movement, d.direction_movement) + 50 )
+				tmp = dataset.slice(0,i).map(x=>x.thetaRad)
+				if (tmp.length > 0){
+					tmp = tmp.reduce((a, b) => a + b) / tmp.length;
+					d.weightDist = tmp
+				}else {
+					d.weightDist = 0
+				}
 			});
-
+			console.log(dataset)
 
 			//Set the minimum inner radius and max outer radius of the chart
 			var	outerRadius = Math.min(width, height, 250)/2,
@@ -314,7 +324,7 @@
 			var data = []
 			var dataStyling = []
 			var dataset = dataset.sort(({playbackTime:a}, {playbackTime:b}) => a-b);
-			console.log('sorted', dataset)
+			// console.log('sorted', dataset)
 			
 			radArr = dataset.map(x=>(x.playbackTime)*radiusOutwardMult)
 			// Nonzero radii
@@ -330,25 +340,31 @@
 					  if (randJitter) {data.push([Math.PI * i, radArr[ii] + getRandomNumber(-3.5, 3.5) ])}
 					  if (!randJitter) {data.push([Math.PI * i, radArr[ii] ])}
 					}
-					dataStyling.push({'body_movement' : dataset[ii].body_movement,
-									  'step_length' : dataset[ii].step_length * stepLengthMultipier,
-									  'playback_time': dataset[ii].playbackTime})
+					// dataStyling.push({'body_movement' : dataset[ii].body_movement,
+					// 				  'step_length' : dataset[ii].step_length * stepLengthMultipier,
+					// 				  'playback_time': dataset[ii].playbackTime,
+					// 				  'weight_dist': dataset[ii].weightDist})
 					arr = spokeArrRad
 					num = degrees_to_radians(dataset[ii].theta)
 					var closestSpoke = arr.reduce(function(prev, curr) {
 				  		return (Math.abs(curr - num) < Math.abs(prev - num) ? curr : prev);
 					});
+					dataStyling.push({'body_movement' : dataset[ii].body_movement,
+									  'step_length' : dataset[ii].step_length * stepLengthMultipier,
+									  'playback_time': dataset[ii].playbackTime,
+									  'weight_dist': dataset[ii].weightDist,
+									  'closest_spoke': closestSpoke})
 					// find theta closest to chosen spokeArr
 					if (dataset[ii].direction_movement!='place'){
 						index = data.findIndex(x => findClosest(x, closestSpoke));
 						data[index] = [data[index][0], radArr[ii]+dataset[ii].step_length * radiusMult]
 						dataArr.push({data})
 					}
-					if (dataset[ii].direction_movement=='place'){
+					// if (dataset[ii].direction_movement=='place'){
 						// index = data.findIndex(x => findClosest(x, closestSpoke));
 						// data[index] = [data[index][0], radArr[ii]]
 						// dataArr.push({data})
-					}
+					// }
 
 				}
 			}
@@ -360,29 +376,62 @@
 			
 			var radialWrapper = svg.append("g")
 				.attr("transform", "translate(" + 0 + "," + 0 + ")");
+			var circleWrapper = svg.append("g")
+				.attr("transform", "translate(" + 0 + "," + 0 + ")");
+
 			$('#play-button').click(function(){
 				$('#play-button').addClass('enabled')
 				for (i = 0; i < dataArr.length; i++) {
+					tmp = dataset.slice(0,i).map(x=>x.closest_spoke)
+					if (tmp.length > 0){
+						tmp = tmp.reduce((a, b) => a + b) / tmp.length;
+						cur_weight_dist = tmp
+					}else {
+						cur_weight_dist = 0
+					}
 					className = "radial_"+dataStyling[i].body_movement
 					curRadialLineWidth = dataStyling[i].step_length
 					curPlaybackTime = dataStyling[i].playback_time 
-					console.log(curPlaybackTime)
+
+					// Calculate cumulative
+					console.log(dataStyling[i].weight_dist)
+					console.log('----')
 					radialWrapper
-					    .append("path")
-					    .attr("d", lineRadial(dataArr[i].data))
-					    .attr("class", className)
-                        .attr("opacity", 0)
-                        .style("filter", "url(#glow)")
-					    .attr("fill", "none")
-					    .attr("stroke-width", curRadialLineWidth/2)
-					    .attr("stroke", "black")
+						.append("path")
+						.attr("d", lineRadial(dataArr[i].data))
+						.attr("class", className)
+						.attr("opacity", 0)
+						// .attr("opacity", 0.7)
+						.style("filter", "url(#glow)")
+						.attr("fill", "none")
+						.attr("stroke-width", curRadialLineWidth/2)
+						.attr("stroke", "black")
 						.transition()
-						.delay( (curPlaybackTime-14)*900)
-                        .attr("opacity", 0.7)
-				}
+							.delay( (curPlaybackTime-14)*900)
+							.attr("opacity", 0.7)
+					
+					circleWrapper
+						.append("circle")
+							// .attr("cy", dataArr[i].data[0][1]*Math.sin(radians_to_degrees(dataStyling[i].weight_dist)))
+							// .attr("cx", dataArr[i].data[0][1]*Math.cos(radians_to_degrees(dataStyling[i].weight_dist)))
+							.attr("opacity", 0)
+							// .attr("opacity", 0.7)
+							.attr("cy", dataArr[i].data[0][1]*Math.sin(dataStyling[i].weight_dist))
+							.attr("cx", dataArr[i].data[0][1]*Math.cos(dataStyling[i].weight_dist))
+							// .attr("transform", function(d,i) { return "rotate(" + ( 330 ) + ")"; })
+							.attr("r", 3)
+							.style('fill', 'red')
+							.transition()
+								.delay( (curPlaybackTime-14)*900)
+								.attr("opacity", 0.7)
+								.transition()
+									.duration((curPlaybackTime-14)*300)
+									.attr("opacity", 0)
+			}
 			})
 			var alignRotate = -55;
 		    radialWrapper.attr("transform", function(d,i) { return "rotate(" + ( alignRotate ) + ")"; })
+			// circleWrapper.attr("transform", function(d,i) { return "rotate(" + ( 140 ) + ")"; })
 
             //Apply to your element(s)
             d3.selectAll(".radial_left_arm")
@@ -413,6 +462,7 @@
 							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
 							.attr("fill", "none")
 							.attr("stroke-width", curRadialLineWidth)
+							.style("filter", "url(#glow)")
 							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 					}
 				}
@@ -434,12 +484,13 @@
 						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/2 |  x[0]>=Math.PI )) 				
 						radialWrapper
 							.append("path")
-							// .attr("d", lineRadial(dataArr[i].data))
-							.attr("d", lineRadial(cur_data))
+							.attr("d", lineRadial(dataArr[i].data))
+							// .attr("d", lineRadial(cur_data))
 							.attr("class", className)
 							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
 							.attr("fill", "none")
 							.attr("stroke-width", curRadialLineWidth)
+							.style("filter", "url(#glow)")
 							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 					}
 				}
@@ -465,6 +516,7 @@
 							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
 							.attr("fill", "none")
 							.attr("stroke-width", curRadialLineWidth)
+							.style("filter", "url(#glow)")
 							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 					}
 				}
@@ -490,6 +542,7 @@
 							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
 							.attr("fill", "none")
 							.attr("stroke-width", curRadialLineWidth)
+							.style("filter", "url(#glow)")
 							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 					}
 				}
@@ -514,6 +567,7 @@
 							.attr("class", className)
 							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
 							.attr("fill", "none")
+							.style("filter", "url(#glow)")
 							.attr("stroke-width", curRadialLineWidth)
 							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 					}
@@ -536,12 +590,13 @@
 						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/1.2 |  x[0]>=Math.PI )) 
 						radialWrapper
 							.append("path")
-							// .attr("d", lineRadial(dataArr[i].data))
-							.attr("d", lineRadial(cur_data))
+							.attr("d", lineRadial(dataArr[i].data))
+							// .attr("d", lineRadial(cur_data))
 							.attr("class", className)
 							.attr("opacity", function(d,i) { return className.includes(highlight) ? 0.7 : 0 })
 							.attr("fill", "none")
 							.attr("stroke-width", curRadialLineWidth)
+							.style("filter", "url(#glow)")
 							.attr("stroke", function(d,i) { return className.includes(highlight) ? "black" : "black" })
 					}
 				}
@@ -562,11 +617,12 @@
 						cur_data = dataArr[i].data.filter(x => ( x[0]<=Math.PI/1.3 |  x[0]>=Math.PI )) 
 						radialWrapper
 							.append("path")
-							// .attr("d", lineRadial(dataArr[i].data))
-							.attr("d", lineRadial(cur_data))
+							.attr("d", lineRadial(dataArr[i].data))
+							// .attr("d", lineRadial(cur_data))
 							.attr("class", className)
 							.attr("opacity", 0.7)
 							.attr("fill", "none")
+							.style("filter", "url(#glow)")
 							.attr("stroke-width", curRadialLineWidth)
 							.attr("stroke", "black")
 					// }

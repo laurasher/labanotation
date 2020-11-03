@@ -286,19 +286,11 @@
 				measNum = +d.measure_num
 				meas_ymin = measures.filter(x=>+x.measure_num==measNum)[0].ymax
 				step_ymin = +d.ymax
-				// console.log(meas_ymin)
-				// console.log(step_ymin)
-				// console.log( (step_ymin -meas_ymin)*measNum )
-				// console.log('-------')
-				// d.playbackTime = (step_ymin-meas_ymin)*measNum
-				// d.playbackTime = measNum
-				// d.playbackTime = (step_ymin-meas_ymin)/100+measNum
 				d.playbackTime = measNum + (step_ymin)/100
 			});
 			min = Math.min.apply(Math, dataset.map(x=>x.playbackTime))
 			max = Math.max.apply(Math, dataset.map(x=>x.playbackTime))
 			dataset.forEach(function(d) {
-				// d.playbackTime = ((d.playbackTime-min)/(max-min))*total_len_sec
 				d.playbackTime = d.playbackTime*4
 			});
 			// Normalize playback time from 0 to 1, so I can scale by total ballet lenth
@@ -352,9 +344,9 @@
 						dataArr.push({data})
 					}
 					if (dataset[ii].direction_movement=='place'){
-						index = data.findIndex(x => findClosest(x, closestSpoke));
-						data[index] = [data[index][0], radArr[ii]]
-						dataArr.push({data})
+						// index = data.findIndex(x => findClosest(x, closestSpoke));
+						// data[index] = [data[index][0], radArr[ii]]
+						// dataArr.push({data})
 					}
 
 				}

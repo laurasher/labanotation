@@ -19,10 +19,11 @@ def style_plots(fig):
 
 
 data_root = "clustering_output/"
-jitter_amt = 0.03
+# jitter_amt = 0.03
+jitter_amt = 0.01
 
-ballets = ["coppelia_dawn", "raymonda", "sleepingbeauty_bluebird", "songs", "artifact",]
-colors = {"raymonda": "orange", "coppelia_dawn": "red", "artifact": "blue", "songs": "purple", "sleepingbeauty_bluebird": "pink"}
+ballets = ["coppelia_dawn", "raymonda", "sleepingbeauty_bluebird", "songs", "artifact", "endolor"]
+colors = {"raymonda": "orange", "coppelia_dawn": "red", "artifact": "blue", "songs": "purple", "endolor": "black", "sleepingbeauty_bluebird": "pink"}
 
 # p = figure(plot_width=800, plot_height=600, title="Repetition index and direction diversity index")
 p = figure(plot_width=800, plot_height=600, title="Repetition index and total movements in measure")
@@ -39,8 +40,9 @@ for b in ballets:
     source = ColumnDataSource(
         data=dict(
             # x=df["direction_diversity_index"],
-            x=df["movements_in_measure"],
-            y=df["repetition_index"],
+            # x=df["movements_in_measure"],
+            x=df["repetition_index"],
+            y=df["direction_diversity_index"],
             label=df["ballet"],
             col=df["color"],
             alpha=df["alpha"]
@@ -59,8 +61,9 @@ for b in ballets:
         source=source,
         legend_group="label",
     )
-    # frames.append(df[["direction_diversity_index","repetition_index"]])
-    frames.append(df[["movements_in_measure","repetition_index"]])
+    frames.append(df[["repetition_index","direction_diversity_index"]])
+    # frames.append(df[["movements_in_measure","repetition_index"]])
+    # frames.append(df[["movements_in_measure","direction_diversity_index"]])
 
 all_ballets_df = pd.concat(frames)
 print(all_ballets_df)
@@ -76,13 +79,13 @@ p.circle(
         line_alpha=1,
         alpha=0
     )
-p.yaxis.axis_label = "repetition_index (RI)"
-p.xaxis.axis_label = "movements in measure"
-# p.xaxis.axis_label = "direction diversity in measure"
+p.xaxis.axis_label = "repetition_index (RI)"
+# p.xaxis.axis_label = "movements in measure"
+p.yaxis.axis_label = "direction diversity in measure"
 p = style_plots(p)
-p.legend.location = "top_left"
+p.legend.location = "top_right"
 p.legend.click_policy = "hide"
-p.add_layout(Title(text="Higher DDI, more diverse directional mvmt. Higher RI, more repetitive mvmt.", text_font_style="italic"), 'above')
+# p.add_layout(Title(text="Higher DDI, more diverse directional mvmt. Higher RI, more repetitive mvmt.", text_font_style="italic"), 'above')
 
 # show the results
 show(p)
