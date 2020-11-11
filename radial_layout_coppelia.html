@@ -142,7 +142,7 @@
 	        var style = '<style>circle {cursor: pointer;}</style>'
 	        var full_svg = head +  style + svg_data + "</svg>"
 	        var blob = new Blob([full_svg], {type: "image/svg+xml"});  
-	        // saveAs(blob, name);
+	        saveAs(blob, name);
 		};
 
 		function getRandomNumber(start, end) {
